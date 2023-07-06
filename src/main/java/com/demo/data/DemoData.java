@@ -25,6 +25,7 @@ public interface DemoData {
      */
     @Data
     class Vo {
+        //it can contain different information as demo class
         private String id;
         // content
         private String content;
