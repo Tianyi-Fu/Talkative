@@ -9,14 +9,11 @@ import lombok.Data;
  * @since 2023/7/5
  */
 @Data
-public class Demo {
-
+public class Questionnaire {
     // Primary key
     @TableId(value = "id", type = IdType.ASSIGN_ID)
     private String id;
-
-
-    // content
-    private String content;
+    private Question question;
+    private Answer answer;
 
 }
