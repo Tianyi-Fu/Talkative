@@ -14,7 +14,7 @@ public class Question {
     @TableId(value = "id", type = IdType.ASSIGN_ID)
     private String id;
 
-
+    //content
     private String content;
     private Boolean sentiment;
     private String type;
