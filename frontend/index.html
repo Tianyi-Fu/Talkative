@@ -9,19 +9,23 @@
 </head>
 
 <body>
-    <div class="search">
-        <input type="text" id="serachContent" />
-        <input type="button" id="search" value="search" />
-        <span> Search： </span>
-        <span id="result" style="color:red"> </span>
-    </div>
-    <div class="operate">
-        <input type="text" id="addContent" />
-        <input type="button" id="add" value="Create" />
-    </div>
-    <ul class="list">
+<div class="search">
+    <input type="text" id="serachContent"/>
+    <input type="button" id="search" value="search"/>
+    <span> Search： </span>
+    <span id="result" style="color:red"> </span>
+</div>
+<div class="operate">
+    <input type="text" id="addContent"/>
+    <input type="button" id="add" value="Create"/>
+    <br/>
+    <br/>
+    <textarea name="text" id="chat" style="height: 120px; width: 250px"></textarea>
+    <button type="submit" id="submit">Send Transcript</button>
+</div>
+<ul class="list">
 
-    </ul>
+</ul>
 </body>
 <script type="text/javascript">
     var baseUrl = 'http://127.0.0.1:8081'
@@ -52,7 +56,7 @@
             url: baseUrl + '/create',
             method: 'post',
             contentType: "application/json", // Set the request header to JSON format
-            data: JSON.stringify({ 'content': $('#addContent').val() }),
+            data: JSON.stringify({'content': $('#addContent').val()}),
             success: function (data) {
                 if (data.code == 500) {
                     alert(data.message)
@@ -65,7 +69,7 @@
     })
 
 
-    queryAll();
+    // queryAll();
 
     // query all
     function queryAll() {
@@ -78,7 +82,7 @@
                 } else {
                     let list = data.data;
                     list.forEach(item => {
-                        $('.list').append('<li id="' + item.id + '"> <input type="text" id="updateContent" value='+ item.content +' /> <input type="button" id="delete" value="delete"/> <input type="button" id="update" value="update"/> </li>')
+                        $('.list').append('<li id="' + item.id + '"> <input type="text" id="updateContent" value=' + item.content + ' /> <input type="button" id="delete" value="delete"/> <input type="button" id="update" value="update"/> </li>')
                     });
                 }
             }
@@ -92,7 +96,7 @@
             url: baseUrl + '/update',
             method: 'post',
             contentType: "application/json", // Set the request header to JSON format
-            data: JSON.stringify({ 'id': id, 'content': $('#updateContent').val() }),
+            data: JSON.stringify({'id': id, 'content': $('#updateContent').val()}),
             success: function (data) {
                 if (data.code == 500) {
                     alert(data.message)
@@ -119,6 +123,25 @@
         })
     })
 
+    /***********************************************************/
+    $("#submit").click((e) => {
+        // e.preventDefault();
+        let conversation = $("#chat").val();
+
+        $.ajax({
+            url: baseUrl + '/read_transcript',
+            method: 'post',
+            contentType: "application/json", // Set the request header to JSON format
+            data: JSON.stringify(conversation),
+            success: function (data) {
+                if (data.code == 500) {
+                    alert(data.message)
+                } else {
+                    console.log('OK')
+                }
+            }
+        })
+    })
 </script>
 
 </html>
