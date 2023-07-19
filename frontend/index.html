@@ -127,12 +127,19 @@
     $("#submit").click((e) => {
         // e.preventDefault();
         let conversation = $("#chat").val();
+        let newConversation = [];
+        let msgArray = JSON.parse(conversation).messages;
+
+        msgArray.map((item) => {
+            newConversation.push({[item.sender_name]: item.message});
+        })
+        console.log(newConversation)
 
         $.ajax({
             url: baseUrl + '/read_transcript',
             method: 'post',
             contentType: "application/json", // Set the request header to JSON format
-            data: JSON.stringify(conversation),
+            data: JSON.stringify(newConversation),
             success: function (data) {
                 if (data.code == 500) {
                     alert(data.message)
