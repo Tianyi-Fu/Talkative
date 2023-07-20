@@ -10,11 +10,11 @@ import lombok.Data;
  */
 
 @Data
-public class DemoException extends Exception {
+public class Exception extends java.lang.Exception {
 
     private String msg;
 
-    public DemoException(String msg) {
+    public Exception(String msg) {
         this.msg = msg;
     }
 

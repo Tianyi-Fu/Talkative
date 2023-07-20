@@ -1,6 +1,6 @@
 package com.demo.controller;
 
-import com.demo.error.DemoException;
+import com.demo.error.Exception;
 import com.demo.model.Result;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class ErrorController {
 
-    @ExceptionHandler(value = DemoException.class)
-    public Result handleError(DemoException e) {
+    @ExceptionHandler(value = Exception.class)
+    public Result handleError(Exception e) {
         return Result.fail(e.getMsg());
     }
 

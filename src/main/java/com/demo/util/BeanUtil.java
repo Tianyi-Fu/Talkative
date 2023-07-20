@@ -1,6 +1,6 @@
 package com.demo.util;
 
-import com.demo.error.DemoException;
+import com.demo.error.Exception;
 import org.springframework.beans.BeanUtils;
 
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ public class BeanUtil {
      * @param <TargetClass>    the class want to be change
      * @return target object
      */
-    public static <TargetClass> TargetClass sourceToTarget(Object source, Class<TargetClass> target) throws DemoException {
+    public static <TargetClass> TargetClass sourceToTarget(Object source, Class<TargetClass> target) throws Exception {
         if (source == null) {
             return null;
         } else {
@@ -28,8 +28,8 @@ public class BeanUtil {
             try {
                 targetObject = target.newInstance();
                 BeanUtils.copyProperties(source, targetObject);
-            } catch (Exception e) {
-                throw new DemoException("convert error");
+            } catch (java.lang.Exception e) {
+                throw new Exception("convert error");
             }
             return targetObject;
         }
@@ -43,7 +43,7 @@ public class BeanUtil {
      * @param <TargetClass>    the class want to be change
      * @return target object
      */
-    public static <TargetClass> List<TargetClass> convertToList(Collection<?> sourceList, Class<TargetClass> target) throws DemoException {
+    public static <TargetClass> List<TargetClass> convertToList(Collection<?> sourceList, Class<TargetClass> target) throws Exception {
         if (sourceList == null) {
             return null;
         } else {
@@ -54,8 +54,8 @@ public class BeanUtil {
                     BeanUtils.copyProperties(source, targetObject);
                     targetList.add(targetObject);
                 }
-            } catch (Exception e) {
-                throw new DemoException("convert error");
+            } catch (java.lang.Exception e) {
+                throw new Exception("convert error");
             }
             return targetList;
         }
