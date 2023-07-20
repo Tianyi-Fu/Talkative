@@ -33,7 +33,7 @@ public class Service {
         //id=feedBackRecord id
         ChatRecord chatRecord=new ChatRecord();
         chatRecord.setAgentName(agentName);
-        chatRecord.setFeedbackRecordId(id);
+//        chatRecord.setFeedbackRecordId(id);
         chatRecordMapper.insert(chatRecord);
         id++;
 

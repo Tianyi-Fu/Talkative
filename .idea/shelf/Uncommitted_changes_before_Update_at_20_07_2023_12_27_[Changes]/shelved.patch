@@ -1,0 +1,76 @@
+Index: .idea/.gitignore
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+deleted file mode 100644
+--- a/.idea/.gitignore	(revision 5ce501734503a023df6966f4ef4eb7cd8f131a95)
++++ /dev/null	(revision 5ce501734503a023df6966f4ef4eb7cd8f131a95)
+@@ -1,8 +0,0 @@
+-# Default ignored files
+-/shelf/
+-/workspace.xml
+-# Editor-based HTTP Client requests
+-/httpRequests/
+-# Datasource local storage ignored files
+-/dataSources/
+-/dataSources.local.xml
+Index: .idea/vcs.xml
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+deleted file mode 100644
+--- a/.idea/vcs.xml	(revision 5ce501734503a023df6966f4ef4eb7cd8f131a95)
++++ /dev/null	(revision 5ce501734503a023df6966f4ef4eb7cd8f131a95)
+@@ -1,6 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="VcsDirectoryMappings">
+-    <mapping directory="" vcs="Git" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/modules.xml
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+deleted file mode 100644
+--- a/.idea/modules.xml	(revision 5ce501734503a023df6966f4ef4eb7cd8f131a95)
++++ /dev/null	(revision 5ce501734503a023df6966f4ef4eb7cd8f131a95)
+@@ -1,8 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ProjectModuleManager">
+-    <modules>
+-      <module fileurl="file://$PROJECT_DIR$/.idea/Talkative.iml" filepath="$PROJECT_DIR$/.idea/Talkative.iml" />
+-    </modules>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/Talkative.iml
+===================================================================
+diff --git a/.idea/Talkative.iml b/.idea/Talkative.iml
+deleted file mode 100644
+--- a/.idea/Talkative.iml	(revision 5ce501734503a023df6966f4ef4eb7cd8f131a95)
++++ /dev/null	(revision 5ce501734503a023df6966f4ef4eb7cd8f131a95)
+@@ -1,9 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module type="JAVA_MODULE" version="4">
+-  <component name="NewModuleRootManager" inherit-compiler-output="true">
+-    <exclude-output />
+-    <content url="file://$MODULE_DIR$" />
+-    <orderEntry type="inheritedJdk" />
+-    <orderEntry type="sourceFolder" forTests="false" />
+-  </component>
+-</module>
+\ No newline at end of file
+Index: .idea/misc.xml
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+deleted file mode 100644
+--- a/.idea/misc.xml	(revision 5ce501734503a023df6966f4ef4eb7cd8f131a95)
++++ /dev/null	(revision 5ce501734503a023df6966f4ef4eb7cd8f131a95)
+@@ -1,6 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ProjectRootManager">
+-    <output url="file://$PROJECT_DIR$/out" />
+-  </component>
+-</project>
+\ No newline at end of file

@@ -1,0 +1,104 @@
+Index: .idea/libraries/Maven__com_google_code_gson_gson_2_8_5.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"libraryTable\">\r\n  <library name=\"Maven: com.google.code.gson:gson:2.8.5\">\r\n    <CLASSES>\r\n      <root url=\"jar://D:/java/repository/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar!/\" />\r\n    </CLASSES>\r\n    <JAVADOC>\r\n      <root url=\"jar://D:/java/repository/com/google/code/gson/gson/2.8.5/gson-2.8.5-javadoc.jar!/\" />\r\n    </JAVADOC>\r\n    <SOURCES>\r\n      <root url=\"jar://D:/java/repository/com/google/code/gson/gson/2.8.5/gson-2.8.5-sources.jar!/\" />\r\n    </SOURCES>\r\n  </library>\r\n</component>
+===================================================================
+diff --git a/.idea/libraries/Maven__com_google_code_gson_gson_2_8_5.xml b/.idea/libraries/Maven__com_google_code_gson_gson_2_8_5.xml
+--- a/.idea/libraries/Maven__com_google_code_gson_gson_2_8_5.xml	
++++ b/.idea/libraries/Maven__com_google_code_gson_gson_2_8_5.xml	
+@@ -1,13 +1,13 @@
+ <component name="libraryTable">
+   <library name="Maven: com.google.code.gson:gson:2.8.5">
+     <CLASSES>
+-      <root url="jar://D:/java/repository/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar!/" />
+     </CLASSES>
+     <JAVADOC>
+-      <root url="jar://D:/java/repository/com/google/code/gson/gson/2.8.5/gson-2.8.5-javadoc.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.5/gson-2.8.5-javadoc.jar!/" />
+     </JAVADOC>
+     <SOURCES>
+-      <root url="jar://D:/java/repository/com/google/code/gson/gson/2.8.5/gson-2.8.5-sources.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.5/gson-2.8.5-sources.jar!/" />
+     </SOURCES>
+   </library>
+ </component>
+\ No newline at end of file
+Index: .idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_13_5.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"libraryTable\">\r\n  <library name=\"Maven: com.fasterxml.jackson.core:jackson-core:2.13.5\">\r\n    <CLASSES>\r\n      <root url=\"jar://D:/java/repository/com/fasterxml/jackson/core/jackson-core/2.13.5/jackson-core-2.13.5.jar!/\" />\r\n    </CLASSES>\r\n    <JAVADOC>\r\n      <root url=\"jar://D:/java/repository/com/fasterxml/jackson/core/jackson-core/2.13.5/jackson-core-2.13.5-javadoc.jar!/\" />\r\n    </JAVADOC>\r\n    <SOURCES>\r\n      <root url=\"jar://D:/java/repository/com/fasterxml/jackson/core/jackson-core/2.13.5/jackson-core-2.13.5-sources.jar!/\" />\r\n    </SOURCES>\r\n  </library>\r\n</component>
+===================================================================
+diff --git a/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_13_5.xml b/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_13_5.xml
+--- a/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_13_5.xml	
++++ b/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_13_5.xml	
+@@ -1,13 +1,13 @@
+ <component name="libraryTable">
+   <library name="Maven: com.fasterxml.jackson.core:jackson-core:2.13.5">
+     <CLASSES>
+-      <root url="jar://D:/java/repository/com/fasterxml/jackson/core/jackson-core/2.13.5/jackson-core-2.13.5.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.13.5/jackson-core-2.13.5.jar!/" />
+     </CLASSES>
+     <JAVADOC>
+-      <root url="jar://D:/java/repository/com/fasterxml/jackson/core/jackson-core/2.13.5/jackson-core-2.13.5-javadoc.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.13.5/jackson-core-2.13.5-javadoc.jar!/" />
+     </JAVADOC>
+     <SOURCES>
+-      <root url="jar://D:/java/repository/com/fasterxml/jackson/core/jackson-core/2.13.5/jackson-core-2.13.5-sources.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.13.5/jackson-core-2.13.5-sources.jar!/" />
+     </SOURCES>
+   </library>
+ </component>
+\ No newline at end of file
+Index: .idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_13_4_2.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"libraryTable\">\r\n  <library name=\"Maven: com.fasterxml.jackson.core:jackson-databind:2.13.4.2\">\r\n    <CLASSES>\r\n      <root url=\"jar://D:/java/repository/com/fasterxml/jackson/core/jackson-databind/2.13.4.2/jackson-databind-2.13.4.2.jar!/\" />\r\n    </CLASSES>\r\n    <JAVADOC>\r\n      <root url=\"jar://D:/java/repository/com/fasterxml/jackson/core/jackson-databind/2.13.4.2/jackson-databind-2.13.4.2-javadoc.jar!/\" />\r\n    </JAVADOC>\r\n    <SOURCES>\r\n      <root url=\"jar://D:/java/repository/com/fasterxml/jackson/core/jackson-databind/2.13.4.2/jackson-databind-2.13.4.2-sources.jar!/\" />\r\n    </SOURCES>\r\n  </library>\r\n</component>
+===================================================================
+diff --git a/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_13_4_2.xml b/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_13_4_2.xml
+--- a/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_13_4_2.xml	
++++ b/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_13_4_2.xml	
+@@ -1,13 +1,13 @@
+ <component name="libraryTable">
+   <library name="Maven: com.fasterxml.jackson.core:jackson-databind:2.13.4.2">
+     <CLASSES>
+-      <root url="jar://D:/java/repository/com/fasterxml/jackson/core/jackson-databind/2.13.4.2/jackson-databind-2.13.4.2.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.13.4.2/jackson-databind-2.13.4.2.jar!/" />
+     </CLASSES>
+     <JAVADOC>
+-      <root url="jar://D:/java/repository/com/fasterxml/jackson/core/jackson-databind/2.13.4.2/jackson-databind-2.13.4.2-javadoc.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.13.4.2/jackson-databind-2.13.4.2-javadoc.jar!/" />
+     </JAVADOC>
+     <SOURCES>
+-      <root url="jar://D:/java/repository/com/fasterxml/jackson/core/jackson-databind/2.13.4.2/jackson-databind-2.13.4.2-sources.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.13.4.2/jackson-databind-2.13.4.2-sources.jar!/" />
+     </SOURCES>
+   </library>
+ </component>
+\ No newline at end of file
+Index: .idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_13_5.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"libraryTable\">\r\n  <library name=\"Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.5\">\r\n    <CLASSES>\r\n      <root url=\"jar://D:/java/repository/com/fasterxml/jackson/core/jackson-annotations/2.13.5/jackson-annotations-2.13.5.jar!/\" />\r\n    </CLASSES>\r\n    <JAVADOC>\r\n      <root url=\"jar://D:/java/repository/com/fasterxml/jackson/core/jackson-annotations/2.13.5/jackson-annotations-2.13.5-javadoc.jar!/\" />\r\n    </JAVADOC>\r\n    <SOURCES>\r\n      <root url=\"jar://D:/java/repository/com/fasterxml/jackson/core/jackson-annotations/2.13.5/jackson-annotations-2.13.5-sources.jar!/\" />\r\n    </SOURCES>\r\n  </library>\r\n</component>
+===================================================================
+diff --git a/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_13_5.xml b/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_13_5.xml
+--- a/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_13_5.xml	
++++ b/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_13_5.xml	
+@@ -1,13 +1,13 @@
+ <component name="libraryTable">
+   <library name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.5">
+     <CLASSES>
+-      <root url="jar://D:/java/repository/com/fasterxml/jackson/core/jackson-annotations/2.13.5/jackson-annotations-2.13.5.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.13.5/jackson-annotations-2.13.5.jar!/" />
+     </CLASSES>
+     <JAVADOC>
+-      <root url="jar://D:/java/repository/com/fasterxml/jackson/core/jackson-annotations/2.13.5/jackson-annotations-2.13.5-javadoc.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.13.5/jackson-annotations-2.13.5-javadoc.jar!/" />
+     </JAVADOC>
+     <SOURCES>
+-      <root url="jar://D:/java/repository/com/fasterxml/jackson/core/jackson-annotations/2.13.5/jackson-annotations-2.13.5-sources.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.13.5/jackson-annotations-2.13.5-sources.jar!/" />
+     </SOURCES>
+   </library>
+ </component>
+\ No newline at end of file
