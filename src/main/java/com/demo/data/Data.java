@@ -1,18 +1,18 @@
 package com.demo.data;
 
-import lombok.Data;
+import java.util.List;
 
 /**
  * @author Tianyi Fu
  * @since 2023/7/5
  */
 
-public interface DemoData {
+public interface Data {
 
     /**
      * Front end
      */
-    @Data
+    @lombok.Data
     class QueryParam {
 
         // query content
@@ -23,7 +23,7 @@ public interface DemoData {
     /**
      * Return to front end
      */
-    @Data
+    @lombok.Data
     class Vo {
         //it can contain different information as demo class
         private String id;
@@ -34,10 +34,30 @@ public interface DemoData {
     /**
      * From front end
      */
-    @Data
+    @lombok.Data
     class SaveParam {
         private String id;
         // content
         private String content;
+    }
+
+    @lombok.Data
+    class ChatParam {
+        private String content;
+    }
+
+
+    @lombok.Data
+    class QuestionVo {
+        private String agentName;
+        private List<String> questions;
+    }
+
+    @lombok.Data
+    class FeedbackSaveParam {
+
+        private String question;
+
+        private String answer;
     }
 }

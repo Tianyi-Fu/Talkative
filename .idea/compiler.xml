@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Talkative1" target="1.8" />
+      <module name="Talkative1" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

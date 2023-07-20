@@ -1,9 +1,6 @@
 package com.demo.model;
 
-import com.demo.data.DemoData;
-import lombok.Data;
-
-import java.util.HashMap;
+import com.demo.data.Data;
 
 /**
  * @author Tianyi Fu

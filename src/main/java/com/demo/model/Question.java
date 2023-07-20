@@ -3,19 +3,16 @@ package com.demo.model;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
-
 /**
  * @author Tianyi Fu
- * @since 2023/7/5
+ * @since 2023/7/20
  */
 @Data
 public class Question {
-    // Primary key
-    @TableId(value = "id", type = IdType.ASSIGN_ID)
-    private String id;
+    @TableId(value = "id", type = IdType.AUTO)
+    private Integer feedbackRecordId;
 
+    private String question;
 
-    private String content;
-    private Boolean sentiment;
-    private String type;
+    private String answer;
 }
