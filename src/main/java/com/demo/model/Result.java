@@ -1,6 +1,6 @@
 package com.demo.model;
 
-import com.demo.data.Data;
+import lombok.Data;
 
 /**
  * @author Tianyi Fu
