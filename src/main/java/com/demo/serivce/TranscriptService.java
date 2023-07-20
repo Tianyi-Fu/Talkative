@@ -1,6 +1,6 @@
 package com.demo.serivce;
 
-import com.demo.error.DemoException;
+import com.demo.error.Exception;
 import com.demo.mapper.TranscriptMapper;
 import com.demo.model.ChatRecord;
 import lombok.RequiredArgsConstructor;
@@ -12,7 +12,7 @@ public class TranscriptService {
     private final TranscriptMapper transcriptMapper;
 //    static int id = 1;
 
-    public void create(String transcript, String agentName) throws DemoException {
+    public void create(String transcript, String agentName) throws Exception {
 //        System.out.println(transcript);
 
 //        List<ChatRecord> chat = BeanUtil.convertToList(transcript, ChatRecord.class);
