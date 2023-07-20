@@ -8,11 +8,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Talkative" />
+        <module name="Talkative1" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Talkative" target="1.8" />
-      <module name="Talkative1" target="1.8" />
+      <module name="Talkative1" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

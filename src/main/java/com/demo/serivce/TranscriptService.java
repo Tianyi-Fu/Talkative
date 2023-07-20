@@ -2,8 +2,7 @@ package com.demo.serivce;
 
 import com.demo.error.DemoException;
 import com.demo.mapper.TranscriptMapper;
-import com.demo.model.Chat_record;
-import com.demo.util.BeanUtil;
+import com.demo.model.ChatRecord;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -11,13 +10,21 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class TranscriptService {
     private final TranscriptMapper transcriptMapper;
+//    static int id = 1;
 
-    public void create(String param) throws DemoException {
-        System.out.println(param);
+    public void create(String transcript, String agentName) throws DemoException {
+//        System.out.println(transcript);
 
-        Chat_record transcript = BeanUtil.sourceToTarget(param, Chat_record.class);
+//        List<ChatRecord> chat = BeanUtil.convertToList(transcript, ChatRecord.class);
 
-        System.out.println(transcript);
-        transcriptMapper.insert(transcript);
+        ChatRecord chatRecord = new ChatRecord();
+
+        chatRecord.setTranscript(transcript);
+        chatRecord.setAgentName(agentName);
+//        chatRecord.setFeedbackRecordId(id);
+        System.out.println(chatRecord);
+        transcriptMapper.insert(chatRecord);
+
+//        id++;
     }
 }

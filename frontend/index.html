@@ -141,7 +141,7 @@
         // console.log(newConversation)
 
         let transcriptObj = {"agent_name": sender, "transcript": newConversation}
-        console.log(transcriptObj)
+        console.log(JSON.stringify(transcriptObj))
 
         $.ajax({
             url: baseUrl + '/read_transcript',

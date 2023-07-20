@@ -7,24 +7,23 @@ DROP TABLE IF EXISTS chat_record;
 DROP TABLE IF EXISTS feedback_record;
 DROP TABLE IF EXISTS users;
 
-CREATE TABLE feedback_record
-(
-    feedback_record_id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    question           VARCHAR(255),
-    answer             VARCHAR(255),
-    created_at         VARCHAR(255)
-);
-
 CREATE TABLE chat_record
 (
     chat_record_id     INTEGER AUTO_INCREMENT PRIMARY KEY,
     transcript         TEXT,
     agent_id           INTEGER,
-    agent_name         VARCHAR(255),
-    feedback_record_id INTEGER,
-    FOREIGN KEY (feedback_record_id) REFERENCES feedback_record (feedback_record_id)
+    agent_name         VARCHAR(255)
 );
 
+CREATE TABLE feedback_record
+(
+    feedback_record_id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    question           VARCHAR(255),
+    answer             VARCHAR(255),
+    created_at         VARCHAR(255),
+    chat_record_id INTEGER,
+    FOREIGN KEY (chat_record_id) REFERENCES chat_record (chat_record_id)
+);
 
 CREATE TABLE users
 (
