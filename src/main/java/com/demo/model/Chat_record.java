@@ -9,7 +9,7 @@ import java.util.List;
 @Data
 public class Chat_record {
     // Primary key
-    @TableId(value = "chat_record_id", type = IdType.ASSIGN_ID)
+    @TableId(value = "chat_record_id", type = IdType.AUTO)
     private String id;
 
     private List transcript;
