@@ -129,17 +129,25 @@
         let conversation = $("#chat").val();
         let newConversation = [];
         let msgArray = JSON.parse(conversation).messages;
+        let sender;
+
+        msgArray.find((item) => {
+            if(item.sender_type.includes("User")) sender = item.sender_name;
+        })
 
         msgArray.map((item) => {
             newConversation.push({[item.sender_name]: item.message});
         })
-        console.log(newConversation)
+        // console.log(newConversation)
+
+        let transcriptObj = {"agent_name": sender, "transcript": newConversation}
+        console.log(transcriptObj)
 
         $.ajax({
             url: baseUrl + '/read_transcript',
             method: 'post',
             contentType: "application/json", // Set the request header to JSON format
-            data: JSON.stringify(newConversation),
+            data: JSON.stringify(transcriptObj),
             success: function (data) {
                 if (data.code == 500) {
                     alert(data.message)
