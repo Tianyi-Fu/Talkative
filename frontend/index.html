@@ -138,10 +138,9 @@
         msgArray.map((item) => {
             newConversation.push({[item.sender_name]: item.message});
         })
-        // console.log(newConversation)
 
         let transcriptObj = {"agent_name": sender, "transcript": newConversation}
-        console.log(JSON.stringify(transcriptObj))
+        console.log(transcriptObj)
 
         $.ajax({
             url: baseUrl + '/read_transcript',
