@@ -10,6 +10,7 @@ import com.demo.serivce.Service;
 import com.demo.util.AIUtil;
 import com.demo.util.JsonUtil;
 import lombok.RequiredArgsConstructor;
+import org.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -34,7 +35,7 @@ public class MyController {
     @PostMapping("/create/{agentName}")
     public Result create(@RequestBody List<Data.FeedbackSaveParam> param, @PathVariable String agentName) throws Exception {
 
-        service.create(param,agentName);
+        service.create(param, agentName);
         return Result.success();
     }
 
@@ -58,14 +59,14 @@ public class MyController {
 
         //Have the AI output in JSON format.
         chatMessages.add(new ChatMessage(ChatRole.USER).setContent(
-                "Based on the above dialogue and the emotions of the conversation participants, generate six forms for the Customer to capture their needs. Please output in JSON format according to the following requirements:" +
-                        "\n 1. There should be six questions."+
-                "\n 2. The outermost layer should be a 'questions' array, and the inner elements should be of string type."+
-                "\n 3. Only output in JSON format."
+                "Based on the above dialogue and the emotions of the conversation participants, generate six forms to ask the Customer for their feedback of the conversation. Please output in JSON format according to the following requirements:" +
+                        "\n 1. There should be six questions." +
+                        "\n 2. The outermost layer should be a 'questions' array, and the inner elements should be of string type." +
+                        "\n 3. Only output in JSON format."
         ));
         //convert to json
         String json = AIUtil.chatWithAI(client, chatMessages);
-        Data.QuestionVo questionVo= JsonUtil.toClass(json, Data.QuestionVo.class);
+        Data.QuestionVo questionVo = JsonUtil.toClass(json, Data.QuestionVo.class);
         chatMessages.add(new ChatMessage(ChatRole.USER).setContent(
 
                 "Please output the 'sender_name' from this conversation, excluding the 'customer'. Only provide me with this name in string format and only output this single name."

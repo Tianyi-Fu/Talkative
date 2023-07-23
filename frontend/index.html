@@ -1,161 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 
 <head>
-    <title></title>
+    <title>Talkative</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+
+    <!--Vendor CSS files-->
+    <link href="vendors/bootstrap-5.2.3/css/bootstrap.css" rel="stylesheet">
+    <!--Vendor JS files-->
+    <script src="vendors/jquery-3.7.0/jquery-3.7.0.min.js"></script>
+    <script src="vendors/bootstrap-5.2.3/js/bootstrap.bundle.js"></script>
+
+    <!-- CSS File -->
+    <link href="css/index.css" rel="stylesheet">
 </head>
 
 <body>
-<div class="search">
-    <input type="text" id="serachContent"/>
-    <input type="button" id="search" value="search"/>
-    <span> Search： </span>
-    <span id="result" style="color:red"> </span>
-</div>
-<div class="operate">
-    <input type="text" id="addContent"/>
-    <input type="button" id="add" value="Create"/>
-    <br/>
-    <br/>
-    <textarea name="text" id="chat" style="height: 120px; width: 250px"></textarea>
-    <button type="submit" id="submit">Send Transcript</button>
-</div>
-<ul class="list">
 
-</ul>
+<h1 class="text-center headerFont fw-bold mb-5">
+    <p class="text-primary-emphasis">Welcome to Talkative</p>
+    <small class="text-muted">Customer Service</small>
+</h1>
+
+<div class='main'>
+    <div class="col-xl-6 col-lg-6 d-none d-xl-block"><img class="mb-2" src="../../../Talkative/frontend/images/2.png"
+                                                          width="100%" alt="">
+    </div>
+
+    <div class="container">
+        <textarea id="chat" class="textarea" rows="30" name="message"></textarea>
+        <br/>
+        <button id="submit" type="button" class="btn btn-success openBtn"
+                disabled>End Chat
+        </button>
+        <!--        <a href="/demo2/frontend/surveyForm.html" target="_blank" about="aaa"></a>-->
+    </div>
+</div>
+
+<!--Modal-->
+<div id="modalContainer" class="modal fade text-center" role="dialog" tabindex="-1"
+     aria-labelledby="modalContainerLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/index.js"></script>
 </body>
-<script type="text/javascript">
-    var baseUrl = 'http://127.0.0.1:8081'
-
-    // Search
-    $('#search').click(function () {
-        // HTTP requests will cause cross-domain problems under different ports of the machine. You need to add the @CrossOrigin annotation to the back-end controller class. See the back-end code for details.
-        // ajax
-        $.ajax({
-            url: baseUrl + '/query',
-            method: 'get',
-            data: {
-                'content': $('#serachContent').val()
-            },
-            success: function (data) {
-                if (data.code == 500) {
-                    alert(data.message)
-                } else {
-                    $('#result').text(data.data.content)
-                }
-            }
-        })
-    })
-
-    // create
-    $('#add').click(function () {
-        $.ajax({
-            url: baseUrl + '/create',
-            method: 'post',
-            contentType: "application/json", // Set the request header to JSON format
-            data: JSON.stringify({'content': $('#addContent').val()}),
-            success: function (data) {
-                if (data.code == 500) {
-                    alert(data.message)
-                } else {
-                    $('.list').empty()
-                    queryAll()
-                }
-            }
-        })
-    })
-
-
-    // queryAll();
-
-    // query all
-    function queryAll() {
-        $.ajax({
-            url: baseUrl + '/all',
-            method: 'get',
-            success: function (data) {
-                if (data.code == 500) {
-                    alert(data.message)
-                } else {
-                    let list = data.data;
-                    list.forEach(item => {
-                        $('.list').append('<li id="' + item.id + '"> <input type="text" id="updateContent" value=' + item.content + ' /> <input type="button" id="delete" value="delete"/> <input type="button" id="update" value="update"/> </li>')
-                    });
-                }
-            }
-        })
-    }
-
-    // update
-    $('.list').on('click', '#update', function () {
-        const id = $(this).parent().attr('id')
-        $.ajax({
-            url: baseUrl + '/update',
-            method: 'post',
-            contentType: "application/json", // Set the request header to JSON format
-            data: JSON.stringify({'id': id, 'content': $('#updateContent').val()}),
-            success: function (data) {
-                if (data.code == 500) {
-                    alert(data.message)
-                } else {
-                    console.log(data);
-                }
-            }
-        })
-    })
-
-    // delete
-    $('.list').on('click', '#delete', function () {
-        const id = $(this).parent().attr('id')
-        $.ajax({
-            url: baseUrl + '/delete/' + id,
-            method: 'get',
-            success: function (data) {
-                if (data.code == 500) {
-                    alert(data.message)
-                } else {
-                    $('#' + id).remove()
-                }
-            }
-        })
-    })
-
-    /***********************************************************/
-    $("#submit").click((e) => {
-        // e.preventDefault();
-        let conversation = $("#chat").val();
-        let newConversation = [];
-        let msgArray = JSON.parse(conversation).messages;
-        let sender;
-
-        msgArray.find((item) => {
-            if(item.sender_type.includes("User")) sender = item.sender_name;
-        })
-
-        msgArray.map((item) => {
-            newConversation.push({[item.sender_name]: item.message});
-        })
-
-        let transcriptObj = {"agent_name": sender, "transcript": newConversation}
-        console.log(transcriptObj)
-
-        $.ajax({
-            url: baseUrl + '/read_transcript',
-            method: 'post',
-            contentType: "application/json", // Set the request header to JSON format
-            data: JSON.stringify(transcriptObj),
-            success: function (data) {
-                if (data.code == 500) {
-                    alert(data.message)
-                } else {
-                    console.log('OK')
-                }
-            }
-        })
-    })
-</script>
-
 </html>
