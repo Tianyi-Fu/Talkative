@@ -1,20 +1,17 @@
 package com.demo.controller;
 
 import com.demo.error.Exception;
-import com.demo.model.ChatRecord;
 import com.demo.model.Result;
 import com.demo.serivce.TranscriptService;
 import lombok.RequiredArgsConstructor;
 import org.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping
 @RequiredArgsConstructor
 @CrossOrigin
-public class FeedbackController {
+public class TranscriptController {
     private final TranscriptService transcriptService;
 
     @PostMapping("/read_transcript")

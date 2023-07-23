@@ -1,0 +1,56 @@
+body {
+    font-family: 'Nunito', sans-serif !important;
+    background-color: #aecfd1;
+    font-size: 14px
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 50px 50px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: auto;
+}
+
+
+.textarea {
+    border-style: solid;
+    border-width: medium;
+    border-color: #748687;
+}
+
+.button {
+    margin-top: 10px;
+    background-color: #748687;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+}
+
+/* Modal */
+.modal-content {
+    min-height: 500px;
+}
+
+.modal-body p {
+    margin: 10px 5px;
+}
+
+.modal-body button {
+    margin: 8px;
+}
+
+.model-body span {
+    font-size: 20px;
+}
+
+.modal-body textarea {
+    min-height: 250px;
+    min-width: 350px;
+}

@@ -6,48 +6,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!--Vendor CSS files-->
+    <link href="vendors/bootstrap-5.2.3/css/bootstrap.css" rel="stylesheet">
+    <!--Vendor JS files-->
+    <script src="vendors/jquery-3.7.0/jquery-3.7.0.min.js"></script>
+    <script src="vendors/bootstrap-5.2.3/js/bootstrap.bundle.js"></script>
 
-
-    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-
-    <style>
-        body {
-            font-family: 'Nunito', sans-serif !important;
-            background-color: #aecfd1;
-            font-size: 14px
-        }
-
-        .main {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            margin: 50px 50px;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            width: 50%;
-            margin-left: auto;
-        }
-
-
-        .textarea {
-            border-style:solid;
-            border-width:medium;
-            border-color:#748687;
-        }
-
-        .button {
-            margin-top: 10px;
-            background-color: #748687;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-        }
-    </style>
+    <!-- CSS File -->
+    <link href="css/index.css" rel="stylesheet">
 </head>
 
 <body>
@@ -57,85 +23,32 @@
     <small class="text-muted">Customer Service</small>
 </h1>
 
-    <div class='main'>
-        <div class="col-xl-6 col-lg-6 d-none d-xl-block"> <img class="mb-2" src="../../../Talkative/frontend/images/2.png" width="100%" alt="">
-        </div>
-
-        <div class="container">
-            <textarea id="message" class="textarea" rows="30" name="message">
-            </textarea>
-            <input id="submit" class="button" type="button" value="Submit" />
-            <a href="/demo2/frontend/surveyForm.html" target="_blank" about="aaa"></a>
-        </div>
+<div class='main'>
+    <div class="col-xl-6 col-lg-6 d-none d-xl-block"><img class="mb-2" src="../../../Talkative/frontend/images/2.png"
+                                                          width="100%" alt="">
     </div>
 
+    <div class="container">
+        <textarea id="chat" class="textarea" rows="30" name="message"></textarea>
+        <br/>
+        <button id="submit" type="button" class="btn btn-success openBtn"
+                disabled>End Chat
+        </button>
+        <!--        <a href="/demo2/frontend/surveyForm.html" target="_blank" about="aaa"></a>-->
+    </div>
+</div>
+
+<!--Modal-->
+<div id="modalContainer" class="modal fade text-center" role="dialog" tabindex="-1"
+     aria-labelledby="modalContainerLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/index.js"></script>
+<!--<script type="text/javascript" src="js/startSurveyModal.js"></script>-->
 </body>
-<script type="text/javascript">
-    var baseUrl = 'http://127.0.0.1:8081'
-    let agentName='';
-    // content
-    $('#submit').click(function () {
-        // HTTP requests across different ports on the same machine can lead to cross-domain issues.
-        // These issues can be resolved by adding the @CrossOrigin annotation in the backend controller class.
-        // Please refer to the backend code for specific details.
-        // ajax
-        $('.questions').empty()
-        agentName='';
-        $.ajax({
-            url: baseUrl + '/openai-chat',
-            method: 'get',
-            data: {
-                'content': $('#message').val()
-            },
-            success: function (data) {
-                if (data.code == 500) {
-                    alert(data.message)
-                } else {
-                    localStorage.setItem("questions",JSON.stringify(data.data.questions))
-                    localStorage.setItem("agentName",data.data.agentName)
-                    const htmlAnchorElement = document.querySelector("a");
-                    htmlAnchorElement.click()
-                    // const url = "http://localhost:63342/demo2/frontend/surveyForm.html?_ijt=vmhg70kv089cbm2l95i1dhafcs"
-
-                    // const questions = data.data.questions;
-                    // agentName = data.data.agentName;
-                    // questions.forEach(question => {
-                    //     $('.questions').append('<div class="question"> <p class="qs">'+question+'</p> <input type="text" class="answer" /> </div>')
-                    // });
-                    // $('.questions').append('<input class="saveAnswer" type="button" value="Submit" />')
-                }
-            }
-        })
-    })
-
-    $('.questions').on('click','.saveAnswer',function(){
-        let feedback = []
-        $('.question').each(function(){
-            const question = $(this).children('.qs').text();
-            const answer = $(this).children('.answer').val();
-            feedback.push({
-                "question":question,
-                "answer":answer
-            })
-        })
-
-        $.ajax({
-            url: baseUrl + '/create/'+agentName,
-            method: 'post',
-            contentType: "application/json", // Set the request header to JSON format.
-            data: JSON.stringify(feedback),
-            success: function (data) {
-                if (data.code == 500) {
-                    alert(data.message)
-                } else {
-                    alert('Thank you for your answer!')
-                }
-            }
-        })
-    })
-
-
-
-</script>
-
 </html>
