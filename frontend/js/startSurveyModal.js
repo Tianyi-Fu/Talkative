@@ -5,12 +5,7 @@ $(document).ready(() => {
         $('.modal-content').empty();
         $('.modal-content').append("<div class='spinner-border m-5' role='status'><span class='visually-hidden'>Loading...</span>");
 
-        // NEEDS FIXING HERE => SHOW LOADING UNTIL QUESTIONS ARE LOADED IN LOCALSTORAGE
-        setTimeout(() => {
-            $('.modal-content').load('components/feedbackQuestionModal.html', () => {
-                loadQuestions();
-            });
-        }, 8000)
+        questionsLoadedCheck();
     })
 
     // Functions
@@ -21,5 +16,21 @@ $(document).ready(() => {
         $('#question').append(`<span>${questions[0]}</span>`);
 
         localStorage.setItem('questionNumber', "1");
+    }
+
+    function questionsLoadedCheck() {
+        let timer = setInterval(checkLocalStorage, 2000);
+
+        function checkLocalStorage() {
+            localStorage.getItem("questions") ? abortTimer() : console.log("not loaded");
+        }
+
+        function abortTimer() {
+            clearInterval(timer);
+
+            $('.modal-content').load('components/feedbackQuestionModal.html', () => {
+                loadQuestions();
+            });
+        }
     }
 })

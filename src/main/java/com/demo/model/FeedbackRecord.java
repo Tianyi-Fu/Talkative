@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
+import java.sql.Timestamp;
+
 /**
  * @author Tianyi Fu
  * @since 2023/7/19
@@ -11,11 +13,16 @@ import lombok.Data;
 @Data
 public class FeedbackRecord {
 
-    //@TableId(value = "id", type = IdType.AUTO) 23
-    private Integer feedbackRecordId;
+    @TableId(value = "id", type = IdType.AUTO)
+    private int id;
+
+    private Integer questionId;
 
     private String question;
 
     private String answer;
 
+    private Timestamp createdAt;
+
+    private String chatRecordId;
 }
