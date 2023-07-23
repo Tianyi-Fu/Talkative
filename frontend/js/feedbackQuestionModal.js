@@ -17,12 +17,24 @@ $(document).ready(() => {
         saveAnsGetQuestion();
     })
 
+    $("#submitFeedbackBtn").click(() => {
+        submitFeedbackForm();
+
+        $('.modal-content').empty();
+        $('.modal-content').append('<div class="modal-body" style="margin-top: 50px"><h3>Thank you for your feedback!</h3></div>');
+
+        setTimeout(() => {
+            window.location.reload();
+        }, 2000)
+    })
+
 //    Functions
     function saveAnsGetQuestion() {
         // Save customer answer to localStorage
-        let answersArray = JSON.parse(localStorage.getItem("answers")) ? localStorage.getItem("answers") : [];
+        let answersArray = localStorage.getItem("answers") ? JSON.parse(localStorage.getItem("answers")) : [];
         answersArray.push($("#answer").val());
         localStorage.setItem("answers", JSON.stringify(answersArray));
+        $("#answer").val("");
 
         // Get questions from localStorage
         const questionArray = JSON.parse(localStorage.getItem("questions"));
@@ -38,18 +50,29 @@ $(document).ready(() => {
         switch (questionNum) {
             case "1":
                 document.querySelector(".modal-body #question span").innerHTML = questionArray[1];
+                localStorage.setItem("questionNumber", "2");
                 break;
             case "2":
                 document.querySelector(".modal-body #question span").innerHTML = questionArray[2];
+                localStorage.setItem("questionNumber", "3");
                 break;
             case "3":
                 document.querySelector(".modal-body #question span").innerHTML = questionArray[3];
+                localStorage.setItem("questionNumber", "4");
                 break;
             case "4":
                 document.querySelector(".modal-body #question span").innerHTML = questionArray[4];
+                localStorage.setItem("questionNumber", "5");
+
+                $("#nextBtn").prop("hidden", true);
+                $("#submitFeedbackBtn").prop("hidden", false);
                 break;
             default:
                 break;
         }
+    }
+
+    function submitFeedbackForm () {
+
     }
 })
