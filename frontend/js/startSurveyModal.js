@@ -3,10 +3,14 @@ $(document).ready(() => {
     $("#startBtn").on('click', () => {
         console.log('clicked start')
         $('.modal-content').empty();
-        // document.getElementsByClassName("modal-body").innerHTML =  "<div class='spinner-border m-5' role='status'><span class='visually-hidden'>Loading...</span>";
-        $('.modal-content').load('components/feedbackQuestionModal.html', () => {
-            loadQuestions();
-        });
+        $('.modal-content').append("<div class='spinner-border m-5' role='status'><span class='visually-hidden'>Loading...</span>");
+
+        // NEEDS FIXING HERE => SHOW LOADING UNTIL QUESTIONS ARE LOADED IN LOCALSTORAGE
+        setTimeout(() => {
+            $('.modal-content').load('components/feedbackQuestionModal.html', () => {
+                loadQuestions();
+            });
+        }, 8000)
     })
 
     // Functions
