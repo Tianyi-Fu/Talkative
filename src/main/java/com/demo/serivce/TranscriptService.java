@@ -10,21 +10,13 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class TranscriptService {
     private final TranscriptMapper transcriptMapper;
-//    static int id = 1;
-
     public void create(String transcript, String agentName) throws Exception {
-//        System.out.println(transcript);
-
-//        List<ChatRecord> chat = BeanUtil.convertToList(transcript, ChatRecord.class);
 
         ChatRecord chatRecord = new ChatRecord();
 
         chatRecord.setTranscript(transcript);
         chatRecord.setAgentName(agentName);
 //        chatRecord.setFeedbackRecordId(id);
-        System.out.println(chatRecord);
         transcriptMapper.insert(chatRecord);
-
-//        id++;
     }
 }
