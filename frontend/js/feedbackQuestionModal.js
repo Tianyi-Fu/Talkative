@@ -27,7 +27,7 @@ $(document).ready(() => {
         setTimeout(() => {
             localStorage.clear();
             window.location.reload();
-        }, 2000)
+        }, 200000)
     })
 
     // Functions
@@ -103,7 +103,26 @@ $(document).ready(() => {
                 if (data.code == 500) {
                     return alert(data.message);
                 } else {
-                    return "success";
+                    var json = {
+                        "firstName": localStorage.getItem("firstName"),
+                        "lastName": localStorage.getItem("lastName"),
+                        "email": localStorage.getItem("email"),
+                        "array": feedback,
+                        "chatRecordIdList": ["1"],
+                    };
+                    $.ajax({
+                        url: baseUrl + '/create-info/' + localStorage.getItem("agentName"),
+                        method: 'post',
+                        contentType: "application/json", // Set the request header to JSON format.
+                        data: JSON.stringify(json),
+                        success: function (data) {
+                            if (data.code == 500) {
+                                return alert(data.message);
+                            } else {
+                                return "success";
+                            }
+                        }
+                    })
                 }
             }
         })
