@@ -5,53 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="Only load questions when they are in localStorage; Refactored schema.sql &amp; FeedbackRecord">
-      <change afterPath="$PROJECT_DIR$/frontend/components/feedbackCustomerInformation.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/js/feedbackCustomerInformation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/controller/CreateInfoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/mapper/CreateInfoMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/model/CreateUserInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/model/FeedBackUserInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/serivce/CreateInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_7_22,_15_07_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_7_22,_15_09_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_7_22,_16_30_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_7_22__15_07__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_7_22__15_09__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_7_22__16_30__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_7_24,_11_34_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_7_24,_11_47_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_7_24__11_34__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_7_24__11_47__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_7_22,_16_30_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_7_22__16_30__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_7_23,_14_33_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_7_23__14_33__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_7_24,_12_16_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_7_24,_12_16_[Changes]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_7_24__12_16__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_7_24__12_16__Changes_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/library/select2-4.0.13/docs/LICENSE 2.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/library/select2-4.0.13/docs/README 2.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/library/select2-4.0.13/docs/blueprints 2.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/library/select2-4.0.13/docs/screenshot 2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/library/select2-4.0.13/docs/themes/.gitkeep 2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Talkative.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Talkative.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo2.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/js/feedbackCustomerInformation.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/feedbackCustomerInformation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/js/feedbackQuestionModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/feedbackQuestionModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/js/startSurveyModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/startSurveyModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/TalkativeApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/ErrorController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/MyController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$ChatParam.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$FeedbackSaveParam.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$QueryParam.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$QuestionVo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$SaveParam.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$Vo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/error/Exception.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/mapper/ChatRecordMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/mapper/Mapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/mapper/TranscriptMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/ChatRecord.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/Demo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/Feedback.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/FeedbackRecord.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/Question.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/Result.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/Service.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/TranscriptService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/util/AIUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/util/BeanUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/util/JsonUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/schema.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/demo2-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/controller/CreateInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/controller/CreateInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/controller/MyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/controller/MyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/data/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/data/Data.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/model/CreateUserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/model/CreateUserInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/serivce/CreateInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/serivce/CreateInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/serivce/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/serivce/Service.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -307,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690153603328</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="1.Implemented on the front-end and back-end to collect information from users who fill out feedback forms.">
+      <created>1690220237040</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1690220237040</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -350,6 +343,8 @@
     <MESSAGE value="1.As a developer, I want to automatically pop up the surveyForm page while submitting a transcript on the Talkative page.&#10;2.As a developer, I want to display issues analyzed and generated by ChatGPT on the surveyForm page.&#10;3.As a developer, I want to write some CSS style for the webpages." />
     <MESSAGE value="Refactored code; changed feedback form to popup; trying to show feedback questions 1 by 1" />
     <MESSAGE value="Only load questions when they are in localStorage; Refactored schema.sql &amp; FeedbackRecord" />
-    <option name="LAST_COMMIT_MESSAGE" value="Only load questions when they are in localStorage; Refactored schema.sql &amp; FeedbackRecord" />
+    <MESSAGE value="1.Implemented on the front-end and back-end to collect information from users who fill out feedback forms." />
+    <MESSAGE value="2.Get the chat record id in the transcript, and save them in the database." />
+    <option name="LAST_COMMIT_MESSAGE" value="2.Get the chat record id in the transcript, and save them in the database." />
   </component>
 </project>

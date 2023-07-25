@@ -3,14 +3,16 @@ $(document).ready(function () {
         var firstName = document.getElementById("firstName").value
         var lastName = document.getElementById("lastName").value
         var email = document.getElementById("inputEmail").value
-
+        var regEmail = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/
         if (firstName.trim().length <= 0) {
             alert("First Name Is Null")
         } else if (lastName.trim().length <= 0) {
             alert("Last Name Is Null")
         } else if (email.trim().length <= 0) {
             alert("email Is Null")
-        } else {
+        }else if (!regEmail.test(email)){
+            alert("email result is false")
+        }else {
             localStorage.setItem("firstName", firstName)
             localStorage.setItem("lastName", lastName)
             localStorage.setItem("email", email);

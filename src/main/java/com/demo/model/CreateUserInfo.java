@@ -19,4 +19,5 @@ public class CreateUserInfo {
     private String email;
     private List<Data.FeedbackSaveParam> array;
     private List<String> chatRecordIdList;
+    private String chatRecordId;
 }

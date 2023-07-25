@@ -29,13 +29,22 @@ public class MyController {
 
     private final Service service;
 
-    /**
+/*    *//**
      * Create
-     */
+     *//*
     @PostMapping("/create/{agentName}")
     public Result create(@RequestBody List<Data.FeedbackSaveParam> param, @PathVariable String agentName) throws Exception {
 
         service.create(param, agentName);
+        return Result.success();
+    }*/
+    /**
+     * Create
+     */
+    @PostMapping("/create/{agentName}")
+    public Result create(@RequestBody Data.FeedbackSaveParamAndChatId param, @PathVariable String agentName) throws Exception {
+
+        service.create(param.getList(), agentName, param.getChatRecordId());
         return Result.success();
     }
 

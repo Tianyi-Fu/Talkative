@@ -30,7 +30,9 @@ public class CreateInfoController {
     @PostMapping("/create-info/{agentName}")
     public Result createInfo(@RequestBody CreateUserInfo createUserInfo, @PathVariable String agentName) throws Exception {
         System.out.println(createUserInfo);
-        service.createInfo(createUserInfo.getArray(), createUserInfo.getChatRecordIdList(), agentName, createUserInfo.getFirstName(), createUserInfo.getLastName(), createUserInfo.getEmail());
+        service.createInfo(createUserInfo.getArray(), createUserInfo.getChatRecordIdList(), agentName,
+                createUserInfo.getFirstName(), createUserInfo.getLastName(), createUserInfo.getEmail(),
+                createUserInfo.getChatRecordId());
         return Result.success();
     }
 }
