@@ -4,7 +4,6 @@ import com.azure.ai.openai.OpenAIClient;
 import com.azure.ai.openai.OpenAIClientBuilder;
 import com.azure.ai.openai.models.*;
 import com.demo.data.Data;
-import com.demo.error.Exception;
 import com.demo.model.Result;
 import com.demo.serivce.Service;
 import com.demo.util.AIUtil;
@@ -29,7 +28,7 @@ public class MyController {
 
     private final Service service;
 
-/*    *//**
+    /*    *//**
      * Create
      *//*
     @PostMapping("/create/{agentName}")
@@ -44,7 +43,7 @@ public class MyController {
     @PostMapping("/create/{agentName}")
     public Result create(@RequestBody Data.FeedbackSaveParamAndChatId param, @PathVariable String agentName) throws Exception {
 
-        service.create(param.getList(), agentName, param.getChatRecordId());
+        service.create(param.getList(), agentName, param.getChatRecordId(),param.getFeedbackRecordId());
         return Result.success();
     }
 

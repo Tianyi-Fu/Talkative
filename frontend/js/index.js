@@ -19,7 +19,7 @@ $(document).ready(() => {
             localStorage.setItem("chatRecordId",chatRecordId)
             loadModalContent();
 
-            let transcriptObj = formatTranscript(conversation);
+            let transcriptObj = formatTranscript(conversation,chatRecordId);
             //
             $.ajax({
                 /* Write to chat_record table */
@@ -31,6 +31,7 @@ $(document).ready(() => {
                     if (data.code == 500) {
                         alert(data.message)
                     } else {
+                        localStorage.setItem("feedbackRecordId",data.data)
                         console.log('OK')
 
                         /* Send transcript to Chat GPT */
@@ -72,7 +73,7 @@ $(document).ready(() => {
     })
 
     // Functions
-    function formatTranscript(conversation) {
+    function formatTranscript(conversation,chatRecordId) {
         let newConversation = [];
         let msgArray = JSON.parse(conversation).messages;
         let sender;
@@ -85,7 +86,7 @@ $(document).ready(() => {
             newConversation.push({[item.sender_name]: item.message});
         })
 
-        let transcriptObj = {"agent_name": sender, "transcript": newConversation}
+        let transcriptObj = {"agent_name": sender, "transcript": newConversation,"chatRecordId":chatRecordId}
         console.log(transcriptObj)
         return transcriptObj;
     }

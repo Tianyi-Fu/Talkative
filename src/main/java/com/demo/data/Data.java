@@ -65,6 +65,8 @@ public interface Data {
     class FeedbackSaveParamAndChatId{
         private String chatRecordId;
 
+        private String feedbackRecordId;
+
         private List<FeedbackSaveParam> list;
     }
 }

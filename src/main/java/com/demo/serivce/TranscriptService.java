@@ -10,13 +10,15 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class TranscriptService {
     private final TranscriptMapper transcriptMapper;
-    public void create(String transcript, String agentName) throws Exception {
+    public String create(String transcript, String agentName,String chatRecordId) throws Exception {
 
         ChatRecord chatRecord = new ChatRecord();
 
         chatRecord.setTranscript(transcript);
         chatRecord.setAgentName(agentName);
+        chatRecord.setChatRecordId(chatRecordId);
 //        chatRecord.setFeedbackRecordId(id);
         transcriptMapper.insert(chatRecord);
+        return chatRecord.getFeedbackRecordId();
     }
 }

@@ -95,8 +95,9 @@ $(document).ready(() => {
         console.log(feedback)
 
         var chatRecordId = localStorage.getItem("chatRecordId")
+        var feedbackRecordId = localStorage.getItem("feedbackRecordId")
 
-        var jsons = {"chatRecordId":chatRecordId,"list":feedback}
+        var jsons = {"chatRecordId":chatRecordId,"list":feedback,"feedbackRecordId":feedbackRecordId}
         $.ajax({
             url: baseUrl + '/create/' + localStorage.getItem("agentName"),
             method: 'post',
@@ -112,7 +113,7 @@ $(document).ready(() => {
                         "email": localStorage.getItem("email"),
                         "array": feedback,
                         "chatRecordIdList": ["1"],
-                        "chatRecordId":chatRecordId,
+                        "chatRecordId":chatRecordId
                     };
                     $.ajax({
                         url: baseUrl + '/create-info/' + localStorage.getItem("agentName"),

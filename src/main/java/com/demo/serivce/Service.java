@@ -24,13 +24,17 @@ public class Service {
     private final Mapper mapper;
     static int id = 0;
 
-    public void create(List<Data.FeedbackSaveParam> param, String agentName, String chatRecordId) throws Exception {
+    public void create(List<Data.FeedbackSaveParam> param, String agentName, String chatRecordId, String feedbackRecordId) throws Exception {
 
         List<FeedbackRecord> feedbackRecord = BeanUtil.convertToList(param, FeedbackRecord.class);
+
+        int questionId = 1;
         for (FeedbackRecord record : feedbackRecord) {
             record.setQuestionId(id);
             record.setCreatedAt(new Timestamp(System.currentTimeMillis()));
-            record.setChatRecordId(chatRecordId);
+            record.setFeedbackRecordId(chatRecordId);
+            record.setQuestionId(questionId++);
+            record.setFeedbackRecordId(feedbackRecordId);
             mapper.insert(record);
         }
 //        //id=feedBackRecord id
