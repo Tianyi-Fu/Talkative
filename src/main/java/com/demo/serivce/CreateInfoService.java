@@ -2,7 +2,7 @@ package com.demo.serivce;
 
 import com.demo.data.Data;
 import com.demo.mapper.CreateInfoMapper;
-import com.demo.model.FeedBackUserInfo;
+import com.demo.model.FeedbackUserInfo;
 import lombok.RequiredArgsConstructor;
 
 import java.sql.Timestamp;
@@ -24,7 +24,7 @@ public class CreateInfoService {
 
     public void createInfo(List<Data.FeedbackSaveParam> param, List<String> chatRecordIdList, String agentName,
                            String firstName, String lastName, String email, String chatRecordId) {
-        FeedBackUserInfo createInfoFeedBack = new FeedBackUserInfo();
+        FeedbackUserInfo createInfoFeedBack = new FeedbackUserInfo();
         createInfoFeedBack.setAgentName(agentName);
 
         createInfoFeedBack.setChatRecordId(chatRecordId);
