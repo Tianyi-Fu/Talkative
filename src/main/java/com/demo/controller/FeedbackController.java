@@ -5,11 +5,10 @@ import com.azure.ai.openai.OpenAIClientBuilder;
 import com.azure.ai.openai.models.*;
 import com.demo.data.Data;
 import com.demo.model.Result;
-import com.demo.serivce.Service;
+import com.demo.serivce.FeedbackService;
 import com.demo.util.AIUtil;
 import com.demo.util.JsonUtil;
 import lombok.RequiredArgsConstructor;
-import org.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -24,9 +23,9 @@ import java.util.List;
 @RequestMapping
 @RequiredArgsConstructor
 @CrossOrigin
-public class MyController {
+public class FeedbackController {
 
-    private final Service service;
+    private final FeedbackService service;
 
     /*    *//**
      * Create

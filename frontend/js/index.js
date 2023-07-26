@@ -11,53 +11,54 @@ $(document).ready(() => {
         // Check for value in textarea
         if (conversation.length < 1) return;
 
-        var chatRecordId = JSON.parse(conversation).id
-        if (chatRecordId === undefined){
-            alert("not data")
-            return;
-        }else {
-            localStorage.setItem("chatRecordId",chatRecordId)
-            loadModalContent();
+        let chatRecordId = JSON.parse(conversation).id;
 
-            let transcriptObj = formatTranscript(conversation,chatRecordId);
-            //
-            $.ajax({
-                /* Write to chat_record table */
-                url: baseUrl + '/read_transcript',
-                method: 'post',
-                contentType: "application/json", // Set the request header to JSON format
-                data: JSON.stringify(transcriptObj),
-                success: function (data) {
-                    if (data.code == 500) {
-                        alert(data.message)
-                    } else {
-                        localStorage.setItem("feedbackRecordId",data.data)
-                        console.log('OK')
-
-                        /* Send transcript to Chat GPT */
-                        // HTTP requests across different ports on the same machine can lead to cross-domain issues.
-                        // These issues can be resolved by adding the @CrossOrigin annotation in the backend controller class.
-                        // Please refer to the backend code for specific details.
-                        agentName = transcriptObj.agent_name;
-                        $.ajax({
-                            url: baseUrl + '/openai-chat',
-                            method: 'get',
-                            // data: JSON.stringify(transcriptObj),
-                            data: {'content': JSON.stringify(transcriptObj.transcript)},
-                            success: function (data) {
-                                if (data.code == 500) {
-                                    alert(data.message)
-                                } else {
-                                    localStorage.setItem("questions", JSON.stringify(data.data.questions))
-                                    localStorage.setItem("agentName", data.data.agentName)
-                                }
-                            }
-                        })
-                    }
-                }
-            })
+        if (chatRecordId) {
+            localStorage.setItem("chatRecordId", chatRecordId);
+        } else {
+            localStorage.setItem("chatRecordId", JSON.stringify(Date.now()));
         }
 
+        loadModalContent();
+
+        let transcriptObj = formatTranscript(conversation, chatRecordId);
+
+        agentName = transcriptObj.agent_name;
+        localStorage.setItem("agentName", agentName);
+
+        $.ajax({
+            /* Write to chat_record table */
+            url: baseUrl + '/read_transcript',
+            method: 'post',
+            contentType: "application/json", // Set the request header to JSON format
+            data: JSON.stringify(transcriptObj),
+            success: function (data) {
+                if (data.code == 500) {
+                    alert(data.message)
+                } else {
+                    localStorage.setItem("feedbackRecordId", data.data)
+                    console.log('OK')
+
+                    /* Send transcript to Chat GPT */
+                    // HTTP requests across different ports on the same machine can lead to cross-domain issues.
+                    // These issues can be resolved by adding the @CrossOrigin annotation in the backend controller class.
+                    // Please refer to the backend code for specific details.
+                    $.ajax({
+                        url: baseUrl + '/openai-chat',
+                        method: 'get',
+                        // data: JSON.stringify(transcriptObj),
+                        data: {'content': JSON.stringify(transcriptObj.transcript)},
+                        success: function (data) {
+                            if (data.code == 500) {
+                                alert(data.message)
+                            } else {
+                                localStorage.setItem("questions", JSON.stringify(data.data.questions))
+                            }
+                        }
+                    })
+                }
+            }
+        })
     })
 
     // EventListeners
@@ -73,7 +74,7 @@ $(document).ready(() => {
     })
 
     // Functions
-    function formatTranscript(conversation,chatRecordId) {
+    function formatTranscript(conversation, chatRecordId) {
         let newConversation = [];
         let msgArray = JSON.parse(conversation).messages;
         let sender;
@@ -86,7 +87,7 @@ $(document).ready(() => {
             newConversation.push({[item.sender_name]: item.message});
         })
 
-        let transcriptObj = {"agent_name": sender, "transcript": newConversation,"chatRecordId":chatRecordId}
+        let transcriptObj = {"agent_name": sender, "transcript": newConversation, "chatRecordId": chatRecordId}
         console.log(transcriptObj)
         return transcriptObj;
     }

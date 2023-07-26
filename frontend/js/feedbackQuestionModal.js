@@ -1,5 +1,5 @@
 $(document).ready(() => {
-    let baseUrl = 'http://127.0.0.1:8081'
+    let baseUrl = 'http://127.0.0.1:8081';
 
     // EventListeners
     /* Enable Next button when there is content in textarea */
@@ -14,20 +14,14 @@ $(document).ready(() => {
     })
 
     $("#nextBtn").click(() => {
-        console.log("NEXT")
+        // console.log("NEXT")
         saveAnsGetQuestion();
     })
 
     $("#submitFeedbackBtn").click(() => {
         saveAnsGetQuestion();
 
-        $('.modal-content').empty();
-        $('.modal-content').append('<div class="modal-body" style="margin-top: 50px"><h3>Thank you for your feedback!</h3></div>');
-
-        setTimeout(() => {
-            localStorage.clear();
-            window.location.reload();
-        }, 2000)
+        $('.modal-content').load('components/feedbackCustomerInformation.html');
     })
 
     // Functions
@@ -83,6 +77,8 @@ $(document).ready(() => {
 
     function submitFeedbackForm() {
         let feedback = [];
+        let chatRecordId = localStorage.getItem("chatRecordId")
+        let feedbackRecordId = localStorage.getItem("feedbackRecordId")
         const questionArray = JSON.parse(localStorage.getItem("questions"));
         let answersArray = JSON.parse(localStorage.getItem("answers"));
 
@@ -94,40 +90,18 @@ $(document).ready(() => {
         })
         console.log(feedback)
 
-        var chatRecordId = localStorage.getItem("chatRecordId")
-        var feedbackRecordId = localStorage.getItem("feedbackRecordId")
+        let data = {"chatRecordId": chatRecordId, "list": feedback, "feedbackRecordId": feedbackRecordId}
 
-        var jsons = {"chatRecordId":chatRecordId,"list":feedback,"feedbackRecordId":feedbackRecordId}
         $.ajax({
             url: baseUrl + '/create/' + localStorage.getItem("agentName"),
             method: 'post',
             contentType: "application/json", // Set the request header to JSON format.
-            data: JSON.stringify(jsons),
+            data: JSON.stringify(data),
             success: function (data) {
                 if (data.code == 500) {
                     return alert(data.message);
                 } else {
-                    var json = {
-                        "firstName": localStorage.getItem("firstName"),
-                        "lastName": localStorage.getItem("lastName"),
-                        "email": localStorage.getItem("email"),
-                        "array": feedback,
-                        "chatRecordIdList": ["1"],
-                        "chatRecordId":chatRecordId
-                    };
-                    $.ajax({
-                        url: baseUrl + '/create-info/' + localStorage.getItem("agentName"),
-                        method: 'post',
-                        contentType: "application/json", // Set the request header to JSON format.
-                        data: JSON.stringify(json),
-                        success: function (data) {
-                            if (data.code == 500) {
-                                return alert(data.message);
-                            } else {
-                                return "success";
-                            }
-                        }
-                    })
+                    return "success"
                 }
             }
         })

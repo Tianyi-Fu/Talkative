@@ -2,9 +2,7 @@ package com.demo.serivce;
 
 import com.demo.data.Data;
 import com.demo.error.Exception;
-import com.demo.mapper.ChatRecordMapper;
 import com.demo.mapper.Mapper;
-import com.demo.model.ChatRecord;
 import com.demo.model.FeedbackRecord;
 import com.demo.util.BeanUtil;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +16,7 @@ import java.util.List;
  */
 @org.springframework.stereotype.Service
 @RequiredArgsConstructor
-public class Service {
+public class FeedbackService {
 
     //    private final ChatRecordMapper chatRecordMapper;
     private final Mapper mapper;

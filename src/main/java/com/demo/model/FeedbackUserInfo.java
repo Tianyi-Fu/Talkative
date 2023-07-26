@@ -15,7 +15,7 @@ import java.sql.Timestamp;
  */
 
 @Data
-public class FeedBackUserInfo {
+public class FeedbackUserInfo {
 
     @TableId(value = "id", type = IdType.AUTO)
     private int id;
