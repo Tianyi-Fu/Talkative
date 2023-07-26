@@ -94,16 +94,40 @@ $(document).ready(() => {
         })
         console.log(feedback)
 
+        var chatRecordId = localStorage.getItem("chatRecordId")
+        var feedbackRecordId = localStorage.getItem("feedbackRecordId")
+
+        var jsons = {"chatRecordId":chatRecordId,"list":feedback,"feedbackRecordId":feedbackRecordId}
         $.ajax({
             url: baseUrl + '/create/' + localStorage.getItem("agentName"),
             method: 'post',
             contentType: "application/json", // Set the request header to JSON format.
-            data: JSON.stringify(feedback),
+            data: JSON.stringify(jsons),
             success: function (data) {
                 if (data.code == 500) {
                     return alert(data.message);
                 } else {
-                    return "success";
+                    var json = {
+                        "firstName": localStorage.getItem("firstName"),
+                        "lastName": localStorage.getItem("lastName"),
+                        "email": localStorage.getItem("email"),
+                        "array": feedback,
+                        "chatRecordIdList": ["1"],
+                        "chatRecordId":chatRecordId
+                    };
+                    $.ajax({
+                        url: baseUrl + '/create-info/' + localStorage.getItem("agentName"),
+                        method: 'post',
+                        contentType: "application/json", // Set the request header to JSON format.
+                        data: JSON.stringify(json),
+                        success: function (data) {
+                            if (data.code == 500) {
+                                return alert(data.message);
+                            } else {
+                                return "success";
+                            }
+                        }
+                    })
                 }
             }
         })

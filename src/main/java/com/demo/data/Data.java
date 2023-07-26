@@ -60,4 +60,13 @@ public interface Data {
 
         private String answer;
     }
+
+    @lombok.Data
+    class FeedbackSaveParamAndChatId{
+        private String chatRecordId;
+
+        private String feedbackRecordId;
+
+        private List<FeedbackSaveParam> list;
+    }
 }

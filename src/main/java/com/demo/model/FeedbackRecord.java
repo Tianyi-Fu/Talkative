@@ -24,5 +24,5 @@ public class FeedbackRecord {
 
     private Timestamp createdAt;
 
-    private String chatRecordId;
+    private String feedbackRecordId;
 }
