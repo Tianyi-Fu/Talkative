@@ -68,8 +68,9 @@ public class FeedbackController {
         chatMessages.add(new ChatMessage(ChatRole.USER).setContent(
                 "Based on the above dialogue and the emotions of the conversation participants, generate six forms to ask the Customer for their feedback of the conversation. Please output in JSON format according to the following requirements:" +
                         "\n 1. There should be six questions." +
-                        "\n 2. The outermost layer should be a 'questions' array, and the inner elements should be of string type." +
-                        "\n 3. Only output in JSON format."
+                        "\n 2. The six questions are output in the following types and order: the first question has a question type of Scale. The second and third questions have a question type of Yes/No. The fourth, fifth and sixth questions have a question type of Open ended." +
+                        "\n 3. The outermost layer should be a 'questions' array, and the inner elements should be of string type." +
+                        "\n 4. Only output in JSON format."
         ));
         //convert to json
         String json = AIUtil.chatWithAI(client, chatMessages);
