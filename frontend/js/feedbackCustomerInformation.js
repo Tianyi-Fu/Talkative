@@ -3,21 +3,29 @@ $(document).ready(function () {
 
     // EventListeners
     $("#submitInfoBtn").click(function () {
-        let firstName = document.getElementById("firstName").value
-        let lastName = document.getElementById("lastName").value
-        let email = document.getElementById("inputEmail").value
-        let regEmail = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/
+        if (document.getElementById("check").checked === false){
+            let firstName = document.getElementById("firstName").value
+            let lastName = document.getElementById("lastName").value
+            let email = document.getElementById("inputEmail").value
+            let regEmail = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/
 
-        if (firstName.trim().length <= 0) {
-            alert("First Name Is Null")
-        } else if (lastName.trim().length <= 0) {
-            alert("Last Name Is Null")
-        } else if (email.trim().length <= 0) {
-            alert("email Is Null")
-        } else if (!regEmail.test(email)) {
-            alert("email result is false")
-        } else {
-            saveCustomerInfo(firstName, lastName, email);
+            if (firstName.trim().length <= 0) {
+                alert("First Name Is Null")
+                return false
+            } else if (lastName.trim().length <= 0) {
+                alert("Last Name Is Null")
+                return false
+            } else if (email.trim().length <= 0) {
+                alert("email Is Null")
+                return false
+            } else if (!regEmail.test(email)) {
+                alert("email result is false")
+                return false
+            } else {
+                saveCustomerInfo(firstName, lastName, email);
+            }
+        }else {
+            saveCustomerInfo("someone", "someone", "someone");
         }
 
         $('.modal-content').empty();
@@ -58,3 +66,13 @@ $(document).ready(function () {
         })
     }
 })
+let checkRadio = false
+function checkOne() {
+    if (checkRadio === false){
+        checkRadio = true
+    }else {
+        checkRadio = false
+        document.getElementById("check").checked=false
+    }
+    console.log()
+}
