@@ -25,7 +25,7 @@ $(document).ready(function () {
                 saveCustomerInfo(firstName, lastName, email);
             }
         }else {
-            saveCustomerInfo("someone", "someone", "someone");
+            saveCustomerInfo("", "", "");
         }
 
         $('.modal-content').empty();
