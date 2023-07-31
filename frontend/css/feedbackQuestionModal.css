@@ -1,5 +1,6 @@
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
+/*** Star Rating ***/
 .starrating > input {
     display: none;
 }
@@ -25,4 +26,16 @@
 /* Set yellow color when star checked */
 .starrating > input:hover ~ label {
     color: #ffca08;
+}
+
+/*** Radio Buttons ***/
+.form-check {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    margin: 10px;
+}
+
+.form-check-input {
+    margin-right: 8px;
 }
