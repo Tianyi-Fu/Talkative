@@ -79,12 +79,23 @@ $(document).ready(() => {
         let msgArray = JSON.parse(conversation).messages;
         let sender;
 
-        msgArray.find((item) => {
-            if (item.sender_type.includes("User")) sender = item.sender_name;
-        })
-
         msgArray.map((item) => {
             newConversation.push({[item.sender_name]: item.message});
+        })
+
+        // Find agent name & ignore "Talkative" sender_name if human agent was involved
+            let reverseArr = msgArray.reverse();
+            let lastAgent =     reverseArr.find((item) => {
+                return item.sender_type.includes("User");
+            })
+
+        msgArray.find((item) => {
+            if (item.sender_type.includes("User")) {
+                let agent = item.sender_name;
+                // console.log(lastAgent)
+                // Check if the first response and last response are from the same agent
+                agent === lastAgent.sender_name ? sender = agent : sender = lastAgent.sender_name;
+            }
         })
 
         let transcriptObj = {"agent_name": sender, "transcript": newConversation, "chatRecordId": chatRecordId}

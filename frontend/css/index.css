@@ -54,3 +54,7 @@ body {
     min-height: 250px;
     min-width: 350px;
 }
+
+#loading-container {
+    margin: auto;
+}

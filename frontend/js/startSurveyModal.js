@@ -2,7 +2,7 @@ $(document).ready(() => {
     // EventListeners
     $("#startBtn").on('click', () => {
         $('.modal-content').empty();
-        $('.modal-content').append("<div class='spinner-border m-5' role='status'><span class='visually-hidden'>Loading...</span>");
+        $('.modal-content').append("<div id='loading-container'><div class='spinner-border m-5' role='status'><span class='visually-hidden'>Loading...</span>");
 
         questionsLoadedCheck();
     })
