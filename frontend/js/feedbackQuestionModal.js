@@ -6,7 +6,7 @@ $(document).ready(() => {
     /* Get value from star rating */
     $('input[name="rating"]').click(() => {
         let selected = document.querySelector('input[name="rating"]:checked').value;
-        console.log(selected)
+        // console.log(selected)
 
         answer = selected;
         $("#nextBtn").prop("disabled", false);
@@ -37,7 +37,7 @@ $(document).ready(() => {
     })
 
     $("#submitFeedbackBtn").click(() => {
-        saveAnsGetQuestion();
+        saveAnsGetQuestion(answer);
 
         $('.modal-content').load('components/feedbackCustomerInformation.html');
     })

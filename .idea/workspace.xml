@@ -5,24 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_7_24,_11_34_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_7_24,_11_47_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_7_24__11_34__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_7_24__11_47__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_7_23,_14_33_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_7_23__14_33__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_7_24,_12_16_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_7_24__12_16__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Talkative.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Talkative.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/feedbackCustomerInformation.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/feedbackCustomerInformation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/feedbackQuestionModal.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/feedbackQuestionModal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/css/feedbackQuestionModal.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/css/feedbackQuestionModal.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/css/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/js/feedbackQuestionModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/feedbackQuestionModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/js/startSurveyModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/startSurveyModal.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +163,7 @@
       <workItem from="1689782525643" duration="18653000" />
       <workItem from="1689854195941" duration="3441000" />
       <workItem from="1690839718240" duration="5486000" />
-      <workItem from="1690845292873" duration="854000" />
+      <workItem from="1690845292873" duration="3153000" />
     </task>
     <task id="LOCAL-00001" summary="new gitigonore file">
       <created>1689282546007</created>
@@ -286,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690677491812</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Updated feedback answer options corresponding to question type; Added check sender_name when saving transcript; Minor css updates;">
+      <created>1690846350781</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1690846350781</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,6 +322,7 @@
     <MESSAGE value="1.Implemented on the front-end and back-end to collect information from users who fill out feedback forms." />
     <MESSAGE value="2.Get the chat record id in the transcript, and save them in the database." />
     <MESSAGE value="Added star rating for 1st feedback question" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added star rating for 1st feedback question" />
+    <MESSAGE value="Updated feedback answer options corresponding to question type; Added check sender_name when saving transcript; Minor css updates;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated feedback answer options corresponding to question type; Added check sender_name when saving transcript; Minor css updates;" />
   </component>
 </project>
