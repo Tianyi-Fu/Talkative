@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>FeedbackSystem - Admin</title>
+    <title>FeedbackDatasheet - Admin</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -119,13 +119,13 @@
             <!-- Top bar -->
             <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-                    <!-- Page title -->
-                    <div class="d-flex justify-content-center">
-                        <h1 class="h4 mb-0 text-gray">Dashboard</h1>
-                    </div>
+                <!-- Page title -->
+                <div class="d-flex justify-content-center">
+                    <h1 class="h4 mb-0 text-gray">Feedback Datasheet</h1>
+                </div>
 
-                    <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                <!-- Topbar Navbar -->
+                <ul class="navbar-nav ml-auto">
 
                     <!-- border -->
                     <div class="topbar-divider d-none d-sm-block"></div>
@@ -171,7 +171,26 @@
 
                 <!-- Page Heading -->
                 <div class="container tbl-container">
-                    <h1 class="h3 mb-4 text-gray-800">Feedback data visualisation:</h1>
+                    <div class="tbl-fixed" style="overflow-x: auto; overflow-y: auto;">
+                        <table id="feedbackUserTable" class="table table-condensed">
+                            <thead>
+                            <tr>
+                                <th scope="col">UID</th>
+                                <th scope="col">ChatRecord_NB</th>
+                                <th scope="col">Firstname</th>
+                                <th scope="col">Lastname</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Satisfaction</th>
+                                <th scope="col">Questions</th>
+                                <th scope="col">Created at</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <!-- Table rows will be generated dynamically using jQuery -->
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
             </div>
@@ -201,6 +220,10 @@
     <i class="fas fa-angle-up"></i>
 </a>
 
+<!-- Include the jQuery library -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script type="text/javascript" src="js/feedbackDatasheet.js"></script>
 <!-- Bootstrap core JavaScript-->
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
