@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="Only load questions when they are in localStorage; Refactored schema.sql &amp; FeedbackRecord">
-      <change afterPath="$PROJECT_DIR$/frontend/components/logoutModal.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/feedbackDatasheet.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/js/feedbackDatasheet.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/js/questionDetails.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/questionDetails.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/js/feedbackCustomerInformation.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/feedbackCustomerInformation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/js/feedbackQuestionModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/feedbackQuestionModal.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,13 +28,20 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="popup_modal_feedback_form" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="2SX9gNf062XMVS6hFsxAjCPsbQN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -52,15 +52,33 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="RequestMappingsPanelOrder0" value="0" />
-    <property name="RequestMappingsPanelOrder1" value="1" />
-    <property name="RequestMappingsPanelWidth0" value="75" />
-    <property name="RequestMappingsPanelWidth1" value="75" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Talkative.wasFacetEverAdded": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "demo2.wasFacetEverAdded": "true",
+    "last_opened_file_path": "/Users/yinzuo/Desktop/Talkative14/frontend/vendors",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "Errors",
+    "spring.configuration.checksum": "3d03706d9ca9cfb206f00c437c272955",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
+  }
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -85,7 +103,18 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.TalkativeApplication">
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -116,39 +145,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="schema.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
-      <script-file value="$PROJECT_DIR$/schema.sql" />
-      <script-mode>FILE</script-mode>
-      <method v="2" />
-    </configuration>
-    <configuration name="TalkativeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
+    <configuration name="TalkativeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="Talkative" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.demo.TalkativeApplication" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.demo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.demo.TalkativeApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.TalkativeApplication" />
-        <item itemvalue="Database Script.schema.sql" />
         <item itemvalue="Spring Boot.TalkativeApplication" />
         <item itemvalue="Spring Boot.TalkativeApplication" />
         <item itemvalue="Spring Boot.TalkativeApplication" />
@@ -177,8 +188,6 @@
       <workItem from="1690324360671" duration="9751000" />
       <workItem from="1690818310672" duration="2330000" />
       <workItem from="1690913669260" duration="166000" />
-      <workItem from="1690915167576" duration="310000" />
-      <workItem from="1690915544913" duration="15512000" />
     </task>
     <task id="LOCAL-00001" summary="new gitigonore file">
       <created>1689282546007</created>
@@ -302,7 +311,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="new gitigonore file" />
@@ -317,7 +325,6 @@
     <MESSAGE value="1.As a developer, I want to automatically pop up the surveyForm page while submitting a transcript on the Talkative page.&#10;2.As a developer, I want to display issues analyzed and generated by ChatGPT on the surveyForm page.&#10;3.As a developer, I want to write some CSS style for the webpages." />
     <MESSAGE value="Refactored code; changed feedback form to popup; trying to show feedback questions 1 by 1" />
     <MESSAGE value="Only load questions when they are in localStorage; Refactored schema.sql &amp; FeedbackRecord" />
-    <MESSAGE value="1.Modify the Admin module front-end and remove unneeded parts.&#10;2.Create the FeedbackDatasheet front end, the feedbackDatasheet.html file and the .js file.&#10;3.Create the QuestionDetails front end, the questionDetails.html file and the .js file." />
-    <option name="LAST_COMMIT_MESSAGE" value="1.Modify the Admin module front-end and remove unneeded parts.&#10;2.Create the FeedbackDatasheet front end, the feedbackDatasheet.html file and the .js file.&#10;3.Create the QuestionDetails front end, the questionDetails.html file and the .js file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Only load questions when they are in localStorage; Refactored schema.sql &amp; FeedbackRecord" />
   </component>
 </project>
