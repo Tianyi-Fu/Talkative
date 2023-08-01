@@ -25,7 +25,7 @@ $(document).ready(function () {
                 saveCustomerInfo(firstName, lastName, email);
             }
         }else {
-            saveCustomerInfo("", "", "");
+            saveCustomerInfo("Anonymity", "Anonymity", "NULL");
         }
 
         $('.modal-content').empty();
