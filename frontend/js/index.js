@@ -5,7 +5,6 @@ $(document).ready(() => {
     // Ajax
     /* Send Transcript to Backend */
     $("#submit").click((e) => {
-        // e.preventDefault();
         let conversation = $("#chat").val();
 
         // Check for value in textarea
@@ -43,19 +42,19 @@ $(document).ready(() => {
                     // HTTP requests across different ports on the same machine can lead to cross-domain issues.
                     // These issues can be resolved by adding the @CrossOrigin annotation in the backend controller class.
                     // Please refer to the backend code for specific details.
-                    $.ajax({
-                        url: baseUrl + '/openai-chat',
-                        method: 'get',
-                        // data: JSON.stringify(transcriptObj),
-                        data: {'content': JSON.stringify(transcriptObj.transcript)},
-                        success: function (data) {
-                            if (data.code == 500) {
-                                alert(data.message)
-                            } else {
-                                localStorage.setItem("questions", JSON.stringify(data.data.questions))
-                            }
-                        }
-                    })
+                    // $.ajax({
+                    //     url: baseUrl + '/openai-chat',
+                    //     method: 'get',
+                    //     // data: JSON.stringify(transcriptObj),
+                    //     data: {'content': JSON.stringify(transcriptObj.transcript)},
+                    //     success: function (data) {
+                    //         if (data.code == 500) {
+                    //             alert(data.message)
+                    //         } else {
+                    //             localStorage.setItem("questions", JSON.stringify(data.data.questions))
+                    //         }
+                    //     }
+                    // })
                 }
             }
         })
@@ -92,7 +91,6 @@ $(document).ready(() => {
         msgArray.find((item) => {
             if (item.sender_type.includes("User")) {
                 let agent = item.sender_name;
-                // console.log(lastAgent)
                 // Check if the first response and last response are from the same agent
                 agent === lastAgent.sender_name ? sender = agent : sender = lastAgent.sender_name;
             }

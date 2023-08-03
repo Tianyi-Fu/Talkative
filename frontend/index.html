@@ -59,5 +59,8 @@
 </div>
 
 <script type="text/javascript" src="js/index.js"></script>
+<script>
+    import(`https://eu.engage.app/api/ecs/v1/loader/7e2a48e9-b96f-49ba-9fd4-b7a39ea48aff.js?path=${encodeURIComponent(window.location.origin + window.location.pathname)}&selectedVersion=${(new URLSearchParams(window.location.search)).get('ecsSelectedVersion') || ''}`)
+</script>
 </body>
 </html>
