@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
-
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,7 +12,6 @@
     <meta name="author" content="">
 
     <title>FeedbackDatasheet - Admin</title>
-
     <!-- Custom fonts for this template-->
     <!--    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">-->
     <!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
@@ -31,7 +32,7 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgba(0,0,0,0.4);
+            background-color: rgba(0, 0, 0, 0.4);
         }
 
         .popup-content {
@@ -56,7 +57,15 @@
             text-decoration: none;
             cursor: pointer;
         }
-
+        .answer::placeholder{
+            color: white;
+        }
+        /*input{*/
+        /*    color: white; !important;*/
+        /*}*/
+        .container{
+            max-width: 1740px;
+        }
     </style>
 </head>
 
@@ -206,11 +215,30 @@
             <!-- Begin Page Content -->
             <div class="container-fluid">
 
+
                 <!-- Page Heading -->
                 <div class="container tbl-container">
                     <!--                    <div class="tbl-fixed" style="overflow-x: auto; overflow-y: auto;">-->
-                    <div class="tbl-fixed" style="margin-left: -233px;width: 1600px;">
-                        <table id="feedbackUserTable" class="table table-condensed">
+
+                    <!--                    <div class="tbl-fixed" style="margin-left: -233px;width: 1600px;">-->
+                    <div class="tbl-fixed" style="width: 100%;max-width: 100%;overflow-x: auto">
+                        <div style="width: 1700px">
+                            <input type="text" id="chatRecordID" placeholder="Please enter ChatRecord_NB" style="width: 220px;height: 50px">
+                            <input type="text" id="satisfaction" placeholder="Please enter Satisfaction" style="width: 220px;height: 50px">
+                            <input type="text" id="agentName" placeholder="Please enter agentName" style="width: 220px;height: 50px">
+                            <!--                        <input type="date"  style="width: 220px;height: 50px"> &#45;&#45;&#45;&#45;&#45;&#45;-->
+                            <!--                        <input type="date"  style="width: 220px;height: 50px">-->
+                            <label for="datepicker">Select Date:</label>
+                            <input type="text" id="datepicker"> --
+                            <input type="text" id="datepicker2">
+                            <!--                        <input type="date" id="datepicker">-->
+
+                            <button type="button" style="width: 220px; height: 50px" onclick="buttonSelect()">
+                                Select
+                            </button>
+
+                        </div>
+                        <table id="feedbackUserTable" class="table table-condensed" style="width: 100%;max-width: 100%;overflow-x: auto">
                             <thead>
                             <tr>
                                 <th scope="col">UID</th>
@@ -226,7 +254,7 @@
                                 <th scope="col">Action</th>
                             </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="feedbackUserTableTbody">
                             <!-- Table rows will be generated dynamically using jQuery -->
                             </tbody>
                         </table>
@@ -241,10 +269,48 @@
         <div id="popup" class="popup">
             <div class="popup-content">
                 <span class="close" onclick="hidePopup()">&times;</span>
-                <h2>弹窗标题</h2>
-                <p>这是弹窗的内容。</p>
+                <h2>Questions</h2>
+                <div id="questionss">
+
+                </div>
+                <!--                <p>这是弹窗的内容。</p>-->
+                <!--                <p>这是弹窗的内容。</p>-->
+                <!--                <p>这是弹窗的内容。</p>-->
+                <!--                <p>这是弹窗的内容。</p>-->
+                <!--                <p>这是弹窗的内容。</p>-->
+
             </div>
         </div>
+
+        <div id="popup2" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="hidePopup2()">&times;</span>
+                <h2>Transcript</h2>
+                <div id="transcript">
+                </div>
+            </div>
+        </div>
+        <div id="popup3" class="popup">
+            <div class="popup-content" style="width: 50%">
+                <span class="close" onclick="hidePopup3()">&times;</span>
+                <h2>Edit</h2>
+                <div id="edit">
+                    <p style="width: 300px;text-align: right;display: none">feedbackRecordId：<input type="text" placeholder="feedbackRecordId" id="feedbackRecordId"></p>
+                    <p style="width: 300px;text-align: right">firstName：<input type="text" placeholder="firstName" id="firstName"></p>
+                    <p style="width: 300px;text-align: right">lastName：<input type="text" placeholder="lastName" id="lastName"></p>
+                    <p style="width: 300px;text-align: right">email：<input type="text" placeholder="email" id="email"></p>
+                    <p style="width: 300px;text-align: right">agentName：<input type="text" placeholder="agentName" id="agentNames"></p>
+                    <button onclick="onsubmitEdit()" style="margin-left: 107px">submit</button>
+                </div>
+            </div>
+        </div>
+        <div id="paginationContainer"></div>
+
+        <div style=" display: table-cell; text-align: center; vertical-align: middle;">
+            <button id="prevButton" onclick="up()" style="width: 100px;">上一页</button>
+            <button id="nextButton" onclick="down()" style="width: 100px">下一页</button>
+        </div>
+
         <!-- Footer -->
         <footer class="sticky-footer bg-white">
             <div class="container my-auto">
@@ -267,7 +333,7 @@
 </a>
 
 <!-- Include the jQuery library -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
 
 <script type="text/javascript" src="js/feedbackDatasheet.js"></script>
 <!-- Bootstrap core JavaScript-->
@@ -281,23 +347,122 @@
 <script src="js/sb-admin-2.min.js"></script>
 
 </body>
+
 <script>
-    function showPopup() {
+
+</script>
+<script>
+    function showPopup(feedbackRecordId) {
+        var json = {"feedbackRecordId": feedbackRecordId}
+        $.ajax({
+            url: "http://127.0.0.1:8081/question/list",
+            data: JSON.stringify(json),
+            method: 'post',
+            contentType: "application/json", // Set the request header to JSON format.
+            success: function (data) {
+                function generateTableRow(user) {
+                    return "<p>question：<span>" + user.question + "</span></p> <p>answer：<span>" + user.answer + "</span></p>";
+                }
+
+                const tbody = $("#questionss");
+
+                data.data.list.forEach(user => {
+                    // var dd = "<p>question：<span>"+user.question+"</span></p> <p>answer：<span>"+user.answer+"</span></p> "
+                    tbody.append(generateTableRow(user));
+                });
+            },
+            error: function (error) {
+                console.log("Error fetching data:", error);
+            }
+
+        });
+
         var popup = document.getElementById("popup");
         popup.style.display = "block";
     }
 
     function hidePopup() {
+        let myul = document.getElementById('questionss');
+        while (myul.hasChildNodes()) {
+            myul.removeChild(myul.firstChild);
+        }
         var popup = document.getElementById("popup");
         popup.style.display = "none";
     }
 
-    //The js is placed on the page because there is an issue with the loading order of the page in the js.
+    function showPopup2(feedbackRecordId) {
+        var json = {"feedbackRecordId": feedbackRecordId}
+        $.ajax({
+            url: "http://127.0.0.1:8081/transcript/list",
+            data: JSON.stringify(json),
+            method: 'post',
+            contentType: "application/json", // Set the request header to JSON format.
+            success: function (data) {
+                console.log(data)
+
+                function generateTableRow(user) {
+                    for (const userKey in user) {
+                        return "<p>sender：<span>" + userKey + "</span>  <span> |  </span>      content：<span>" + user[userKey] + "</span></p> <p></p>";
+                    }
+
+                }
+
+                const tbody = $("#transcript");
+
+                var ll = JSON.parse(data.data.transcript)
+                ll.forEach(user => {
+                    // var dd = "<p>question：<span>"+user.question+"</span></p> <p>answer：<span>"+user.answer+"</span></p> "
+                    tbody.append(generateTableRow(user));
+                });
+            },
+            error: function (error) {
+                console.log("Error fetching data:", error);
+            }
+
+        });
+
+        var popup = document.getElementById("popup2");
+        popup.style.display = "block";
+    }
+
+    function hidePopup2() {
+        let myul = document.getElementById('transcript');
+        while (myul.hasChildNodes()) {
+            myul.removeChild(myul.firstChild);
+        }
+        var popup = document.getElementById("popup2");
+        popup.style.display = "none";
+    }
+
+
+    function showPopup3(feedbackRecordId,first_name,last_name,email,agent_name) {
+        document.getElementById("firstName").value = first_name
+        document.getElementById("lastName").value = last_name
+        document.getElementById("email").value = email
+        document.getElementById("agentNames").value = agent_name
+        document.getElementById("feedbackRecordId").value = feedbackRecordId
+        var popup = document.getElementById("popup3");
+        popup.style.display = "block";
+    }
+
+
+    function hidePopup3() {
+        console.log("ss")
+        // let myul = document.getElementById('edit');
+        // while (myul.hasChildNodes()) {
+        //     myul.removeChild(myul.firstChild);
+        // }
+        var popup = document.getElementById("popup3");
+        popup.style.display = "none";
+    }
+
+
+    //因为在js中页面存在加载顺序的问题，所以将js放在页面
     function getFeedBackRecordByRecordId(feedbackRecordId) {
         console.log(feedbackRecordId)
     }
 
-    //The js is placed on the page because there is an issue with the loading order of the page in the js.
+    //因为在js中页面存在加载顺序的问题，所以将js放在页面
     function getFeedBackRecordByRecordId2(feedbackRecordId) {
         console.log(feedbackRecordId)
     }
