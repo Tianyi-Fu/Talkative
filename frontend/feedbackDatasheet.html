@@ -234,9 +234,11 @@
                             <!--                        <input type="date" id="datepicker">-->
 
                             <button type="button" style="width: 220px; height: 50px" onclick="buttonSelect()">
-                                Select
+                                search
                             </button>
-
+                            <button type="button" style="width: 220px; height: 50px" onclick="reset()">
+                                reset
+                            </button>
                         </div>
                         <table id="feedbackUserTable" class="table table-condensed" style="width: 100%;max-width: 100%;overflow-x: auto">
                             <thead>
@@ -273,12 +275,6 @@
                 <div id="questionss">
 
                 </div>
-                <!--                <p>这是弹窗的内容。</p>-->
-                <!--                <p>这是弹窗的内容。</p>-->
-                <!--                <p>这是弹窗的内容。</p>-->
-                <!--                <p>这是弹窗的内容。</p>-->
-                <!--                <p>这是弹窗的内容。</p>-->
-
             </div>
         </div>
 
@@ -307,8 +303,10 @@
         <div id="paginationContainer"></div>
 
         <div style=" display: table-cell; text-align: center; vertical-align: middle;">
-            <button id="prevButton" onclick="up()" style="width: 100px;">上一页</button>
-            <button id="nextButton" onclick="down()" style="width: 100px">下一页</button>
+            <span>Total Pages : <input id="totalPages" type="text" disabled style="width: 20px;border: none;">     &ensp;&ensp;&ensp;&ensp;         </span>
+            <button id="prevButton" onclick="up()" style="width: 100px;">Prev</button>
+            <button id="nextButton" onclick="down()" style="width: 100px">Next</button>
+            <button id="lastButton" onclick="lastb()" style="width: 100px">Last</button>
         </div>
 
         <!-- Footer -->
@@ -352,6 +350,7 @@
 
 </script>
 <script>
+
     function showPopup(feedbackRecordId) {
         var json = {"feedbackRecordId": feedbackRecordId}
         $.ajax({
@@ -457,12 +456,12 @@
     }
 
 
-    //因为在js中页面存在加载顺序的问题，所以将js放在页面
+    //Because there is a problem with the loading order of pages in js, put the js in the page
     function getFeedBackRecordByRecordId(feedbackRecordId) {
         console.log(feedbackRecordId)
     }
 
-    //因为在js中页面存在加载顺序的问题，所以将js放在页面
+    //Because there is a problem with the loading order of pages in js, put the js in the page
     function getFeedBackRecordByRecordId2(feedbackRecordId) {
         console.log(feedbackRecordId)
     }

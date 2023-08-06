@@ -1,16 +1,16 @@
 <!-- AJAX script to fetch data from the server -->
 $(document).ready(function () {
     $("#datepicker").datepicker({
-        dateFormat: "mm/dd/yy", // 设置日期格式为月/日/年
-        changeMonth: true, // 允许选择月份
-        changeYear: true, // 允许选择年份
-        yearRange: "1900:2023" // 设置年份范围
+        dateFormat: "dd/mm/yy", // Setting the date format
+        changeMonth: true, // Allow month selection
+        changeYear: true, // Allow year selection
+        yearRange: "1900:2023" // Setting the year range
     });
     $("#datepicker2").datepicker({
-        dateFormat: "mm/dd/yy", // 设置日期格式为月/日/年
-        changeMonth: true, // 允许选择月份
-        changeYear: true, // 允许选择年份
-        yearRange: "1900:2023" // 设置年份范围
+        dateFormat: "dd/mm/yy",
+        changeMonth: true,
+        changeYear: true,
+        yearRange: "1900:2023"
     });
     load(page, size, "", "", "", "", "")
 
@@ -18,7 +18,7 @@ $(document).ready(function () {
 
 var currentPage = 1;
 var page = 1;
-var size = 10;
+var size = 8;
 var total;
 var pages;
 
@@ -82,6 +82,7 @@ function load(page, size, chatRecordID, satisfaction, agentName, datepicker, dat
             });
             total = data.data.total
             pages = data.data.page
+            document.getElementById("totalPages").value = data.data.page
             // if (!typeOne){
             //     if (type) {
             //         ++currentPage
@@ -131,6 +132,21 @@ function up() {
     }
 }
 
+function lastb() {
+    var chatRecordID = document.getElementById("chatRecordID").value
+    var satisfaction = document.getElementById("satisfaction").value
+    var agentName = document.getElementById("agentName").value
+    var datepicker = getData(document.getElementById("datepicker").value)
+    var datepicker2 = getData(document.getElementById("datepicker2").value)
+    load(pages, size, chatRecordID, satisfaction, agentName, datepicker, datepicker2)
+    let myul = document.getElementById('feedbackUserTableTbody');
+    while (myul.hasChildNodes()) {
+        myul.removeChild(myul.firstChild);
+    }
+    currentPage = pages
+}
+
+
 function buttonSelect() {
     var chatRecordID = document.getElementById("chatRecordID").value
     var satisfaction = document.getElementById("satisfaction").value
@@ -144,6 +160,20 @@ function buttonSelect() {
     }
 }
 
+function reset() {
+    document.getElementById("chatRecordID").value = ''
+    document.getElementById("satisfaction").value = ''
+    document.getElementById("agentName").value = ''
+    document.getElementById("datepicker").value = ''
+    document.getElementById("datepicker2").value = ''
+    var chatRecordID = document.getElementById("chatRecordID").value
+    var satisfaction = document.getElementById("satisfaction").value
+    var agentName = document.getElementById("agentName").value
+    var datepicker = getData(document.getElementById("datepicker").value)
+    var datepicker2 = getData(document.getElementById("datepicker2").value)
+    load(currentPage, size, chatRecordID, satisfaction, agentName, datepicker, datepicker2)
+}
+
 function getData(inputDate) {
     if (inputDate == '') {
         return null
@@ -154,8 +184,8 @@ function getData(inputDate) {
     const dateArray = inputDate.split('/');
 
 // Obtain month, date, and year
-    const month = dateArray[0];
-    const day = dateArray[1];
+    const month = dateArray[1];
+    const day = dateArray[0];
     const year = dateArray[2];
 
 // Build a new date string

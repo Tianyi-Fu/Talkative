@@ -6,8 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="Only load questions when they are in localStorage; Refactored schema.sql &amp; FeedbackRecord">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/serivce/FeedBackRecordAndUserInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/serivce/FeedBackRecordAndUserInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/FeedBackRecordAndUserInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/serivce/FeedBackRecordAndUserInfoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/feedbackDatasheet.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/feedbackDatasheet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/js/feedbackDatasheet.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/feedbackDatasheet.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/controller/FeedBackRecordAndUserInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/controller/FeedBackRecordAndUserInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Talkative-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Talkative-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/FeedBackRecordAndUserInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/controller/FeedBackRecordAndUserInfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +160,7 @@
       <workItem from="1690324360671" duration="9751000" />
       <workItem from="1690818310672" duration="2330000" />
       <workItem from="1690913669260" duration="166000" />
-      <workItem from="1691298194872" duration="603000" />
+      <workItem from="1691298194872" duration="5089000" />
     </task>
     <task id="LOCAL-00001" summary="new gitigonore file">
       <created>1689282546007</created>
@@ -254,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691258169514</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Fix some bugs">
+      <created>1691299043271</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1691299043271</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -297,6 +310,8 @@
     <MESSAGE value="Only load questions when they are in localStorage; Refactored schema.sql &amp; FeedbackRecord" />
     <MESSAGE value="add" />
     <MESSAGE value="1.Write the popup windows to show the questions and transcripts.&#10;2.Write the delete and modify function in the datasheet.&#10;3.Create a search function for the datasheet that allows to filter the data by ChatRecord_NB, Satisfaction, agentName, and date." />
-    <option name="LAST_COMMIT_MESSAGE" value="1.Write the popup windows to show the questions and transcripts.&#10;2.Write the delete and modify function in the datasheet.&#10;3.Create a search function for the datasheet that allows to filter the data by ChatRecord_NB, Satisfaction, agentName, and date." />
+    <MESSAGE value="Fix some bugs" />
+    <MESSAGE value="Configuring MyBatis-Plus in application.properties file and fix some bugs." />
+    <option name="LAST_COMMIT_MESSAGE" value="Configuring MyBatis-Plus in application.properties file and fix some bugs." />
   </component>
 </project>
