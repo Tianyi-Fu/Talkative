@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 
@@ -23,20 +24,21 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class FeedBackRecordAndUserInfoService {
 
-    @Autowired
+    @Resource
     FeedBackRecordAndUserInfoMapper feedBackRecordAndUserInfoMapper;
 
     /**
      * select Feedback Datasheet list
+     *
      * @param chatRecordId
      * @param page
      * @param size
      * @return
      */
-    public Object[] selectFeedBackRecordAndUserInfo(String chatRecordId, int page, int size) {
+    public Object[] selectFeedBackRecordAndUserInfo(String chatRecordId, int page, int size, String satisfaction, String agentName, String beginTime, String endTime) {
         IPage<Map<String, Object>> iPage = new Page<>(page, size);
-        feedBackRecordAndUserInfoMapper.selectFeedBackRecordAndUserInfo(iPage, chatRecordId);
-        return new Object[]{iPage.getRecords(), iPage.getTotal()};
+        feedBackRecordAndUserInfoMapper.selectFeedBackRecordAndUserInfo(iPage, chatRecordId, satisfaction, agentName, beginTime, endTime);
+        return new Object[]{iPage.getRecords(), iPage.getTotal(), iPage.getPages(), iPage.getSize()};
     }
 
     public List<Map<String, Object>> selectFeedBackRecordByRecordId(String feedbackRecordId) {
@@ -51,5 +53,21 @@ public class FeedBackRecordAndUserInfoService {
             return null;
         }
         return feedBackRecordAndUserInfoMapper.selectChatRecordByRecordId(feedbackRecordId);
+    }
+
+    public void del(int feedbackRecordId) {
+        Map<String, Object> map = feedBackRecordAndUserInfoMapper.selectChatRecordByRecordId(String.valueOf(feedbackRecordId));
+        int chatRecordId = (int) map.get("chat_record_id");
+        feedBackRecordAndUserInfoMapper.deleteChatRecordFeedbackRecord(feedbackRecordId);
+        feedBackRecordAndUserInfoMapper.deleteChatRecord(feedbackRecordId);
+        feedBackRecordAndUserInfoMapper.deleteChatRecordFeedbackUserInfo(chatRecordId);
+    }
+
+    public void upd(String feedbackRecordId, String firstName, String lastName, String email, String agentName) {
+        Map<String, Object> map = feedBackRecordAndUserInfoMapper.selectChatRecordByRecordId(String.valueOf(feedbackRecordId));
+        int chatRecordId = (int) map.get("chat_record_id");
+        feedBackRecordAndUserInfoMapper.updFeedBackRecordByRecordId(chatRecordId,firstName,lastName,email,agentName);
+        feedBackRecordAndUserInfoMapper.updChatRecordByRecordId(feedbackRecordId,agentName);
+
     }
 }
