@@ -60,12 +60,12 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "last_opened_file_path": "F:/毕设examples/Feedback System Dashboard",
-    "spring.configuration.checksum": "3d03706d9ca9cfb206f00c437c272955"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;last_opened_file_path&quot;: &quot;F:/毕设examples/Feedback System Dashboard&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;3d03706d9ca9cfb206f00c437c272955&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -167,6 +167,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.TalkativeApplication" />
         <item itemvalue="Spring Boot.TalkativeApplication" />
         <item itemvalue="Spring Boot.TalkativeApplication" />
         <item itemvalue="Spring Boot.TalkativeApplication" />
