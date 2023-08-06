@@ -3,34 +3,22 @@ $(document).ready(() => {
         let shadow = document.querySelector("#talkative-engage").shadowRoot
 
         let observer = new MutationObserver(function (m) {
-            if (shadow.querySelector("button[title='End Interaction']")) {
-                console.log('found End Interaction')
+            // if (shadow.querySelector("button[title='End Interaction']")) {
+            //     console.log('found End Interaction')
+            // }
 
-                // shadow.querySelector("button[title='End Interaction']").addEventListener("click", () => {
-                //     console.log('End clicked')
-                // }, false);
-
-                // shadow.querySelector("button[title='Confirm']").addEventListener("click", () => {
-                //     console.log('clicked')
-                // })
-
-                let chatBody = shadow.querySelector("div#app .bg-white.overflow-y-auto.flex.flex-grow")
-                let observer = new MutationObserver((m) => {
-                    if (chatBody.querySelector("form input[id='send-transcript']")) {
-                        console.log('found Confirm');
-
-
-                        // If customer confirm ends conversation, extract conversation transcript
-                        let customer = shadow.querySelectorAll("#main-app .bg-primary .whitespace-pre-line");
-                        customer.forEach((item) => console.log(item.innerText));
-                    }
-                });
-                observer.observe(chatBody, {childList: true});
-            }
+            let observer2 = new MutationObserver((m) => {
+                console.log('new observer')
+                if (shadow.querySelector("div.flex.h-full h1")?.innerHTML === "Feedback") {
+                    // If customer confirm ends conversation, extract conversation transcript
+                    let customer = shadow.querySelectorAll("#main-app .bg-primary .whitespace-pre-line");
+                    customer.forEach((item) => console.log(item.innerText));
+                } else console.log("not yet loaded");
+            });
+            observer2.observe(shadow.querySelector("div.flex.h-full"), {childList: true});
         });
 
         observer.observe(shadow, {childList: true});
-
     }, 3000)
 
     /*

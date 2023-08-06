@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/js/chatWidget.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/chatWidget.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +165,7 @@
       <workItem from="1689854195941" duration="3441000" />
       <workItem from="1690839718240" duration="5486000" />
       <workItem from="1690845292873" duration="3153000" />
-      <workItem from="1691332630079" duration="6330000" />
+      <workItem from="1691332630079" duration="10668000" />
     </task>
     <task id="LOCAL-00001" summary="new gitigonore file">
       <created>1689282546007</created>
@@ -281,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690846350781</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Trying to extract conversation after interaction ended">
+      <created>1691340071304</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1691340071304</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -327,6 +332,7 @@
     <MESSAGE value="2.Get the chat record id in the transcript, and save them in the database." />
     <MESSAGE value="Added star rating for 1st feedback question" />
     <MESSAGE value="Updated feedback answer options corresponding to question type; Added check sender_name when saving transcript; Minor css updates;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated feedback answer options corresponding to question type; Added check sender_name when saving transcript; Minor css updates;" />
+    <MESSAGE value="Trying to extract conversation after interaction ended" />
+    <option name="LAST_COMMIT_MESSAGE" value="Trying to extract conversation after interaction ended" />
   </component>
 </project>
