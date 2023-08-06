@@ -5,22 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="Only load questions when they are in localStorage; Refactored schema.sql &amp; FeedbackRecord">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/config/MpConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_7_28,_12_36_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_7_28__12_36__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_7_27,_09_09_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_7_27__09_09__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_7_28,_12_36_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_7_28__12_36__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/css/sb-admin-2.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/css/sb-admin-2.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/feedbackDatasheet.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/feedbackDatasheet.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/js/feedbackDatasheet.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/feedbackDatasheet.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/controller/FeedBackRecordAndUserInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/controller/FeedBackRecordAndUserInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/mapper/FeedBackRecordAndUserInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/mapper/FeedBackRecordAndUserInfoMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/serivce/FeedBackRecordAndUserInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/serivce/FeedBackRecordAndUserInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/FeedBackRecordAndUserInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/controller/FeedBackRecordAndUserInfoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/mapper/FeedBackRecordAndUserInfoMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/mapper/FeedBackRecordAndUserInfoMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/FeedBackRecordAndUserInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/serivce/FeedBackRecordAndUserInfoService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,6 +50,8 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
   </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
@@ -123,17 +111,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TalkativeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="Talkative" />
       <extension name="coverage">
@@ -177,6 +154,7 @@
       <workItem from="1690324360671" duration="9751000" />
       <workItem from="1690818310672" duration="2330000" />
       <workItem from="1690913669260" duration="166000" />
+      <workItem from="1691298194872" duration="603000" />
     </task>
     <task id="LOCAL-00001" summary="new gitigonore file">
       <created>1689282546007</created>
@@ -269,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690932337503</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="1.Write the popup windows to show the questions and transcripts.&#10;2.Write the delete and modify function in the datasheet.&#10;3.Create a search function for the datasheet that allows to filter the data by ChatRecord_NB, Satisfaction, agentName, and date.">
+      <created>1691258169514</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1691258169514</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,19 +275,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="main" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -323,6 +296,7 @@
     <MESSAGE value="Refactored code; changed feedback form to popup; trying to show feedback questions 1 by 1" />
     <MESSAGE value="Only load questions when they are in localStorage; Refactored schema.sql &amp; FeedbackRecord" />
     <MESSAGE value="add" />
-    <option name="LAST_COMMIT_MESSAGE" value="add" />
+    <MESSAGE value="1.Write the popup windows to show the questions and transcripts.&#10;2.Write the delete and modify function in the datasheet.&#10;3.Create a search function for the datasheet that allows to filter the data by ChatRecord_NB, Satisfaction, agentName, and date." />
+    <option name="LAST_COMMIT_MESSAGE" value="1.Write the popup windows to show the questions and transcripts.&#10;2.Write the delete and modify function in the datasheet.&#10;3.Create a search function for the datasheet that allows to filter the data by ChatRecord_NB, Satisfaction, agentName, and date." />
   </component>
 </project>
