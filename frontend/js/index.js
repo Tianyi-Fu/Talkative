@@ -4,7 +4,7 @@ $(document).ready(() => {
 
     // Ajax
     /* Send Transcript to Backend */
-    $("#submit").click((e) => {
+    $("#submit").click(() => {
         let conversation = $("#chat").val();
 
         // Check for value in textarea
