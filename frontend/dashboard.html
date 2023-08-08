@@ -119,13 +119,13 @@
             <!-- Top bar -->
             <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-                    <!-- Page title -->
-                    <div class="d-flex justify-content-center">
-                        <h1 class="h4 mb-0 text-gray">Dashboard</h1>
-                    </div>
+                <!-- Page title -->
+                <div class="d-flex justify-content-center">
+                    <h1 class="h4 mb-0 text-gray">Dashboard</h1>
+                </div>
 
-                    <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                <!-- Topbar Navbar -->
+                <ul class="navbar-nav ml-auto">
 
                     <!-- border -->
                     <div class="topbar-divider d-none d-sm-block"></div>
@@ -189,9 +189,9 @@
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 fleft">
                                             Earnings (Monthly)</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800 font50">0%</div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -207,9 +207,9 @@
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1 fleft">
                                             Earnings (Annual)</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800 font50">40</div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -225,20 +225,21 @@
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
+                                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1 fleft">Tasks
                                         </div>
-                                        <div class="row no-gutters align-items-center">
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800 font50">2</div>
+                                        <!--  <div class="row no-gutters align-items-center">
                                             <div class="col-auto">
-                                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800 font50">2</div>
                                             </div>
-                                            <div class="col">
-                                                <div class="progress progress-sm mr-2">
+                                           <div class="col">
+                                               <div class="progress progress-sm mr-2">
                                                     <div class="progress-bar bg-info" role="progressbar"
                                                          style="width: 50%" aria-valuenow="50" aria-valuemin="0"
                                                          aria-valuemax="100"></div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div>-->
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
@@ -254,9 +255,28 @@
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1 fleft">
                                             Pending Requests</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800 font50">0</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Pending Requests Card Example -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-warning shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1 fleft">
+                                            Pending Requests</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800 font50">0</div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -295,8 +315,9 @@
                             </div>
                             <!-- Card Body -->
                             <div class="card-body">
-                                <div class="chart-area">
-                                    <canvas id="myAreaChart"></canvas>
+                                <div class="chart-area" id="chartmain_zhe">
+                                    <!--<canvas id="myAreaChart"></canvas>-->
+
                                 </div>
                             </div>
                         </div>
@@ -326,8 +347,126 @@
                             </div>
                             <!-- Card Body -->
                             <div class="card-body">
-                                <div class="chart-pie pt-4 pb-2">
-                                    <canvas id="myPieChart"></canvas>
+                                <div class="chart-pie pt-4 pb-2" id="chartmain_bing">
+                                    <!--<canvas id="myPieChart"></canvas>-->
+                                </div>
+                                <div class="mt-4 text-center small">
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-primary"></i> Direct
+                                        </span>
+                                    <span class="mr-2">
+                                            <i class="fas fa-circle text-success"></i> Social
+                                        </span>
+                                    <span class="mr-2">
+                                            <i class="fas fa-circle text-info"></i> Referral
+                                        </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <!-- Area Chart -->
+                    <div class="col-xl-8 col-lg-7">
+                        <div class="card shadow mb-4">
+                            <!-- Card Header - Dropdown -->
+                            <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
+                                <div class="dropdown no-arrow">
+                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                         aria-labelledby="dropdownMenuLink">
+                                        <div class="dropdown-header">Dropdown Header:</div>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Body -->
+                            <div class="card-body">
+                                <div class="chart-area" id="chartmain">
+                                    <!--<canvas id="myAreaChart"></canvas>-->
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pie Chart -->
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="card shadow mb-4">
+                            <!-- Card Header - Dropdown -->
+                            <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+                                <div class="dropdown no-arrow">
+                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                         aria-labelledby="dropdownMenuLink">
+                                        <div class="dropdown-header">Dropdown Header:</div>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Body -->
+                            <div class="card-body">
+                                <div class="chart-pie pt-4 pb-2" id="chartmain_bing22">
+                                    <!--<canvas id="myPieChart"></canvas>-->
+                                    <div class="biaoge biaoge_bi" style="width:100%; height:25vh">
+                                        <ul style="display:none">
+                                            <li>
+                                                <div class="liIn">
+                                                    <p class="shu shu1">23</p>
+                                                    <p class="zi">今日收益比例</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="liIn">
+                                                    <p class="shu shu2">107</p>
+                                                    <p class="zi">本月收益比例</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="liIn">
+                                                    <p class="shu shu3">107</p>
+                                                    <p class="zi">历史收益比例</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="liIn">
+                                                    <p class="shu shu4">23</p>
+                                                    <p class="zi">今日收益比例</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="liIn">
+                                                    <p class="shu shu5">23</p>
+                                                    <p class="zi">本月收益比例</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="liIn">
+                                                    <p class="shu shu6">23</p>
+                                                    <p class="zi">历史收益比例</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+
+                                    </div>
                                 </div>
                                 <div class="mt-4 text-center small">
                                         <span class="mr-2">
@@ -497,43 +636,349 @@
 
                     </div>
 
+                </div>
+                <!-- /.container-fluid -->
+
             </div>
-            <!-- /.container-fluid -->
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Talkative Project Team B 2023</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
 
         </div>
-        <!-- End of Main Content -->
-
-        <!-- Footer -->
-        <footer class="sticky-footer bg-white">
-            <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; Talkative Project Team B 2023</span>
-                </div>
-            </div>
-        </footer>
-        <!-- End of Footer -->
+        <!-- End of Content Wrapper -->
 
     </div>
-    <!-- End of Content Wrapper -->
+    <!-- End of Page Wrapper -->
 
-</div>
-<!-- End of Page Wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
 
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-</a>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-<!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
 
-<!-- Custom scripts for all pages-->
-<script src="js/sb-admin-2.min.js"></script>
+    <script src='https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/echarts/4.2.1/echarts.min.js'></script>
+    <script type="text/javascript">
+        option = {
+            title: {
+                text: 'Revenue Sources Statistics',
+                subtext: '',
+                left: 'right',
+                textStyle: {
+                    color: '#858796',
+                    fontSize: 12
+                }
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: '{a} <br/>{b} : {c} ({d}%)'
+            },
+            legend: {
+                // orient: 'vertical',
+                // top: 'middle',
+                type: 'scroll',
+                orient: 'vertical',
+                right: 10,
+                top: 40,
+                bottom: 20,
+                left: 'right',
+                data: ['Sources1', 'Sources2', 'Sources3', 'Sources4', 'Sources5'],
+                textStyle: {
+                    color: '#858796',
+                    fontSize: 12
+                }
 
+            },
+            grid:{
+                x:'-10%',
+                y:40,
+                x2:20,
+                y2:20,
+            },
+            color : [ '#e74a3b', '#f6c23e', '#4e73df', '#36b9cc',  '#1cc88a' ],
+            series: [
+                {
+                    type: 'pie',
+                    radius: '65%',
+                    center: ['50%', '50%'],
+                    selectedMode: 'single',
+                    data: [
+                        {value: 1548, name: 'Sources1',},
+                        {value: 535, name: 'Sources2'},
+                        {value: 510, name: 'Sources3'},
+                        {value: 634, name: 'Sources4'},
+                        {value: 735, name: 'Sources5'}
+                    ],
+                    emphasis: {
+                        itemStyle: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+        //获取dom容器
+        var myChart = echarts.init(document.getElementById('chartmain_bing'));
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+
+    </script>
+
+    <script type="text/javascript">
+        //window.onload = function (){
+        //指定图表的配置项和数据
+        option = {
+            title: {
+                text: ''
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                textStyle: {
+                    color: '#858796',
+                    fontSize: 12,
+                },
+                right:'10%',
+                data: ['data one', 'data two']
+            },
+            grid:{
+                x:40,
+                y:40,
+                x2:20,
+                y2:20,
+            },
+            toolbox: {
+                feature: {
+                    //saveAsImage: {}
+                }
+            },
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                axisLabel: {
+                    /*inside: true,*/
+                    interval:0,
+                    textStyle: {
+                        color: '#858796',
+                        fontSize: 12
+
+                    }
+                },
+                axisTick: {
+                    show: false,
+                },
+                axisLine: {
+                    show: true,
+                    symbol:['none', 'arrow'],
+                    symbolOffset: 12,
+                    lineStyle:{
+                        color: '#858796',
+                    }
+                },
+                data: ['00:00', '02:00', '04:00', '06:00', '08:00', '10:00', '12:00']
+            },
+            yAxis: {
+                type: 'value',
+
+                axisLine: {
+                    show: true,
+                    symbol: ['none', 'arrow'],
+                    symbolOffset: 12,
+                    lineStyle:{
+                        color: '#858796',
+                    }
+                },
+                axisTick: {
+                    show: false
+                },
+                axisLabel: {
+                    textStyle: {
+                        color: '#858796',
+                        fontSize: 12
+                    }
+                }
+            },
+            series: [
+                {
+                    name: 'data one',
+                    type: 'line',
+                    stack: '总量',
+                    data: [280, 102, 191, 134, 390, 230, 210],
+                    itemStyle: {
+                        normal: {
+                            color: "#0efdff",//折线点的颜色
+                            lineStyle: {
+                                color: "#0efdff",//折线的颜色
+                                width:2,
+                            }
+                        },
+                    }
+                },
+                {
+                    name: 'data two',
+                    type: 'line',
+                    stack: '总量',
+                    data: [100, 132, 131, 234, 290, 330, 110]
+                },
+            ]
+        };
+        //获取dom容器
+        var myChart = echarts.init(document.getElementById('chartmain_zhe'));
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+        //};
+    </script>
+    <script type="text/javascript">
+        //window.onload = function () {
+        //指定图表的配置项和数据
+        var dataAxis = ['满意', '中等', '不满意'];
+        var data = [220, 182, 191];
+        var yMax = 500;
+        var dataShadow = [];
+
+        for (var i = 0; i < data.length; i++) {
+            dataShadow.push(yMax);
+        }
+
+        option = {
+            title: {
+                text: '',
+                subtext: ''
+            },
+            grid:{
+                x:40,
+                y:40,
+                x2:20,
+                y2:20,
+
+            },
+            xAxis: {
+                data: dataAxis,
+                axisLabel: {
+                    /*inside: true,*/
+                    interval:0,
+                    textStyle: {
+                        color: '#858796',
+                        fontSize: 12
+
+                    }
+                },
+                axisTick: {
+                    show: false,
+                },
+                axisLine: {
+                    show: true,
+                    symbol:['none', 'arrow'],
+                    symbolOffset: 12,
+                    lineStyle:{
+                        color: '#858796',
+                    }
+                },
+                z: 10
+            },
+            yAxis: {
+                type: 'value',
+                name: '单位：数量',
+                axisLine: {
+                    show: true,
+                    symbol: ['none', 'arrow'],
+                    symbolOffset: 12,
+                    lineStyle:{
+                        color: '#858796',
+                    }
+                },
+                axisTick: {
+                    show: false
+                },
+                axisLabel: {
+                    textStyle: {
+                        color: '#858796',
+                        fontSize: 12
+                    }
+                }
+            },
+
+            dataZoom: [
+                {
+                    type: 'inside'
+                }
+            ],
+            series: [
+                { // For shadow
+                    type: 'bar',
+                    itemStyle: {
+                        color: 'rgba(0,0,0,0.05)'
+                    },
+                    barGap: '-100%',
+                    barCategoryGap: '40%',
+                    data: dataShadow,
+                    animation: false
+                },
+                {
+                    type: 'bar',
+                    itemStyle: {
+                        color: new echarts.graphic.LinearGradient(
+                            0, 0, 0, 1,
+                            [
+                                {offset: 0, color: '#0efdff'},
+                                {offset: 0.5, color: '#188df0'},
+                                {offset: 1, color: '#188df0'}
+                            ]
+                        )
+                    },
+                    emphasis: {
+                        itemStyle: {
+                            color: new echarts.graphic.LinearGradient(
+                                0, 0, 0, 1,
+                                [
+                                    {offset: 0, color: '#2378f7'},
+                                    {offset: 0.7, color: '#2378f7'},
+                                    {offset: 1, color: '#0efdff'}
+                                ]
+                            )
+                        }
+                    },
+                    data: data
+                }
+            ]
+        };
+
+        // Enable data zoom when user click bar.
+        /*var zoomSize = 6;
+        myChart.on('click', function (params) {
+            console.log(dataAxis[Math.max(params.dataIndex - zoomSize / 2, 0)]);
+            myChart.dispatchAction({
+                type: 'dataZoom',
+                startValue: dataAxis[Math.max(params.dataIndex - zoomSize / 2, 0)],
+                endValue: dataAxis[Math.min(params.dataIndex + zoomSize / 2, data.length - 1)]
+            });
+        });*/
+
+        //获取dom容器
+        var myChart = echarts.init(document.getElementById('chartmain'));
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+        //};
+    </script>
 </body>
 
 </html>
