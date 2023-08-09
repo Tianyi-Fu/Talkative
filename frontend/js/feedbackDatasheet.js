@@ -1,4 +1,3 @@
-<!-- AJAX script to fetch data from the server -->
 $(document).ready(function () {
     $("#datepicker").datepicker({
         dateFormat: "dd/mm/yy", // Setting the date format

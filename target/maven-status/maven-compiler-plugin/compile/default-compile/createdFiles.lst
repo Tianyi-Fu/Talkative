@@ -21,6 +21,7 @@ com/demo/controller/CreateInfoController.class
 com/demo/data/Data$FeedbackSaveParamAndChatId.class
 com/demo/controller/FeedBackRecordAndUserInfoController.class
 com/demo/model/Demo.class
+com/demo/controller/DashboardController.class
 com/demo/mapper/FeedBackRecordAndUserInfoMapper.class
 com/demo/util/BeanUtil.class
 com/demo/model/FeedbackUserInfo.class
@@ -28,6 +29,7 @@ com/demo/model/CreateUserInfo.class
 com/demo/model/Question.class
 com/demo/error/Exception.class
 com/demo/mapper/TranscriptMapper.class
+com/demo/controller/DashboardData.class
 com/demo/data/Data$Vo.class
 com/demo/util/AIUtil.class
 com/demo/model/Result.class
