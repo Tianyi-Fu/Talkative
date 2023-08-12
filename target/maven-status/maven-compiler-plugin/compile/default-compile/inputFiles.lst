@@ -16,7 +16,6 @@
 /Users/weipeng/Desktop/Talkative/src/main/java/com/demo/serivce/FeedbackService.java
 /Users/weipeng/Desktop/Talkative/src/main/java/com/demo/controller/FeedbackController.java
 /Users/weipeng/Desktop/Talkative/src/main/java/com/demo/util/BeanUtil.java
-/Users/weipeng/Desktop/Talkative/src/main/java/com/demo/controller/DashboardController.java
 /Users/weipeng/Desktop/Talkative/src/main/java/com/demo/model/Question.java
 /Users/weipeng/Desktop/Talkative/src/main/java/com/demo/controller/ErrorController.java
 /Users/weipeng/Desktop/Talkative/src/main/java/com/demo/controller/CreateInfoController.java
@@ -24,6 +23,7 @@
 /Users/weipeng/Desktop/Talkative/src/main/java/com/demo/data/Data.java
 /Users/weipeng/Desktop/Talkative/src/main/java/com/demo/mapper/Mapper.java
 /Users/weipeng/Desktop/Talkative/src/main/java/com/demo/model/Demo.java
+/Users/weipeng/Desktop/Talkative/src/main/java/com/demo/controller/FileDownloadController.java
 /Users/weipeng/Desktop/Talkative/src/main/java/com/demo/util/AIUtil.java
 /Users/weipeng/Desktop/Talkative/src/main/java/com/demo/mapper/CreateInfoMapper.java
 /Users/weipeng/Desktop/Talkative/src/main/java/com/demo/serivce/TranscriptService.java
