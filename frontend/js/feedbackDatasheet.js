@@ -82,6 +82,7 @@ function load(page, size, chatRecordID, satisfaction, agentName, datepicker, dat
             total = data.data.total
             pages = data.data.page
             document.getElementById("totalPages").value = data.data.page
+            document.getElementById("totalCount").value = data.data.total
             // if (!typeOne){
             //     if (type) {
             //         ++currentPage
