@@ -4,13 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="">
+    <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="Only load questions when they are in localStorage; Refactored schema.sql &amp; FeedbackRecord">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/controller/FileDownloadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_17_2.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/js/chatWidget.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/chatWidget.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/js/feedbackCustomerInformation.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/feedbackCustomerInformation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/feedbackDatasheet.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/feedbackDatasheet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/js/feedbackDatasheet.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/feedbackDatasheet.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/mapper/FeedBackRecordAndUserInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/mapper/FeedBackRecordAndUserInfoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/serivce/FeedBackRecordAndUserInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/serivce/FeedBackRecordAndUserInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Talkative-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/mapper/FeedBackRecordAndUserInfoMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/mapper/FeedBackRecordAndUserInfoMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/FeedBackRecordAndUserInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/serivce/FeedBackRecordAndUserInfoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,9 +30,8 @@
       <list>
         <option value="Python Script" />
         <option value="Interface" />
-        <option value="HTML File" />
-        <option value="CSS File" />
         <option value="Class" />
+        <option value="HTML File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -32,10 +39,15 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feedback_management_admin" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <bower-package value="" />
+    <bower.json value="" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -49,40 +61,35 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;3d03706d9ca9cfb206f00c437c272955&quot;
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+  </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/frontend/js" />
+      <recent name="$PROJECT_DIR$/frontend/vendors" />
       <recent name="$PROJECT_DIR$/frontend/css" />
       <recent name="$PROJECT_DIR$/frontend" />
-      <recent name="C:\Users\c21112765\OneDrive - Cardiff University\Desktop\Talkative\lib" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/frontend/images" />
       <recent name="$PROJECT_DIR$/frontend" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
+      <recent name="$PROJECT_DIR$/frontend/images" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.demo.serivce" />
-      <recent name="com.demo.model" />
-      <recent name="com.demo.mapper" />
+      <recent name="com.demo.controller" />
+      <recent name="com.demo.config" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -92,19 +99,18 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.TalkativeApplication">
+  <component name="RunManager">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
       <option name="appServicePlanResourceGroup" />
       <option name="appSettingsKey" value="4f2d11c9-40f7-498d-90e8-e0621ace9f19" />
       <option name="artifact" />
-      <option name="autoPort" value="true" />
       <option name="debugOptions" />
       <option name="deployment" />
       <option name="deploymentStagingDirectoryPath" />
       <option name="funcPath" />
-      <option name="funcPort" value="0" />
+      <option name="functionHostArguments" />
       <option name="hostJsonPath" />
       <option name="insightsName" />
       <option name="instrumentationKey" />
@@ -124,20 +130,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="schema.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
-      <script-file value="$PROJECT_DIR$/schema.sql" />
-      <script-mode>FILE</script-mode>
-      <method v="2" />
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="TalkativeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
+    <configuration name="TalkativeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="Talkative" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.demo.TalkativeApplication" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.demo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.demo.TalkativeApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -145,9 +157,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.TalkativeApplication" />
-        <item itemvalue="Database Script.schema.sql" />
         <item itemvalue="Spring Boot.TalkativeApplication" />
-        <item itemvalue="Database Script.schema.sql" />
         <item itemvalue="Spring Boot.TalkativeApplication" />
       </list>
     </recent_temporary>
@@ -167,10 +177,14 @@
       <workItem from="1689684237846" duration="14248000" />
       <workItem from="1689782525643" duration="18653000" />
       <workItem from="1689854195941" duration="3441000" />
-      <workItem from="1690839718240" duration="5486000" />
-      <workItem from="1690845292873" duration="3153000" />
-      <workItem from="1691332630079" duration="6330000" />
-      <workItem from="1691956716477" duration="1937000" />
+      <workItem from="1690154222502" duration="1986000" />
+      <workItem from="1690156214989" duration="811000" />
+      <workItem from="1690157030612" duration="5984000" />
+      <workItem from="1690319566567" duration="4107000" />
+      <workItem from="1690324360671" duration="9751000" />
+      <workItem from="1690818310672" duration="2330000" />
+      <workItem from="1690913669260" duration="166000" />
+      <workItem from="1691298194872" duration="5089000" />
     </task>
     <task id="LOCAL-00001" summary="new gitigonore file">
       <created>1689282546007</created>
@@ -256,69 +270,61 @@
       <option name="project" value="LOCAL" />
       <updated>1690153603328</updated>
     </task>
-    <task id="LOCAL-00013" summary="1.Implemented on the front-end and back-end to collect information from users who fill out feedback forms.">
-      <created>1690220237040</created>
+    <task id="LOCAL-00013" summary="add">
+      <created>1690932337503</created>
       <option name="number" value="00013" />
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1690220237040</updated>
+      <updated>1690932337503</updated>
     </task>
-    <task id="LOCAL-00014" summary="2.Get the chat record id in the transcript, and save them in the database.">
-      <created>1690282712808</created>
+    <task id="LOCAL-00014" summary="1.Write the popup windows to show the questions and transcripts.&#10;2.Write the delete and modify function in the datasheet.&#10;3.Create a search function for the datasheet that allows to filter the data by ChatRecord_NB, Satisfaction, agentName, and date.">
+      <created>1691258169514</created>
       <option name="number" value="00014" />
       <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1690282712808</updated>
+      <updated>1691258169514</updated>
     </task>
-    <task id="LOCAL-00015" summary="Added star rating for 1st feedback question">
-      <created>1690677491812</created>
+    <task id="LOCAL-00015" summary="Fix some bugs">
+      <created>1691299043271</created>
       <option name="number" value="00015" />
       <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
-      <updated>1690677491812</updated>
+      <updated>1691299043271</updated>
     </task>
-    <task id="LOCAL-00016" summary="Updated feedback answer options corresponding to question type; Added check sender_name when saving transcript; Minor css updates;">
-      <created>1690846350781</created>
+    <task id="LOCAL-00016" summary="Delete some useless file.">
+      <created>1691763221517</created>
       <option name="number" value="00016" />
       <option name="presentableId" value="LOCAL-00016" />
       <option name="project" value="LOCAL" />
-      <updated>1690846350781</updated>
+      <updated>1691763221517</updated>
     </task>
-    <task id="LOCAL-00017" summary="Able to extract conversation; Need to form transcript object using extracted data">
-      <created>1691533116580</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1691533116581</updated>
-    </task>
-    <option name="localTasksCounter" value="18" />
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-core" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.security:spring-security-core" />
+    <option featureType="dependencySupport" implementationName="java:io.projectreactor:reactor-core" />
+    <option featureType="dependencySupport" implementationName="java:org.thymeleaf:thymeleaf" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-webmvc" />
+    <option featureType="dependencySupport" implementationName="java:com.azure:azure-core" />
+    <option featureType="dependencySupport" implementationName="java:org.projectlombok:lombok" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="Add_Customer_information" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="new gitigonore file" />
@@ -333,11 +339,15 @@
     <MESSAGE value="1.As a developer, I want to automatically pop up the surveyForm page while submitting a transcript on the Talkative page.&#10;2.As a developer, I want to display issues analyzed and generated by ChatGPT on the surveyForm page.&#10;3.As a developer, I want to write some CSS style for the webpages." />
     <MESSAGE value="Refactored code; changed feedback form to popup; trying to show feedback questions 1 by 1" />
     <MESSAGE value="Only load questions when they are in localStorage; Refactored schema.sql &amp; FeedbackRecord" />
-    <MESSAGE value="1.Implemented on the front-end and back-end to collect information from users who fill out feedback forms." />
-    <MESSAGE value="2.Get the chat record id in the transcript, and save them in the database." />
-    <MESSAGE value="Added star rating for 1st feedback question" />
-    <MESSAGE value="Updated feedback answer options corresponding to question type; Added check sender_name when saving transcript; Minor css updates;" />
-    <MESSAGE value="Able to extract conversation; Need to form transcript object using extracted data" />
-    <option name="LAST_COMMIT_MESSAGE" value="Able to extract conversation; Need to form transcript object using extracted data" />
+    <MESSAGE value="add" />
+    <MESSAGE value="1.Write the popup windows to show the questions and transcripts.&#10;2.Write the delete and modify function in the datasheet.&#10;3.Create a search function for the datasheet that allows to filter the data by ChatRecord_NB, Satisfaction, agentName, and date." />
+    <MESSAGE value="Fix some bugs" />
+    <MESSAGE value="Configuring MyBatis-Plus in application.properties file and fix some bugs." />
+    <MESSAGE value="Delete some useless file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Delete some useless file." />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
