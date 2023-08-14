@@ -116,12 +116,11 @@
       <option name="appServicePlanResourceGroup" />
       <option name="appSettingsKey" value="4f2d11c9-40f7-498d-90e8-e0621ace9f19" />
       <option name="artifact" />
-      <option name="autoPort" value="true" />
       <option name="debugOptions" />
       <option name="deployment" />
       <option name="deploymentStagingDirectoryPath" />
       <option name="funcPath" />
-      <option name="funcPort" value="0" />
+      <option name="functionHostArguments" />
       <option name="hostJsonPath" />
       <option name="insightsName" />
       <option name="instrumentationKey" />
