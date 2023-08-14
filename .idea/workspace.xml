@@ -297,7 +297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691763221517</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="fix">
+      <created>1691940107462</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1691940107462</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -342,7 +349,9 @@
     <MESSAGE value="Fix some bugs" />
     <MESSAGE value="Configuring MyBatis-Plus in application.properties file and fix some bugs." />
     <MESSAGE value="Delete some useless file." />
-    <option name="LAST_COMMIT_MESSAGE" value="Delete some useless file." />
+    <MESSAGE value="fix" />
+    <MESSAGE value="Fix some bugs." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix some bugs." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
