@@ -5,10 +5,7 @@ from gensim.parsing.preprocessing import preprocess_string
 from nltk.sentiment import SentimentIntensityAnalyzer
 import nltk
 import json
-from transformers import AutoTokenizer
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline
-
-import pandas as pd
 from transformers import pipeline
 from flair.models import TextClassifier
 from flair.data import Sentence
@@ -155,7 +152,6 @@ DB_CONFIG = {
     'password': 'Fty5005669',
     'db': 'talkative',
     'charset': 'utf8mb4',
-
     'cursorclass': pymysql.cursors.DictCursor
 }
 
