@@ -215,29 +215,96 @@
 
                     <!--                    <div class="tbl-fixed" style="margin-left: -233px;width: 1600px;">-->
                     <div class="tbl-fixed" style="width: 100%;max-width: 100%;overflow-x: auto">
-                        <div style="width: 1700px">
-                            <input type="text" id="chatRecordID" placeholder="Please enter ChatRecord_NB" style="width: 220px;height: 50px">
-                            <input type="text" id="satisfaction" placeholder="Please enter Satisfaction" style="width: 220px;height: 50px">
-                            <input type="text" id="agentName" placeholder="Please enter agentName" style="width: 220px;height: 50px">
-                            <!--                        <input type="date"  style="width: 220px;height: 50px"> &#45;&#45;&#45;&#45;&#45;&#45;-->
-                            <!--                        <input type="date"  style="width: 220px;height: 50px">-->
-                            <label for="datepicker">Select Date:</label>
-                            <input type="text" id="datepicker"> --
-                            <input type="text" id="datepicker2">
-                            <!--                        <input type="date" id="datepicker">-->
 
-                            <button type="button" style="width: 178px; height: 50px" onclick="buttonSelect()">
-                                search
-                            </button>
-                            <button type="button" style="width: 178px; height: 50px" onclick="reset()">
-                                reset
-                            </button>
-                            <a type="button" class="btn btn-danger btn-xs" href="http://127.0.0.1:8081/download/excel">Download</a>
+                        <div class="row">
 
+                            <!-- Area Chart -->
+                            <div class="col-xl-8 col-lg-7">
+                                <div class="card shadow mb-4">
+                                    <!-- Card Header - Dropdown -->
+                                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h6 class="m-0 font-weight-bold text-primary">Filter</h6>
+                                        <div class="dropdown no-arrow">
+                                        </div>
+                                    </div>
+                                    <!-- Card Body -->
+                                    <div class="card-body">
+                                        <!-- First Row -->
+                                        <div class="row mb-3">
+                                            <div class="col-md-4">
+                                                <input type="text" id="chatRecordID" placeholder="ChatRecord_NB" class="form-control">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="text" id="satisfaction" placeholder="Satisfaction" class="form-control">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="text" id="agentName" placeholder="Agent Name" class="form-control">
+                                            </div>
+                                        </div>
+                                        <!-- Second Row -->
+                                        <div class="row mb-3">
+                                            <div class="col-md-4">
+                                                <label for="datepicker">Select Date:</label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="text" id="datepicker" class="form-control">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="text" id="datepicker2" class="form-control">
+                                            </div>
+                                        </div>
+                                        <!-- Third Row -->
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <button type="button" class="btn btn-primary btn-block" onclick="buttonSelect()">
+                                                    Search
+                                                </button>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <button type="button" class="btn btn-secondary btn-block" onclick="reset()">
+                                                    Reset
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card border-left-primary shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col-8">
+                                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                    Feedback：
+                                                </div>
+                                                <div class="h3 font-weight-bold text-gray-800" style="margin-top: 10px;">
+                                                    <input type="text" disabled style="width: 60px; border: none; text-align: center; background: transparent;" id="totalCount">
+                                                </div>
+                                            </div>
+                                            <div class="col-4 text-center">
+                                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+<!--                            <div>-->
+<!--                                feedback： <input type="text" disabled style="width: 20px;border: none;margin-top: 16px" id="totalCount">-->
+<!--                            </div>-->
                         </div>
-                        <div>
-                            feedback： <input type="text" disabled style="width: 20px;border: none;margin-top: 16px" id="totalCount">
+
+
+
+                        <div class="col-sm-12 mb-4 d-flex justify-content-between align-items-center">
+                            <h1 class="h3 mb-0 text-gray-800">Data Sheet</h1>
+                            <a href="http://127.0.0.1:8081/download/excel" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" style="font-size: 14px;">
+                                <i class="fas fa-download fa-sm text-white-50"></i> Download
+                            </a>
                         </div>
+
+
+
                         <table id="feedbackUserTable" class="table table-condensed" style="width: 100%;max-width: 100%;overflow-x: auto;margin-top: 6px">
                             <thead>
                             <tr>
@@ -273,7 +340,7 @@
                 <div id="questionss">
 
                 </div>
-                <button type="button" class="btn btn-danger btn-xs" onclick="downloadQuestion()">Download</button>
+                <button type="button" class="btn btn-primary btn-xs" onclick="downloadQuestion()">Download</button>
 
             </div>
         </div>
@@ -284,7 +351,7 @@
                 <h2>Transcript</h2>
                 <div id="transcript">
                 </div>
-                <button type="button" class="btn btn-danger btn-xs" onclick="downloadTranscript()">Download</button>
+                <button type="button" class="btn btn-primary btn-xs" onclick="downloadTranscript()">Download</button>
             </div>
         </div>
         <div id="popup3" class="popup">
@@ -297,18 +364,19 @@
                     <p style="width: 300px;text-align: right">lastName：<input type="text" placeholder="lastName" id="lastName"></p>
                     <p style="width: 300px;text-align: right">email：<input type="text" placeholder="email" id="email"></p>
                     <p style="width: 300px;text-align: right">agentName：<input type="text" placeholder="agentName" id="agentNames"></p>
-                    <button onclick="onsubmitEdit()" style="margin-left: 107px">submit</button>
+                    <button type="button" class="btn btn-primary btn-xs" onclick="onsubmitEdit()" style="margin-left: 107px">submit</button>
                 </div>
             </div>
         </div>
         <div id="paginationContainer"></div>
 
-        <div style=" display: table-cell; text-align: center; vertical-align: middle;">
-            <span>Total Pages : <input id="totalPages" type="text" disabled style="width: 20px;border: none;">     &ensp;&ensp;&ensp;&ensp;         </span>
-            <button id="prevButton" onclick="up()" style="width: 100px;">Prev</button>
-            <button id="nextButton" onclick="down()" style="width: 100px">Next</button>
-            <button id="lastButton" onclick="lastb()" style="width: 100px">Last</button>
+        <div style="display: table-cell; text-align: center; vertical-align: middle;">
+            <span style="font-size: 18px;">Total Pages: <input id="totalPages" type="text" disabled style="width: 30px; border: none;"></span>
+            <button id="prevButton" onclick="up()" class="btn btn-primary ml-2">Prev</button>
+            <button id="nextButton" onclick="down()" class="btn btn-primary mx-2">Next</button>
+            <button id="lastButton" onclick="lastb()" class="btn btn-primary mr-2">Last</button>
         </div>
+
 
         <!-- Footer -->
         <footer class="sticky-footer bg-white">
