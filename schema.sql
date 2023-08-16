@@ -2,8 +2,9 @@ CREATE
     DATABASE IF NOT EXISTS talkative;
 USE talkative;
 DROP TABLE IF EXISTS feedback_record;
-DROP TABLE IF EXISTS chat_record;
+
 DROP TABLE IF EXISTS review_analysis;
+DROP TABLE IF EXISTS chat_record;
 DROP TABLE IF EXISTS feedback_user_info;
 DROP TABLE IF EXISTS users;
 

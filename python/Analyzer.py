@@ -9,6 +9,7 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipe
 from transformers import pipeline
 from flair.models import TextClassifier
 from flair.data import Sentence
+
 print("——————————————————————————————————————————————————————————————————————————————————————————————————————")
 print("——————————————————————————————————————————————————————————————————————————————————————————————————————")
 # Download the vader_lexicon data
@@ -149,7 +150,7 @@ DB_CONFIG = {
     'host': '127.0.0.1',
     'port': 3306,
     'user': 'root',
-    'password': 'Fty5005669',
+    'password': 'comsc',
     'db': 'talkative',
     'charset': 'utf8mb4',
     'cursorclass': pymysql.cursors.DictCursor
@@ -171,7 +172,6 @@ def ensure_chat_record_exists(chat_record_id):
             cursor.execute(sql, (chat_record_id,))
             result = cursor.fetchone()
             if not result:
-
                 sql = "INSERT INTO chat_record (chat_record_id) VALUES (%s)"
                 cursor.execute(sql, (chat_record_id,))
                 connection.commit()
@@ -185,22 +185,27 @@ def save_review_to_db(review_data):
     connection = connect_to_db()
     try:
         with connection.cursor() as cursor:
-            # Inserting data into review_analysis table
-            sql = """
-                INSERT INTO review_analysis (
-                    review_text, sentiment_ntlk, sentiment_flair, sentiment_bert, topic, chat_record_id
-                )
-                VALUES (%s, %s, %s, %s, %s, %s)
-            """
-            cursor.execute(sql, (
-                review_data['Review'],
-                review_data['NTLK'],
-                review_data['Flair'],
-                review_data['BERT'],
-                review_data['Topic'],
-                review_data.get('chat_record_id', None)
-            ))
-            connection.commit()
+            # First check if the record already exists
+            sql_check = "SELECT 1 FROM review_analysis WHERE chat_record_id = %s"
+            cursor.execute(sql_check, (chat_record_id,))
+            exists = cursor.fetchone()
+            if not exists:
+                # Inserting data into review_analysis table if not exists
+                sql_insert = """
+                    INSERT INTO review_analysis (
+                        review_text, sentiment_ntlk, sentiment_flair, sentiment_bert, topic, chat_record_id
+                    )
+                    VALUES (%s, %s, %s, %s, %s, %s)
+                """
+                cursor.execute(sql_insert, (
+                    review_data['Review'],
+                    review_data['NTLK'],
+                    review_data['Flair'],
+                    review_data['BERT'],
+                    review_data['Topic'],
+                    chat_record_id
+                ))
+                connection.commit()
     finally:
         connection.close()
 
