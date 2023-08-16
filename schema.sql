@@ -40,12 +40,13 @@ CREATE TABLE feedback_user_info
     chat_record_id INTEGER
 );
 
-CREATE TABLE users
+CREATE TABLE user
 (
-    id         INTEGER AUTO_INCREMENT PRIMARY KEY,
-    email      VARCHAR(255),
-    password   TEXT,
-    created_at VARCHAR(255)
+    uid           int(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    username      varchar(30) NOT NULL,
+    password      varchar(255) NOT NULL,
+    user_role     varchar(10) NOT NULL DEFAULT 'USER',
+    created_at    varchar(255) NOT NULL DEFAULT current_timestamp()
 );
 CREATE TABLE review_analysis
 (
