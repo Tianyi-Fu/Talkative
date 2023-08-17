@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>FeedbackDatasheet - Admin</title>
+    <!-- Custom fonts for this template-->
+    <!--    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">-->
+    <!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+    <!--    <link-->
+    <!--            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"-->
+    <!--            rel="stylesheet">-->
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+    <style>
+        .popup {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .popup-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .answer::placeholder{
+            color: white;
+        }
+        /*input{*/
+        /*    color: white; !important;*/
+        /*}*/
+        .container{
+            max-width: 1740px;
+        }
+    </style>
+</head>
+
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+        <!-- Sidebar - Brand -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard.html">
+            <div class="sidebar-brand-icon rotate-n-15">
+                <i class="fas fa-laugh-wink"></i>
+            </div>
+            <div class="sidebar-brand-text mx-3">Feedback System</div>
+        </a>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
+
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item">
+            <a class="nav-link" href="dashboard.html">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Dashboard</span></a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            Feedback Management
+        </div>
+
+        <!-- Nav Item  -->
+        <li class="nav-item">
+            <a class="nav-link" href="feedbackDatasheet.html">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Feedback Datasheet</span>
+            </a>
+        </li>
+
+        <!-- Nav Item  -->
+        <li class="nav-item">
+            <a class="nav-link" href="questionDetails.html">
+                <i class="fas fa-fw fa-wrench"></i>
+                <span>Questions Details</span>
+            </a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            Admin Management
+        </div>
+
+        <!-- Nav Item -->
+        <li class="nav-item">
+            <a class="nav-link" href="login.html">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Login</span>
+            </a>
+        </li>
+
+        <!-- Nav Item -->
+        <li class="nav-item">
+            <a class="nav-link" href="register.html">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Register</span>
+            </a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+
+        <a class="sidebar-brand d-flex align-items-center justify-content-center">
+            <div class="sidebar-brand-icon rotate-n-15">
+                <i class="fas fa-laugh-wink"></i>
+            </div>
+            <div class="sidebar-brand-text mx-3">Talkative</div>
+        </a>
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Top bar -->
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                <!-- Page title -->
+                <div class="d-flex justify-content-center">
+                    <h1 class="h4 mb-0 text-gray">Feedback Datasheet</h1>
+                </div>
+
+                <!-- Topbar Navbar -->
+                <ul class="navbar-nav ml-auto">
+
+                    <!-- border -->
+                    <div class="topbar-divider d-none d-sm-block"></div>
+
+                    <!-- Nav Item - Admin Information -->
+                    <li class="nav-item dropdown no-arrow">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Account</span>
+                            <img class="img-profile rounded-circle"
+                                 src="images/undraw_profile.svg">
+                        </a>
+                        <!-- Dropdown - Admin Information -->
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                             aria-labelledby="userDropdown">
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Profile
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Settings
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Activity Log
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </nav>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+
+                <!-- Page Heading -->
+                <div class="container tbl-container">
+                    <!--                    <div class="tbl-fixed" style="overflow-x: auto; overflow-y: auto;">-->
+
+                    <!--                    <div class="tbl-fixed" style="margin-left: -233px;width: 1600px;">-->
+                    <div class="tbl-fixed" style="width: 100%;max-width: 100%;overflow-x: auto">
+                        <div style="width: 1700px">
+                            <input type="text" id="chatRecordID" placeholder="Please enter ChatRecord_NB" style="width: 220px;height: 50px">
+                            <input type="text" id="satisfaction" placeholder="Please enter Satisfaction" style="width: 220px;height: 50px">
+                            <input type="text" id="agentName" placeholder="Please enter agentName" style="width: 220px;height: 50px">
+                            <!--                        <input type="date"  style="width: 220px;height: 50px"> &#45;&#45;&#45;&#45;&#45;&#45;-->
+                            <!--                        <input type="date"  style="width: 220px;height: 50px">-->
+                            <label for="datepicker">Select Date:</label>
+                            <input type="text" id="datepicker"> --
+                            <input type="text" id="datepicker2">
+                            <!--                        <input type="date" id="datepicker">-->
+
+                            <button type="button" style="width: 178px; height: 50px" onclick="buttonSelect()">
+                                search
+                            </button>
+                            <button type="button" style="width: 178px; height: 50px" onclick="reset()">
+                                reset
+                            </button>
+                            <a type="button" class="btn btn-danger btn-xs" href="http://127.0.0.1:8081/download/excel">Download</a>
+
+                        </div>
+                        <div>
+                            feedback： <input type="text" disabled style="width: 20px;border: none;margin-top: 16px" id="totalCount">
+                        </div>
+                        <table id="feedbackUserTable" class="table table-condensed" style="width: 100%;max-width: 100%;overflow-x: auto;margin-top: 6px">
+                            <thead>
+                            <tr>
+                                <th scope="col">UID</th>
+                                <th scope="col">ChatRecord_NB</th>
+                                <th scope="col">Firstname</th>
+                                <th scope="col">Lastname</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Satisfaction</th>
+                                <th scope="col">agentName</th>
+                                <th scope="col">Questions</th>
+                                <th scope="col">Transcript</th>
+                                <th scope="col">Created at</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                            </thead>
+                            <tbody id="feedbackUserTableTbody">
+                            <!-- Table rows will be generated dynamically using jQuery -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="hidePopup()">&times;</span>
+                <h2>Questions</h2>
+                <div id="questionss">
+
+                </div>
+                <button type="button" class="btn btn-danger btn-xs" onclick="downloadQuestion()">Download</button>
+
+            </div>
+        </div>
+
+        <div id="popup2" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="hidePopup2()">&times;</span>
+                <h2>Transcript</h2>
+                <div id="transcript">
+                </div>
+                <button type="button" class="btn btn-danger btn-xs" onclick="downloadTranscript()">Download</button>
+            </div>
+        </div>
+        <div id="popup3" class="popup">
+            <div class="popup-content" style="width: 50%">
+                <span class="close" onclick="hidePopup3()">&times;</span>
+                <h2>Edit</h2>
+                <div id="edit">
+                    <p style="width: 300px;text-align: right;display: none">feedbackRecordId：<input type="text" placeholder="feedbackRecordId" id="feedbackRecordId"></p>
+                    <p style="width: 300px;text-align: right">firstName：<input type="text" placeholder="firstName" id="firstName"></p>
+                    <p style="width: 300px;text-align: right">lastName：<input type="text" placeholder="lastName" id="lastName"></p>
+                    <p style="width: 300px;text-align: right">email：<input type="text" placeholder="email" id="email"></p>
+                    <p style="width: 300px;text-align: right">agentName：<input type="text" placeholder="agentName" id="agentNames"></p>
+                    <button onclick="onsubmitEdit()" style="margin-left: 107px">submit</button>
+                </div>
+            </div>
+        </div>
+        <div id="paginationContainer"></div>
+
+        <div style=" display: table-cell; text-align: center; vertical-align: middle;">
+            <span>Total Pages : <input id="totalPages" type="text" disabled style="width: 20px;border: none;">     &ensp;&ensp;&ensp;&ensp;         </span>
+            <button id="prevButton" onclick="up()" style="width: 100px;">Prev</button>
+            <button id="nextButton" onclick="down()" style="width: 100px">Next</button>
+            <button id="lastButton" onclick="lastb()" style="width: 100px">Last</button>
+        </div>
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Talkative Project Team B 2023</span>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Include the jQuery library -->
+<!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+
+<script type="text/javascript" src="js/feedbackDatasheet.js"></script>
+
+<!-- Bootstrap core JavaScript-->
+<!--<script src="vendor/jquery/jquery.min.js"></script>-->
+<!--<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>-->
+
+<!-- Core plugin JavaScript-->
+<!--<script src="vendor/jquery-easing/jquery.easing.min.js"></script>-->
+
+<!-- Custom scripts for all pages-->
+<script src="js/sb-admin-2.min.js"></script>
+
+</body>
+
+<script>
+    function downloadTranscript() {
+        // var href =
+        // document.getElementById("okDownload")
+        window.location.href='http://127.0.0.1:8081/download/excel/transcript/'+this.feedbackRecordId
+        // window.location.href='http://127.0.0.1:8081/download/excel'
+    }
+    function downloadQuestion() {
+        window.location.href='http://127.0.0.1:8081/download/excel/question/'+this.feedbackRecordId
+    }
+    var feedbackRecordId;
+
+    function showPopup(feedbackRecordId) {
+        this.feedbackRecordId = feedbackRecordId
+        var json = {"feedbackRecordId": feedbackRecordId}
+        $.ajax({
+            url: "http://127.0.0.1:8081/question/list",
+            data: JSON.stringify(json),
+            method: 'post',
+            contentType: "application/json", // Set the request header to JSON format.
+            success: function (data) {
+                function generateTableRow(user) {
+                    return "<p>question：<span>" + user.question + "</span></p> <p>answer：<span>" + user.answer + "</span></p>";
+                }
+
+                const tbody = $("#questionss");
+
+                data.data.list.forEach(user => {
+                    // var dd = "<p>question：<span>"+user.question+"</span></p> <p>answer：<span>"+user.answer+"</span></p> "
+                    tbody.append(generateTableRow(user));
+                });
+            },
+            error: function (error) {
+                console.log("Error fetching data:", error);
+            }
+
+        });
+
+        var popup = document.getElementById("popup");
+        popup.style.display = "block";
+    }
+
+    function hidePopup() {
+        let myul = document.getElementById('questionss');
+        while (myul.hasChildNodes()) {
+            myul.removeChild(myul.firstChild);
+        }
+        var popup = document.getElementById("popup");
+        popup.style.display = "none";
+    }
+
+    function showPopup2(feedbackRecordId) {
+        this.feedbackRecordId = feedbackRecordId
+        var json = {"feedbackRecordId": feedbackRecordId}
+        $.ajax({
+            url: "http://127.0.0.1:8081/transcript/list",
+            data: JSON.stringify(json),
+            method: 'post',
+            contentType: "application/json", // Set the request header to JSON format.
+            success: function (data) {
+                console.log(data)
+
+                function generateTableRow(user) {
+                    for (const userKey in user) {
+                        return "<p>sender：<span>" + userKey + "</span>  <span> |  </span>      content：<span>" + user[userKey] + "</span></p> <p></p>";
+                    }
+
+                }
+
+                const tbody = $("#transcript");
+
+                var ll = JSON.parse(data.data.transcript)
+                ll.forEach(user => {
+                    // var dd = "<p>question：<span>"+user.question+"</span></p> <p>answer：<span>"+user.answer+"</span></p> "
+                    tbody.append(generateTableRow(user));
+                });
+            },
+            error: function (error) {
+                console.log("Error fetching data:", error);
+            }
+
+        });
+
+        var popup = document.getElementById("popup2");
+        popup.style.display = "block";
+    }
+
+    function hidePopup2() {
+        let myul = document.getElementById('transcript');
+        while (myul.hasChildNodes()) {
+            myul.removeChild(myul.firstChild);
+        }
+        var popup = document.getElementById("popup2");
+        popup.style.display = "none";
+    }
+
+
+    function showPopup3(feedbackRecordId,first_name,last_name,email,agent_name) {
+        document.getElementById("firstName").value = first_name
+        document.getElementById("lastName").value = last_name
+        document.getElementById("email").value = email
+        document.getElementById("agentNames").value = agent_name
+        document.getElementById("feedbackRecordId").value = feedbackRecordId
+        var popup = document.getElementById("popup3");
+        popup.style.display = "block";
+    }
+
+
+    function hidePopup3() {
+        console.log("ss")
+        // let myul = document.getElementById('edit');
+        // while (myul.hasChildNodes()) {
+        //     myul.removeChild(myul.firstChild);
+        // }
+        var popup = document.getElementById("popup3");
+        popup.style.display = "none";
+    }
+
+
+    //Because there is a problem with the loading order of pages in js, put the js in the page
+    function getFeedBackRecordByRecordId(feedbackRecordId) {
+        console.log(feedbackRecordId)
+    }
+
+    //Because there is a problem with the loading order of pages in js, put the js in the page
+    function getFeedBackRecordByRecordId2(feedbackRecordId) {
+        console.log(feedbackRecordId)
+    }
+</script>
+</html>

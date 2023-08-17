@@ -1,0 +1,294 @@
+Index: Talkative.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule=\"true\" type=\"JAVA_MODULE\" version=\"4\">\r\n  <component name=\"FacetManager\">\r\n    <facet type=\"web\" name=\"Web\">\r\n      <configuration>\r\n        <webroots />\r\n      </configuration>\r\n    </facet>\r\n    <facet type=\"Spring\" name=\"Spring\">\r\n      <configuration />\r\n    </facet>\r\n  </component>\r\n  <component name=\"NewModuleRootManager\" LANGUAGE_LEVEL=\"JDK_1_8\">\r\n    <output url=\"file://$MODULE_DIR$/target/classes\" />\r\n    <output-test url=\"file://$MODULE_DIR$/target/test-classes\" />\r\n    <content url=\"file://$MODULE_DIR$\">\r\n      <sourceFolder url=\"file://$MODULE_DIR$/src/main/java\" isTestSource=\"false\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/src/main/resources\" type=\"java-resource\" />\r\n      <excludeFolder url=\"file://$MODULE_DIR$/target\" />\r\n    </content>\r\n    <orderEntry type=\"inheritedJdk\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework.boot:spring-boot-starter-web:2.7.5\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework.boot:spring-boot-starter:2.7.5\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework.boot:spring-boot:2.7.5\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework.boot:spring-boot-starter-logging:2.7.5\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: ch.qos.logback:logback-classic:1.2.11\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: ch.qos.logback:logback-core:1.2.11\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.apache.logging.log4j:log4j-to-slf4j:2.17.2\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.apache.logging.log4j:log4j-api:2.17.2\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: jakarta.annotation:jakarta.annotation-api:1.3.5\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework:spring-core:5.3.23\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework:spring-jcl:5.3.23\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.yaml:snakeyaml:1.30\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework.boot:spring-boot-starter-json:2.7.5\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.fasterxml.jackson.core:jackson-databind:2.13.4.2\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.13.4\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.4\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.fasterxml.jackson.module:jackson-module-parameter-names:2.13.4\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework.boot:spring-boot-starter-tomcat:2.7.5\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.apache.tomcat.embed:tomcat-embed-core:9.0.68\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.apache.tomcat.embed:tomcat-embed-el:9.0.68\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.apache.tomcat.embed:tomcat-embed-websocket:9.0.68\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework:spring-web:5.3.23\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework:spring-beans:5.3.23\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework:spring-webmvc:5.3.23\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework:spring-aop:5.3.23\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework:spring-context:5.3.23\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework:spring-expression:5.3.23\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.baomidou:mybatis-plus-boot-starter:3.5.1\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.baomidou:mybatis-plus:3.5.1\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.baomidou:mybatis-plus-extension:3.5.1\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.baomidou:mybatis-plus-core:3.5.1\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.baomidou:mybatis-plus-annotation:3.5.1\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.github.jsqlparser:jsqlparser:4.3\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.mybatis:mybatis:3.5.9\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.mybatis:mybatis-spring:2.0.6\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework.boot:spring-boot-autoconfigure:2.5.3\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework.boot:spring-boot-starter-jdbc:2.5.3\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.zaxxer:HikariCP:4.0.3\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework:spring-jdbc:5.3.9\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework:spring-tx:5.3.9\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: mysql:mysql-connector-java:8.0.11\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"RUNTIME\" name=\"Maven: com.google.protobuf:protobuf-java:2.6.0\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.slf4j:slf4j-api:1.7.7\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.slf4j:jul-to-slf4j:1.7.7\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.slf4j:jcl-over-slf4j:1.7.7\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.slf4j:log4j-over-slf4j:1.7.7\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.azure:azure-ai-openai:1.0.0-beta.2\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.azure:azure-core:1.40.0\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.azure:azure-json:1.0.1\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.5\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.fasterxml.jackson.core:jackson-core:2.13.5\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: io.projectreactor:reactor-core:3.4.29\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.reactivestreams:reactive-streams:1.0.4\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.azure:azure-core-http-netty:1.13.4\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: io.netty:netty-handler:4.1.91.Final\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: io.netty:netty-resolver:4.1.91.Final\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: io.netty:netty-transport:4.1.91.Final\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: io.netty:netty-handler-proxy:4.1.91.Final\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: io.netty:netty-codec-socks:4.1.91.Final\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: io.netty:netty-buffer:4.1.91.Final\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: io.netty:netty-codec:4.1.91.Final\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: io.netty:netty-codec-http:4.1.91.Final\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: io.netty:netty-codec-http2:4.1.91.Final\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: io.netty:netty-transport-native-unix-common:4.1.91.Final\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: io.netty:netty-transport-native-epoll:linux-x86_64:4.1.91.Final\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: io.netty:netty-transport-classes-epoll:4.1.91.Final\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: io.netty:netty-transport-native-kqueue:osx-x86_64:4.1.91.Final\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: io.netty:netty-transport-classes-kqueue:4.1.91.Final\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: io.netty:netty-tcnative-boringssl-static:2.0.59.Final\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: io.netty:netty-tcnative-classes:2.0.59.Final\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: io.netty:netty-tcnative-boringssl-static:linux-x86_64:2.0.59.Final\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: io.netty:netty-tcnative-boringssl-static:linux-aarch_64:2.0.59.Final\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: io.netty:netty-tcnative-boringssl-static:osx-x86_64:2.0.59.Final\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: io.netty:netty-tcnative-boringssl-static:osx-aarch_64:2.0.59.Final\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: io.netty:netty-tcnative-boringssl-static:windows-x86_64:2.0.59.Final\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: io.projectreactor.netty:reactor-netty-http:1.0.31\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: io.netty:netty-resolver-dns:4.1.91.Final\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: io.netty:netty-codec-dns:4.1.91.Final\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: io.netty:netty-resolver-dns-native-macos:osx-x86_64:4.1.91.Final\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: io.netty:netty-resolver-dns-classes-macos:4.1.91.Final\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: io.projectreactor.netty:reactor-netty-core:1.0.31\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: io.netty:netty-common:4.1.91.Final\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.google.code.gson:gson:2.8.5\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.json:json:20230618\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.projectlombok:lombok:1.18.28\" level=\"project\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Talkative.iml b/Talkative.iml
+--- a/Talkative.iml	(revision de047add52856f65623ec6f177f70b6c1ade40f7)
++++ b/Talkative.iml	(date 1691512838764)
+@@ -4,6 +4,7 @@
+     <facet type="web" name="Web">
+       <configuration>
+         <webroots />
++        <sourceRoots />
+       </configuration>
+     </facet>
+     <facet type="Spring" name="Spring">
+Index: target/classes/application.properties
+===================================================================
+diff --git a/target/classes/application.properties b/target/classes/application.properties
+deleted file mode 100644
+--- a/target/classes/application.properties	(revision de047add52856f65623ec6f177f70b6c1ade40f7)
++++ /dev/null	(revision de047add52856f65623ec6f177f70b6c1ade40f7)
+@@ -1,7 +0,0 @@
+-server.port=8081
+-
+-spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+-spring.datasource.url=jdbc:mysql://127.0.0.1:3306/talkative
+-spring.datasource.username=root
+-spring.datasource.password=comsc
+-
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"d1122899-63bc-4208-8b3b-19db2bcf95c8\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/frontend/js/chatWidget.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/frontend/js/chatWidget.js\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Python Script\" />\r\n        <option value=\"Interface\" />\r\n        <option value=\"HTML File\" />\r\n        <option value=\"CSS File\" />\r\n        <option value=\"Class\" />\r\n        <option value=\"JavaScript File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"feedback_management_admin\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2SX9gNf062XMVS6hFsxAjCPsbQN\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n    <option name=\"showVisibilityIcons\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,\r\n    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,\r\n    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,\r\n    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,\r\n    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;spring.configuration.checksum&quot;: &quot;3d03706d9ca9cfb206f00c437c272955&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ReactorSettings\">\r\n    <option name=\"notificationShown\" value=\"true\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"$PROJECT_DIR$/frontend/js\" />\r\n      <recent name=\"$PROJECT_DIR$/frontend/css\" />\r\n      <recent name=\"$PROJECT_DIR$/frontend\" />\r\n      <recent name=\"C:\\Users\\c21112765\\OneDrive - Cardiff University\\Desktop\\Talkative\\lib\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"$PROJECT_DIR$/frontend/images\" />\r\n      <recent name=\"$PROJECT_DIR$/frontend\" />\r\n    </key>\r\n    <key name=\"CopyClassDialog.RECENTS_KEY\">\r\n      <recent name=\"com.demo.serivce\" />\r\n      <recent name=\"com.demo.model\" />\r\n      <recent name=\"com.demo.mapper\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunDashboard\">\r\n    <option name=\"configurationTypes\">\r\n      <set>\r\n        <option value=\"SpringBootApplicationConfigurationType\" />\r\n      </set>\r\n    </option>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Spring Boot.TalkativeApplication\">\r\n    <configuration default=\"true\" type=\"AZURE_FUNCTION_SUPPORT\" factoryName=\"Run Functions\">\r\n      <option name=\"appName\" />\r\n      <option name=\"appServicePlanName\" />\r\n      <option name=\"appServicePlanResourceGroup\" />\r\n      <option name=\"appSettingsKey\" value=\"4f2d11c9-40f7-498d-90e8-e0621ace9f19\" />\r\n      <option name=\"artifact\" />\r\n      <option name=\"autoPort\" value=\"true\" />\r\n      <option name=\"debugOptions\" />\r\n      <option name=\"deployment\" />\r\n      <option name=\"deploymentStagingDirectoryPath\" />\r\n      <option name=\"funcPath\" />\r\n      <option name=\"funcPort\" value=\"0\" />\r\n      <option name=\"hostJsonPath\" />\r\n      <option name=\"insightsName\" />\r\n      <option name=\"instrumentationKey\" />\r\n      <option name=\"javaVersion\" />\r\n      <option name=\"localSettingsJsonPath\" />\r\n      <option name=\"moduleName\" />\r\n      <option name=\"os\" />\r\n      <option name=\"pricingTier\" />\r\n      <option name=\"providerMap\">\r\n        <map />\r\n      </option>\r\n      <option name=\"region\" />\r\n      <option name=\"resourceGroup\" />\r\n      <option name=\"stagingFolder\" />\r\n      <option name=\"subscription\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"schema.sql\" type=\"DatabaseScript\" editBeforeRun=\"true\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <script-file value=\"$PROJECT_DIR$/schema.sql\" />\r\n      <script-mode>FILE</script-mode>\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"TalkativeApplication\" type=\"SpringBootApplicationConfigurationType\" factoryName=\"Spring Boot\" temporary=\"true\">\r\n      <module name=\"Talkative\" />\r\n      <option name=\"SPRING_BOOT_MAIN_CLASS\" value=\"com.demo.TalkativeApplication\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.demo.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Spring Boot.TalkativeApplication\" />\r\n        <item itemvalue=\"Database Script.schema.sql\" />\r\n        <item itemvalue=\"Spring Boot.TalkativeApplication\" />\r\n        <item itemvalue=\"Database Script.schema.sql\" />\r\n        <item itemvalue=\"Spring Boot.TalkativeApplication\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"d1122899-63bc-4208-8b3b-19db2bcf95c8\" name=\"Changes\" comment=\"\" />\r\n      <created>1689282179940</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1689282179940</updated>\r\n      <workItem from=\"1689282185609\" duration=\"760000\" />\r\n      <workItem from=\"1689283094194\" duration=\"3898000\" />\r\n      <workItem from=\"1689618426597\" duration=\"8671000\" />\r\n      <workItem from=\"1689646715697\" duration=\"6301000\" />\r\n      <workItem from=\"1689684237846\" duration=\"14248000\" />\r\n      <workItem from=\"1689782525643\" duration=\"18653000\" />\r\n      <workItem from=\"1689854195941\" duration=\"3441000\" />\r\n      <workItem from=\"1690839718240\" duration=\"5486000\" />\r\n      <workItem from=\"1690845292873\" duration=\"3153000\" />\r\n      <workItem from=\"1691332630079\" duration=\"10668000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"new gitigonore file\">\r\n      <created>1689282546007</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1689282546007</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"added Feedback java files &amp; Python script to format transcript, not yet tested out\">\r\n      <created>1689682242585</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1689682242585</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"tryin to use JAVA to format the transcript data instead of Python, not yet working\">\r\n      <created>1689781236343</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1689781236343</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"tryin to use JAVA to format the transcript data instead of Python, not yet working\">\r\n      <created>1689782802126</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1689782802126</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"format transcript data at frontend, removed all Python related dependencies\">\r\n      <created>1689790659026</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1689790659026</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"attempted to save transcript to DB, not working yet\">\r\n      <created>1689846019447</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1689846019447</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"changed Chat_record Table_id to AUTO\">\r\n      <created>1689852347914</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1689852347914</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"Updated database schema &amp; successfully written transcript data to chat_record table\">\r\n      <created>1689856962052</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1689856962053</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"added unversioned files\">\r\n      <created>1689857373156</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1689857373156</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"merged with folder_structure\">\r\n      <created>1689857966254</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1689857966254</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"Refactored code; changed feedback form to popup; trying to show feedback questions 1 by 1\">\r\n      <created>1690071237232</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1690071237232</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"Only load questions when they are in localStorage; Refactored schema.sql &amp; FeedbackRecord\">\r\n      <created>1690153603327</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1690153603328</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"1.Implemented on the front-end and back-end to collect information from users who fill out feedback forms.\">\r\n      <created>1690220237040</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1690220237040</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"2.Get the chat record id in the transcript, and save them in the database.\">\r\n      <created>1690282712808</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1690282712808</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00015\" summary=\"Added star rating for 1st feedback question\">\r\n      <created>1690677491812</created>\r\n      <option name=\"number\" value=\"00015\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1690677491812</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00016\" summary=\"Updated feedback answer options corresponding to question type; Added check sender_name when saving transcript; Minor css updates;\">\r\n      <created>1690846350781</created>\r\n      <option name=\"number\" value=\"00016\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1690846350781</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00017\" summary=\"Trying to extract conversation after interaction ended\">\r\n      <created>1691340071304</created>\r\n      <option name=\"number\" value=\"00017\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00017\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1691340071304</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"18\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"Add_Customer_information\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"new gitigonore file\" />\r\n    <MESSAGE value=\"added Feedback java files &amp; Python script to format transcript, not yet tested out\" />\r\n    <MESSAGE value=\"tryin to use JAVA to format the transcript data instead of Python, not yet working\" />\r\n    <MESSAGE value=\"format transcript data at frontend, removed all Python related dependencies\" />\r\n    <MESSAGE value=\"attempted to save transcript to DB, not working yet\" />\r\n    <MESSAGE value=\"changed Chat_record Table_id to AUTO\" />\r\n    <MESSAGE value=\"Updated database schema &amp; successfully written transcript data to chat_record table\" />\r\n    <MESSAGE value=\"added unversioned files\" />\r\n    <MESSAGE value=\"merged with folder_structure\" />\r\n    <MESSAGE value=\"1.As a developer, I want to automatically pop up the surveyForm page while submitting a transcript on the Talkative page.&#10;2.As a developer, I want to display issues analyzed and generated by ChatGPT on the surveyForm page.&#10;3.As a developer, I want to write some CSS style for the webpages.\" />\r\n    <MESSAGE value=\"Refactored code; changed feedback form to popup; trying to show feedback questions 1 by 1\" />\r\n    <MESSAGE value=\"Only load questions when they are in localStorage; Refactored schema.sql &amp; FeedbackRecord\" />\r\n    <MESSAGE value=\"1.Implemented on the front-end and back-end to collect information from users who fill out feedback forms.\" />\r\n    <MESSAGE value=\"2.Get the chat record id in the transcript, and save them in the database.\" />\r\n    <MESSAGE value=\"Added star rating for 1st feedback question\" />\r\n    <MESSAGE value=\"Updated feedback answer options corresponding to question type; Added check sender_name when saving transcript; Minor css updates;\" />\r\n    <MESSAGE value=\"Trying to extract conversation after interaction ended\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Trying to extract conversation after interaction ended\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision de047add52856f65623ec6f177f70b6c1ade40f7)
++++ b/.idea/workspace.xml	(date 1691512838783)
+@@ -5,8 +5,9 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="">
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_20_07_2023_12_56__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_20_07_2023_12_56__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_7_24__12_16__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_7_24__12_16__Changes_.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/frontend/js/chatWidget.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/chatWidget.js" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -18,9 +19,8 @@
+       <list>
+         <option value="Python Script" />
+         <option value="Interface" />
+-        <option value="HTML File" />
+-        <option value="CSS File" />
+         <option value="Class" />
++        <option value="HTML File" />
+         <option value="JavaScript File" />
+       </list>
+     </option>
+@@ -28,10 +28,11 @@
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="feedback_management_admin" />
++        <entry key="$PROJECT_DIR$" value="main" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++    <option name="RESET_MODE" value="HARD" />
+   </component>
+   <component name="MarkdownSettingsMigration">
+     <option name="stateVersion" value="1" />
+@@ -45,40 +46,38 @@
+     <option name="showLibraryContents" value="true" />
+     <option name="showVisibilityIcons" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;spring.configuration.checksum&quot;: &quot;3d03706d9ca9cfb206f00c437c272955&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "RequestMappingsPanelOrder0": "0",
++    "RequestMappingsPanelOrder1": "1",
++    "RequestMappingsPanelWidth0": "75",
++    "RequestMappingsPanelWidth1": "75",
++    "WebServerToolWindowFactoryState": "false",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "project.structure.last.edited": "Modules",
++    "project.structure.proportion": "0.15",
++    "project.structure.side.proportion": "0.4827586",
++    "spring.configuration.checksum": "07bbbc64262aeaf86dc395d0279d66e4"
+   }
+-}</component>
++}]]></component>
+   <component name="ReactorSettings">
+     <option name="notificationShown" value="true" />
+   </component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+-      <recent name="$PROJECT_DIR$/frontend/js" />
++      <recent name="$PROJECT_DIR$/frontend/vendors" />
+       <recent name="$PROJECT_DIR$/frontend/css" />
+       <recent name="$PROJECT_DIR$/frontend" />
+-      <recent name="C:\Users\c21112765\OneDrive - Cardiff University\Desktop\Talkative\lib" />
++      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
++      <recent name="$PROJECT_DIR$/src/main/resources" />
+     </key>
+     <key name="MoveFile.RECENT_KEYS">
++      <recent name="$PROJECT_DIR$/frontend" />
++      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
+       <recent name="$PROJECT_DIR$/frontend/images" />
+-      <recent name="$PROJECT_DIR$/frontend" />
+     </key>
+     <key name="CopyClassDialog.RECENTS_KEY">
+-      <recent name="com.demo.serivce" />
+-      <recent name="com.demo.model" />
+-      <recent name="com.demo.mapper" />
++      <recent name="com.demo.config" />
+     </key>
+   </component>
+   <component name="RunDashboard">
+@@ -88,7 +87,7 @@
+       </set>
+     </option>
+   </component>
+-  <component name="RunManager" selected="Spring Boot.TalkativeApplication">
++  <component name="RunManager">
+     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
+       <option name="appName" />
+       <option name="appServicePlanName" />
+@@ -120,12 +119,7 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="schema.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+-      <script-file value="$PROJECT_DIR$/schema.sql" />
+-      <script-mode>FILE</script-mode>
+-      <method v="2" />
+-    </configuration>
+-    <configuration name="TalkativeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
++    <configuration name="TalkativeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+       <module name="Talkative" />
+       <option name="SPRING_BOOT_MAIN_CLASS" value="com.demo.TalkativeApplication" />
+       <extension name="coverage">
+@@ -141,9 +135,7 @@
+     <recent_temporary>
+       <list>
+         <item itemvalue="Spring Boot.TalkativeApplication" />
+-        <item itemvalue="Database Script.schema.sql" />
+         <item itemvalue="Spring Boot.TalkativeApplication" />
+-        <item itemvalue="Database Script.schema.sql" />
+         <item itemvalue="Spring Boot.TalkativeApplication" />
+       </list>
+     </recent_temporary>
+@@ -163,9 +155,15 @@
+       <workItem from="1689684237846" duration="14248000" />
+       <workItem from="1689782525643" duration="18653000" />
+       <workItem from="1689854195941" duration="3441000" />
+-      <workItem from="1690839718240" duration="5486000" />
+-      <workItem from="1690845292873" duration="3153000" />
+-      <workItem from="1691332630079" duration="10668000" />
++      <workItem from="1690154222502" duration="1986000" />
++      <workItem from="1690156214989" duration="811000" />
++      <workItem from="1690157030612" duration="5984000" />
++      <workItem from="1690319566567" duration="4107000" />
++      <workItem from="1690324360671" duration="9751000" />
++      <workItem from="1690818310672" duration="2330000" />
++      <workItem from="1690913669260" duration="166000" />
++      <workItem from="1691298194872" duration="5089000" />
++      <workItem from="1691512590426" duration="70000" />
+     </task>
+     <task id="LOCAL-00001" summary="new gitigonore file">
+       <created>1689282546007</created>
+@@ -251,65 +249,49 @@
+       <option name="project" value="LOCAL" />
+       <updated>1690153603328</updated>
+     </task>
+-    <task id="LOCAL-00013" summary="1.Implemented on the front-end and back-end to collect information from users who fill out feedback forms.">
+-      <created>1690220237040</created>
++    <task id="LOCAL-00013" summary="add">
++      <created>1690932337503</created>
+       <option name="number" value="00013" />
+       <option name="presentableId" value="LOCAL-00013" />
+       <option name="project" value="LOCAL" />
+-      <updated>1690220237040</updated>
++      <updated>1690932337503</updated>
+     </task>
+-    <task id="LOCAL-00014" summary="2.Get the chat record id in the transcript, and save them in the database.">
+-      <created>1690282712808</created>
++    <task id="LOCAL-00014" summary="1.Write the popup windows to show the questions and transcripts.&#10;2.Write the delete and modify function in the datasheet.&#10;3.Create a search function for the datasheet that allows to filter the data by ChatRecord_NB, Satisfaction, agentName, and date.">
++      <created>1691258169514</created>
+       <option name="number" value="00014" />
+       <option name="presentableId" value="LOCAL-00014" />
+       <option name="project" value="LOCAL" />
+-      <updated>1690282712808</updated>
++      <updated>1691258169514</updated>
+     </task>
+-    <task id="LOCAL-00015" summary="Added star rating for 1st feedback question">
+-      <created>1690677491812</created>
++    <task id="LOCAL-00015" summary="Fix some bugs">
++      <created>1691299043271</created>
+       <option name="number" value="00015" />
+       <option name="presentableId" value="LOCAL-00015" />
+       <option name="project" value="LOCAL" />
+-      <updated>1690677491812</updated>
+-    </task>
+-    <task id="LOCAL-00016" summary="Updated feedback answer options corresponding to question type; Added check sender_name when saving transcript; Minor css updates;">
+-      <created>1690846350781</created>
+-      <option name="number" value="00016" />
+-      <option name="presentableId" value="LOCAL-00016" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1690846350781</updated>
+-    </task>
+-    <task id="LOCAL-00017" summary="Trying to extract conversation after interaction ended">
+-      <created>1691340071304</created>
+-      <option name="number" value="00017" />
+-      <option name="presentableId" value="LOCAL-00017" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1691340071304</updated>
++      <updated>1691299043271</updated>
+     </task>
+-    <option name="localTasksCounter" value="18" />
++    <option name="localTasksCounter" value="16" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
++  </component>
++  <component name="UnknownFeatures">
++    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-core" />
++    <option featureType="dependencySupport" implementationName="java:org.springframework.security:spring-security-core" />
++    <option featureType="dependencySupport" implementationName="java:io.projectreactor:reactor-core" />
++    <option featureType="dependencySupport" implementationName="java:org.thymeleaf:thymeleaf" />
++    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot" />
++    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-webmvc" />
++    <option featureType="dependencySupport" implementationName="java:com.azure:azure-core" />
++    <option featureType="dependencySupport" implementationName="java:org.projectlombok:lombok" />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+     <option name="TAB_STATES">
+       <map>
+         <entry key="MAIN">
+           <value>
+-            <State>
+-              <option name="FILTERS">
+-                <map>
+-                  <entry key="branch">
+-                    <value>
+-                      <list>
+-                        <option value="Add_Customer_information" />
+-                      </list>
+-                    </value>
+-                  </entry>
+-                </map>
+-              </option>
+-            </State>
++            <State />
+           </value>
+         </entry>
+       </map>
+@@ -328,11 +310,10 @@
+     <MESSAGE value="1.As a developer, I want to automatically pop up the surveyForm page while submitting a transcript on the Talkative page.&#10;2.As a developer, I want to display issues analyzed and generated by ChatGPT on the surveyForm page.&#10;3.As a developer, I want to write some CSS style for the webpages." />
+     <MESSAGE value="Refactored code; changed feedback form to popup; trying to show feedback questions 1 by 1" />
+     <MESSAGE value="Only load questions when they are in localStorage; Refactored schema.sql &amp; FeedbackRecord" />
+-    <MESSAGE value="1.Implemented on the front-end and back-end to collect information from users who fill out feedback forms." />
+-    <MESSAGE value="2.Get the chat record id in the transcript, and save them in the database." />
+-    <MESSAGE value="Added star rating for 1st feedback question" />
+-    <MESSAGE value="Updated feedback answer options corresponding to question type; Added check sender_name when saving transcript; Minor css updates;" />
+-    <MESSAGE value="Trying to extract conversation after interaction ended" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Trying to extract conversation after interaction ended" />
++    <MESSAGE value="add" />
++    <MESSAGE value="1.Write the popup windows to show the questions and transcripts.&#10;2.Write the delete and modify function in the datasheet.&#10;3.Create a search function for the datasheet that allows to filter the data by ChatRecord_NB, Satisfaction, agentName, and date." />
++    <MESSAGE value="Fix some bugs" />
++    <MESSAGE value="Configuring MyBatis-Plus in application.properties file and fix some bugs." />
++    <option name="LAST_COMMIT_MESSAGE" value="Configuring MyBatis-Plus in application.properties file and fix some bugs." />
+   </component>
+ </project>
+\ No newline at end of file
