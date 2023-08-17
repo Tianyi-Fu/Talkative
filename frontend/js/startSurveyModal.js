@@ -15,7 +15,7 @@ $(document).ready(() => {
         $('#question').append(`<span>${questions[0]}</span>`);
 
         generateStepper(questions.length);
-        let stepper = new Stepper($('.bs-stepper')[0]);
+        nextStep(1);
 
         localStorage.setItem('questionNumber', "1");
     }

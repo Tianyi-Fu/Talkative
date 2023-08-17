@@ -99,19 +99,19 @@ function sendTranscript(chatRecordId, conversation, widget) {
                 // HTTP requests across different ports on the same machine can lead to cross-domain issues.
                 // These issues can be resolved by adding the @CrossOrigin annotation in the backend controller class.
                 // Please refer to the backend code for specific details.
-                // $.ajax({
-                //     url: baseUrl + '/openai-chat',
-                //     method: 'get',
-                //     // data: JSON.stringify(transcriptObj),
-                //     data: {'content': JSON.stringify(transcriptObj.transcript)},
-                //     success: function (data) {
-                //         if (data.code == 500) {
-                //             alert(data.message)
-                //         } else {
-                //             localStorage.setItem("questions", JSON.stringify(data.data.questions))
-                //         }
-                //     }
-                // })
+                $.ajax({
+                    url: baseUrl + '/openai-chat',
+                    method: 'get',
+                    // data: JSON.stringify(transcriptObj),
+                    data: {'content': JSON.stringify(transcriptObj.transcript)},
+                    success: function (data) {
+                        if (data.code == 500) {
+                            alert(data.message)
+                        } else {
+                            localStorage.setItem("questions", JSON.stringify(data.data.questions))
+                        }
+                    }
+                })
             }
         }
     })

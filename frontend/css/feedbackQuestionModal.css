@@ -1,5 +1,9 @@
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
+.modal-body textarea {
+    font-size: 18px;
+}
+
 /*** Star Rating ***/
 .starrating > input {
     display: none;

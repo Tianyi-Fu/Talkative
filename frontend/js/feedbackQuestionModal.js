@@ -34,9 +34,6 @@ $(document).ready(() => {
         $("#open-end_answer").val("");
 
         saveAnsGetQuestion(answer);
-
-        let stepper = new Stepper(document.querySelector('.bs-stepper'))
-        stepper.next()
     })
 
     $("#submitFeedbackBtn").click(() => {
@@ -85,13 +82,13 @@ $(document).ready(() => {
                 $("#rating-container").prop("hidden", true);
                 $("#radioBtns").prop("hidden", false);
                 localStorage.setItem("questionNumber", "2");
+                nextStep(2);
                 disableNextBtn();
-                console.log(questionArray.length)
-                generateStepper(questionArray.length);
                 break;
             case "2":
                 document.querySelector(".modal-body #question span").innerHTML = questionArray[2];
                 localStorage.setItem("questionNumber", "3");
+                nextStep(3);
                 disableNextBtn();
                 break;
             case "3":
@@ -99,16 +96,19 @@ $(document).ready(() => {
                 $("#radioBtns").prop("hidden", true);
                 $("#open-end_answer").prop("hidden", false);
                 localStorage.setItem("questionNumber", "4");
+                nextStep(4);
                 disableNextBtn();
                 break;
             case "4":
                 document.querySelector(".modal-body #question span").innerHTML = questionArray[4];
                 localStorage.setItem("questionNumber", "5");
+                nextStep(5);
                 disableNextBtn();
                 break;
             case "5":
                 document.querySelector(".modal-body #question span").innerHTML = questionArray[5];
                 localStorage.setItem("questionNumber", "last");
+                nextStep(6);
                 disableNextBtn();
                 $("#nextBtn").prop("hidden", true);
                 $("#submitFeedbackBtn").prop("hidden", false);
