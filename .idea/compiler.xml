@@ -9,7 +9,6 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Talkative" />
         <module name="Talkative1" />
-        <module name="demo2" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
