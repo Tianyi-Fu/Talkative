@@ -34,6 +34,9 @@ $(document).ready(() => {
         $("#open-end_answer").val("");
 
         saveAnsGetQuestion(answer);
+
+        let stepper = new Stepper(document.querySelector('.bs-stepper'))
+        stepper.next()
     })
 
     $("#submitFeedbackBtn").click(() => {
@@ -83,6 +86,8 @@ $(document).ready(() => {
                 $("#radioBtns").prop("hidden", false);
                 localStorage.setItem("questionNumber", "2");
                 disableNextBtn();
+                console.log(questionArray.length)
+                generateStepper(questionArray.length);
                 break;
             case "2":
                 document.querySelector(".modal-body #question span").innerHTML = questionArray[2];

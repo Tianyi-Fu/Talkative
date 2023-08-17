@@ -34,16 +34,30 @@ body {
 }
 
 /* Modal */
+.modal-title {
+    font-size: 28px !important;
+    margin: 8px;
+}
+
+.modal-header .btn-close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
 .modal-content {
     min-height: 500px;
+    min-width: 580px;
 }
 
 .modal-body p {
-    margin: 10px 5px;
+    font-size: 20px;
+    margin: 20px 8px;
 }
 
 .modal-body button {
-    margin: 8px;
+    font-size: 18px;
+    margin: 15px;
 }
 
 .model-body span {
