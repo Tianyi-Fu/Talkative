@@ -1,8 +1,23 @@
 body {
     font-family: 'Nunito', sans-serif !important;
     background-color: #aecfd1;
-    font-size: 14px
+    font-size: 14px;
+    overflow-y: scroll;
+    margin: 0;
+    background-image: url("../../../Talkative/frontend/images/home.png");
+    background-size: cover;
+    width: 100%;
+    height: 17008px;
 }
+
+/*#indexBg {*/
+/*    width: 100vw;*/
+/*    height: 100vh;*/
+/*    margin: 0;*/
+/*    background-image: url("../../../Talkative/frontend/images/home.png");*/
+/*    background-attachment: scroll;*/
+/*    background-size: cover;*/
+/*}*/
 
 .main {
     display: flex;
