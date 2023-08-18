@@ -3,9 +3,12 @@ package com.demo.serivce;
 import com.demo.data.Data;
 import com.demo.error.Exception;
 import com.demo.mapper.Mapper;
+import com.demo.model.FeedbackAnalysis;
 import com.demo.model.FeedbackRecord;
 import com.demo.util.BeanUtil;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Timestamp;
 import java.util.List;
@@ -18,10 +21,14 @@ import java.util.List;
 @RequiredArgsConstructor
 public class FeedbackService {
 
+    @Autowired
+    FeedbackAnalysisService analysisService;
+
     //    private final ChatRecordMapper chatRecordMapper;
     private final Mapper mapper;
     static int id = 0;
 
+    @Transactional(rollbackFor = Exception.class)
     public void create(List<Data.FeedbackSaveParam> param, String agentName, String chatRecordId, String feedbackRecordId) throws Exception {
 
         List<FeedbackRecord> feedbackRecord = BeanUtil.convertToList(param, FeedbackRecord.class);
@@ -35,6 +42,9 @@ public class FeedbackService {
             record.setFeedbackRecordId(feedbackRecordId);
             mapper.insert(record);
         }
+        FeedbackAnalysis feedbackAnalysis = new FeedbackAnalysis();
+        feedbackAnalysis.setFeedbackRecordId(feedbackRecordId);
+        analysisService.analysis(feedbackAnalysis);
 //        //id=feedBackRecord id
 //        ChatRecord chatRecord=new ChatRecord();
 //        chatRecord.setAgentName(agentName);

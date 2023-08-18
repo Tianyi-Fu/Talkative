@@ -69,7 +69,7 @@ public interface FeedBackRecordAndUserInfoMapper {
             "</script>")
     List<Map<String,Object>> selectFeedBackRecordAndUserInfoExcel();
 
-    @Select("select question,answer from feedback_record where feedback_record_id = #{feedbackRecordId}")
+    @Select("select question_id,question,answer from feedback_record where feedback_record_id = #{feedbackRecordId}")
     List<Map<String, Object>> selectFeedBackRecordByRecordId(String feedbackRecordId);
 
     @Select("select chat_record_id,transcript from chat_record where feedback_record_id = #{feedbackRecordId}")

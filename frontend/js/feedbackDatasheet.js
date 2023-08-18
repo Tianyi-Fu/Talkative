@@ -58,6 +58,7 @@ function load(page, size, chatRecordID, satisfaction, agentName, datepicker, dat
                                   <a type="button" class="btn btn-info btn-xs" 
                                   onclick="showPopup3(\'${feedbackUser.feedback_record_id}'\,\'${feedbackUser.first_name}'\,\'${feedbackUser.last_name}'\,\'${feedbackUser.aa_email}'\,\'${feedbackUser.agent_name}'\)" style="background-color:#27a844;color:white;">Modify</a>&nbsp;
                                 <a type="button" class="btn btn-danger btn-xs" onclick="dele(${feedbackUser.feedback_record_id})">Delete</a>
+                                <a type="button" class="btn btn-danger btn-xs" onclick="analysis(${feedbackUser.feedback_record_id})">Analysis</a>
                             </td>
                         </tr>`;
             }

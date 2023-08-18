@@ -29,15 +29,7 @@ public class FeedbackController {
 
     private final FeedbackService service;
 
-    /*    *//**
-     * Create
-     *//*
-    @PostMapping("/create/{agentName}")
-    public Result create(@RequestBody List<Data.FeedbackSaveParam> param, @PathVariable String agentName) throws Exception {
 
-        service.create(param, agentName);
-        return Result.success();
-    }*/
     /**
      * Create
      */
