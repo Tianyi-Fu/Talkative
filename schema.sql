@@ -2,7 +2,7 @@ CREATE
     DATABASE IF NOT EXISTS talkative;
 USE talkative;
 DROP TABLE IF EXISTS feedback_record;
-
+DROP TABLE IF EXISTS feedback_analysis;
 DROP TABLE IF EXISTS review_analysis;
 DROP TABLE IF EXISTS chat_record;
 DROP TABLE IF EXISTS feedback_user_info;
@@ -40,6 +40,16 @@ CREATE TABLE feedback_user_info
     chat_record_id INTEGER
 );
 
+CREATE TABLE feedback_analysis
+(
+    id             INTEGER AUTO_INCREMENT PRIMARY KEY,
+    question       VARCHAR(600),
+    suggestion     VARCHAR(600),
+    created_at     VARCHAR(255),
+    feedback_record_id INTEGER
+);
+
+
 CREATE TABLE user
 (
     uid           int(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -48,6 +58,8 @@ CREATE TABLE user
     user_role     varchar(10) NOT NULL DEFAULT 'USER',
     created_at    varchar(255) NOT NULL DEFAULT current_timestamp()
 );
+
+
 CREATE TABLE review_analysis
 (
     id                 INTEGER AUTO_INCREMENT PRIMARY KEY,

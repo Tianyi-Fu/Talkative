@@ -24,9 +24,9 @@
       <list>
         <option value="Python Script" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -81,6 +81,8 @@
       <recent name="$PROJECT_DIR$/frontend/images" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.demo.model" />
+      <recent name="com.demo.mapper" />
       <recent name="com.demo.controller" />
       <recent name="com.demo.config" />
     </key>
@@ -124,6 +126,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TalkativeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="Talkative" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.demo.TalkativeApplication" />
@@ -139,9 +152,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.TalkativeApplication" />
-        <item itemvalue="Spring Boot.TalkativeApplication" />
-        <item itemvalue="Spring Boot.TalkativeApplication" />
         <item itemvalue="Spring Boot.TalkativeApplication" />
       </list>
     </recent_temporary>
@@ -170,6 +180,8 @@
       <workItem from="1690913669260" duration="166000" />
       <workItem from="1691298194872" duration="5089000" />
       <workItem from="1692121815464" duration="298000" />
+      <workItem from="1692222749896" duration="16912000" />
+      <workItem from="1692356786331" duration="7069000" />
     </task>
     <task id="LOCAL-00001" summary="new gitigonore file">
       <created>1689282546007</created>
@@ -346,6 +358,16 @@
     <MESSAGE value="Fix some bugs." />
     <MESSAGE value="Edited style of feedback modal &amp; added stepper at th top of modal; still need to fix show active step issue" />
     <option name="LAST_COMMIT_MESSAGE" value="Edited style of feedback modal &amp; added stepper at th top of modal; still need to fix show active step issue" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.RuntimeException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
