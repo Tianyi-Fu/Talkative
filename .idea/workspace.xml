@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="Steppe">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_8_13_19_27__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_8_13_19_27__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_8_13__16_19__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_8_13__16_19__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_13__16_20__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_13__16_20__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_14_3_02__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_14_3_02__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_16_15_50__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_16_15_50__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Talkative.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Talkative.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Analyzer.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Analyzer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="fix bug 1: miss typed in main&#10;fix bug 2: a possible mistake report in database setting&#10;fix bug 3: a database structure mistake" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Combine_python_analysis" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -319,7 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692294633633</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="fix bug 1: miss typed in main&#10;fix bug 2: a possible mistake report in database setting&#10;fix bug 3: a database structure mistake">
+      <created>1692379837858</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1692379837858</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -367,7 +362,8 @@
     <MESSAGE value="fix" />
     <MESSAGE value="Fix some bugs." />
     <MESSAGE value="Edited style of feedback modal &amp; added stepper at th top of modal; still need to fix show active step issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edited style of feedback modal &amp; added stepper at th top of modal; still need to fix show active step issue" />
+    <MESSAGE value="fix bug 1: miss typed in main&#10;fix bug 2: a possible mistake report in database setting&#10;fix bug 3: a database structure mistake" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bug 1: miss typed in main&#10;fix bug 2: a possible mistake report in database setting&#10;fix bug 3: a database structure mistake" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

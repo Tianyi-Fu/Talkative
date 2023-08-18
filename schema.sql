@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS feedback_analysis;
 DROP TABLE IF EXISTS review_analysis;
 DROP TABLE IF EXISTS chat_record;
 DROP TABLE IF EXISTS feedback_user_info;
-DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS user;
 
 CREATE TABLE chat_record
 (
@@ -56,7 +56,7 @@ CREATE TABLE user
     username      varchar(30) NOT NULL,
     password      varchar(255) NOT NULL,
     user_role     varchar(10) NOT NULL DEFAULT 'USER',
-    created_at    varchar(255) NOT NULL DEFAULT current_timestamp()
+    created_at    TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 
