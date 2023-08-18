@@ -14,6 +14,9 @@ $(document).ready(() => {
 
         $('#question').append(`<span>${questions[0]}</span>`);
 
+        generateStepper(questions.length);
+        nextStep(1);
+
         localStorage.setItem('questionNumber', "1");
     }
 
