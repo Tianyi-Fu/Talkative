@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="fix bug 1: miss typed in main&#10;fix bug 2: a possible mistake report in database setting&#10;fix bug 3: a database structure mistake" />
+    <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="fix bug 1: miss typed in main&#10;fix bug 2: a possible mistake report in database setting&#10;fix bug 3: a database structure mistake">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Terraform/c22045328-openrc.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Terraform/fty_keypair.key" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Terraform/fty_keypair.key.pub" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Terraform/plan.tf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Terraform/server.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Terraform/variables.tf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portal.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/create_database.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,11 +67,12 @@
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/dell/Desktop/frontend",
+    "last_opened_file_path": "C:/Users/Tony/Desktop/Talkative/src",
     "node.js.selected.package.tslint": "(autodetect)",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
+    "spring.configuration.checksum": "3d03706d9ca9cfb206f00c437c272955",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -67,11 +81,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Tony\Desktop\Talkative\src" />
+      <recent name="C:\Users\Tony\Desktop\Talkative" />
       <recent name="$PROJECT_DIR$/frontend/vendors" />
       <recent name="$PROJECT_DIR$/frontend/css" />
       <recent name="$PROJECT_DIR$/frontend" />
-      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
-      <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\c21112765\OneDrive - Cardiff University\Desktop\Talkative\frontend\vendors\bs-stepper" />
@@ -180,6 +194,7 @@
       <workItem from="1692121815464" duration="298000" />
       <workItem from="1692222749896" duration="16912000" />
       <workItem from="1692356786331" duration="7069000" />
+      <workItem from="1692408410838" duration="2351000" />
     </task>
     <task id="LOCAL-00001" summary="new gitigonore file">
       <created>1689282546007</created>
@@ -314,7 +329,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692379837858</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="fix bug 1: miss typed in main&#10;fix bug 2: a possible mistake report in database setting&#10;fix bug 3: a database structure mistake">
+      <created>1692380068872</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1692380068872</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
