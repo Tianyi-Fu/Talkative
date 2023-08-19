@@ -6,7 +6,55 @@
   <component name="ChangeListManager">
     <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="try to deployee in openstack">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Analyzer.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Analyzer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Talkative-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Talkative-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application 2.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/TalkativeApplication 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/config/MpConfig 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/CreateInfoController 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/ErrorController 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/FeedBackRecordAndUserInfoController 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/FeedbackController 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/FileDownloadController 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/TranscriptController 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/UserController 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$ChatParam 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$FeedbackSaveParam 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$FeedbackSaveParamAndChatId 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$QueryParam 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$QuestionVo 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$SaveParam 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$Vo 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/error/Exception 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/mapper/ChatRecordMapper 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/mapper/CreateInfoMapper 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/mapper/FeedBackRecordAndUserInfoMapper 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/mapper/Mapper 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/mapper/TranscriptMapper 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/ChatRecord 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/CreateUserInfo 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/Demo 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/FeedbackRecord 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/FeedbackUserInfo 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/Question 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/Result 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/User 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/repository/UserRepository 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/CreateInfoService 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/FeedBackRecordAndUserInfoService 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/FeedbackService 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/TranscriptService 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/util/AIUtil 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/util/BeanUtil 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/util/JsonUtil 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles 2.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles 2.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +70,17 @@
         <option value="JavaScript File" />
         <option value="Class" />
       </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
     </option>
   </component>
   <component name="Git.Settings">
@@ -50,23 +109,25 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Tony/Desktop/Talkative/src",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "spring.configuration.checksum": "3d03706d9ca9cfb206f00c437c272955",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Tony/Desktop/Talkative/src&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;3d03706d9ca9cfb206f00c437c272955&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -185,7 +246,9 @@
       <workItem from="1692121815464" duration="298000" />
       <workItem from="1692222749896" duration="16912000" />
       <workItem from="1692356786331" duration="7069000" />
-      <workItem from="1692408410838" duration="5350000" />
+      <workItem from="1692408410838" duration="7117000" />
+      <workItem from="1692448687578" duration="347000" />
+      <workItem from="1692449110151" duration="357000" />
     </task>
     <task id="LOCAL-00001" summary="new gitigonore file">
       <created>1689282546007</created>
@@ -341,7 +404,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692415055066</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="try to deployee in openstack">
+      <created>1692446058188</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1692446058188</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

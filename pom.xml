@@ -112,5 +112,20 @@
         </dependency>
 
     </dependencies>
-
+    <build>
+        <plugins>
+            <!-- Spring Boot Maven插件，用于创建可执行的JAR文件 -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
