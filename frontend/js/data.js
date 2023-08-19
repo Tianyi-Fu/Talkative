@@ -1,4 +1,25 @@
-var table=[
+function getData(url,call,par){
+	$.ajax({
+		url: url,
+        data:par||'{}',
+        dataType:"json",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        async : false,
+		type: "POST",
+		success: function(data){
+            var code=data.code||data.status;
+            if (code == 200) {
+                call(data.data);
+            } else {
+                var meaages=data.message||data.error;
+                alert(meaasge);
+            }
+		}
+	});
+}
+/*var table=[
     {"id":"1","review_text":"Cannot get account on line to go through I have act code Apple I pad I only have apple I pad Not sure Ok will phone Adrian flux and get document sent in post. Thank you.","sentiment_ntlk":"Negative","sentiment_flair":"NEGATIVE","sentiment_bert":"NEGATIVE","topic":"thank (0.03) appl (0.02) pad (0.02)","chat_record_id":"635385"},
     {"id":"2","review_text":"I have been a Mitel engineer for over 20 years and never heard of talkative you are big in Mitel I see you have the Bravissimo account that use to be a 4Sight customer you don't have Mitel engineers the online stuff for Ignite you have made is very good Mitel don't have anything like it I have made my own but not as good as yours but you outsource this have you got AI working and if so which customer and can I check out the bot online I am looking to set up a demo but not getting any feedback from the field so I imagine its not that easy never heard of them Olive and 4Sight are two of the best in the UK but not your guys do you know ALC from Mitel he is working on AI for Olive I am trying to reach out to other that have started the journey as Mitel documention not that good do you get that stuff? I was looking for a new challenge. I will dig into it do you start with coursera or do I need to get demo up and running first??? thanks I better got on with some work now. but well done on the site. you need to get it out there on linkdin as I have not seen you. john smith nice one  thanks bye","sentiment_ntlk":"Positive","sentiment_flair":"POSITIVE","sentiment_bert":"NEGATIVE","topic":"thank (0.02) talk (0.02) chat (0.01)","chat_record_id":"642035"},
     {"id":"3","review_text":"Hello in reference to this https://support.talkative.uk/technical/adding-scripts page we have the script implemented for a client However this CSS file https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css seems to have no other dependencies on the page and it is found to be 100% unused across page templates for our client Could this line of code \"\"<link rel=\"\"stylesheet\"\" href=\"\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\"\">\"\" be removed from the script as it contributes to the site loading time but doesn't seem to be contributing much to the page? Ok thank you. Can you give us a screenshot example of what the missing icons would be and how this would look in practice? Happy to take this over to email or a phone call if that would be easier Is the one on the right with and the one on the left without? Oh right I see  so essentially it is just the chat bubble? & removing the font awesome line would also remove these other icons you mention? Thank you so much :) this is super helpful. I think this is it thank you","sentiment_ntlk":"Positive","sentiment_flair":"NEGATIVE","sentiment_bert":"NEGATIVE","topic":"thank (0.04) chat (0.02) function (0.01)","chat_record_id":"645620"},
@@ -53,3 +74,64 @@ var table=[
 		html+="<tr><td scope=\"col\">"+table[i].id+"</td><td scope=\"col\" title=\""+table[i].review_text.replace(/\"/g,"'")+"\">"+(table[i].review_text.length>170?(table[i].review_text.replace(/\"/g,"'").substring(0,170)+"..."):table[i].review_text.replace(/\"/g,"'"))+"</td><td scope=\"col\">"+table[i].sentiment_ntlk+"</td><td scope=\"col\">"+table[i].sentiment_flair+"</td><td scope=\"col\">"+table[i].sentiment_bert+"</td><td scope=\"col\">"+table[i].topic+"</td><td scope=\"col\">"+table[i].chat_record_id+"</td></tr>";
 	}
 	document.getElementById("feedbackUserTableTbody").innerHTML=html;
+*/
+	$("#generate-excel").click(function(){
+		var excel=new ExcelGen({"src_id":"feedbackUserTable","show_header":true});
+		excel.generate();
+	});
+function loadTotal(){
+	getData("/feedbackrecord/count",function(data){
+		$("#feedbackTotal").html(data.total);
+	});
+	getData("/chatrecord/count",function(data){
+		$("#chatRecordTotal").html(data.total);
+	});
+}
+function loadPeviewanalysisLits(){
+    getData("/reviewanalysis/list",function(data){
+        var html="";
+        var table=data.list;
+        for(var i in table){
+            html+="<tr><td scope=\"col\">"+table[i].id+"</td><td scope=\"col\" title=\""+table[i].review_text.replace(/\"/g,"'")+"\">"+(table[i].review_text.length>170?(table[i].review_text.replace(/\"/g,"'").substring(0,170)+"..."):table[i].review_text.replace(/\"/g,"'"))+"</td><td scope=\"col\">"+table[i].sentiment_ntlk+"</td><td scope=\"col\">"+table[i].sentiment_flair+"</td><td scope=\"col\">"+table[i].sentiment_bert+"</td><td scope=\"col\">"+table[i].topic+"</td><td scope=\"col\">"+table[i].chat_record_id+"</td></tr>";
+        }
+        $("#feedbackUserTableTbody").html(html);
+    },'{"page":1,"size":10000}');
+}
+function loadPeviewanalysisSentiment(){
+    getData("/reviewanalysis/sentiment",function(data){
+        var ntlk=data.sentiment_ntlk[0];
+        var flair=data.sentiment_flair[0];
+        var bert=data.sentiment_bert[0];
+        optionmyd.series[0].data=[ntlk.Neutral,flair.Neutral,bert.Neutral];
+        optionmyd.series[1].data=[ntlk.Negative,flair.Negative,bert.Negative];
+        optionmyd.series[2].data=[ntlk.Positive,flair.Positive,bert.Positive];
+        var myChart = echarts.init(document.getElementById('chartmain_zhexiao_myd'));
+        myChart.setOption(optionmyd);
+    });
+}
+function loadPeviewanalysisTopic(){
+    getData("/reviewanalysis/topic",function(data){
+        var topic=data.list;
+        var keys=data.key;
+        var data=[];
+        var data2=[];
+        for (var key in keys) {
+            data.push(topic[keys[key]]);
+            data2.push({value: topic[keys[key]], name: keys[key]});
+        }
+        topicoption.xAxis.data=keys;
+        topicoption.series[0].data=data;
+        topicoption.series[1].data=data;
+        var myChart = echarts.init(document.getElementById('chartmain_tiaoxin_topic'));
+        myChart.setOption(topicoption);
+
+        topicoption_bz.legend.data=keys;
+        topicoption_bz.series[0].data=data2;
+        var myChart = echarts.init(document.getElementById('chartmain_bingzhuan'));
+        myChart.setOption(topicoption_bz);
+    });
+}
+loadTotal();
+loadPeviewanalysisLits();
+loadPeviewanalysisSentiment();
+loadPeviewanalysisTopic();

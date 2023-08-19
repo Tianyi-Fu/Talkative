@@ -68,7 +68,7 @@ function load(page, size, chatRecordID, satisfaction, agentName, datepicker, dat
             data.data.list.forEach(user => {
                 if (1 == user.answer || 2 == user.answer) {
                     user.answer = "<div><input style=\"background-color: red;\" class='answer'  placeholder=\"unsatisfied\" disabled/></div>"
-                } else if (3 == user.answer || 4 == user.answer) {
+                } else if (2 == user.answer || 4 == user.answer) {
                     user.answer = "<div><input style=\"background-color: yellow;\" class='answer'  placeholder=\"neutral\" disabled/></div>"
                 } else {
                     user.answer = "<div><input style=\"background-color: green;\" class='answer' placeholder=\"satisfied\" disabled/></div>"
@@ -83,7 +83,6 @@ function load(page, size, chatRecordID, satisfaction, agentName, datepicker, dat
             total = data.data.total
             pages = data.data.page
             document.getElementById("totalPages").value = data.data.page
-            document.getElementById("totalCount").value = data.data.total
             // if (!typeOne){
             //     if (type) {
             //         ++currentPage
@@ -154,7 +153,7 @@ function buttonSelect() {
     var agentName = document.getElementById("agentName").value
     var datepicker = getData(document.getElementById("datepicker").value)
     var datepicker2 = getData(document.getElementById("datepicker2").value)
-    load(1, size, chatRecordID, satisfaction, agentName, datepicker, datepicker2)
+    load(currentPage, size, chatRecordID, satisfaction, agentName, datepicker, datepicker2)
     let myul = document.getElementById('feedbackUserTableTbody');
     while (myul.hasChildNodes()) {
         myul.removeChild(myul.firstChild);
@@ -172,10 +171,6 @@ function reset() {
     var agentName = document.getElementById("agentName").value
     var datepicker = getData(document.getElementById("datepicker").value)
     var datepicker2 = getData(document.getElementById("datepicker2").value)
-    let myul = document.getElementById('feedbackUserTableTbody');
-    while (myul.hasChildNodes()) {
-        myul.removeChild(myul.firstChild);
-    }
     load(currentPage, size, chatRecordID, satisfaction, agentName, datepicker, datepicker2)
 }
 
