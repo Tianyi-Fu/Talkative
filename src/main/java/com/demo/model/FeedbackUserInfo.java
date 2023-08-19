@@ -18,7 +18,7 @@ import java.sql.Timestamp;
 public class FeedbackUserInfo {
 
     @TableId(value = "id", type = IdType.AUTO)
-    private int id;
+    private Integer id;
 
     private String firstName;
 
