@@ -118,13 +118,6 @@
             </a>
         </li>
 
-        <!-- Nav Item  -->
-        <li class="nav-item">
-            <a class="nav-link" href="questionDetails.html">
-                <i class="fas fa-fw fa-wrench"></i>
-                <span>Questions Details</span>
-            </a>
-        </li>
 
         <!-- Divider -->
         <hr class="sidebar-divider">
@@ -229,25 +222,97 @@
 
                     <!--                    <div class="tbl-fixed" style="margin-left: -233px;width: 1600px;">-->
                     <div class="tbl-fixed" style="width: 100%;max-width: 100%;overflow-x: auto">
-                        <div style="width: 1700px">
-                            <input type="text" id="chatRecordID" placeholder="Please enter ChatRecord_NB" style="width: 220px;height: 50px">
-                            <input type="text" id="satisfaction" placeholder="Please enter Satisfaction" style="width: 220px;height: 50px">
-                            <input type="text" id="agentName" placeholder="Please enter agentName" style="width: 220px;height: 50px">
-                            <!--                        <input type="date"  style="width: 220px;height: 50px"> &#45;&#45;&#45;&#45;&#45;&#45;-->
-                            <!--                        <input type="date"  style="width: 220px;height: 50px">-->
-                            <label for="datepicker">Select Date:</label>
-                            <input type="text" id="datepicker"> --
-                            <input type="text" id="datepicker2">
-                            <!--                        <input type="date" id="datepicker">-->
 
-                            <button type="button" style="width: 220px; height: 50px" onclick="buttonSelect()">
-                                search
-                            </button>
-                            <button type="button" style="width: 220px; height: 50px" onclick="reset()">
-                                reset
-                            </button>
+                        <div class="row">
+
+                            <!-- Area Chart -->
+                            <div class="col-xl-8 col-lg-7">
+                                <div class="card shadow mb-4">
+                                    <!-- Card Header - Dropdown -->
+                                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h6 class="m-0 font-weight-bold text-primary">Filter</h6>
+                                        <div class="dropdown no-arrow">
+                                        </div>
+                                    </div>
+                                    <!-- Card Body -->
+                                    <div class="card-body">
+                                        <!-- First Row -->
+                                        <div class="row mb-3">
+                                            <div class="col-md-4">
+                                                <input type="text" id="chatRecordID" placeholder="ChatRecord_NB" class="form-control">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="text" id="satisfaction" placeholder="Satisfaction" class="form-control">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="text" id="agentName" placeholder="Agent Name" class="form-control">
+                                            </div>
+                                        </div>
+                                        <!-- Second Row -->
+                                        <div class="row mb-3">
+                                            <div class="col-md-4">
+                                                <label for="datepicker">Select Date:</label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="text" id="datepicker" class="form-control">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="text" id="datepicker2" class="form-control">
+                                            </div>
+                                        </div>
+                                        <!-- Third Row -->
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <button type="button" class="btn btn-primary btn-block" onclick="buttonSelect()">
+                                                    Search
+                                                </button>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <button type="button" class="btn btn-secondary btn-block" onclick="reset()">
+                                                    Reset
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card border-left-primary shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col-8">
+                                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                    Feedback：
+                                                </div>
+                                                <div class="h3 font-weight-bold text-gray-800" style="margin-top: 10px;">
+                                                    <input type="text" disabled style="width: 60px; border: none; text-align: center; background: transparent;" id="totalCount">
+                                                </div>
+                                            </div>
+                                            <div class="col-4 text-center">
+                                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--                            <div>-->
+                            <!--                                feedback： <input type="text" disabled style="width: 20px;border: none;margin-top: 16px" id="totalCount">-->
+                            <!--                            </div>-->
                         </div>
-                        <table id="feedbackUserTable" class="table table-condensed" style="width: 100%;max-width: 100%;overflow-x: auto">
+
+
+
+                        <div class="col-sm-12 mb-4 d-flex justify-content-between align-items-center">
+                            <h1 class="h3 mb-0 text-gray-800">Data Sheet</h1>
+                            <a href="http://127.0.0.1:8081/download/excel" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" style="font-size: 14px;">
+                                <i class="fas fa-download fa-sm text-white-50"></i> Download
+                            </a>
+                        </div>
+
+
+
+                        <table id="feedbackUserTable" class="table table-condensed" style="width: 100%;max-width: 100%;overflow-x: auto;margin-top: 6px">
                             <thead>
                             <tr>
                                 <th scope="col">UID</th>
@@ -282,6 +347,8 @@
                 <div id="questionss">
 
                 </div>
+                <button type="button" class="btn btn-primary btn-xs" onclick="downloadQuestion()">Download</button>
+
             </div>
         </div>
 
@@ -291,6 +358,7 @@
                 <h2>Transcript</h2>
                 <div id="transcript">
                 </div>
+                <button type="button" class="btn btn-primary btn-xs" onclick="downloadTranscript()">Download</button>
             </div>
         </div>
 
@@ -368,7 +436,57 @@
 
 <script>
 
+    function analysis(feedbackRecordId) {
+        $.ajax({
+            url: "http://127.0.0.1:8081/qry/analysis/"+feedbackRecordId,
+            method: 'get',
+            success: function (data) {
+                var json = JSON.parse(data.data)
+                json["suggestions"]
+
+
+                function generateTableRow(user) {
+                    return "<p><span>" + user + "</span></p> ";
+                }
+
+                const tbody = $("#analysis");
+
+                json.forEach(user => {
+                    // var dd = "<p>question：<span>"+user.question+"</span></p> <p>answer：<span>"+user.answer+"</span></p> "
+                    tbody.append(generateTableRow(user));
+                });
+                var popup = document.getElementById("popup4");
+                popup.style.display = "block";
+            },
+            error: function (error) {
+                console.log("Error fetching data:", error);
+            }
+
+        });
+    }
+    function analysisClose() {
+        let myul = document.getElementById('analysis');
+        while (myul.hasChildNodes()) {
+            myul.removeChild(myul.firstChild);
+        }
+        var popup = document.getElementById("popup4");
+        popup.style.display = "none";
+    }
+
+
+    function downloadTranscript() {
+        // var href =
+        // document.getElementById("okDownload")
+        window.location.href='http://127.0.0.1:8081/download/excel/transcript/'+this.feedbackRecordId
+        // window.location.href='http://127.0.0.1:8081/download/excel'
+    }
+    function downloadQuestion() {
+        window.location.href='http://127.0.0.1:8081/download/excel/question/'+this.feedbackRecordId
+    }
+    var feedbackRecordId;
+
     function showPopup(feedbackRecordId) {
+        this.feedbackRecordId = feedbackRecordId
         var json = {"feedbackRecordId": feedbackRecordId}
         $.ajax({
             url: "http://127.0.0.1:8081/question/list",
@@ -407,6 +525,7 @@
     }
 
     function showPopup2(feedbackRecordId) {
+        this.feedbackRecordId = feedbackRecordId
         var json = {"feedbackRecordId": feedbackRecordId}
         $.ajax({
             url: "http://127.0.0.1:8081/transcript/list",
