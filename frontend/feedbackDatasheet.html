@@ -111,6 +111,13 @@
             </a>
         </li>
 
+        <!-- Nav Item  -->
+        <li class="nav-item">
+            <a class="nav-link" href="questionDetails.html">
+                <i class="fas fa-fw fa-wrench"></i>
+                <span>Questions Details</span>
+            </a>
+        </li>
 
         <!-- Divider -->
         <hr class="sidebar-divider">
@@ -226,19 +233,14 @@
                             <input type="text" id="datepicker2">
                             <!--                        <input type="date" id="datepicker">-->
 
-                            <button type="button" style="width: 178px; height: 50px" onclick="buttonSelect()">
+                            <button type="button" style="width: 220px; height: 50px" onclick="buttonSelect()">
                                 search
                             </button>
-                            <button type="button" style="width: 178px; height: 50px" onclick="reset()">
+                            <button type="button" style="width: 220px; height: 50px" onclick="reset()">
                                 reset
                             </button>
-                            <a type="button" class="btn btn-danger btn-xs" href="http://127.0.0.1:8081/download/excel">Download</a>
-
                         </div>
-                        <div>
-                            feedback： <input type="text" disabled style="width: 20px;border: none;margin-top: 16px" id="totalCount">
-                        </div>
-                        <table id="feedbackUserTable" class="table table-condensed" style="width: 100%;max-width: 100%;overflow-x: auto;margin-top: 6px">
+                        <table id="feedbackUserTable" class="table table-condensed" style="width: 100%;max-width: 100%;overflow-x: auto">
                             <thead>
                             <tr>
                                 <th scope="col">UID</th>
@@ -273,8 +275,6 @@
                 <div id="questionss">
 
                 </div>
-                <button type="button" class="btn btn-danger btn-xs" onclick="downloadQuestion()">Download</button>
-
             </div>
         </div>
 
@@ -284,7 +284,6 @@
                 <h2>Transcript</h2>
                 <div id="transcript">
                 </div>
-                <button type="button" class="btn btn-danger btn-xs" onclick="downloadTranscript()">Download</button>
             </div>
         </div>
         <div id="popup3" class="popup">
@@ -349,19 +348,8 @@
 </body>
 
 <script>
-    function downloadTranscript() {
-        // var href =
-        // document.getElementById("okDownload")
-        window.location.href='http://127.0.0.1:8081/download/excel/transcript/'+this.feedbackRecordId
-        // window.location.href='http://127.0.0.1:8081/download/excel'
-    }
-    function downloadQuestion() {
-        window.location.href='http://127.0.0.1:8081/download/excel/question/'+this.feedbackRecordId
-    }
-    var feedbackRecordId;
 
     function showPopup(feedbackRecordId) {
-        this.feedbackRecordId = feedbackRecordId
         var json = {"feedbackRecordId": feedbackRecordId}
         $.ajax({
             url: "http://127.0.0.1:8081/question/list",
@@ -400,7 +388,6 @@
     }
 
     function showPopup2(feedbackRecordId) {
-        this.feedbackRecordId = feedbackRecordId
         var json = {"feedbackRecordId": feedbackRecordId}
         $.ajax({
             url: "http://127.0.0.1:8081/transcript/list",
