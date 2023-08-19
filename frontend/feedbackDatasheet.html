@@ -43,6 +43,13 @@
             width: 80%;
         }
 
+        .analysis-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f8f8f8;
+            margin-top: 10px;
+        }
+
         .close {
             color: #aaa;
             float: right;
@@ -286,6 +293,8 @@
                 </div>
             </div>
         </div>
+
+
         <div id="popup3" class="popup">
             <div class="popup-content" style="width: 50%">
                 <span class="close" onclick="hidePopup3()">&times;</span>
@@ -296,17 +305,27 @@
                     <p style="width: 300px;text-align: right">lastName：<input type="text" placeholder="lastName" id="lastName"></p>
                     <p style="width: 300px;text-align: right">email：<input type="text" placeholder="email" id="email"></p>
                     <p style="width: 300px;text-align: right">agentName：<input type="text" placeholder="agentName" id="agentNames"></p>
-                    <button onclick="onsubmitEdit()" style="margin-left: 107px">submit</button>
+                    <button type="button" class="btn btn-primary btn-xs" onclick="onsubmitEdit()" style="margin-left: 107px">submit</button>
                 </div>
             </div>
         </div>
         <div id="paginationContainer"></div>
 
-        <div style=" display: table-cell; text-align: center; vertical-align: middle;">
-            <span>Total Pages : <input id="totalPages" type="text" disabled style="width: 20px;border: none;">     &ensp;&ensp;&ensp;&ensp;         </span>
-            <button id="prevButton" onclick="up()" style="width: 100px;">Prev</button>
-            <button id="nextButton" onclick="down()" style="width: 100px">Next</button>
-            <button id="lastButton" onclick="lastb()" style="width: 100px">Last</button>
+        <div style="display: table-cell; text-align: center; vertical-align: middle;">
+            <span style="font-size: 18px;">Total Pages: <input id="totalPages" type="text" disabled style="width: 30px; border: none;"></span>
+            <button id="prevButton" onclick="up()" class="btn btn-primary ml-2">Prev</button>
+            <button id="nextButton" onclick="down()" class="btn btn-primary mx-2">Next</button>
+            <button id="lastButton" onclick="lastb()" class="btn btn-primary mr-2">Last</button>
+        </div>
+
+        <div id="popup4" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="analysisClose()">&times;</span>
+                <h2>Analysis Result</h2>
+                <h3>Get suggestions:</h3>
+                <div id="analysis" class="analysis-box">
+                </div>
+            </div>
         </div>
 
         <!-- Footer -->

@@ -12,6 +12,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,15 +31,7 @@ public class FeedbackController {
     @Autowired
     private final FeedbackService service;
 
-    /*    *//**
-     * Create
-     *//*
-    @PostMapping("/create/{agentName}")
-    public Result create(@RequestBody List<Data.FeedbackSaveParam> param, @PathVariable String agentName) throws Exception {
 
-        service.create(param, agentName);
-        return Result.success();
-    }*/
     /**
      * Create
      */
@@ -45,6 +39,7 @@ public class FeedbackController {
     public Result create(@RequestBody Data.FeedbackSaveParamAndChatId param, @PathVariable String agentName) throws Exception {
 
         service.create(param.getList(), agentName, param.getChatRecordId(),param.getFeedbackRecordId());
+        runPythonScript();
         return Result.success();
     }
 
@@ -84,5 +79,40 @@ public class FeedbackController {
         String agentName = AIUtil.chatWithAI(client, chatMessages);
         questionVo.setAgentName(agentName);
         return Result.success(questionVo);
+    }
+
+
+    private void runPythonScript() {
+        try {
+            String command = "python python/Analyzer.py";
+            System.out.println("Attempting to run python script with command: " + command);
+
+            Process process = Runtime.getRuntime().exec(command);
+
+            process.waitFor(); // Move this line up
+
+            // Read the standard output of the script
+            BufferedReader stdInput = new BufferedReader(new InputStreamReader(process.getInputStream()));
+
+            // Read the standard error of the script
+            BufferedReader stdError = new BufferedReader(new InputStreamReader(process.getErrorStream()));
+
+            // Read the output from the command
+            System.out.println("Standard Output:\n");
+            String s = null;
+            while ((s = stdInput.readLine()) != null) {
+                System.out.println(s);
+            }
+
+            // Read any errors from the attempted command
+            System.out.println("Standard Error:\n");
+            while ((s = stdError.readLine()) != null) {
+                System.out.println(s);
+            }
+
+            System.out.println("Python script finished.");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
