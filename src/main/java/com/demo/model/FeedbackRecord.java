@@ -14,7 +14,7 @@ import java.sql.Timestamp;
 public class FeedbackRecord {
 
     @TableId(value = "id", type = IdType.AUTO)
-    private Integer id;
+    private int id;
 
     private Integer questionId;
 

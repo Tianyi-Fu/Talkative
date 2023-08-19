@@ -57,7 +57,19 @@ public interface FeedBackRecordAndUserInfoMapper {
                                                                @Param("satisfaction") String satisfaction, @Param("agentName") String agentName,
                                                                @Param("beginTime") String beginTime, @Param("endTime") String endTime);
 
-    @Select("select question,answer from feedback_record where feedback_record_id = #{feedbackRecordId}")
+    @Select("<script>" +
+            "select distinct(dd.feedback_record_id),dd.chat_record_id,dd.agent_name,dd.transcript, dd.first_name," +
+            "        dd.last_name,dd.email,dd.created_at,fr.answer from feedback_record as fr," +
+            "        (" +
+            "        select feedback_record_id,cc.chat_record_id,cc.agent_name,cc.transcript, f.first_name," +
+            "        f.last_name,f.email,f.created_at from feedback_user_info f,chat_record as cc" +
+            "        where cc.chat_record_id = f.chat_record_id" +
+            "        ) as dd where fr.feedback_record_id = dd.feedback_record_id and fr.question_id = 1" +
+            "        order by dd.created_at desc" +
+            "</script>")
+    List<Map<String,Object>> selectFeedBackRecordAndUserInfoExcel();
+
+    @Select("select question_id,question,answer from feedback_record where feedback_record_id = #{feedbackRecordId}")
     List<Map<String, Object>> selectFeedBackRecordByRecordId(String feedbackRecordId);
 
     @Select("select chat_record_id,transcript from chat_record where feedback_record_id = #{feedbackRecordId}")

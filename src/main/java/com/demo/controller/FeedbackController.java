@@ -9,7 +9,6 @@ import com.demo.serivce.FeedbackService;
 import com.demo.util.AIUtil;
 import com.demo.util.JsonUtil;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.BufferedReader;
@@ -28,7 +27,6 @@ import java.util.List;
 @CrossOrigin
 public class FeedbackController {
 
-    @Autowired
     private final FeedbackService service;
 
 

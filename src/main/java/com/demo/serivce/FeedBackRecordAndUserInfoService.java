@@ -41,6 +41,10 @@ public class FeedBackRecordAndUserInfoService {
         return new Object[]{iPage.getRecords(), iPage.getTotal(), iPage.getPages(), iPage.getSize()};
     }
 
+    public List<Map<String,Object>> selectFeedBackRecordAndUserInfoExcel(){
+        return feedBackRecordAndUserInfoMapper.selectFeedBackRecordAndUserInfoExcel();
+    }
+
     public List<Map<String, Object>> selectFeedBackRecordByRecordId(String feedbackRecordId) {
         if (StringUtils.isBlank(feedbackRecordId)) {
             return null;
