@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="fix bug 1: miss typed in main&#10;fix bug 2: a possible mistake report in database setting&#10;fix bug 3: a database structure mistake">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Terraform/c22045328-openrc.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Terraform/fty_keypair.key" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Terraform/fty_keypair.key.pub" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Terraform/plan.tf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Terraform/server.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Terraform/variables.tf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portal.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/create_database.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="try to deployee in openstack" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -194,7 +181,7 @@
       <workItem from="1692121815464" duration="298000" />
       <workItem from="1692222749896" duration="16912000" />
       <workItem from="1692356786331" duration="7069000" />
-      <workItem from="1692408410838" duration="2351000" />
+      <workItem from="1692408410838" duration="3006000" />
     </task>
     <task id="LOCAL-00001" summary="new gitigonore file">
       <created>1689282546007</created>
@@ -336,7 +323,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692380068872</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="try to deployee in openstack">
+      <created>1692414101308</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1692414101308</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,7 +379,8 @@
     <MESSAGE value="Fix some bugs." />
     <MESSAGE value="Edited style of feedback modal &amp; added stepper at th top of modal; still need to fix show active step issue" />
     <MESSAGE value="fix bug 1: miss typed in main&#10;fix bug 2: a possible mistake report in database setting&#10;fix bug 3: a database structure mistake" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bug 1: miss typed in main&#10;fix bug 2: a possible mistake report in database setting&#10;fix bug 3: a database structure mistake" />
+    <MESSAGE value="try to deployee in openstack" />
+    <option name="LAST_COMMIT_MESSAGE" value="try to deployee in openstack" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -103,7 +103,7 @@ echo "cloning repository..."
 ssh-agent bash -c 'ssh-add fty_keypair.key;git clone -b develop git@git.cardiff.ac.uk:c22045328/Talkative.git'
 
 echo "changing to repository directory..."
-cd devops_tianyi-fu/
+cd Talkative/
 
 mysql -uroot -pcomsc < src/create_database.sql
 
