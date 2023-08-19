@@ -11,5 +11,5 @@ FROM openjdk:11-jdk-slim
 #ENTRYPOINT ["java", "-jar", "build/libs/Bipsync.jar"]
 VOLUME /tmp
 
-COPY build/libs/Talkative-0.0.1-SNAPSHOT.jar app.jar
+COPY target/Talkative-1.0-SNAPSHOT.jar app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]

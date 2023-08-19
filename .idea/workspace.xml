@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="try to deployee in openstack" />
+    <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="try to deployee in openstack">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,6 +59,7 @@
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/Tony/Desktop/Talkative/src",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -181,7 +185,7 @@
       <workItem from="1692121815464" duration="298000" />
       <workItem from="1692222749896" duration="16912000" />
       <workItem from="1692356786331" duration="7069000" />
-      <workItem from="1692408410838" duration="3006000" />
+      <workItem from="1692408410838" duration="5350000" />
     </task>
     <task id="LOCAL-00001" summary="new gitigonore file">
       <created>1689282546007</created>
@@ -330,7 +334,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692414101308</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="try to deployee in openstack">
+      <created>1692415055066</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1692415055066</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
