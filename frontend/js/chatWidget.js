@@ -10,13 +10,6 @@ $(document).ready(() => {
                     if (shadow.querySelector("button[title='Finish']")) {
                         console.log('found Finish2')
 
-                        // If customer confirm ends conversation, extract conversation transcript
-                        // let customer = shadow.querySelectorAll("#main-app .bg-primary .whitespace-pre-line");
-                        // customer.forEach((item) => console.log(item.innerText));
-                        //
-                        // let agent = shadow.querySelectorAll("#main-app .bg-white .whitespace-pre-line");
-                        // agent.forEach((item) => console.log(item.innerText));
-
                         let conversation = shadow.querySelector(".chat-thread-container").childNodes;
                         let conversationArr = Array.from(conversation);
                         let agentName = "flex pt-2 justify-start text-left";
