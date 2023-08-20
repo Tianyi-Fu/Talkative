@@ -51,9 +51,18 @@ $(document).ready(() => {
                         conversationObj.map((item) => {
                             newConversation.push({[item.agentName || item.customerName]: item.agentMsg || item.customerMsg});
                         })
-                        console.log(newConversation);
+                        // console.log(newConversation);
 
                         $(shadow.querySelector("button[title='Finish']")).click(() => {
+                            createTranscriptObject({"agent_name": sender_agent, "transcript": newConversation});
+                        })
+
+                        // Detect when user closes browser
+                        $(window).on("beforeunload", () => {
+                            alert('test')
+                            // Hide Talkative widget
+                            document.querySelector("#talkative-engage").style.display = "none";
+                            loadModalContent();
                             createTranscriptObject({"agent_name": sender_agent, "transcript": newConversation});
                         })
                     }
@@ -69,25 +78,4 @@ $(document).ready(() => {
         let id = Date.now();
         sendTranscript(id, {...transcriptObj, "chatRecordId": id}, true);
     }
-
-    /*
-    // Agent ends conversation
-    document.querySelector("#talkative-engage").shadowRoot.querySelector("input#send-transcript");
-
-
-    let customer = document.querySelector("#talkative-engage").shadowRoot.querySelectorAll("#main-app .bg-primary .whitespace-pre-line");
-    customer.forEach((item) => console.log(item.innerText)); => Get Customer Message
-
-    let agent = document.querySelector("#talkative-engage").shadowRoot.querySelectorAll("#main-app .bg-white .whitespace-pre-line");
-    agent.forEach((item) => console.log(item.innerText)); => Get Agent Message
-
-
-    { id: xxxx,
-    messages: [
-        { message: "",
-        sender_type: "Customer" / "User",
-        sender_name: "Customer" / "agent's name" }
-        ]
-    }
-     */
 })
