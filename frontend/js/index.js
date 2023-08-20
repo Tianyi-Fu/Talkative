@@ -1,4 +1,5 @@
-let baseUrl = 'http://127.0.0.1:8081'
+// let baseUrl = 'http://127.0.0.1:8081'
+let baseUrl = 'http://My_web1:8081'
 
 $(document).ready(() => {
     let agentName = '';
