@@ -5,56 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="try to deployee in openstack">
+      <change afterPath="$PROJECT_DIR$/Talkative.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wait-for-it.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_8_13,_16_19_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_8_13__16_19__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/feedbackQuestionModal.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/feedbackQuestionModal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/startSurveyModal.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/startSurveyModal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/js/startSurveyModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/startSurveyModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portal.conf" beforeDir="false" afterPath="$PROJECT_DIR$/portal.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python/Analyzer.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Analyzer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Talkative-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Talkative-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application 2.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/TalkativeApplication 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/config/MpConfig 3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/CreateInfoController 3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/ErrorController 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/FeedBackRecordAndUserInfoController 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/FeedbackController 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/FileDownloadController 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/TranscriptController 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/UserController 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$ChatParam 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$FeedbackSaveParam 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$FeedbackSaveParamAndChatId 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$QueryParam 3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$QuestionVo 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$SaveParam 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$Vo 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/error/Exception 3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/mapper/ChatRecordMapper 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/mapper/CreateInfoMapper 3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/mapper/FeedBackRecordAndUserInfoMapper 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/mapper/Mapper 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/mapper/TranscriptMapper 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/ChatRecord 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/CreateUserInfo 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/Demo 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/FeedbackRecord 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/FeedbackUserInfo 3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/Question 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/Result 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/User 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/repository/UserRepository 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/CreateInfoService 3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/FeedBackRecordAndUserInfoService 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/FeedbackService 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/TranscriptService 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/util/AIUtil 3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/util/BeanUtil 3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/util/JsonUtil 3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles 2.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles 2.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/FileDownloadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/controller/FileDownloadController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/model/Result.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/FeedbackAnalysisService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/serivce/FeedbackAnalysisService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/util/JsonUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/util/JsonUtil.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,13 +90,14 @@
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
     &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Tony/Desktop/Talkative/src&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Tony/Desktop/Talkative&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;3d03706d9ca9cfb206f00c437c272955&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -133,8 +108,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Tony\Desktop\Talkative\src" />
       <recent name="C:\Users\Tony\Desktop\Talkative" />
+      <recent name="C:\Users\Tony\Desktop\Talkative\src" />
       <recent name="$PROJECT_DIR$/frontend/vendors" />
       <recent name="$PROJECT_DIR$/frontend/css" />
       <recent name="$PROJECT_DIR$/frontend" />
@@ -159,7 +134,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript Debug.home.html">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -201,6 +176,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="home.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost/static/home.html">
+      <method v="2" />
+    </configuration>
     <configuration name="TalkativeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="Talkative" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.demo.TalkativeApplication" />
@@ -216,6 +194,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.home.html" />
         <item itemvalue="Spring Boot.TalkativeApplication" />
       </list>
     </recent_temporary>
@@ -248,7 +227,10 @@
       <workItem from="1692356786331" duration="7069000" />
       <workItem from="1692408410838" duration="7117000" />
       <workItem from="1692448687578" duration="347000" />
-      <workItem from="1692449110151" duration="357000" />
+      <workItem from="1692449110151" duration="1010000" />
+      <workItem from="1692484468212" duration="2216000" />
+      <workItem from="1692487812803" duration="18388000" />
+      <workItem from="1692555314585" duration="4427000" />
     </task>
     <task id="LOCAL-00001" summary="new gitigonore file">
       <created>1689282546007</created>
@@ -411,7 +393,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692446058188</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="try to deployee in openstack">
+      <created>1692449734794</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1692449734794</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -470,6 +459,11 @@
           <properties class="java.lang.RuntimeException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/python/Analyzer.py</url>
+          <line>159</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

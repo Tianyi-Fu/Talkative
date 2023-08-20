@@ -1,6 +1,7 @@
 $(document).ready(() => {
     // EventListeners
     $("#startBtn").on('click', () => {
+        console.log("1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111")
         $('.modal-content').empty();
         $('.modal-content').append("<div id='loading-container'><div class='spinner-border m-5' role='status'><span class='visually-hidden'>Loading...</span>");
 
@@ -30,7 +31,7 @@ $(document).ready(() => {
         function abortTimer() {
             clearInterval(timer);
 
-            $('.modal-content').load('components/feedbackQuestionModal.html', () => {
+            $('.modal-content').load('/static/components/feedbackQuestionModal.html', () => {
                 loadQuestions();
             });
         }

@@ -1,4 +1,5 @@
-let baseUrl = 'http://127.0.0.1:8081'
+// let baseUrl = 'http://127.0.0.1:8081'
+let baseUrl = 'http://localhost'
 
 $(document).ready(() => {
     let agentName = '';
@@ -60,7 +61,7 @@ function formatTranscript(conversation, chatRecordId) {
 
 function loadModalContent() {
     let modalContainer = new bootstrap.Modal(document.getElementById('modalContainer'))
-    $('.modal-content').load('components/startSurveyModal.html', () => {
+    $('.modal-content').load('/static/components/startSurveyModal.html', () => {
         modalContainer.show();
     });
 }
