@@ -5,6 +5,10 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- Include Peity library -->
+    <script src="https://cdn.staticfile.org/Chart.js/3.9.1/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -281,24 +285,68 @@
                                 <div class="card border-left-primary shadow h-100 py-2">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
-                                            <div class="col-8">
-                                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                    Feedback：
+                                            <div class="col-6">
+                                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1" style="font-size: 14px;">
+                                                    Feedback:
                                                 </div>
                                                 <div class="h3 font-weight-bold text-gray-800" style="margin-top: 10px;">
                                                     <input type="text" disabled style="width: 60px; border: none; text-align: center; background: transparent;" id="totalCount">
                                                 </div>
                                             </div>
-                                            <div class="col-4 text-center">
-                                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                            <div class="col-6">
+                                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1" style="font-size: 14px;">
+                                                    Interaction:
+                                                </div>
+                                                <div class="h3 font-weight-bold text-gray-800" style="margin-top: 10px;">
+                                                    <input type="text" disabled style="width: 60px; border: none; text-align: center; background: transparent;" id="totalInteraction">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!--                            <div>-->
                             <!--                                feedback： <input type="text" disabled style="width: 20px;border: none;margin-top: 16px" id="totalCount">-->
                             <!--                            </div>-->
+                        </div>
+
+                        <div class="row">
+
+                            <!-- Pie Chart -->
+                            <div class="col-xl-4 col-lg-5">
+                                <div class="card shadow mb-4">
+                                    <!-- Card Header - Dropdown -->
+                                    <div
+                                            class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h6 class="m-0 font-weight-bold text-primary">Participation Rate of feedback</h6>
+                                        <div class="dropdown no-arrow"></div>
+                                    </div>
+                                    <!-- Card Body -->
+                                    <div class="card-body"  style="min-height: 360px;">
+                                        <div class="col-12 mt-3">
+                                            <div class="h3 font-weight-bold text-gray-800">
+                                                <span id="participationRate"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 mt-3 text-center">
+                                            <!-- The peity chart will be inserted here -->
+                                            <canvas id="peityChart" width="200" height="200"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-7 col-lg-14 mb-4">
+                                <div class="card shadow">
+                                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h6 class="m-0 font-weight-bold text-primary">Satisfaction</h6>
+                                        <div class="dropdown no-arrow"></div>
+                                    </div>
+                                    <div class="card-body text-center" style="height: 360px;">
+                                        <!-- The satisfaction chart will be inserted here -->
+                                        <canvas id="satisfactionChart" style="width: 100%; height: 100%;"></canvas>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
 
@@ -417,6 +465,7 @@
     <i class="fas fa-angle-up"></i>
 </a>
 
+
 <!-- Include the jQuery library -->
 <!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
 
@@ -433,6 +482,40 @@
 <script src="js/sb-admin-2.min.js"></script>
 
 </body>
+<!--<script>-->
+<!--    const ctx = document.getElementById('peityChart');-->
+<!--    const data = {-->
+<!--        labels: [-->
+<!--            'No feedback',-->
+<!--            'Feedback'-->
+<!--        ],-->
+<!--        datasets: [{-->
+<!--            label: '饼图实例',-->
+<!--            data: [100, 200],-->
+<!--            backgroundColor: [-->
+<!--                'white',-->
+<!--                'rgb(54, 162, 235)'-->
+<!--            ],-->
+<!--            hoverOffset: 4-->
+<!--        }]-->
+<!--    };-->
+<!--    const config = {-->
+<!--        type: 'pie',-->
+<!--        data: data,-->
+<!--        options: {-->
+<!--            responsive: true, // 设置图表为响应式，根据屏幕窗口变化而变化-->
+<!--            maintainAspectRatio: false,// 保持图表原有比例-->
+<!--            scales: {-->
+<!--                // yAxes: [{-->
+<!--                //     ticks: {-->
+<!--                //         beginAtZero:true-->
+<!--                //     }-->
+<!--                // }]-->
+<!--            }-->
+<!--        }-->
+<!--    };-->
+<!--    const myChart = new Chart(ctx, config);-->
+<!--</script>-->
 
 <script>
 

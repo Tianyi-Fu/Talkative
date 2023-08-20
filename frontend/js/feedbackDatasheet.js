@@ -20,6 +20,8 @@ var page = 1;
 var size = 8;
 var total;
 var pages;
+var all_total;
+var participationRateValue;
 
 function load(page, size, chatRecordID, satisfaction, agentName, datepicker, datepicker2) {
     // AJAX request to fetch data from the server
@@ -82,15 +84,102 @@ function load(page, size, chatRecordID, satisfaction, agentName, datepicker, dat
             });
             total = data.data.total
             pages = data.data.page
+            all_total = data.data.all_total
+            participationRateValue = (total / all_total) * 100;
+            // Round the participation rate to two decimal places
+            var formattedParticipationRate = participationRateValue.toFixed(2);
+
             document.getElementById("totalPages").value = data.data.page
             document.getElementById("totalCount").value = data.data.total
-            // if (!typeOne){
-            //     if (type) {
-            //         ++currentPage
-            //     }else {
-            //         --currentPage
-            //     }
-            // }
+            document.getElementById("totalInteraction").value = data.data.all_total
+            document.getElementById("participationRate").textContent = formattedParticipationRate + "%";
+
+            const ctx = document.getElementById('peityChart');
+            const dataValues = [all_total - total, total];
+
+            const chartData = {
+                labels: [
+                    'No feedback',
+                    'Feedback'
+                ],
+                datasets: [{
+                    label: '饼图实例',
+                    data: dataValues,
+                    backgroundColor: [
+                        'rgb(186, 197, 204)',
+                        'rgb(54, 162, 235)'
+                    ],
+                    hoverOffset: 4
+                }]
+            };
+
+            const chartConfig = {
+                type: 'pie',
+                data: chartData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {}
+                }
+            };
+
+            const peityChart = new Chart(ctx, chartConfig);
+
+
+            // 统计满意度类别的数量
+            const ctxs = document.getElementById('satisfactionChart').getContext('2d');
+
+            const unsatisfiedCount = data.data.unsatisfiedCount;
+            const neutralCount = data.data.neutralCount;
+            const satisfiedCount = data.data.satisfiedCount;
+
+            const chartSData = {
+                labels: ['Unsatisfied', 'Neutral', 'Satisfied'],
+                datasets: [{
+                    label: 'Satisfaction Levels',
+                    data: [unsatisfiedCount, neutralCount, satisfiedCount],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.7)',
+                        'rgba(255, 206, 86, 0.7)',
+                        'rgba(75, 192, 192, 0.7)'
+                    ],
+                    borderColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(255, 206, 86)',
+                        'rgb(75, 192, 192)'
+                    ],
+                    borderWidth: 1
+                }]
+            };
+
+            const chartSConfig = {
+                type: 'bar',
+                data: chartSData,
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                stepSize: 1
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            };
+
+            const satisfactionChart = new Chart(ctxs, chartSConfig);
+
+
         },
         error: function (error) {
             console.log("Error fetching data:", error);

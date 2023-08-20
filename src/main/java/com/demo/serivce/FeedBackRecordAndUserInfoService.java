@@ -74,4 +74,13 @@ public class FeedBackRecordAndUserInfoService {
         feedBackRecordAndUserInfoMapper.updChatRecordByRecordId(feedbackRecordId,agentName);
 
     }
+
+    public int selectCountCharRecord(){
+        return feedBackRecordAndUserInfoMapper.selectCountCharRecord();
+    }
+
+
+    public int selectAnswerCountByQuestionId1(int type) {
+        return feedBackRecordAndUserInfoMapper.selectAnswerCountByQuestionId1(type);
+    }
 }
