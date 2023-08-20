@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <title>Talkative</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Vendor CSS files-->
+    <link href="vendors/bootstrap-5.2.3/css/bootstrap.css" rel="stylesheet">
+    <link href="vendors/bs-stepper/bs-stepper.css" rel="stylesheet">
+
+    <!--Vendor JS files-->
+    <script src="vendors/jquery-3.7.0/jquery-3.7.0.min.js"></script>
+    <script src="vendors/bootstrap-5.2.3/js/bootstrap.bundle.js"></script>
+    <!--    <script src="vendors/bs-stepper/bs-stepper.min.js"></script>-->
+
+    <script async>
+        import(`https://eu.engage.app/api/ecs/v1/loader/7e2a48e9-b96f-49ba-9fd4-b7a39ea48aff.js?path=${encodeURIComponent(window.location.origin + window.location.pathname)}&selectedVersion=${(new URLSearchParams(window.location.search)).get('ecsSelectedVersion') || ''}`)
+    </script>
+
+    <!-- CSS File -->
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/feedbackQuestionModal.css" rel="stylesheet">
+</head>
+
+<body>
+
+<h1 class="text-center headerFont fw-bold mb-5">
+    <p class="text-primary-emphasis">Welcome to Talkative</p>
+    <small class="text-muted">Customer Service</small>
+</h1>
+
+<div class='main'>
+    <div class="col-xl-6 col-lg-6 d-none d-xl-block"><img class="mb-2" src="../../../Talkative/frontend/images/2.png"
+                                                          width="100%" alt="">
+    </div>
+
+    <div class="container">
+        <textarea id="chat" class="textarea" rows="30" name="message"></textarea>
+        <br/>
+        <button id="submit" type="button" class="btn btn-success openBtn"
+                disabled>End Chat
+        </button>
+        <!--        <a href="/demo2/frontend/surveyForm.html" target="_blank" about="aaa"></a>-->
+    </div>
+</div>
+
+<!--Modal-->
+<div id="modalContainer" class="modal fade text-center" data-bs-backdrop="static" role="dialog" tabindex="-1"
+     aria-labelledby="modalContainerLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/chatWidget.js"></script>
+</body>
+</html>
