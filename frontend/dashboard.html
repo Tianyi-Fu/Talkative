@@ -13,7 +13,7 @@
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
     <link
             href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
             rel="stylesheet">
@@ -64,7 +64,6 @@
                 <span>Feedback Datasheet</span>
             </a>
         </li>
-
         <!-- Divider -->
         <hr class="sidebar-divider">
 
@@ -162,9 +161,12 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
+                <div class="container tbl-container">
+                    <h1 class="h3 mb-4 text-gray-800">Feedback data visualisation:</h1>
+                </div>
 
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">Data Visualisation</h1>
+                    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
                     <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                             class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                 </div>
@@ -179,8 +181,8 @@
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 fleft">
-                                            Interaction (Monthly)</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800 font50">14887</div>
+                                            Total of Feedback Received</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800 font50" id="feedbackTotal">0</div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -197,8 +199,8 @@
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1 fleft">
-                                            Interaction (Annual)</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800 font50">205617</div>
+                                            Total of Chat Record</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800 font50" id="chatRecordTotal">0</div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -209,15 +211,15 @@
                     </div>
 
                     <!-- Earnings (Monthly) Card Example -->
-                    <div class="col-xl-3 col-md-6 mb-4">
+                    <!--<div class="col-xl-3 col-md-6 mb-4">
                         <div class="card border-left-info shadow h-100 py-2">
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-info text-uppercase mb-1 fleft">Evaluation
                                         </div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800 font50">1689</div>
-                                        <!--  <div class="row no-gutters align-items-center">
+										<div class="h5 mb-0 font-weight-bold text-gray-800 font50">1689</div>
+                                        !--  <div class="row no-gutters align-items-center">
                                             <div class="col-auto">
                                                 <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800 font50">2</div>
                                             </div>
@@ -228,7 +230,7 @@
                                                          aria-valuemax="100"></div>
                                                 </div>
                                             </div>
-                                        </div>-->
+                                        </div>--
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
@@ -236,10 +238,10 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
 
                     <!-- Pending Requests Card Example -->
-                    <div class="col-xl-3 col-md-6 mb-4">
+                    <!--<div class="col-xl-3 col-md-6 mb-4">
                         <div class="card border-left-warning shadow h-100 py-2">
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
@@ -254,11 +256,11 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
 
 
                     <!-- Pending Requests Card Example -->
-                    <div class="col-xl-3 col-md-6 mb-4">
+                    <!--<div class="col-xl-3 col-md-6 mb-4">
                         <div class="card border-left-warning shadow h-100 py-2">
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
@@ -273,7 +275,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
 
                 <!-- Content Row -->
@@ -286,25 +288,17 @@
                             <!-- Card Header - Dropdown -->
                             <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Topic statistics</h6>
                                 <div class="dropdown no-arrow">
                                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                         aria-labelledby="dropdownMenuLink">
-                                        <div class="dropdown-header">Dropdown Header:</div>
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
                                 </div>
                             </div>
                             <!-- Card Body -->
                             <div class="card-body">
-                                <div class="chart-area" id="chartmain_zhe">
+                                <div class="chart-area" id="chartmain_tiaoxin_topic">
                                     <!--<canvas id="myAreaChart"></canvas>-->
 
                                 </div>
@@ -318,25 +312,17 @@
                             <!-- Card Header - Dropdown -->
                             <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Topic proportion</h6>
                                 <div class="dropdown no-arrow">
                                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                         aria-labelledby="dropdownMenuLink">
-                                        <div class="dropdown-header">Dropdown Header:</div>
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
                                 </div>
                             </div>
                             <!-- Card Body -->
                             <div class="card-body"  style="min-height: 360px;">
-                                <div class="chart-pie pt-4 pb-2" id="chartmain_bing">
+                                <div class="chart-pie pt-4 pb-2" id="chartmain_bingzhuan">
                                     <!--<canvas id="myPieChart"></canvas>-->
                                 </div>
                                 <div class="mt-4 text-center small" style="display:none">
@@ -358,30 +344,22 @@
                 <div class="row">
 
                     <!-- Area Chart -->
-                    <div class="col-xl-8 col-lg-7">
+                    <div class="col-xl-8 col-lg-7" style="display: none">
                         <div class="card shadow mb-4">
                             <!-- Card Header - Dropdown -->
                             <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Sentiment statistics</h6>
                                 <div class="dropdown no-arrow">
                                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                         aria-labelledby="dropdownMenuLink">
-                                        <div class="dropdown-header">Dropdown Header:</div>
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
                                 </div>
                             </div>
                             <!-- Card Body -->
                             <div class="card-body">
-                                <div class="chart-area" id="chartmain">
+                                <div class="chart-area" id="chartmain_tiaoxin">
                                     <!--<canvas id="myAreaChart"></canvas>-->
 
                                 </div>
@@ -390,85 +368,23 @@
                     </div>
 
                     <!-- Pie Chart -->
-                    <div class="col-xl-4 col-lg-5">
+                    <div class="col-xl-4 col-lg-5" style="display: none">
                         <div class="card shadow mb-4">
                             <!-- Card Header - Dropdown -->
                             <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Sentiment proportion</h6>
                                 <div class="dropdown no-arrow">
-                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                    <a class="dropdown-toggle" href="javascript:void(0)" role="button" id="dropdownMenuLink"
                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400" id="mydxz">Download</i>
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                         aria-labelledby="dropdownMenuLink">
-                                        <div class="dropdown-header">Dropdown Header:</div>
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
                                 </div>
                             </div>
                             <!-- Card Body -->
                             <div class="card-body" style="min-height: 360px;">
                                 <div class="chart-pie pt-4 pb-2" id="chartmain_bing22">
-                                    <!--<canvas id="myPieChart"></canvas>-->
-                                    <!--<div class="biaoge biaoge_bi" style="width:100%; height:25vh">
-                                        <ul style="display:none">
-                                            <li>
-                                                <div class="liIn">
-                                                    <p class="shu shu1">23</p>
-                                                    <p class="zi">今日收益比例</p>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="liIn">
-                                                    <p class="shu shu2">107</p>
-                                                    <p class="zi">本月收益比例</p>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="liIn">
-                                                    <p class="shu shu3">107</p>
-                                                    <p class="zi">历史收益比例</p>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="liIn">
-                                                    <p class="shu shu4">23</p>
-                                                    <p class="zi">今日收益比例</p>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="liIn">
-                                                    <p class="shu shu5">23</p>
-                                                    <p class="zi">本月收益比例</p>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="liIn">
-                                                    <p class="shu shu6">23</p>
-                                                    <p class="zi">历史收益比例</p>
-                                                </div>
-                                            </li>
-                                        </ul>
-
-                                    </div>
-                                </div>
-                                <div class="mt-4 text-center small">
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-primary"></i> Direct
-                                        </span>
-                                    <span class="mr-2">
-                                            <i class="fas fa-circle text-success"></i> Social
-                                        </span>
-                                    <span class="mr-2">
-                                            <i class="fas fa-circle text-info"></i> Referral
-                                        </span>
-                                </div>-->
-                                    <div class="card-body">
+                                    <div class="card-body" id="mydtj">
                                         <h4 class="small font-weight-bold">postive<span
                                                 class="float-right">50%</span></h4>
                                         <div class="progress mb-4">
@@ -494,6 +410,28 @@
                     </div>
 
 
+                    <!-- Area Chart class="col-xl-8 col-lg-7"  统计满意度-->
+                    <div class="" style="max-width: 100%;width: 1640px">
+                        <div class="card shadow mb-4">
+                            <!-- Card Header - Dropdown -->
+                            <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary">Sentiment statistics</h6>
+                                <div class="dropdown no-arrow">
+                                    <a class="dropdown-toggle" href="javascript:void(0)" role="button" id="dropdownMenuLink"
+                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Card Body -->
+                            <div class="card-body">
+                                <div class="chart-area" id="chartmain_zhexiao_myd">
+                                    <!--<canvas id="myAreaChartmyd"></canvas>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <!-- Area Chart class="col-xl-8 col-lg-7" -->
                     <div class="" style="max-width: 100%;width: 1640px">
@@ -501,20 +439,12 @@
                             <!-- Card Header - Dropdown -->
                             <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Review analysis</h6>
                                 <div class="dropdown no-arrow">
-                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                    <a class="dropdown-toggle" href="javascript:void(0)" role="button" id="dropdownMenuLink"
                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400" id="generate-excel">下载</i>
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                         aria-labelledby="dropdownMenuLink">
-                                        <div class="dropdown-header">Dropdown Header:</div>
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
                                 </div>
                             </div>
                             <!-- Card Body -->
@@ -541,160 +471,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Content Row -->
-                    <!--<div class="row">
-
-                        !-- Content Column --
-                        <div class="col-lg-6 mb-4">
-
-                            !-- Project Card Example --
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
-                                </div>
-                                <div class="card-body">
-                                    <h4 class="small font-weight-bold">Server Migration <span
-                                            class="float-right">20%</span></h4>
-                                    <div class="progress mb-4">
-                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 20%"
-                                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <h4 class="small font-weight-bold">Sales Tracking <span
-                                            class="float-right">40%</span></h4>
-                                    <div class="progress mb-4">
-                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 40%"
-                                             aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <h4 class="small font-weight-bold">Customer Database <span
-                                            class="float-right">60%</span></h4>
-                                    <div class="progress mb-4">
-                                        <div class="progress-bar" role="progressbar" style="width: 60%"
-                                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <h4 class="small font-weight-bold">Payout Details <span
-                                            class="float-right">80%</span></h4>
-                                    <div class="progress mb-4">
-                                        <div class="progress-bar bg-info" role="progressbar" style="width: 80%"
-                                             aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <h4 class="small font-weight-bold">Account Setup <span
-                                            class="float-right">Complete!</span></h4>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-success" role="progressbar" style="width: 100%"
-                                             aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            !-- Color System --
-                            <div class="row">
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-primary text-white shadow">
-                                        <div class="card-body">
-                                            Primary
-                                            <div class="text-white-50 small">#4e73df</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-success text-white shadow">
-                                        <div class="card-body">
-                                            Success
-                                            <div class="text-white-50 small">#1cc88a</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-info text-white shadow">
-                                        <div class="card-body">
-                                            Info
-                                            <div class="text-white-50 small">#36b9cc</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-warning text-white shadow">
-                                        <div class="card-body">
-                                            Warning
-                                            <div class="text-white-50 small">#f6c23e</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-danger text-white shadow">
-                                        <div class="card-body">
-                                            Danger
-                                            <div class="text-white-50 small">#e74a3b</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-secondary text-white shadow">
-                                        <div class="card-body">
-                                            Secondary
-                                            <div class="text-white-50 small">#858796</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-light text-black shadow">
-                                        <div class="card-body">
-                                            Light
-                                            <div class="text-black-50 small">#f8f9fc</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-dark text-white shadow">
-                                        <div class="card-body">
-                                            Dark
-                                            <div class="text-white-50 small">#5a5c69</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="col-lg-6 mb-4">
-
-                            !-- Illustrations --
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Illustrations</h6>
-                                </div>
-                                <div class="card-body">
-                                    <div class="text-center">
-                                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                                             src="img/undraw_posting_photo.svg" alt="...">
-                                    </div>
-                                    <p>Add some quality, svg illustrations to your project courtesy of <a
-                                            target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a>, a
-                                        constantly updated collection of beautiful svg images that you can use
-                                        completely free and without attribution!</p>
-                                    <a target="_blank" rel="nofollow" href="https://undraw.co/">Browse Illustrations on
-                                        unDraw &rarr;</a>
-                                </div>
-                            </div>
-
-                            !-- Approach --
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Development Approach</h6>
-                                </div>
-                                <div class="card-body">
-                                    <p>SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order to reduce
-                                        CSS bloat and poor page performance. Custom CSS classes are used to create
-                                        custom components and custom utility classes.</p>
-                                    <p class="mb-0">Before working with this theme, you should become familiar with the
-                                        Bootstrap framework, especially the utility classes.</p>
-                                </div>
-                            </div>
-
-                        </div>
-
-                </div>-->
-                    <!-- /.container-fluid -->
 
                 </div>
                 <!-- End of Main Content -->
@@ -713,342 +489,464 @@
             <!-- End of Content Wrapper -->
 
         </div>
-        <!-- End of Page Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
 
-        <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded" href="#page-top">
-            <i class="fas fa-angle-up"></i>
-        </a>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
 
-        <!-- Bootstrap core JavaScript-->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-        <!-- Core plugin JavaScript-->
-        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-        <!-- Custom scripts for all pages-->
-        <script src="js/sb-admin-2.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
 
-        <script src='https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/echarts/4.2.1/echarts.min.js'></script>
-        <script type="text/javascript">
-            var option0 = {
-                toolbox:{feature:{saveAsImage:{}}},//保存为图片
-                title: {
-                    text: 'topic						.',
-                    subtext: '',
-                    left: 'right',
-                    textStyle: {
-                        color: '#858796',
-                        fontSize: 14
+    <script src='https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/echarts/4.2.1/echarts.min.js'></script>
+
+    <script type="text/javascript">//折线图
+    //window.onload = function (){
+    //指定图表的配置项和数据
+    var dataAxis = ['postive', 'neutral', 'negative'];
+    var data = [318, 182, 51];
+    var yMax = 500;
+    var dataShadow = [];
+
+    for (var i = 0; i < data.length; i++) {
+        dataShadow.push(yMax);
+    }
+
+    topicoption = {
+        toolbox:{feature:{saveAsImage:{}}},//保存为图片
+        title: {
+            text: '',
+            subtext: ''
+        },
+        grid:{
+            x:40,
+            y:40,
+            x2:20,
+            y2:20,
+
+        },
+        xAxis: {
+            data: dataAxis,
+            axisLabel: {
+                /*inside: true,*/
+                interval:0,
+                textStyle: {
+                    color: '#858796',
+                    fontSize: 12
+
+                },
+                rotate:-15
+            },
+            axisTick: {
+                show: false,
+            },
+            axisLine: {
+                show: true,
+                symbol:['none', 'arrow'],
+                symbolOffset: 12,
+                lineStyle:{
+                    color: '#858796',
+                }
+            },
+            z: 10
+        },
+        yAxis: {
+            type: 'value',
+            name: 'unit: quantity',
+            axisLine: {
+                show: true,
+                symbol: ['none', 'arrow'],
+                symbolOffset: 12,
+                lineStyle:{
+                    color: '#858796',
+                }
+            },
+            axisTick: {
+                show: false
+            },
+            axisLabel: {
+                textStyle: {
+                    color: '#858796',
+                    fontSize: 12
+                }
+            }
+        },
+
+        dataZoom: [
+            {
+                type: 'inside'
+            }
+        ],
+        series: [
+            { // For shadow
+                type: 'bar',
+                itemStyle: {
+                    color: 'rgba(0,0,0,0.05)'
+                },
+                barGap: '-100%',
+                barCategoryGap: '40%',
+                data: dataShadow,
+                animation: false
+            },
+            {
+                type: 'bar',
+                itemStyle: {
+                    color: new echarts.graphic.LinearGradient(
+                        0, 0, 0, 1,
+                        [
+                            {offset: 0, color: '#0efdff'},
+                            {offset: 0.5, color: '#188df0'},
+                            {offset: 1, color: '#188df0'}
+                        ]
+                    )
+                },
+                emphasis: {
+                    itemStyle: {
+                        color: new echarts.graphic.LinearGradient(
+                            0, 0, 0, 1,
+                            [
+                                {offset: 0, color: '#2378f7'},
+                                {offset: 0.7, color: '#2378f7'},
+                                {offset: 1, color: '#0efdff'}
+                            ]
+                        )
                     }
                 },
-                tooltip: {
-                    trigger: 'item',
-                    formatter: '{a} <br/>{b} : {c} ({d}%)'
-                },
-                legend: {
-                    // orient: 'vertical',
-                    // top: 'middle',
-                    type: 'scroll',
-                    orient: 'vertical',
-                    right: 10,
-                    top: 40,
-                    bottom: 20,
-                    left: 'right',
-                    data: ['thank', 'chat', 'agent', 'ye'],
-                    textStyle: {
-                        color: '#858796',
-                        fontSize: 14
-                    }
-
-                },
-                grid:{
-                    x:'-10%',
-                    y:40,
-                    x2:20,
-                    y2:20,
-                },
-                color : [ '#e74a3b', '#f6c23e', '#4e73df', '#36b9cc'],
-                series: [
-                    {
-                        type: 'pie',
-                        radius: '85%',
-                        center: ['50%', '50%'],
-                        selectedMode: 'single',
-                        data: [
-                            {value: 1548, name: 'thank',},
-                            {value: 535, name: 'chat'},
-                            {value: 510, name: 'agent'},
-                            {value: 634, name: 'ye'}
-                        ],
-                        emphasis: {
-                            itemStyle: {
-                                shadowBlur: 10,
-                                shadowOffsetX: 0,
-                                shadowColor: 'rgba(0, 0, 0, 0.5)'
-                            }
-                        }
-                    }
-                ]
-            };
-            //获取dom容器
-            var myChart = echarts.init(document.getElementById('chartmain_bing'));
-            // 使用刚指定的配置项和数据显示图表。
-            myChart.setOption(option0);
-
-        </script>
-
-        <script type="text/javascript">
-            //window.onload = function (){
-            //指定图表的配置项和数据
-            var option1 = {
-                title: {
-                    text: ''
-                },
-                tooltip: {
-                    trigger: 'axis'
-                },
-                legend: {
-                    textStyle: {
-                        color: '#858796',
-                        fontSize: 12,
-                    },
-                    right:'10%',
-                    data: ['thank', 'chat', 'agent', 'ye']
-                },
-                grid:{
-                    x:40,
-                    y:40,
-                    x2:20,
-                    y2:20,
-                },
-                toolbox: {
-                    feature: {
-                        saveAsImage: {}//保存为图片
-                    }
-                },
-                xAxis: {
-                    type: 'category',
-                    boundaryGap: false,
-                    axisLabel: {
-                        /*inside: true,*/
-                        interval:0,
-                        textStyle: {
-                            color: '#858796',
-                            fontSize: 12
-
-                        }
-                    },
-                    axisTick: {
-                        show: false,
-                    },
-                    axisLine: {
-                        show: true,
-                        symbol:['none', 'arrow'],
-                        symbolOffset: 12,
-                        lineStyle:{
-                            color: '#858796',
-                        }
-                    },
-                    data: ['00:00', '02:00', '04:00', '06:00', '08:00', '10:00', '12:00']
-                },
-                yAxis: {
-                    type: 'value',
-
-                    axisLine: {
-                        show: true,
-                        symbol: ['none', 'arrow'],
-                        symbolOffset: 12,
-                        lineStyle:{
-                            color: '#858796',
-                        }
-                    },
-                    axisTick: {
-                        show: false
-                    },
-                    axisLabel: {
-                        textStyle: {
-                            color: '#858796',
-                            fontSize: 12
-                        }
-                    }
-                },
-                series: [
-                    {
-                        name: 'thank',
-                        type: 'line',
-                        stack: '总量',
-                        data: [280, 102, 191, 134, 390, 230, 210],
-                        itemStyle: {
-                            normal: {
-                                color: "#0efdff",//折线点的颜色
-                                lineStyle: {
-                                    color: "#0efdff",//折线的颜色
-                                    width:2,
-                                }
-                            },
-                        }
-                    },{
-                        name: 'chat',
-                        type: 'line',
-                        stack: '总量',
-                        data: [100, 132, 131, 234, 290, 330, 110]
-                    },
-                    {
-                        name: 'agent',
-                        type: 'line',
-                        stack: '总量',
-                        data: [214, 214, 231, 149, 241, 299, 178]
-                    },
-                    {
-                        name: 'ye',
-                        type: 'line',
-                        stack: '总量',
-                        data: [288, 167, 166, 267, 199, 301, 267]
-                    }
-                ]
-            };
-            //获取dom容器
-            var myChart = echarts.init(document.getElementById('chartmain_zhe'));
-            // 使用刚指定的配置项和数据显示图表。
-            myChart.setOption(option1);
-            //};
-        </script>
-        <script type="text/javascript">
-            //window.onload = function () {
-            //指定图表的配置项和数据
-            var dataAxis = ['postive', 'neutral', 'negative'];
-            var data = [318, 182, 51];
-            var yMax = 500;
-            var dataShadow = [];
-
-            for (var i = 0; i < data.length; i++) {
-                dataShadow.push(yMax);
+                data: data
+            }
+        ]
+    };
+    //获取dom容器
+    var myChart = echarts.init(document.getElementById('chartmain_tiaoxin_topic'));
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(topicoption);
+    //};
+    </script>
+    <script type="text/javascript">//饼状图
+    var topicoption_bz = {
+        toolbox:{feature:{saveAsImage:{}}},//保存为图片
+        title: {
+            text: 'topic						.',
+            subtext: '',
+            left: 'right',
+            textStyle: {
+                color: '#858796',
+                fontSize: 14
+            }
+        },
+        tooltip: {
+            trigger: 'item',
+            //formatter: '{a} <br/>{b} : {c} ({d}%)'
+            formatter: '{b} : {c} ({d}%)'
+        },
+        legend: {
+            // orient: 'vertical',
+            // top: 'middle',
+            type: 'scroll',
+            orient: 'vertical',
+            right: 10,
+            top: 40,
+            bottom: 20,
+            left: 'right',
+            data: ['thank', 'chat', 'agent', 'ye'],
+            textStyle: {
+                color: '#858796',
+                fontSize: 14
             }
 
-            option = {
-                toolbox:{feature:{saveAsImage:{}}},//保存为图片
-                title: {
-                    text: '',
-                    subtext: ''
-                },
-                grid:{
-                    x:40,
-                    y:40,
-                    x2:20,
-                    y2:20,
-
-                },
-                xAxis: {
-                    data: dataAxis,
-                    axisLabel: {
-                        /*inside: true,*/
-                        interval:0,
-                        textStyle: {
-                            color: '#858796',
-                            fontSize: 12
-
-                        }
-                    },
-                    axisTick: {
-                        show: false,
-                    },
-                    axisLine: {
-                        show: true,
-                        symbol:['none', 'arrow'],
-                        symbolOffset: 12,
-                        lineStyle:{
-                            color: '#858796',
-                        }
-                    },
-                    z: 10
-                },
-                yAxis: {
-                    type: 'value',
-                    name: 'unit: quantity',
-                    axisLine: {
-                        show: true,
-                        symbol: ['none', 'arrow'],
-                        symbolOffset: 12,
-                        lineStyle:{
-                            color: '#858796',
-                        }
-                    },
-                    axisTick: {
-                        show: false
-                    },
-                    axisLabel: {
-                        textStyle: {
-                            color: '#858796',
-                            fontSize: 12
-                        }
-                    }
-                },
-
-                dataZoom: [
-                    {
-                        type: 'inside'
-                    }
+        },
+        grid:{
+            x:'-10%',
+            y:40,
+            x2:20,
+            y2:20,
+        },
+        color : [ '#e74a3b', '#f6c23e', '#4e73df', '#36b9cc'],
+        series: [
+            {
+                type: 'pie',
+                radius: '85%',
+                center: ['50%', '50%'],
+                selectedMode: 'single',
+                data: [
+                    {value: 1548, name: 'thank'},
+                    {value: 535, name: 'chat'},
+                    {value: 510, name: 'agent'},
+                    {value: 634, name: 'ye'}
                 ],
-                series: [
-                    { // For shadow
-                        type: 'bar',
-                        itemStyle: {
-                            color: 'rgba(0,0,0,0.05)'
-                        },
-                        barGap: '-100%',
-                        barCategoryGap: '40%',
-                        data: dataShadow,
-                        animation: false
-                    },
-                    {
-                        type: 'bar',
-                        itemStyle: {
-                            color: new echarts.graphic.LinearGradient(
-                                0, 0, 0, 1,
-                                [
-                                    {offset: 0, color: '#0efdff'},
-                                    {offset: 0.5, color: '#188df0'},
-                                    {offset: 1, color: '#188df0'}
-                                ]
-                            )
-                        },
-                        emphasis: {
-                            itemStyle: {
-                                color: new echarts.graphic.LinearGradient(
-                                    0, 0, 0, 1,
-                                    [
-                                        {offset: 0, color: '#2378f7'},
-                                        {offset: 0.7, color: '#2378f7'},
-                                        {offset: 1, color: '#0efdff'}
-                                    ]
-                                )
-                            }
-                        },
-                        data: data
+                emphasis: {
+                    itemStyle: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
                     }
-                ]
-            };
+                }
+            }
+        ]
+    };
+    //获取dom容器
+    var myChart = echarts.init(document.getElementById('chartmain_bingzhuan'));
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(topicoption_bz);
 
-            // Enable data zoom when user click bar.
-            /*var zoomSize = 6;
-            myChart.on('click', function (params) {
-                console.log(dataAxis[Math.max(params.dataIndex - zoomSize / 2, 0)]);
-                myChart.dispatchAction({
-                    type: 'dataZoom',
-                    startValue: dataAxis[Math.max(params.dataIndex - zoomSize / 2, 0)],
-                    endValue: dataAxis[Math.min(params.dataIndex + zoomSize / 2, data.length - 1)]
-                });
-            });*/
+    </script>
+    <script type="text/javascript">//柱状图
+    //window.onload = function () {
+    //指定图表的配置项和数据
+    var dataAxis = ['postive', 'neutral', 'negative'];
+    var data = [318, 182, 51];
+    var yMax = 500;
+    var dataShadow = [];
 
-            //获取dom容器
-            var myChart = echarts.init(document.getElementById('chartmain'));
-            // 使用刚指定的配置项和数据显示图表。
-            myChart.setOption(option);
-            //};
-        </script>
-        <script src="js/data.js"></script>
+    for (var i = 0; i < data.length; i++) {
+        dataShadow.push(yMax);
+    }
+
+    option = {
+        toolbox:{feature:{saveAsImage:{}}},//保存为图片
+        title: {
+            text: '',
+            subtext: ''
+        },
+        grid:{
+            x:40,
+            y:40,
+            x2:20,
+            y2:20,
+
+        },
+        xAxis: {
+            data: dataAxis,
+            axisLabel: {
+                /*inside: true,*/
+                interval:0,
+                textStyle: {
+                    color: '#858796',
+                    fontSize: 12
+
+                }
+            },
+            axisTick: {
+                show: false,
+            },
+            axisLine: {
+                show: true,
+                symbol:['none', 'arrow'],
+                symbolOffset: 12,
+                lineStyle:{
+                    color: '#858796',
+                }
+            },
+            z: 10
+        },
+        yAxis: {
+            type: 'value',
+            name: 'unit: quantity',
+            axisLine: {
+                show: true,
+                symbol: ['none', 'arrow'],
+                symbolOffset: 12,
+                lineStyle:{
+                    color: '#858796',
+                }
+            },
+            axisTick: {
+                show: false
+            },
+            axisLabel: {
+                textStyle: {
+                    color: '#858796',
+                    fontSize: 12
+                }
+            }
+        },
+
+        dataZoom: [
+            {
+                type: 'inside'
+            }
+        ],
+        series: [
+            { // For shadow
+                type: 'bar',
+                itemStyle: {
+                    color: 'rgba(0,0,0,0.05)'
+                },
+                barGap: '-100%',
+                barCategoryGap: '40%',
+                data: dataShadow,
+                animation: false
+            },
+            {
+                type: 'bar',
+                itemStyle: {
+                    color: new echarts.graphic.LinearGradient(
+                        0, 0, 0, 1,
+                        [
+                            {offset: 0, color: '#0efdff'},
+                            {offset: 0.5, color: '#188df0'},
+                            {offset: 1, color: '#188df0'}
+                        ]
+                    )
+                },
+                emphasis: {
+                    itemStyle: {
+                        color: new echarts.graphic.LinearGradient(
+                            0, 0, 0, 1,
+                            [
+                                {offset: 0, color: '#2378f7'},
+                                {offset: 0.7, color: '#2378f7'},
+                                {offset: 1, color: '#0efdff'}
+                            ]
+                        )
+                    }
+                },
+                data: data
+            }
+        ]
+    };
+
+    // Enable data zoom when user click bar.
+    /*var zoomSize = 6;
+    myChart.on('click', function (params) {
+        console.log(dataAxis[Math.max(params.dataIndex - zoomSize / 2, 0)]);
+        myChart.dispatchAction({
+            type: 'dataZoom',
+            startValue: dataAxis[Math.max(params.dataIndex - zoomSize / 2, 0)],
+            endValue: dataAxis[Math.min(params.dataIndex + zoomSize / 2, data.length - 1)]
+        });
+    });*/
+
+    //获取dom容器
+    var myChart = echarts.init(document.getElementById('chartmain_tiaoxin'));
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+    //};
+    </script>
+    <script type="text/javascript">//折线图
+    //window.onload = function (){
+    //指定图表的配置项和数据
+    var optionmyd = {
+        title: {
+            text: ''
+        },
+        tooltip: {
+            trigger: 'axis'
+        },
+        legend: {
+            textStyle: {
+                color: '#858796',
+                fontSize: 12,
+            },
+            right:'10%',
+            data: ['Negative', 'Neutral', 'Positive']
+        },
+        grid:{
+            x:40,
+            y:40,
+            x2:20,
+            y2:20,
+        },
+        toolbox: {
+            feature: {
+                saveAsImage: {}//保存为图片
+            }
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            axisLabel: {
+                /*inside: true,*/
+                interval:0,
+                textStyle: {
+                    color: '#858796',
+                    fontSize: 12
+
+                }
+            },
+            axisTick: {
+                show: false,
+            },
+            axisLine: {
+                show: true,
+                symbol:['none', 'arrow'],
+                symbolOffset: 12,
+                lineStyle:{
+                    color: '#858796',
+                }
+            },
+            data: ['  sentiment_ntlk', 'sentiment_flair', 'sentiment_bert              ']
+        },
+        yAxis: {
+            type: 'value',
+
+            axisLine: {
+                show: true,
+                symbol: ['none', 'arrow'],
+                symbolOffset: 12,
+                lineStyle:{
+                    color: '#858796',
+                }
+            },
+            axisTick: {
+                show: false
+            },
+            axisLabel: {
+                textStyle: {
+                    color: '#858796',
+                    fontSize: 12
+                }
+            }
+        },
+        series: [
+            {
+                name: 'Negative',
+                type: 'line',
+                //stack: '总量',
+                data: [16, 8, 160],
+                itemStyle: {
+                    normal: {
+                        color: "#0efdff",//折线点的颜色
+                        lineStyle: {
+                            color: "#0efdff",//折线的颜色
+                            width:2,
+                        }
+                    },
+                }
+            },{
+                name: 'Neutral',
+                type: 'line',
+                //stack: '总量',
+                data: [31, 25, 120]
+            },
+            {
+                name: 'Positive',
+                type: 'line',
+                //stack: '总量',
+                data: [18, 15, 180]
+            }
+        ]
+    };
+    //获取dom容器
+    var myChart = echarts.init(document.getElementById('chartmain_zhexiao_myd'));
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(optionmyd);
+    //};
+    </script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script  type="text/javascript" src="js/data.js"></script>
+    <script type="text/javascript" src="js/jszip.min.js"></script> <!--表格导出excel处理-->
+    <script type="text/javascript" src="js/FileSaver.js"></script>
+    <script type="text/javascript" src="js/excel-gen.js"></script>
 </body>
 
 </html>
