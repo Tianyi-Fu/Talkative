@@ -1,15 +1,14 @@
 // let baseUrl = 'http://127.0.0.1:8081'
-let baseUrl = 'http://localhost'
+let baseUrl = 'http://localhost';
 
 $(document).ready(() => {
     let agentName = '';
 
-    // Ajax 
-    /* Send Transcript to Backend */
+    // EventListeners
     $("#submit").click(() => {
         let conversation = $("#chat").val();
 
-        // Check for value in textarea 
+        // Check for value in textarea
         if (conversation.length < 1) return;
 
         let chatRecordId = JSON.parse(conversation).id;
@@ -17,7 +16,6 @@ $(document).ready(() => {
         sendTranscript(chatRecordId, conversation);
     })
 
-    // EventListeners 
     /* Enable Submit(End Chat) button when there is content in textarea */
     $("#chat").change((e) => {
         let val = e.target.value;
@@ -27,6 +25,11 @@ $(document).ready(() => {
         } else {
             $("#submit").prop("disabled", true);
         }
+    })
+
+    $(".btn-close").click(() => {
+        localStorage.clear();
+        window.location.reload();
     })
 })
 
@@ -70,7 +73,9 @@ function sendTranscript(chatRecordId, conversation, widget) {
     if (chatRecordId) {
         localStorage.setItem("chatRecordId", chatRecordId);
     } else {
-        localStorage.setItem("chatRecordId", JSON.stringify(Date.now()));
+        let now = Date.now();
+        let id = now.toString().slice(6);
+        localStorage.setItem("chatRecordId", id);
     }
 
     // Hide Talkative widget

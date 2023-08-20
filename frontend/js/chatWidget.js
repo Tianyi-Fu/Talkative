@@ -66,7 +66,8 @@ $(document).ready(() => {
     }, 3000)
 
     function createTranscriptObject(transcriptObj) {
-        let id = Date.now();
+        let now = Date.now();
+        let id = now.toString().slice(6);
         sendTranscript(id, {...transcriptObj, "chatRecordId": id}, true);
     }
 

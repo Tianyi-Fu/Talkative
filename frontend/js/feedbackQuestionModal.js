@@ -1,12 +1,14 @@
 $(document).ready(() => {
-    let baseUrl = 'http://127.0.0.1:8081';
+// let baseUrl = 'http://127.0.0.1:8081';
+    let baseUrl = 'http://localhost';
+
     let answer;
 
     // EventListeners
     /* Get value from star rating */
     $('input[name="rating"]').click(() => {
         let selected = document.querySelector('input[name="rating"]:checked').value;
-        //console.log(selected)
+        console.log(selected)
 
         answer = selected;
         $("#nextBtn").prop("disabled", false);
