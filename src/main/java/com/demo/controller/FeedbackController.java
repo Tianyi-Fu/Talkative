@@ -82,7 +82,7 @@ public class FeedbackController {
 
     private void runPythonScript() {
         try {
-            String command = "python python/Analyzer.py";
+            String command = "python3 python/Analyzer.py";
             System.out.println("Attempting to run python script with command: " + command);
 
             Process process = Runtime.getRuntime().exec(command);
