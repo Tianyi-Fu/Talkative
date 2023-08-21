@@ -1,22 +1,22 @@
-#!/usr/bin/bash
+#!/bin/bash
 echo "update logging configuration..."
 sudo sh -c "echo '*.info;mail.none;authpriv.none;cron.none /dev/ttyS0' >> /etc/rsyslog.conf"
 sudo systemctl restart rsyslog
-ntpdate -u pool.ntp.org
-ntpd -qg
+
+sudo yum install -y ntp
+sudo ntpdate -u pool.ntp.org
+sudo ntpd -qg
 echo logged in as $USER.
 echo in directory $PWD
 
 echo "installing MariaDB..."
 
-sudo apt update
+sudo yum update -y
 
-sudo apt -y install wget curl
-sudo apt install unzip -y
-sudo apt -y install git
+sudo yum install -y wget curl unzip git
 
 echo "needs to be in root account"
-cd root
+cd /root
 
 touch .ssh/known_hosts
 ssh-keyscan git.cardiff.ac.uk >> .ssh/known_hosts
@@ -24,7 +24,6 @@ chmod 644 .ssh/known_hosts
 
 echo "now needs to be in rocky user directory"
 cd /home/rocky
-
 
 echo "installing gitlab deployment key..."
 touch fty_keypair.key
@@ -72,15 +71,13 @@ chmod 400 fty_keypair.key
 
 echo "cloning repository..."
 
-ssh-agent bash -c 'ssh-add fty_keypair.key;git clone -b develop git@git.cardiff.ac.uk:c22045328/Talkative.git'
+ssh-agent bash -c 'ssh-add fty_keypair.key; git clone -b develop git@git.cardiff.ac.uk:c22045328/Talkative.git'
 
 echo "changing to repository directory..."
 cd Talkative/
 
-
-sudo apt update
-sudo apt install default-jdk -y
-
+sudo yum update -y
+sudo yum install -y java-11-openjdk-devel
 
 sudo chown rocky:rocky /home/rocky/fty_keypair.key
 cp /home/rocky/fty_keypair.key /home/rocky/.ssh/id_rsa
@@ -96,7 +93,7 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC7osSlhKZ8dEkDC9RYj9CJVw0SKZdji9lVV+KJ83QO
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 echo "---------------------------------------------------------------installed docker"
-sed -i "s|^ExecStart.*$|ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock --mtu=1450|" /lib/systemd/system/docker.service
+sed -i "s|^ExecStart.*$|ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock --mtu=1450|" /usr/lib/systemd/system/docker.service
 
 sudo systemctl daemon-reload
 sudo systemctl enable --now docker
@@ -106,7 +103,7 @@ sudo ip link set docker0 mtu 1450
 echo "---------------------------------------------------------------login"
 sudo docker login -u tianyifu -p fty5005669
 
-sudo docker compose up -d
-sudo docker compose down
+sudo docker-compose up -d
+sudo docker-compose down
 
 
