@@ -4,17 +4,54 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="figure out one bug.">
-      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+    <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="works perfectly in local docker environment.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile.base" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile.base" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Analyzer.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Analyzer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Talkative-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Talkative-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Talkative-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/Talkative-1.0-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/TalkativeApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/TalkativeApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/config/MpConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/config/MpConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/CreateInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/controller/CreateInfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/ErrorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/controller/ErrorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/FeedBackRecordAndUserInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/controller/FeedBackRecordAndUserInfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/FeedbackAnalysisController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/controller/FeedbackAnalysisController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/FeedbackController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/controller/FeedbackController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/FileDownloadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/controller/FileDownloadController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/TranscriptController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/controller/TranscriptController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$ChatParam.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/data/Data$ChatParam.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$FeedbackSaveParam.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/data/Data$FeedbackSaveParam.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$FeedbackSaveParamAndChatId.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/data/Data$FeedbackSaveParamAndChatId.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$QueryParam.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/data/Data$QueryParam.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$QuestionVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/data/Data$QuestionVo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$SaveParam.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/data/Data$SaveParam.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$Vo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/data/Data$Vo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/data/Data.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/error/Exception.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/error/Exception.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/mapper/ChatRecordMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/mapper/ChatRecordMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/mapper/CreateInfoMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/mapper/CreateInfoMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/mapper/FeedBackRecordAndUserInfoMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/mapper/FeedBackRecordAndUserInfoMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/mapper/FeedbackAnalysisMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/mapper/FeedbackAnalysisMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/mapper/Mapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/mapper/Mapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/mapper/TranscriptMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/mapper/TranscriptMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/ChatRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/model/ChatRecord.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/CreateUserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/model/CreateUserInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/Demo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/model/Demo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/FeedbackAnalysis.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/model/FeedbackAnalysis.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/FeedbackRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/model/FeedbackRecord.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/FeedbackUserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/model/FeedbackUserInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/Question.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/model/Question.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/model/Result.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/CreateInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/serivce/CreateInfoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/FeedBackRecordAndUserInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/serivce/FeedBackRecordAndUserInfoService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/FeedbackAnalysisService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/serivce/FeedbackAnalysisService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/FeedbackService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/serivce/FeedbackService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/TranscriptService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/serivce/TranscriptService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/util/AIUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/util/AIUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/util/BeanUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/util/BeanUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/util/JsonUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/util/JsonUtil.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -411,7 +448,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692449734794</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="works perfectly in local docker environment.">
+      <created>1692577986031</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1692577986031</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -461,7 +505,8 @@
     <MESSAGE value="Edited style of feedback modal &amp; added stepper at th top of modal; still need to fix show active step issue" />
     <MESSAGE value="fix bug 1: miss typed in main&#10;fix bug 2: a possible mistake report in database setting&#10;fix bug 3: a database structure mistake" />
     <MESSAGE value="try to deployee in openstack" />
-    <option name="LAST_COMMIT_MESSAGE" value="try to deployee in openstack" />
+    <MESSAGE value="works perfectly in local docker environment." />
+    <option name="LAST_COMMIT_MESSAGE" value="works perfectly in local docker environment." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
