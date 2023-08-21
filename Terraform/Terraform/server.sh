@@ -9,39 +9,11 @@ echo in directory $PWD
 
 echo "installing MariaDB..."
 
-# sudo yum install mysql -y
 sudo apt update
-sudo apt -y install mariadb-server
-sudo systemctl start mariadb
-sudo systemctl status mariadb
-sudo systemctl enable mariadb
 
-
-
-echo "creating mysql_secure_installation.txt..."
-# Grant all privileges to root user
-
-touch mysql_secure_installation.txt
-cat << `EOF` >> mysql_secure_installation.txt
-
-n
-Y
-comsc
-comsc
-Y
-Y
-Y
-Y
-Y
-`EOF`
-
-echo "running mysql_secure_installation..."
-sudo mysql_secure_installation < mysql_secure_installation.txt
-sudo mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' IDENTIFIED BY 'comsc' WITH GRANT OPTION;"
 sudo apt -y install wget curl
 sudo apt install unzip -y
 sudo apt -y install git
-
 
 echo "needs to be in root account"
 cd root
@@ -100,32 +72,40 @@ chmod 400 fty_keypair.key
 
 echo "cloning repository..."
 
-ssh-agent bash -c 'ssh-add fty_keypair.key;git clone -b develop git@git.cardiff.ac.uk:c22045328/Talkative.git'
+ssh-agent bash -c 'ssh-add fty_keypair.key;git clone git@git.cardiff.ac.uk:c22045328/devops_tianyi-fu.git'
 
 echo "changing to repository directory..."
-cd Talkative/
-
-mysql -uroot -pcomsc < src/create_database.sql
-
+cd devops_tianyi-fu/
 
 sudo apt update
 sudo apt install default-jdk -y
 
+
+sudo chown debian:debian /home/debian/fty_keypair.key
+cp /home/debian/fty_keypair.key /home/debian/.ssh/id_rsa
+sudo chown debian:debian /home/debian/.ssh/id_rsa
+sudo chown debian:debian -R /home/debian/devops_tianyi-fu
+cat << `EOF` >> /home/debian/.ssh/authorized_keys
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC7osSlhKZ8dEkDC9RYj9CJVw0SKZdji9lVV+KJ83QOR2yeoPrDKxen4dYfaYD161Hha7LmRzUX5WqICNHF2NxXhJCeAkZuoGNt9uEQVb2N2dm0O9Q8bQSJ1KeS5/ASun7FNad7SluEApbiVe6lgxUX2VyovbPRV6wQCFFco9E5Wwt0EBUEBhaXTPDv3YzPYsUbcFMOuha1jTqWd46ZsvrSCKz76US7QuWXz5ucxW//gqjMlhESYs86fhwpW1Xexlpw6mbBDKUE3wrKfSEcHPMmdEwaO6A2XE8jjfxUFAYOaGIiuWyjudndGkmMwMVTINZyox1cxTijqlS9VpZLiZe8jXQBohBaVePAl/XhmicyMsvwChvL6KOXO24TG+Dnz6S31vPS3ChfNyIqa+eJNY3RpFCUO42n5ZVw5Xy6Ak6FeRv6ERE9Ew6jnvG/G7BYytmFd1+uuzto3DNzMzZllK1Dh3TsnQfE1+7uyDXEFskVOEjHRdR1poR5Y0fD6rW21Zf/RVxLH8V4HpHw5/BNpyK/QGOnd9mpdo8vrs+YnN6NdFXU5F2m0Xsrbr4uNMUNqQF6IbtfaEiUvhytXxifrq0GAhDd4kUZRBC7/DtKFUygD/3QjeUmcigkx0WKCxoW5ST5Ib2UZqQBwsPnxweT26CYE2dyEPDXhSeaNeO2+aJ13w== debian@jenkinsserverdebian
+
+`EOF`
+
+#-------------------------------------------------------------------------------
+# Update package index and install dependencies
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 echo "---------------------------------------------------------------installed docker"
-sudo systemctl start docker
-sudo systemctl enable docker
+sed -i "s|^ExecStart.*$|ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock --mtu=1450|" /lib/systemd/system/docker.service
 
+sudo systemctl daemon-reload
+sudo systemctl enable --now docker
+
+sudo ip link set docker0 mtu 1450
 
 echo "---------------------------------------------------------------login"
-docker login -u tianyifu -p fty5005669
+sudo docker login -u tianyifu -p fty5005669
 
-
-echo "---------------------------------------------------------------pull"
-
-docker pull tianyifu/myproject:dev
-echo "---------------------------------------------------------------run"
-docker compose up
+sudo docker compose up -d
+sudo docker compose down
 
 

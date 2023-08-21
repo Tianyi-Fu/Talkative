@@ -5,25 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="add preload image in jenkins.">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_14_3_02_[Changes]/FeedbackController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_14_3_02_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_14_3_02__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile.base" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile.base" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Analyzer.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Analyzer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Talkative-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Talkative-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Talkative-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/Talkative-1.0-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/FileDownloadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/controller/FileDownloadController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$FeedbackSaveParamAndChatId.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/data/Data$FeedbackSaveParamAndChatId.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$QuestionVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/data/Data$QuestionVo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/CreateUserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/model/CreateUserInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/FeedbackAnalysis.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/model/FeedbackAnalysis.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/FeedbackRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/model/FeedbackRecord.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/FeedbackUserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/model/FeedbackUserInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/model/Result.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/FeedbackAnalysisService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/serivce/FeedbackAnalysisService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,7 +234,7 @@
       <workItem from="1692487812803" duration="18388000" />
       <workItem from="1692555314585" duration="4427000" />
       <workItem from="1692568678700" duration="4965000" />
-      <workItem from="1692597238055" duration="405000" />
+      <workItem from="1692597238055" duration="5301000" />
     </task>
     <task id="LOCAL-00001" summary="new gitigonore file">
       <created>1689282546007</created>
@@ -449,7 +432,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692585204417</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="add preload image in jenkins.">
+      <created>1692597794954</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1692597794954</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
