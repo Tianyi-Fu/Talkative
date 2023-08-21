@@ -6,14 +6,14 @@ from nltk.sentiment import SentimentIntensityAnalyzer
 import nltk
 import json
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline
-from transformers import pipeline
+#from transformers import pipeline
 from flair.models import TextClassifier
 from flair.data import Sentence
 
 print("——————————————————————————————————————————————————————————————————————————————————————————————————————")
 print("——————————————————————————————————————————————————————————————————————————————————————————————————————")
 # Download the vader_lexicon data
-nltk.download("vader_lexicon")
+#nltk.download("vader_lexicon")
 
 # Create a sentiment analyzer using NTLK's Vader
 analyzer = SentimentIntensityAnalyzer()
@@ -147,7 +147,7 @@ def save_results_to_json(results, filename):
 
 # Database configuration
 DB_CONFIG = {
-    'host': '127.0.0.1',
+    'host': 'My_db',
     'port': 3306,
     'user': 'root',
     'password': 'Fty5005669',
@@ -155,6 +155,7 @@ DB_CONFIG = {
     'charset': 'utf8mb4',
     'cursorclass': pymysql.cursors.DictCursor
 }
+
 
 
 def connect_to_db():
