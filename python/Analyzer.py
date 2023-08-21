@@ -147,7 +147,7 @@ def save_results_to_json(results, filename):
 
 # Database configuration
 DB_CONFIG = {
-    'host': '127.0.0.1',
+    'host': 'My_db',
     'port': 3306,
     'user': 'root',
     'password': 'Fty5005669',
@@ -155,6 +155,7 @@ DB_CONFIG = {
     'charset': 'utf8mb4',
     'cursorclass': pymysql.cursors.DictCursor
 }
+
 
 
 def connect_to_db():
