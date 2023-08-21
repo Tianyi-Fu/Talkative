@@ -305,7 +305,7 @@
 
                         <div class="col-sm-12 mb-4 d-flex justify-content-between align-items-center">
                             <h1 class="h3 mb-0 text-gray-800">Data Sheet</h1>
-                            <a href="http://127.0.0.1:8081/download/excel" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" style="font-size: 14px;">
+                            <a href="http://localhost/download/excel" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" style="font-size: 14px;">
                                 <i class="fas fa-download fa-sm text-white-50"></i> Download
                             </a>
                         </div>
@@ -435,10 +435,10 @@
 </body>
 
 <script>
-
+    let baseUrl = "http://localhost";
     function analysis(feedbackRecordId) {
         $.ajax({
-            url: "http://127.0.0.1:8081/qry/analysis/"+feedbackRecordId,
+            url: baseUrl + "/qry/analysis/"+feedbackRecordId,
             method: 'get',
             success: function (data) {
                 var json = JSON.parse(data.data)
@@ -477,11 +477,11 @@
     function downloadTranscript() {
         // var href =
         // document.getElementById("okDownload")
-        window.location.href='http://127.0.0.1:8081/download/excel/transcript/'+this.feedbackRecordId
+        window.location.href= baseUrl + '/download/excel/transcript/'+this.feedbackRecordId
         // window.location.href='http://127.0.0.1:8081/download/excel'
     }
     function downloadQuestion() {
-        window.location.href='http://127.0.0.1:8081/download/excel/question/'+this.feedbackRecordId
+        window.location.href= baseUrl + '/download/excel/question/'+this.feedbackRecordId
     }
     var feedbackRecordId;
 
@@ -489,7 +489,7 @@
         this.feedbackRecordId = feedbackRecordId
         var json = {"feedbackRecordId": feedbackRecordId}
         $.ajax({
-            url: "http://127.0.0.1:8081/question/list",
+            url: baseUrl + "/question/list",
             data: JSON.stringify(json),
             method: 'post',
             contentType: "application/json", // Set the request header to JSON format.
@@ -528,7 +528,7 @@
         this.feedbackRecordId = feedbackRecordId
         var json = {"feedbackRecordId": feedbackRecordId}
         $.ajax({
-            url: "http://127.0.0.1:8081/transcript/list",
+            url: baseUrl + "/transcript/list",
             data: JSON.stringify(json),
             method: 'post',
             contentType: "application/json", // Set the request header to JSON format.

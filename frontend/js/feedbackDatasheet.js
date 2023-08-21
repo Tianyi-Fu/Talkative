@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    let baseUrl = 'http://localhost';
+
     $("#datepicker").datepicker({
         dateFormat: "dd/mm/yy", // Setting the date format
         changeMonth: true, // Allow month selection
@@ -33,7 +35,7 @@ function load(page, size, chatRecordID, satisfaction, agentName, datepicker, dat
         "endTime": datepicker2
     }
     $.ajax({
-        url: "http://127.0.0.1:8081/rc/list",
+        url: baseUrl + "/rc/list",
         data: JSON.stringify(json),
         method: 'post',
         contentType: "application/json", // Set the request header to JSON format.
@@ -203,7 +205,7 @@ function getData(inputDate) {
 function dele(feedbackRecordId) {
     var json = {"feedbackRecordId": feedbackRecordId}
     $.ajax({
-        url: "http://127.0.0.1:8081/all/del",
+        url: baseUrl + "/all/del",
         data: JSON.stringify(json),
         method: 'post',
         contentType: "application/json", // Set the request header to JSON format.
@@ -250,7 +252,7 @@ function onsubmitEdit() {
             "agentName": agentName
         }
         $.ajax({
-            url: "http://127.0.0.1:8081/all/upd",
+            url: baseUrl + "/all/upd",
             data: JSON.stringify(json),
             method: 'post',
             contentType: "application/json", // Set the request header to JSON format.

@@ -6,15 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/feedbackCustomerInformation.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/feedbackCustomerInformation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/feedbackQuestionModal.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/feedbackQuestionModal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/startSurveyModal.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/startSurveyModal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/feedbackDatasheet.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/feedbackDatasheet.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/js/chatWidget.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/chatWidget.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/js/feedbackCustomerInformation.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/feedbackCustomerInformation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/js/feedbackQuestionModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/feedbackQuestionModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/js/startSurveyModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/startSurveyModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/js/feedbackDatasheet.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/feedbackDatasheet.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
