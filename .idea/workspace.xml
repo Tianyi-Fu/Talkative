@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="downgrade to java 11.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="add preload image in jenkins.">
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -424,7 +423,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692580715869</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="add preload image in jenkins.">
+      <created>1692585204417</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1692585204417</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -476,7 +482,8 @@
     <MESSAGE value="try to deployee in openstack" />
     <MESSAGE value="works perfectly in local docker environment." />
     <MESSAGE value="downgrade to java 11." />
-    <option name="LAST_COMMIT_MESSAGE" value="downgrade to java 11." />
+    <MESSAGE value="add preload image in jenkins." />
+    <option name="LAST_COMMIT_MESSAGE" value="add preload image in jenkins." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

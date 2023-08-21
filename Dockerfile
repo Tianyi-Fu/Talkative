@@ -1,4 +1,4 @@
-FROM my_base_image
+FROM tianyifu/my_base_image:latest
 
 COPY python /python
 
