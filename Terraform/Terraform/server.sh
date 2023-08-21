@@ -22,8 +22,8 @@ touch .ssh/known_hosts
 ssh-keyscan git.cardiff.ac.uk >> .ssh/known_hosts
 chmod 644 .ssh/known_hosts
 
-echo "now needs to be in debian user directory"
-cd /home/debian
+echo "now needs to be in rocky user directory"
+cd /home/rocky
 
 
 echo "installing gitlab deployment key..."
@@ -72,21 +72,22 @@ chmod 400 fty_keypair.key
 
 echo "cloning repository..."
 
-ssh-agent bash -c 'ssh-add fty_keypair.key;git clone git@git.cardiff.ac.uk:c22045328/devops_tianyi-fu.git'
+ssh-agent bash -c 'ssh-add fty_keypair.key;git clone -b develop git@git.cardiff.ac.uk:c22045328/Talkative.git'
 
 echo "changing to repository directory..."
-cd devops_tianyi-fu/
+cd Talkative/
+
 
 sudo apt update
 sudo apt install default-jdk -y
 
 
-sudo chown debian:debian /home/debian/fty_keypair.key
-cp /home/debian/fty_keypair.key /home/debian/.ssh/id_rsa
-sudo chown debian:debian /home/debian/.ssh/id_rsa
-sudo chown debian:debian -R /home/debian/devops_tianyi-fu
-cat << `EOF` >> /home/debian/.ssh/authorized_keys
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC7osSlhKZ8dEkDC9RYj9CJVw0SKZdji9lVV+KJ83QOR2yeoPrDKxen4dYfaYD161Hha7LmRzUX5WqICNHF2NxXhJCeAkZuoGNt9uEQVb2N2dm0O9Q8bQSJ1KeS5/ASun7FNad7SluEApbiVe6lgxUX2VyovbPRV6wQCFFco9E5Wwt0EBUEBhaXTPDv3YzPYsUbcFMOuha1jTqWd46ZsvrSCKz76US7QuWXz5ucxW//gqjMlhESYs86fhwpW1Xexlpw6mbBDKUE3wrKfSEcHPMmdEwaO6A2XE8jjfxUFAYOaGIiuWyjudndGkmMwMVTINZyox1cxTijqlS9VpZLiZe8jXQBohBaVePAl/XhmicyMsvwChvL6KOXO24TG+Dnz6S31vPS3ChfNyIqa+eJNY3RpFCUO42n5ZVw5Xy6Ak6FeRv6ERE9Ew6jnvG/G7BYytmFd1+uuzto3DNzMzZllK1Dh3TsnQfE1+7uyDXEFskVOEjHRdR1poR5Y0fD6rW21Zf/RVxLH8V4HpHw5/BNpyK/QGOnd9mpdo8vrs+YnN6NdFXU5F2m0Xsrbr4uNMUNqQF6IbtfaEiUvhytXxifrq0GAhDd4kUZRBC7/DtKFUygD/3QjeUmcigkx0WKCxoW5ST5Ib2UZqQBwsPnxweT26CYE2dyEPDXhSeaNeO2+aJ13w== debian@jenkinsserverdebian
+sudo chown rocky:rocky /home/rocky/fty_keypair.key
+cp /home/rocky/fty_keypair.key /home/rocky/.ssh/id_rsa
+sudo chown rocky:rocky /home/rocky/.ssh/id_rsa
+sudo chown rocky:rocky -R /home/rocky/Talkative
+cat << `EOF` >> /home/rocky/.ssh/authorized_keys
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC7osSlhKZ8dEkDC9RYj9CJVw0SKZdji9lVV+KJ83QOR2yeoPrDKxen4dYfaYD161Hha7LmRzUX5WqICNHF2NxXhJCeAkZuoGNt9uEQVb2N2dm0O9Q8bQSJ1KeS5/ASun7FNad7SluEApbiVe6lgxUX2VyovbPRV6wQCFFco9E5Wwt0EBUEBhaXTPDv3YzPYsUbcFMOuha1jTqWd46ZsvrSCKz76US7QuWXz5ucxW//gqjMlhESYs86fhwpW1Xexlpw6mbBDKUE3wrKfSEcHPMmdEwaO6A2XE8jjfxUFAYOaGIiuWyjudndGkmMwMVTINZyox1cxTijqlS9VpZLiZe8jXQBohBaVePAl/XhmicyMsvwChvL6KOXO24TG+Dnz6S31vPS3ChfNyIqa+eJNY3RpFCUO42n5ZVw5Xy6Ak6FeRv6ERE9Ew6jnvG/G7BYytmFd1+uuzto3DNzMzZllK1Dh3TsnQfE1+7uyDXEFskVOEjHRdR1poR5Y0fD6rW21Zf/RVxLH8V4HpHw5/BNpyK/QGOnd9mpdo8vrs+YnN6NdFXU5F2m0Xsrbr4uNMUNqQF6IbtfaEiUvhytXxifrq0GAhDd4kUZRBC7/DtKFUygD/3QjeUmcigkx0WKCxoW5ST5Ib2UZqQBwsPnxweT26CYE2dyEPDXhSeaNeO2+aJ13w== rocky@jenkinsserverdebian
 
 `EOF`
 

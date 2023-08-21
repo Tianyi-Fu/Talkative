@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="add preload image in jenkins.">
+    <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="update terraform..">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Terraform/Terraform/server.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Terraform/Terraform/server.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +96,7 @@
       <recent name="$PROJECT_DIR$/frontend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Tony\Desktop\Talkative" />
       <recent name="C:\Users\c21112765\OneDrive - Cardiff University\Desktop\Talkative\frontend\vendors\bs-stepper" />
       <recent name="$PROJECT_DIR$/frontend" />
       <recent name="$PROJECT_DIR$/src/main/resources/templates" />
@@ -234,7 +235,7 @@
       <workItem from="1692487812803" duration="18388000" />
       <workItem from="1692555314585" duration="4427000" />
       <workItem from="1692568678700" duration="4965000" />
-      <workItem from="1692597238055" duration="5301000" />
+      <workItem from="1692597238055" duration="6725000" />
     </task>
     <task id="LOCAL-00001" summary="new gitigonore file">
       <created>1689282546007</created>
@@ -439,7 +440,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692597794954</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="update terraform..">
+      <created>1692649098080</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1692649098080</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,7 +475,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="new gitigonore file" />
     <MESSAGE value="added Feedback java files &amp; Python script to format transcript, not yet tested out" />
     <MESSAGE value="tryin to use JAVA to format the transcript data instead of Python, not yet working" />
     <MESSAGE value="format transcript data at frontend, removed all Python related dependencies" />
@@ -492,7 +499,8 @@
     <MESSAGE value="works perfectly in local docker environment." />
     <MESSAGE value="downgrade to java 11." />
     <MESSAGE value="add preload image in jenkins." />
-    <option name="LAST_COMMIT_MESSAGE" value="add preload image in jenkins." />
+    <MESSAGE value="update terraform.." />
+    <option name="LAST_COMMIT_MESSAGE" value="update terraform.." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
