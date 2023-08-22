@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
     <meta charset="utf-8">
@@ -12,7 +11,6 @@
     <title>QuestionsDetails - Admin</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
             href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
             rel="stylesheet">
@@ -32,7 +30,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard.html">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="frontend/dashboard.html">
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-laugh-wink"></i>
             </div>
@@ -65,14 +63,6 @@
             </a>
         </li>
 
-        <!-- Nav Item  -->
-        <li class="nav-item">
-            <a class="nav-link" href="questionDetails.html">
-                <i class="fas fa-fw fa-wrench"></i>
-                <span>Questions Details</span>
-            </a>
-        </li>
-
         <!-- Divider -->
         <hr class="sidebar-divider">
 
@@ -80,22 +70,6 @@
         <div class="sidebar-heading">
             Admin Management
         </div>
-
-        <!-- Nav Item -->
-        <li class="nav-item">
-            <a class="nav-link" href="login.html">
-                <i class="fas fa-fw fa-cog"></i>
-                <span>Login</span>
-            </a>
-        </li>
-
-        <!-- Nav Item -->
-        <li class="nav-item">
-            <a class="nav-link" href="register.html">
-                <i class="fas fa-fw fa-cog"></i>
-                <span>Register</span>
-            </a>
-        </li>
 
         <li class="nav-item">
             <a class="nav-link" href="users.html">
@@ -138,11 +112,9 @@
 
                     <!-- Nav Item - Admin Information -->
                     <li class="nav-item dropdown no-arrow">
-                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                        <a class="nav-link dropdown-toggle" href="/logout" id="userDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Account</span>
-                            <img class="img-profile rounded-circle"
-                                 src="images/undraw_profile.svg">
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Log out</span>
                         </a>
                         <!-- Dropdown - Admin Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -160,10 +132,6 @@
                                 Activity Log
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Logout
-                            </a>
                         </div>
                     </li>
 
@@ -174,28 +142,6 @@
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
-                <!-- Page Heading -->
-<!--                <div class="container tbl-container">-->
-<!--                    <div class="tbl-fixed" style="overflow-x: auto; overflow-y: auto;">-->
-<!--                        <div class="container">-->
-<!--                            <h2>User List</h2>-->
-<!--                            <table class="table">-->
-<!--                                <thead>-->
-<!--                                <tr>-->
-<!--                                    <th>UID</th>-->
-<!--                                    <th>Username</th>-->
-<!--                                    <th>User Role</th>-->
-<!--                                    <th>Created At</th>-->
-<!--                                </tr>-->
-<!--                                </thead>-->
-<!--                                <tbody id="userTableBody">-->
-<!--                                &lt;!&ndash; This space will be populated by JavaScript &ndash;&gt;-->
-<!--                                </tbody>-->
-<!--                            </table>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
                 <div class="container">
                     <h1>User List</h1>
                     <table class="table">
@@ -247,25 +193,11 @@
 <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="js/sb-admin-2.min.js"></script>
-
-<!--<script>-->
-<!--    $(document).ready(function() {-->
-<!--        // Make an AJAX request to fetch user data from the backend-->
-<!--        $.get("/api/users", function(data) {-->
-<!--            const userTableBody = $("#userTableBody");-->
-<!--            data.forEach(function(user) {-->
-<!--                const row = "<tr><td>" + user.uid + "</td><td>" + user.username + "</td><td>" + user.userRole + "</td><td>" + user.createdAt + "</td></tr>";-->
-<!--                userTableBody.append(row);-->
-<!--            });-->
-<!--        });-->
-<!--    });-->
-<!--</script>-->
     <script>
         $(document).ready(function() {
             $.ajax({
                 type: "GET",
-                url: "http://localhost:8081/api/users",
+                url: "/api/users",
                 dataType: "json",
                 success: function(data) {
                     console.log(data);
