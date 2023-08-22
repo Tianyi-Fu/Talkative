@@ -33,6 +33,7 @@ public class FeedBackRecordAndUserInfoController {
 
     @PostMapping("/rc/list")
     public Result<Map<String, Object>> getFeedBackRecordAndUserInfo(@RequestBody Map<String, Object> map) {
+        System.out.println("00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000");
         Object o = map.get("page");
         Object o1 = map.get("size");
         int page = 1;
