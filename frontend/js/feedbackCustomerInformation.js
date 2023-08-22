@@ -1,6 +1,6 @@
 $(document).ready(function () {
 //    let baseUrl = 'http://127.0.0.1:8081';
-    let baseUrl = 'http://localhost';
+    let baseUrl = 'http://13.42.40.174';
 
     // EventListeners
     $("#submitInfoBtn").click(function () {
