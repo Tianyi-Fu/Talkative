@@ -7,6 +7,12 @@ $(document).ready(() => {
         questionsLoadedCheck();
     })
 
+    // Listen close button on click
+    $(".btn-close").click(() => {
+        localStorage.clear();
+        window.location.reload();
+    })
+
     // Functions
     function loadQuestions() {
         const questionArray = localStorage.getItem("questions");

@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    let baseUrl = 'http://localhost';
+//    let baseUrl = 'http://localhost';
 
     $("#datepicker").datepicker({
         dateFormat: "dd/mm/yy", // Setting the date format

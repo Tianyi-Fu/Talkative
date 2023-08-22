@@ -1,6 +1,6 @@
 $(document).ready(() => {
 // let baseUrl = 'http://127.0.0.1:8081';
-    let baseUrl = 'http://localhost';
+//    let baseUrl = 'http://localhost';
 
     let answer;
 
@@ -42,6 +42,12 @@ $(document).ready(() => {
         saveAnsGetQuestion(answer);
 
         $('.modal-content').load('components/feedbackCustomerInformation.html');
+    })
+
+    // Listen close button on click
+    $(".btn-close").click(() => {
+        localStorage.clear();
+        window.location.reload();
     })
 
     // Functions
