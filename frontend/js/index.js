@@ -97,7 +97,7 @@ function sendTranscript(chatRecordId, conversation, widget) {
         data: JSON.stringify(transcriptObj),
         success: function (data) {
             if (data.code == 500) {
-                alert(data.message)
+                console.log(data.message)
             } else {
                 localStorage.setItem("feedbackRecordId", data.data)
                 console.log('OK')

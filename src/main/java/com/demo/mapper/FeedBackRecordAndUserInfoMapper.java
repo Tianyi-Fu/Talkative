@@ -75,6 +75,25 @@ public interface FeedBackRecordAndUserInfoMapper {
     @Select("select chat_record_id,transcript from chat_record where feedback_record_id = #{feedbackRecordId}")
     Map<String, Object> selectChatRecordByRecordId(String feedbackRecordId);
 
+    @Select("select count(1) from chat_record")
+    int selectCountCharRecord();
+
+
+
+    @Select("<script>" +
+            "select count(1) from feedback_record where question_id = 1\n" +
+            "        <if test=\"type == 1 \">\n" +
+            "            and (answer = 1 or answer = 2)\n" +
+            "        </if>\n" +
+            "        <if test=\"type == 2 \">\n" +
+            "            and (answer = 3 or answer = 4)\n" +
+            "        </if>\n" +
+            "        <if test=\"type == 3 \">\n" +
+            "            and (answer = 5)\n" +
+            "        </if>" +
+            "</script>")
+    int selectAnswerCountByQuestionId1(int type);
+
     //2
     @Delete("delete from chat_record where feedback_record_id = #{feedbackRecordId}")
     int deleteChatRecord(int feedbackRecordId);

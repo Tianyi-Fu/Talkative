@@ -50,6 +50,10 @@ public class FeedBackRecordAndUserInfoController {
         map.put("total", chatRecordIds[1]);
         map.put("page", chatRecordIds[2]);
         map.put("size", chatRecordIds[1]);
+        map.put("all_total", feedBackRecordAndUserInfoService.selectCountCharRecord());
+        map.put("unsatisfiedCount", feedBackRecordAndUserInfoService.selectAnswerCountByQuestionId1(1));
+        map.put("neutralCount", feedBackRecordAndUserInfoService.selectAnswerCountByQuestionId1(2));
+        map.put("satisfiedCount", feedBackRecordAndUserInfoService.selectAnswerCountByQuestionId1(3));
         return Result.success(map);
     }
 

@@ -17,7 +17,6 @@ public class TranscriptService {
         chatRecord.setTranscript(transcript);
         chatRecord.setAgentName(agentName);
         chatRecord.setChatRecordId(chatRecordId);
-//        chatRecord.setFeedbackRecordId(id);
         transcriptMapper.insert(chatRecord);
         return chatRecord.getFeedbackRecordId();
     }
