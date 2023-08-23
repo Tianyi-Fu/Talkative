@@ -50,8 +50,8 @@ $(document).ready(function () {
             "chatRecordId": chatRecordId
         };
 
-        console.log(json)
-        console.log("0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000")
+        alert(json)
+        alert("0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000")
 
         $.ajax({
             url: baseUrl + '/create-info/' + localStorage.getItem("agentName"),
