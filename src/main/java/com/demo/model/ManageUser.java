@@ -5,11 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
 
 public class ManageUser {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Long uid;
     private String username;
     private String userRole;
@@ -62,6 +60,13 @@ public class ManageUser {
     }
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
+    }
+    @Override
+    public String toString() {
+        return "User{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 
 }

@@ -885,7 +885,7 @@ finance:
     - balance-scale-left
     - balance-scale-right
     - book
-    - cash-register
+    - cash-register.js
     - chart-line
     - chart-pie
     - coins
@@ -2133,7 +2133,7 @@ shopping:
     - barcode
     - cart-arrow-down
     - cart-plus
-    - cash-register
+    - cash-register.js
     - gift
     - gifts
     - person-booth

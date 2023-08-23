@@ -4800,7 +4800,7 @@ copyright:
     terms:
       - brand
       - mark
-      - register
+      - register.js
       - trademark
   styles:
     - solid
@@ -19357,7 +19357,7 @@ trademark:
   search:
     terms:
       - copyright
-      - register
+      - register.js
       - symbol
   styles:
     - solid
