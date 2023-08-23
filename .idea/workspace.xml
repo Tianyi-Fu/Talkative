@@ -4,9 +4,56 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="fix bugs.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/js/feedbackCustomerInformation.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/feedbackCustomerInformation.js" afterDir="false" />
+    <list default="true" id="9f30ba40-eb77-4a20-aeef-e97a013dd2b4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/target/Talkative-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Talkative-1.0-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/TalkativeApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/config/MpConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/CreateInfoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/ErrorController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/FeedBackRecordAndUserInfoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/FeedbackAnalysisController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/FeedbackController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/FileDownloadController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/TranscriptController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$ChatParam.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$FeedbackSaveParam.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$FeedbackSaveParamAndChatId.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$QueryParam.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$QuestionVo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$SaveParam.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data$Vo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/data/Data.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/error/Exception.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/mapper/ChatRecordMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/mapper/CreateInfoMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/mapper/FeedBackRecordAndUserInfoMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/mapper/FeedbackAnalysisMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/mapper/Mapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/mapper/TranscriptMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/ChatRecord.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/CreateUserInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/Demo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/FeedbackAnalysis.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/FeedbackRecord.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/FeedbackUserInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/Question.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/Result.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/repository/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/CreateInfoService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/FeedBackRecordAndUserInfoService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/FeedbackAnalysisService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/FeedbackService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/TranscriptService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/util/AIUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/util/BeanUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/util/JsonUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,17 +167,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.preload_models">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -157,6 +193,17 @@
       <option name="resourceGroup" />
       <option name="stagingFolder" />
       <option name="subscription" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -562,8 +609,5 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Talkative$Analyzer.coverage" NAME="Analyzer Coverage Results" MODIFIED="1691982690385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python" />
   </component>
 </project>
