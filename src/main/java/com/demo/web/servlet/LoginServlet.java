@@ -6,6 +6,7 @@ import com.demo.model.User;
 import com.demo.serivce.UserService;
 import com.demo.serivce.impl.UserServiceImpl;
 import org.apache.commons.beanutils.BeanUtils;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,16 +14,20 @@ import javax.servlet.http.*;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
+@CrossOrigin(origins = "http://localhost:63342/",maxAge = 3600)
 
 @WebServlet(name = "LoginServlet", urlPatterns = "/LoginServlet")
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setHeader("Access-Control-Allow-Origin","*");//星号表示所有
+
         this.doPost(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setHeader("Access-Control-Allow-Origin","*");//星号表示所有
         request.setCharacterEncoding("utf-8");
         //1.获取用户名和密码
         Map<String, String[]> map = request.getParameterMap();
