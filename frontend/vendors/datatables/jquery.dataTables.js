@@ -1335,7 +1335,7 @@
 	
 	var _ext; // DataTable.ext
 	var _Api; // DataTable.Api
-	var _api_register; // DataTable.Api.register
+	var _api_register; // DataTable.Api.register.js
 	var _api_registerPlural; // DataTable.Api.registerPlural
 	
 	var _re_dic = {};
@@ -2452,7 +2452,7 @@
 			oSettings.aIds[ id ] = oData;
 		}
 	
-		/* Create the DOM information, or register it if already present */
+		/* Create the DOM information, or register.js it if already present */
 		if ( nTr || ! oSettings.oFeatures.bDeferRender )
 		{
 			_fnCreateTr( oSettings, iRow, nTr, anTds );
@@ -6765,7 +6765,7 @@
 	
 	/**
 	 * Computed structure of the DataTables API, defined by the options passed to
-	 * `DataTable.Api.register()` when building the API.
+	 * `DataTable.Api.register.js()` when building the API.
 	 *
 	 * The structure is built in order to speed creation and extension of the Api
 	 * objects since the extensions are effectively pre-parsed.

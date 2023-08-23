@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,6 +15,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
             integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
             crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+
 
 </head>
 <style>
@@ -65,26 +67,33 @@
     <div class="title">
         <h2 class="project">Talkative Feedback System</h2>
     </div>
-    <p th:if="${error}" class="error">Wrong username or password</p>
-    <form id="login-form" th:action="@{/login}" method="post">
+    <form action="LoginServlet" method="post" id="loginForm">
         <div class="login">
             <h2>Hello,Welcome!</h2>
             <p>Please Enter Your Details Below to Continue</p>
         </div>
         <div class="row input-group mb-3">
-            <label class="col-xs-12 col-sm-12 col-md-12 col-lg-3" for="username">Username:</label>
-            <input id="username" type="text" name="username" class="form-control col-xs-12 col-sm-12 col-md-12 col-lg-9" aria-describedby="inputGroup-sizing-default" placeholder="Username" required aria-required="true">
+            <label class="col-xs-12 col-sm-12 col-md-12 col-lg-3" for="user">Username:</label>
+            <input id="user" type="text" name="username" class="form-control col-xs-12 col-sm-12 col-md-12 col-lg-9" aria-describedby="inputGroup-sizing-default" placeholder="Username" required aria-required="true">
         </div>
         <div class="row input-group mb-3">
             <label for="password" class="col-xs-12 col-sm-12 col-md-12 col-lg-3">Password:</label>
             <input id="password" name="password" type="password" class="form-control col-xs-12 col-sm-12 col-md-12 col-lg-9" aria-describedby="inputGroup-sizing-default" placeholder="Password" required aria-required="true">
         </div>
-        <div>
-            <button class="btn btn-primary" type="submit">Log in</button>
+<!--        <div>-->
+<!--            <button class="btn btn-primary" type="submit" id="btn_sub">Log in</button>-->
+<!--        </div>-->
+        <div class="form-group" style="text-align: center;">
+            <input class="btn btn btn-primary" id="btn_sub" type="button" value="登录">
         </div>
     </form>
+<!--    <div class="alert alert-warning alert-dismissible" role="alert">-->
+<!--        <button type="button" class="close" data-dismiss="alert" >-->
+<!--            <span>&times;</span></button>-->
+<!--        <strong id="errorMsg"></strong>-->
+<!--    </div>-->
     <div class="login-label">
-        <p>No account? <a href="/register">Create one!</a></p>
+        <p>No account? <a href="/register.html">Create one!</a></p>
     </div>
 </div>
 </div>

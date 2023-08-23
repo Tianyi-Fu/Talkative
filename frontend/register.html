@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -16,6 +15,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
           integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
           crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script type="text/javascript" src="js/register.js"></script>
+
 
 </head>
 <style>
@@ -62,8 +65,8 @@
 <body class="p-3 m-0 border-0 bd-example bd-example-row">
 <div class="center-container">
   <div class="container w-50">
-    <p th:if="${error}" class="error">Sign up failed</p>
-    <form id="login-form" th:action="@{/register-save}" method="post">
+<!--    <p th:if="${error}" class="error">Sign up failed</p>-->
+    <form action="RegistUserServlet" id="registerForm" accept-charset="utf-8" method="post">
       <div class="mb-3">
         <div class="login"><h2>Sign Up</h2></div>
       </div>
@@ -76,11 +79,11 @@
         <input id="password" name="password" type="password" class="form-control col-xs-12 col-sm-12 col-md-12 col-lg-9" aria-describedby="inputGroup-sizing-default" placeholder="Password" required aria-required="true">
       </div>
       <div>
-        <button class="btn btn-primary" style="background-color: #214ea3" type="submit">Sign Up</button>
+        <button class="btn btn-primary" style="background-color: #214ea3" type="submit" id="btn_sub">Sign Up</button>
       </div>
       <div>
         <p class="signup-label">Already have an account? <a
-                href="/login">Back
+                href="/login.html">Back
           to login!</a></p>
       </div>
     </form>
