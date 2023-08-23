@@ -7,11 +7,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
-/**
- * @author Tianyi Fu
- * @since 2023/7/5
- */
-
 @RestController
 @RequestMapping
 @RequiredArgsConstructor
@@ -24,7 +19,12 @@ public class FeedbackRecordController {
      * count
      */
     @PostMapping("/feedbackrecord/count")
-    public Result count(@RequestBody Map<String,Object> json) throws Exception {
-        return Result.success(service.gelTotal());
+    public Result count(@RequestBody Map<String, Object> json) throws Exception {
+        Map<String, Object> info = service.gelTotal();
+        String total = info.get("total") + "";
+        int totals = Integer.parseInt(total);
+        if (totals > 0) totals = totals / 6;
+        info.put("total", totals + "");
+        return Result.success(info);
     }
 }
