@@ -1,6 +1,6 @@
 $(document).ready(function () {
 //    let baseUrl = 'http://127.0.0.1:8081';
-    let baseUrl = 'http://13.42.40.174';
+   // let baseUrl = 'http://13.42.40.174';
 
     // EventListeners
     $("#submitInfoBtn").click(function () {
@@ -32,10 +32,10 @@ $(document).ready(function () {
         $('.modal-content').empty();
         $('.modal-content').append('<div class="modal-body" style="margin-top: 50px"><h3>Thank you for your feedback!</h3></div>');
 
-        setTimeout(() => {
-            localStorage.clear();
-            window.location.reload();
-        }, 2000)
+        // setTimeout(() => {
+        //     localStorage.clear();
+        //     window.location.reload();
+        // }, 2000)
     })
 
     // Functions
@@ -51,6 +51,7 @@ $(document).ready(function () {
         };
 
         console.log(json)
+        console.log("0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000")
 
         $.ajax({
             url: baseUrl + '/create-info/' + localStorage.getItem("agentName"),
