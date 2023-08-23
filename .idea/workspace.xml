@@ -5,57 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="connect to database">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Talkative.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/js/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/js/register.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/model/ResultInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/repository/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/repository/impl/UserDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/serivce/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/serivce/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/util/JDBCUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/web/servlet/ExitServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/web/servlet/FindUserServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/web/servlet/LoginServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/web/servlet/RegistUserServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/druid.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_8_13_19_27_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_8_13_19_27__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_14_3_02_[Changes]/FeedbackController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_14_3_02_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_14_3_02__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/feedbackDatasheet.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/feedbackDatasheet.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/users.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/vendors/bootstrap-5.2.3/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vendors/bootstrap-5.2.3/js/bootstrap.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/vendors/bootstrap-5.2.3/js/bootstrap.esm.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vendors/bootstrap-5.2.3/js/bootstrap.esm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/vendors/bootstrap-5.2.3/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vendors/bootstrap-5.2.3/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/vendors/chart.js/Chart.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vendors/chart.js/Chart.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/vendors/chart.js/Chart.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vendors/chart.js/Chart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/vendors/datatables/jquery.dataTables.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vendors/datatables/jquery.dataTables.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/vendors/fontawesome-free/metadata/categories.yml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vendors/fontawesome-free/metadata/categories.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/vendors/fontawesome-free/metadata/icons.yml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vendors/fontawesome-free/metadata/icons.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/TalkativeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/TalkativeApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/config/ApiConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/config/ResourceConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/config/SecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/config/WebMvcConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/controller/LoginController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/controller/RegisterController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/model/ManageUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/model/ManageUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/security/MyUserDetailsServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/druid.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/druid.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Talkative-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Talkative-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/TalkativeApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/TalkativeApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/FeedbackRecordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/controller/FeedbackRecordController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/web/servlet/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/web/servlet/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/druid.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/druid.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
@@ -101,27 +60,12 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Talkative.wasFacetEverAdded": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/yinzuo/Desktop/Talkative/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Facet",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Java",
-    "spring.configuration.checksum": "3d03706d9ca9cfb206f00c437c272955",
-    "vue.rearranger.settings.migration": "true"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+  </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -155,17 +99,6 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -192,6 +125,32 @@
       <option name="resourceGroup" />
       <option name="stagingFolder" />
       <option name="subscription" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TalkativeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="Talkative" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.demo.TalkativeApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -391,6 +350,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="new gitigonore file" />
