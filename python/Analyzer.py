@@ -150,7 +150,7 @@ DB_CONFIG = {
     'host': '127.0.0.1',
     'port': 3306,
     'user': 'root',
-    'password': 'fty5005669',
+    'password': 'Fty5005669',
     'db': 'talkative',
     'charset': 'utf8mb4',
     'cursorclass': pymysql.cursors.DictCursor
