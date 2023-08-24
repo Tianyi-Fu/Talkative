@@ -191,11 +191,10 @@
 
 <!-- Custom scripts for all pages-->
     <script>
-        let baseURrl = "http://localhost:8081"
         $(document).ready(function() {
             $.ajax({
                 type: "GET",
-                url: baseURrl + "/api/users",
+                url: http://127.0.0.1:8081/api/users",
                 dataType: "json",
                 success: function(data) {
                     console.log(data);
