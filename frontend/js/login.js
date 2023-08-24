@@ -6,7 +6,7 @@ $(function (){
             //data: {flag :false,errorMsg:''}
             if(data.flag){
                 //登录成功
-                location.href="/dashboard.html";
+                location.href="dashboard.html";
             }else {
                 //登录失败
                 $("#errorMsg").html(data.errorMsg);
