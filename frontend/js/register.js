@@ -42,7 +42,7 @@ $(function(){
         //1.发送数据到服务器
         if(checkUsername() && checkPassword()){
             //校验通过，发送Ajax请求，提交表单的数据
-            $.post("http://localhost/RegistUserServlet",$(this).serialize(),function (data){
+            $.post("RegistUserServlet",$(this).serialize(),function (data){
                 //处理服务器响应的数据 data	{flag:true,errorMsg:"注册失败"}
                 if(data.flag){
                     //注册成功，跳转成功页面

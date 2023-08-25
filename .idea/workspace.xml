@@ -4,37 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="fix bugs.">
+    <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/feedbackQuestionModal.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/feedbackQuestionModal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/js/feedbackCustomerInformation.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/feedbackCustomerInformation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/demo/controller/TranscriptControllerUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/demo/controller/TranscriptControllerUnitTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/demo/service/TranscriptServiceUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/demo/service/TranscriptServiceUnitTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/ChatRecordController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/FeedbackRecordController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/ReviewAnalysisController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/indexController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/mapper/FeedbackRecordMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/mapper/ReviewAnalysisMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/mapper/UserMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/ManageUser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/ResultInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/repository/UserDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/repository/impl/UserDaoImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/ChatRecordService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/FeedbackRecordService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/ReviewAnalysisService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/impl/UserServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/util/JDBCUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/web/servlet/ExitServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/web/servlet/FindUserServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/web/servlet/LoginServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/web/servlet/RegistUserServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/druid.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +120,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Python.preload_models">
+  <component name="RunManager" selected="JUnit.TranscriptServiceUnitTest">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -184,6 +158,36 @@
       <option name="resourceGroup" />
       <option name="stagingFolder" />
       <option name="subscription" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TranscriptControllerUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Talkative" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.demo.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.demo.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.demo.controller.TranscriptControllerUnitTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TranscriptServiceUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Talkative" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.demo.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.demo.service" />
+      <option name="MAIN_CLASS_NAME" value="com.demo.service.TranscriptServiceUnitTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -228,6 +232,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TranscriptServiceUnitTest" />
+        <item itemvalue="JUnit.TranscriptControllerUnitTest" />
         <item itemvalue="Python.preload_models" />
       </list>
     </recent_temporary>
@@ -528,7 +534,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692757850762</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="checked widget works in index.html">
+      <created>1692924319686</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1692924319686</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -556,7 +569,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="format transcript data at frontend, removed all Python related dependencies" />
     <MESSAGE value="attempted to save transcript to DB, not working yet" />
     <MESSAGE value="changed Chat_record Table_id to AUTO" />
     <MESSAGE value="Updated database schema &amp; successfully written transcript data to chat_record table" />
@@ -581,7 +593,8 @@
     <MESSAGE value="update terraform.." />
     <MESSAGE value="finish deployee on the aws and openstack." />
     <MESSAGE value="fix bugs." />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bugs." />
+    <MESSAGE value="checked widget works in index.html" />
+    <option name="LAST_COMMIT_MESSAGE" value="checked widget works in index.html" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -590,6 +603,11 @@
           <properties class="java.lang.RuntimeException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/demo/service/TranscriptServiceUnitTest.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
