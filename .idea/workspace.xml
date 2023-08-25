@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="prepare to launch in aws server.">
-      <change beforePath="$PROJECT_DIR$/frontend/feedbackDatasheet.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/feedbackDatasheet.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/js/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/users.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/druid.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/druid.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portal.conf" beforeDir="false" afterPath="$PROJECT_DIR$/portal.conf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -550,7 +547,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692926266795</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="prepare to launch in aws server.">
+      <created>1693002344272</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1693002344272</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -578,7 +582,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="changed Chat_record Table_id to AUTO" />
     <MESSAGE value="Updated database schema &amp; successfully written transcript data to chat_record table" />
     <MESSAGE value="added unversioned files" />
     <MESSAGE value="merged with folder_structure" />
@@ -603,7 +606,8 @@
     <MESSAGE value="fix bugs." />
     <MESSAGE value="checked widget works in index.html" />
     <MESSAGE value="Fixed test failed issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed test failed issue" />
+    <MESSAGE value="prepare to launch in aws server." />
+    <option name="LAST_COMMIT_MESSAGE" value="prepare to launch in aws server." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

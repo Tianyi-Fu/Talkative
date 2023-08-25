@@ -9,6 +9,7 @@ services:
       - ih
     ports:
       - 80:8081
+      - 443:443
     depends_on:
       - My_web1
 #      - My_web2
@@ -16,6 +17,9 @@ services:
     volumes:
       - ./portal.conf:/etc/nginx/conf.d/default.conf
       - ./frontend:/app/frontend
+      - /home/ec2-user/data/cert.pem:/etc/nginx/ssl/cert.pem:ro
+      - /home/ec2-user/data/key.pem:/etc/nginx/ssl/key.pem:ro
+
   My_web1:
     image: "tianyifu/myproject:dev"
     container_name: My_web1
@@ -71,6 +75,7 @@ services:
 networks:
   ih:
     name: ih
+    external: true
     driver: bridge
     driver_opts:
       com.docker.network.driver.mtu: 1450
