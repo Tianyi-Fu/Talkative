@@ -1,4 +1,4 @@
-let baseUrl = "http://localhost:8081"
+let baseUrl = "http://localhost"
 function getData(url,call,par){
     $.ajax({
         url: url,
