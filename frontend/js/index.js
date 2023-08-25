@@ -1,14 +1,15 @@
 // let baseUrl = 'http://127.0.0.1:8081'
-let baseUrl = 'http://13.42.40.174';
+let baseUrl = 'http://localhost';
 
 $(document).ready(() => {
     let agentName = '';
 
-    // EventListeners
+    // Ajax 
+    /* Send Transcript to Backend */
     $("#submit").click(() => {
         let conversation = $("#chat").val();
 
-        // Check for value in textarea
+        // Check for value in textarea 
         if (conversation.length < 1) return;
 
         let chatRecordId = JSON.parse(conversation).id;
@@ -16,6 +17,7 @@ $(document).ready(() => {
         sendTranscript(chatRecordId, conversation);
     })
 
+    // EventListeners 
     /* Enable Submit(End Chat) button when there is content in textarea */
     $("#chat").change((e) => {
         let val = e.target.value;

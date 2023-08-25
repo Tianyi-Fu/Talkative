@@ -105,7 +105,7 @@ function load(page, size, chatRecordID, satisfaction, agentName, datepicker, dat
                     'Feedback'
                 ],
                 datasets: [{
-                    label: '饼图实例',
+                    label: 'Amount',
                     data: dataValues,
                     backgroundColor: [
                         'rgb(186, 197, 204)',

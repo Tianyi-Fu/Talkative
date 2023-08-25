@@ -3,6 +3,7 @@ package com.demo;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
@@ -10,6 +11,7 @@ import org.springframework.context.annotation.ComponentScan;
  * @since 2023/7/5
  */
 @MapperScan(basePackages = {"com.demo.mapper"})
+@ServletComponentScan
 @SpringBootApplication()
 public class TalkativeApplication {
 

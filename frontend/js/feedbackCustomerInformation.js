@@ -68,8 +68,9 @@ $(document).ready(function () {
         })
     }
 })
-let checkRadio = false
+
 function checkOne() {
+    let checkRadio = false
     if (checkRadio === false){
         checkRadio = true
     }else {
