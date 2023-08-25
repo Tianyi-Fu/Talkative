@@ -1,7 +1,10 @@
 package com.demo.util;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import org.apache.commons.text.StringEscapeUtils;
+
+import java.io.IOException;
 
 /**
  * @author Tianyi Fu

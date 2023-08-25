@@ -1,5 +1,5 @@
 $(document).ready(function () {
-//    let baseUrl = 'http://localhost';
+    //    let baseUrl = 'http://localhost';
 
     $("#datepicker").datepicker({
         dateFormat: "dd/mm/yy", // Setting the date format
@@ -60,9 +60,9 @@ function load(page, size, chatRecordID, satisfaction, agentName, datepicker, dat
                             <td>${feedbackUser.created_at}</td>
                             <td style="width: 300px;">
                                   <a type="button" class="btn btn-info btn-xs" 
-                                  onclick="showPopup3(\'${feedbackUser.feedback_record_id}'\,\'${feedbackUser.first_name}'\,\'${feedbackUser.last_name}'\,\'${feedbackUser.aa_email}'\,\'${feedbackUser.agent_name}'\)" style="background-color:#27a844;color:white;">Modify</a>&nbsp;
-                                <a type="button" class="btn btn-danger btn-xs" onclick="dele(${feedbackUser.feedback_record_id})">Delete</a>
-                                <a type="button" class="btn btn-danger btn-xs" onclick="analysis(${feedbackUser.feedback_record_id})">Analysis</a>
+                                  onclick="showPopup3(\'${feedbackUser.feedback_record_id}'\,\'${feedbackUser.first_name}'\,\'${feedbackUser.last_name}'\,\'${feedbackUser.aa_email}'\,\'${feedbackUser.agent_name}'\)" style="background-color:#27a844;color:white;b">Modify</a>&nbsp;
+                                <a type="button" class="btn btn-danger btn-xs" style="margin:3px;" onclick="dele(${feedbackUser.feedback_record_id})">Delete</a>
+                                <a type="button" class="btn btn-warning btn-xs" style="margin:3px;" onclick="analysis(${feedbackUser.feedback_record_id})">Analysis</a>
                             </td>
                         </tr>`;
             }
@@ -71,15 +71,15 @@ function load(page, size, chatRecordID, satisfaction, agentName, datepicker, dat
             const tbody = $("#feedbackUserTable tbody");
             data.data.list.forEach(user => {
                 if (1 == user.answer || 2 == user.answer) {
-                    user.answer = "<div><input style=\"background-color: red;\" class='answer'  placeholder=\"unsatisfied\" disabled/></div>"
+                    user.answer = "<div><input style=\"background-color: #ff5555; border-radius: 0.35rem; text-align: center;\" class='answer'  placeholder=\"unsatisfied\" disabled/></div>"
                 } else if (3 == user.answer || 4 == user.answer) {
-                    user.answer = "<div><input style=\"background-color: yellow;\" class='answer'  placeholder=\"neutral\" disabled/></div>"
+                    user.answer = "<div><input style=\"background-color: #ffff5a; border-radius: 0.35rem; text-align: center;\" class='answer'  placeholder=\"neutral\" disabled/></div>"
                 } else {
-                    user.answer = "<div><input style=\"background-color: green;\" class='answer' placeholder=\"satisfied\" disabled/></div>"
+                    user.answer = "<div><input style=\"background-color: #71e071; border-radius: 0.35rem; text-align: center;\" class='answer' placeholder=\"satisfied\" disabled/></div>"
                 }
 
-                user.questions = "<div><input type='button' value='view' placeholder='test' onclick='showPopup(" + user.feedback_record_id + ")'/></div>"
-                user.transcript = "<div><input type='button' value='view' placeholder='test' onclick='showPopup2(" + user.feedback_record_id + ")'/></div>"
+                user.questions = "<div><input type='button' class='btn btn-info' value='view' placeholder='test' onclick='showPopup(" + user.feedback_record_id + ")'/></div>"
+                user.transcript = "<div><input type='button' class='btn btn-info' value='view' placeholder='test' onclick='showPopup2(" + user.feedback_record_id + ")'/></div>"
                 user.aa_email = user.email
                 tbody.append(generateTableRow(user));
 
@@ -274,17 +274,17 @@ function getData(inputDate) {
     if (inputDate == '') {
         return null
     }
-// Date string entered
+    // Date string entered
 
-// Using the split () method to split the date string into arrays of months, days, and years
+    // Using the split () method to split the date string into arrays of months, days, and years
     const dateArray = inputDate.split('/');
 
-// Obtain month, date, and year
+    // Obtain month, date, and year
     const month = dateArray[1];
     const day = dateArray[0];
     const year = dateArray[2];
 
-// Build a new date string
+    // Build a new date string
     const convertedDate = `${year}-${month}-${day}`;
 
     return convertedDate

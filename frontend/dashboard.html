@@ -115,7 +115,7 @@
 
                     <!-- Nav Item - Admin Information -->
                     <li class="nav-item dropdown no-arrow">
-                        <a class="nav-link dropdown-toggle" href="login.html" id="userDropdown" role="button"
+                        <a class="nav-link dropdown-toggle" href="/ExitServlet" id="userDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="mr-2 d-none d-lg-inline text-gray-600 small">Log out</span>
                         </a>
@@ -169,8 +169,11 @@
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 fleft">
-                                            Total of Feedback Received</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800 font50" id="feedbackTotal">0</div>
+                                            Total of Feedback Received
+                                        </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800 font50" id="feedbackTotal">
+                                            0
+                                        </div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -187,8 +190,11 @@
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1 fleft">
-                                            Total of Chat Record</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800 font50" id="chatRecordTotal">0</div>
+                                            Total of Chat Record
+                                        </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800 font50" id="chatRecordTotal">
+                                            0
+                                        </div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -276,7 +282,7 @@
                             <!-- Card Header - Dropdown -->
                             <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary">Topic statistics</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Topic Statistics</h6>
                                 <div class="dropdown no-arrow">
                                     <a class="dropdown-toggle" href="#" role="button"
                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -300,7 +306,7 @@
                             <!-- Card Header - Dropdown -->
                             <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary">Topic proportion</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Topic Proportion</h6>
                                 <div class="dropdown no-arrow">
                                     <a class="dropdown-toggle" href="#" role="button"
                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -309,7 +315,7 @@
                                 </div>
                             </div>
                             <!-- Card Body -->
-                            <div class="card-body"  style="min-height: 360px;">
+                            <div class="card-body" style="min-height: 360px;">
                                 <div class="chart-pie pt-4 pb-2" id="chartmain_bingzhuan">
                                     <!--<canvas id="myPieChart"></canvas>-->
                                 </div>
@@ -337,7 +343,7 @@
                             <!-- Card Header - Dropdown -->
                             <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary">Sentiment statistics</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Sentiment Statistics</h6>
                                 <div class="dropdown no-arrow">
                                     <a class="dropdown-toggle" href="#" role="button"
                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -404,7 +410,7 @@
                             <!-- Card Header - Dropdown -->
                             <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary">Sentiment statistics</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Sentiment Statistics</h6>
                                 <div class="dropdown no-arrow">
                                     <a class="dropdown-toggle" href="javascript:void(0)" role="button"
                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -427,9 +433,10 @@
                             <!-- Card Header - Dropdown -->
                             <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary">Review analysis</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Chat Analysis Overview</h6>
                                 <div class="dropdown no-arrow">
-                                    <a class="dropdown-toggle" href="javascript:void(0)" role="button" id="dropdownMenuLink"
+                                    <a class="dropdown-toggle" href="javascript:void(0)" role="button"
+                                       id="dropdownMenuLink"
                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400" id="generate-excel">Download</i>
                                     </a>
@@ -439,16 +446,17 @@
                             <div class="card-body">
                                 <div class="chart-area" id="chartmain" style="height:50rem;overflow-x: auto;">
                                     <!--<canvas id="myAreaChart"></canvas>-->
-                                    <table id="feedbackUserTable" class="table table-condensed" style="width: 100%;max-width: 100%;overflow-x: auto">
+                                    <table id="feedbackUserTable" class="table table-condensed"
+                                           style="width: 100%;max-width: 100%;overflow-x: auto">
                                         <thead>
                                         <tr>
                                             <th scope="col">ID</th>
-                                            <th scope="col">Review_text</th>
-                                            <th scope="col">Sentiment_ntlk</th>
-                                            <th scope="col">Sentiment_flair</th>
-                                            <th scope="col">Sentiment_bert</th>
-                                            <th scope="col">Topic</th>
-                                            <th scope="col">Chat_record_id</th>
+                                            <th scope="col">Transcript</th>
+                                            <th scope="col">Sentiment Analysis 1</th>
+                                            <th scope="col">Sentiment Analysis 2</th>
+                                            <th scope="col">Sentiment Analysis 3</th>
+                                            <th scope="col">Topic (proportion)</th>
+                                            <th scope="col">Chat Record Id</th>
                                         </tr>
                                         </thead>
                                         <tbody id="feedbackUserTableTbody">
@@ -486,15 +494,14 @@
     </a>
 
     <!-- Bootstrap core JavaScript-->
-<!--    <script src="vendor/jquery/jquery.min.js"></script>-->
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="vendors/bootstrap-5.2.3/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script type="text/javascript" src="vendors/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-<!--    <script src="js/sb-admin-2.min.js"></script>-->
+    <script src="js/sb-admin-2.min.js"></script>
 
     <script src='https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/echarts/4.2.1/echarts.min.js'></script>
 
@@ -931,7 +938,8 @@
     myChart.setOption(optionmyd);
     //};
     </script>
-    <script  type="text/javascript" src="js/data.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/data.js"></script>
     <script type="text/javascript" src="js/jszip.min.js"></script> <!--表格导出excel处理-->
     <script type="text/javascript" src="js/FileSaver.js"></script>
     <script type="text/javascript" src="js/excel-gen.js"></script>
