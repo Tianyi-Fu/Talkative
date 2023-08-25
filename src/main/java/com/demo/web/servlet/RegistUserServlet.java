@@ -60,7 +60,7 @@ public class RegistUserServlet extends HttpServlet {
         //设置content-type
         response.setContentType("application/json;charset=utf-8");
         response.getWriter().write(json);
-        response.sendRedirect(request.getContextPath()+"/login.html");
+//        response.sendRedirect(request.getContextPath()+"/login.html");
 
     }
 }

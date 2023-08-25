@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_18,_16_23_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_18__16_23__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/demo/controller/TranscriptControllerUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/demo/controller/TranscriptControllerUnitTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/demo/service/TranscriptServiceUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/demo/service/TranscriptServiceUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/util/JsonUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/util/JsonUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/web/servlet/ExitServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/web/servlet/ExitServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/web/servlet/RegistUserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/web/servlet/RegistUserServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -541,7 +544,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692924319686</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Fixed test failed issue">
+      <created>1692926266795</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1692926266795</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,7 +579,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="attempted to save transcript to DB, not working yet" />
     <MESSAGE value="changed Chat_record Table_id to AUTO" />
     <MESSAGE value="Updated database schema &amp; successfully written transcript data to chat_record table" />
     <MESSAGE value="added unversioned files" />
@@ -594,7 +603,8 @@
     <MESSAGE value="finish deployee on the aws and openstack." />
     <MESSAGE value="fix bugs." />
     <MESSAGE value="checked widget works in index.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="checked widget works in index.html" />
+    <MESSAGE value="Fixed test failed issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed test failed issue" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -603,11 +613,6 @@
           <properties class="java.lang.RuntimeException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/demo/service/TranscriptServiceUnitTest.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

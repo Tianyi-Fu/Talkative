@@ -19,6 +19,6 @@ public class ExitServlet extends HttpServlet {
         request.getSession().invalidate();
 
         //2.跳转登录页面
-        response.sendRedirect(request.getContextPath()+"/login.html");
+        response.sendRedirect(request.getContextPath()+"login.html");
     }
 }
