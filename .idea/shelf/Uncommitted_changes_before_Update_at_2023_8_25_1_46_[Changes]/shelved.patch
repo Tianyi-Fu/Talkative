@@ -1,0 +1,12 @@
+Index: target/classes/druid.properties
+===================================================================
+diff --git a/target/classes/druid.properties b/target/classes/druid.properties
+--- a/target/classes/druid.properties	
++++ b/target/classes/druid.properties	
+@@ -1,5 +1,5 @@
+ driverClassName=com.mysql.cj.jdbc.Driver
+-url=jdbc:mysql://127.0.0.1:3306/talkative?useSSL=true&verifyServerCertificate=false&serverTimezone=UTC
++url=jdbc:mysql://My_db:3306/talkative?allowPublicKeyRetrieval=true&useSSL=false&verifyServerCertificate=false&serverTimezone=UTC
+ username=root
+ password=Fty5005669
+ initialSize=5

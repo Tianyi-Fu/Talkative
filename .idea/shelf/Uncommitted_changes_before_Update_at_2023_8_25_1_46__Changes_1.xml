@@ -1,0 +1,109 @@
+<changelist name="Uncommitted_changes_before_Update_at_2023_8_25_1_46_[Changes]1" date="1692924460527" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_25_1_46_[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 2023/8/25 1:46 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/demo/web/servlet/FindUserServlet.class" />
+    <option name="AFTER_PATH" value="target/classes/com/demo/web/servlet/FindUserServlet.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_25_1_46_[Changes]1/FindUserServlet.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/demo/controller/ChatRecordController.class" />
+    <option name="AFTER_PATH" value="target/classes/com/demo/controller/ChatRecordController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_25_1_46_[Changes]1/ChatRecordController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/demo/mapper/FeedbackRecordMapper.class" />
+    <option name="AFTER_PATH" value="target/classes/com/demo/mapper/FeedbackRecordMapper.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_25_1_46_[Changes]1/FeedbackRecordMapper.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/demo/web/servlet/LoginServlet.class" />
+    <option name="AFTER_PATH" value="target/classes/com/demo/web/servlet/LoginServlet.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_25_1_46_[Changes]1/LoginServlet.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/demo/web/servlet/RegistUserServlet.class" />
+    <option name="AFTER_PATH" value="target/classes/com/demo/web/servlet/RegistUserServlet.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_25_1_46_[Changes]1/RegistUserServlet.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/demo/repository/impl/UserDaoImpl.class" />
+    <option name="AFTER_PATH" value="target/classes/com/demo/repository/impl/UserDaoImpl.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_25_1_46_[Changes]1/UserDaoImpl.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/demo/serivce/ReviewAnalysisService.class" />
+    <option name="AFTER_PATH" value="target/classes/com/demo/serivce/ReviewAnalysisService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_25_1_46_[Changes]1/ReviewAnalysisService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/demo/web/servlet/ExitServlet.class" />
+    <option name="AFTER_PATH" value="target/classes/com/demo/web/servlet/ExitServlet.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_25_1_46_[Changes]1/ExitServlet.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/demo/serivce/FeedbackRecordService.class" />
+    <option name="AFTER_PATH" value="target/classes/com/demo/serivce/FeedbackRecordService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_25_1_46_[Changes]1/FeedbackRecordService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/demo/repository/UserDao.class" />
+    <option name="AFTER_PATH" value="target/classes/com/demo/repository/UserDao.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_25_1_46_[Changes]1/UserDao.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/demo/controller/FeedbackRecordController.class" />
+    <option name="AFTER_PATH" value="target/classes/com/demo/controller/FeedbackRecordController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_25_1_46_[Changes]1/FeedbackRecordController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/demo/model/ManageUser.class" />
+    <option name="AFTER_PATH" value="target/classes/com/demo/model/ManageUser.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_25_1_46_[Changes]1/ManageUser.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/demo/serivce/impl/UserServiceImpl.class" />
+    <option name="AFTER_PATH" value="target/classes/com/demo/serivce/impl/UserServiceImpl.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_25_1_46_[Changes]1/UserServiceImpl.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/demo/serivce/ChatRecordService.class" />
+    <option name="AFTER_PATH" value="target/classes/com/demo/serivce/ChatRecordService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_25_1_46_[Changes]1/ChatRecordService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/demo/controller/indexController.class" />
+    <option name="AFTER_PATH" value="target/classes/com/demo/controller/indexController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_25_1_46_[Changes]1/indexController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/demo/mapper/UserMapper.class" />
+    <option name="AFTER_PATH" value="target/classes/com/demo/mapper/UserMapper.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_25_1_46_[Changes]1/UserMapper.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/demo/serivce/UserService.class" />
+    <option name="AFTER_PATH" value="target/classes/com/demo/serivce/UserService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_25_1_46_[Changes]1/UserService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/demo/controller/ReviewAnalysisController.class" />
+    <option name="AFTER_PATH" value="target/classes/com/demo/controller/ReviewAnalysisController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_25_1_46_[Changes]1/ReviewAnalysisController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/demo/mapper/ReviewAnalysisMapper.class" />
+    <option name="AFTER_PATH" value="target/classes/com/demo/mapper/ReviewAnalysisMapper.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_25_1_46_[Changes]1/ReviewAnalysisMapper.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/demo/util/JDBCUtils.class" />
+    <option name="AFTER_PATH" value="target/classes/com/demo/util/JDBCUtils.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_25_1_46_[Changes]1/JDBCUtils.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/demo/model/ResultInfo.class" />
+    <option name="AFTER_PATH" value="target/classes/com/demo/model/ResultInfo.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_25_1_46_[Changes]1/ResultInfo.class" />
+  </binary>
+</changelist>

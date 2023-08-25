@@ -1,0 +1,284 @@
+Index: frontend/register.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/frontend/register.html b/frontend/register.html
+--- a/frontend/register.html	
++++ b/frontend/register.html	
+@@ -83,7 +83,7 @@
+       </div>
+       <div>
+         <p class="signup-label">Already have an account? <a
+-                href="/login.html">Back
++                href="/static/login.html">Back
+           to login!</a></p>
+       </div>
+     </form>
+Index: src/main/resources/druid.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/src/main/resources/druid.properties b/src/main/resources/druid.properties
+--- a/src/main/resources/druid.properties	
++++ b/src/main/resources/druid.properties	
+@@ -1,5 +1,5 @@
+ driverClassName=com.mysql.cj.jdbc.Driver
+-url=jdbc:mysql://127.0.0.1:3306/talkative?useSSL=true&verifyServerCertificate=false&serverTimezone=UTC
++url=jdbc:mysql://My_db:3306/talkative?allowPublicKeyRetrieval=true&useSSL=false&verifyServerCertificate=false&serverTimezone=UTC
+ username=root
+ password=Fty5005669
+ initialSize=5
+Index: frontend/js/feedbackCustomerInformation.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/frontend/js/feedbackCustomerInformation.js b/frontend/js/feedbackCustomerInformation.js
+--- a/frontend/js/feedbackCustomerInformation.js	
++++ b/frontend/js/feedbackCustomerInformation.js	
+@@ -50,8 +50,7 @@
+             "chatRecordId": chatRecordId
+         };
+ 
+-        alert(json)
+-        alert("0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000")
++
+ 
+         $.ajax({
+             url: baseUrl + '/create-info/' + localStorage.getItem("agentName"),
+Index: frontend/login.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/frontend/login.html b/frontend/login.html
+--- a/frontend/login.html	
++++ b/frontend/login.html	
+@@ -93,7 +93,7 @@
+ <!--        <strong id="errorMsg"></strong>-->
+ <!--    </div>-->
+     <div class="login-label">
+-        <p>No account? <a href="/register.html">Create one!</a></p>
++        <p>No account? <a href="/static/register.html">Create one!</a></p>
+     </div>
+ </div>
+ </div>
+Index: src/test/java/com/demo/controller/TranscriptControllerUnitTest.java
+===================================================================
+diff --git a/src/test/java/com/demo/controller/TranscriptControllerUnitTest.java b/src/test/java/com/demo/controller/TranscriptControllerUnitTest.java
+deleted file mode 100644
+--- a/src/test/java/com/demo/controller/TranscriptControllerUnitTest.java	
++++ /dev/null	
+@@ -1,59 +0,0 @@
+-package com.demo.controller;
+-
+-import com.demo.serivce.TranscriptService;
+-import org.json.JSONArray;
+-import org.json.JSONObject;
+-import org.junit.jupiter.api.Test;
+-import org.mockito.InjectMocks;
+-import org.mockito.Mock;
+-import org.mockito.MockitoAnnotations;
+-import org.springframework.http.MediaType;
+-import org.springframework.test.web.servlet.MockMvc;
+-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+-
+-import static org.mockito.Mockito.when;
+-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+-
+-public class TranscriptControllerUnitTest {
+-
+-    @InjectMocks
+-    private TranscriptController transcriptController;
+-
+-    @Mock
+-    private TranscriptService transcriptService;
+-
+-    private MockMvc mockMvc;
+-
+-    public void setUp() {
+-        MockitoAnnotations.openMocks(this);
+-        this.mockMvc = MockMvcBuilders.standaloneSetup(transcriptController).build();
+-    }
+-
+-    @Test
+-    public void testPostRequestToReadTranscript() throws Exception {
+-        // Transcript JSON array
+-        JSONArray jsonArray = new JSONArray();
+-        JSONObject agentMessage = new JSONObject();
+-        agentMessage.put("Bobo", "Hello");
+-        jsonArray.put(agentMessage);
+-        JSONObject customerMessage = new JSONObject();
+-        customerMessage.put("Customer", "Hi there");
+-        jsonArray.put(customerMessage);
+-
+-        // Create a JSON object with the transcript
+-        JSONObject requestJson = new JSONObject();
+-        requestJson.put("agent_name", "Agent");
+-        requestJson.put("chatRecordId", 001);
+-        requestJson.put("transcript", jsonArray);
+-
+-        // Mock transcriptService.create
+-        when(transcriptService.create(requestJson.toString(), "Agent", "001")).thenReturn("456");
+-
+-        // Perform a POST request to /read_transcript with the JSON payload
+-        mockMvc.perform(post("/read_transcript")
+-                        .contentType(MediaType.APPLICATION_JSON)
+-                        .content(requestJson.toString()))
+-                .andExpect(status().isOk()); // Assuming HTTP 200
+-    }
+-}
+\ No newline at end of file
+Index: src/test/java/com/demo/service/TranscriptServiceUnitTest.java
+===================================================================
+diff --git a/src/test/java/com/demo/service/TranscriptServiceUnitTest.java b/src/test/java/com/demo/service/TranscriptServiceUnitTest.java
+deleted file mode 100644
+--- a/src/test/java/com/demo/service/TranscriptServiceUnitTest.java	
++++ /dev/null	
+@@ -1,66 +0,0 @@
+-package com.demo.service;
+-
+-import com.demo.error.Exception;
+-import com.demo.mapper.TranscriptMapper;
+-import com.demo.model.ChatRecord;
+-import com.demo.serivce.TranscriptService;
+-import org.junit.jupiter.api.BeforeEach;
+-import org.junit.jupiter.api.Test;
+-import org.mockito.Mock;
+-import org.mockito.MockitoAnnotations;
+-import org.springframework.beans.factory.annotation.Autowired;
+-import org.springframework.boot.test.context.SpringBootTest;
+-
+-import static org.junit.jupiter.api.Assertions.assertEquals;
+-import static org.mockito.ArgumentMatchers.any;
+-import static org.mockito.Mockito.verify;
+-import static org.mockito.Mockito.when;
+-
+-@SpringBootTest
+-public class TranscriptServiceUnitTest {
+-
+-    @Mock
+-    private TranscriptMapper transcriptMapper;
+-
+-    @Autowired
+-    private TranscriptService transcriptService;
+-
+-    @BeforeEach
+-    public void setUp() {
+-        MockitoAnnotations.openMocks(this);
+-
+-        // Create instance of TranscriptService with the mock
+-        transcriptService = new TranscriptService(transcriptMapper);
+-    }
+-
+-    @Test
+-    public void testCreateChatRecord() throws Exception {
+-        String transcript = "Test transcript";
+-        String agentName = "Agent";
+-        String chatRecordId = "001";
+-        String feedbackRecordId = "456";
+-
+-        // Create ChatRecord instance
+-        ChatRecord expectedChatRecord = new ChatRecord();
+-        expectedChatRecord.setTranscript(transcript);
+-        expectedChatRecord.setAgentName(agentName);
+-        expectedChatRecord.setChatRecordId(chatRecordId);
+-        expectedChatRecord.setFeedbackRecordId(feedbackRecordId);
+-
+-        // Mock transcriptMapper.insert
+-        when(transcriptMapper.insert(any(ChatRecord.class))).thenAnswer(invocation -> {
+-            ChatRecord chatRecordArgument = invocation.getArgument(0);
+-            chatRecordArgument.setFeedbackRecordId(feedbackRecordId);
+-            return 1;
+-        });
+-
+-        // Call the service method
+-        String actualFeedbackRecordId = transcriptService.create(transcript, agentName, chatRecordId);
+-
+-        // Verify that transcriptMapper.insert was called with the expected ChatRecord
+-        verify(transcriptMapper).insert(expectedChatRecord);
+-
+-        // Verify that the returned feedbackRecordId matches the expected value
+-        assertEquals(feedbackRecordId, actualFeedbackRecordId);
+-    }
+-}
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -5,7 +5,42 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="fix bugs.">
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_8_23__14_42__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_8_23__14_42__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_13__18_13__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_13__18_13__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_20_22_24__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_20_22_24__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_21_5_04__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_21_5_04__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_21__00_38__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_21__00_38__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_22_0_57__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_22_0_57__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_24__03_29__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_24__03_29__Changes_.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/frontend/js/feedbackCustomerInformation.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/feedbackCustomerInformation.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/frontend/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/login.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/frontend/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/register.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/druid.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/druid.properties" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/test/java/com/demo/controller/TranscriptControllerUnitTest.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/test/java/com/demo/service/TranscriptServiceUnitTest.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/ChatRecordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/controller/ChatRecordController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/FeedbackRecordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/controller/FeedbackRecordController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/ReviewAnalysisController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/controller/ReviewAnalysisController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/indexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/controller/indexController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/mapper/FeedbackRecordMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/mapper/FeedbackRecordMapper.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/mapper/ReviewAnalysisMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/mapper/ReviewAnalysisMapper.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/mapper/UserMapper.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/ManageUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/model/ManageUser.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/ResultInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/model/ResultInfo.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/repository/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/repository/UserDao.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/repository/impl/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/repository/impl/UserDaoImpl.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/ChatRecordService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/serivce/ChatRecordService.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/FeedbackRecordService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/serivce/FeedbackRecordService.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/ReviewAnalysisService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/serivce/ReviewAnalysisService.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/serivce/UserService.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/serivce/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/serivce/impl/UserServiceImpl.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/util/JDBCUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/util/JDBCUtils.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/web/servlet/ExitServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/web/servlet/ExitServlet.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/web/servlet/FindUserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/web/servlet/FindUserServlet.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/web/servlet/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/web/servlet/LoginServlet.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/web/servlet/RegistUserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/web/servlet/RegistUserServlet.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/druid.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/druid.properties" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -37,11 +72,10 @@
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="test_read_transcript" />
++        <entry key="$PROJECT_DIR$" value="ac89c998505ee5d189a52d8da2054f4323f67524" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-    <option name="UPDATE_TYPE" value="REBASE" />
+   </component>
+   <component name="HighlightingSettingsPerFile">
+     <setting file="file://$PROJECT_DIR$/talkative.pem" root0="SKIP_INSPECTION" />
+@@ -562,12 +596,6 @@
+           <properties class="java.lang.RuntimeException" package="java.lang" />
+           <option name="timeStamp" value="1" />
+         </breakpoint>
+-        <line-breakpoint enabled="true" type="javascript">
+-          <url>file://$PROJECT_DIR$/frontend/js/feedbackCustomerInformation.js</url>
+-          <line>58</line>
+-          <properties lambdaOrdinal="-1" />
+-          <option name="timeStamp" value="2" />
+-        </line-breakpoint>
+       </breakpoints>
+     </breakpoint-manager>
+   </component>

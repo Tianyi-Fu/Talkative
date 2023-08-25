@@ -1,0 +1,423 @@
+Index: src/test/java/com/demo/controller/TranscriptControllerUnitTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/com/demo/controller/TranscriptControllerUnitTest.java b/src/test/java/com/demo/controller/TranscriptControllerUnitTest.java
+deleted file mode 100644
+--- a/src/test/java/com/demo/controller/TranscriptControllerUnitTest.java	(revision 8ede702174324f0b41f9806c27cd3e06830cdf1c)
++++ /dev/null	(revision 8ede702174324f0b41f9806c27cd3e06830cdf1c)
+@@ -1,61 +0,0 @@
+-package com.demo.controller;
+-
+-import com.demo.serivce.TranscriptService;
+-import org.json.JSONArray;
+-import org.json.JSONObject;
+-import org.junit.jupiter.api.BeforeEach;
+-import org.junit.jupiter.api.Test;
+-import org.mockito.InjectMocks;
+-import org.mockito.Mock;
+-import org.mockito.MockitoAnnotations;
+-import org.springframework.http.MediaType;
+-import org.springframework.test.web.servlet.MockMvc;
+-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+-
+-import static org.mockito.Mockito.when;
+-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+-
+-public class TranscriptControllerUnitTest {
+-
+-    @InjectMocks
+-    private TranscriptController transcriptController;
+-
+-    @Mock
+-    private TranscriptService transcriptService;
+-
+-    private MockMvc mockMvc;
+-
+-    @BeforeEach
+-    public void setUp() {
+-        MockitoAnnotations.openMocks(this);
+-        this.mockMvc = MockMvcBuilders.standaloneSetup(transcriptController).build();
+-    }
+-
+-    @Test
+-    public void testPostRequestToReadTranscript() throws Exception {
+-        // Transcript JSON array
+-        JSONArray jsonArray = new JSONArray();
+-        JSONObject agentMessage = new JSONObject();
+-        agentMessage.put("Bobo", "Hello");
+-        jsonArray.put(agentMessage);
+-        JSONObject customerMessage = new JSONObject();
+-        customerMessage.put("Customer", "Hi there");
+-        jsonArray.put(customerMessage);
+-
+-        // Create a JSON object with the transcript
+-        JSONObject requestJson = new JSONObject();
+-        requestJson.put("agent_name", "Agent");
+-        requestJson.put("chatRecordId", 001);
+-        requestJson.put("transcript", jsonArray);
+-
+-        // Mock transcriptService.create
+-        when(transcriptService.create(requestJson.toString(), "Agent", "001")).thenReturn("456");
+-
+-        // Perform a POST request to /read_transcript with the JSON payload
+-        mockMvc.perform(post("/read_transcript")
+-                        .contentType(MediaType.APPLICATION_JSON)
+-                        .content(requestJson.toString()))
+-                .andExpect(status().isOk()); // Assuming HTTP 200
+-    }
+-}
+\ No newline at end of file
+Index: src/test/java/com/demo/service/TranscriptServiceUnitTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/com/demo/service/TranscriptServiceUnitTest.java b/src/test/java/com/demo/service/TranscriptServiceUnitTest.java
+deleted file mode 100644
+--- a/src/test/java/com/demo/service/TranscriptServiceUnitTest.java	(revision 8ede702174324f0b41f9806c27cd3e06830cdf1c)
++++ /dev/null	(revision 8ede702174324f0b41f9806c27cd3e06830cdf1c)
+@@ -1,66 +0,0 @@
+-package com.demo.service;
+-
+-import com.demo.error.Exception;
+-import com.demo.mapper.TranscriptMapper;
+-import com.demo.model.ChatRecord;
+-import com.demo.serivce.TranscriptService;
+-import org.junit.jupiter.api.BeforeEach;
+-import org.junit.jupiter.api.Test;
+-import org.mockito.Mock;
+-import org.mockito.MockitoAnnotations;
+-import org.springframework.beans.factory.annotation.Autowired;
+-import org.springframework.boot.test.context.SpringBootTest;
+-
+-import static org.junit.jupiter.api.Assertions.assertEquals;
+-import static org.mockito.ArgumentMatchers.any;
+-import static org.mockito.Mockito.verify;
+-import static org.mockito.Mockito.when;
+-
+-@SpringBootTest
+-public class TranscriptServiceUnitTest {
+-
+-    @Mock
+-    private TranscriptMapper transcriptMapper;
+-
+-    @Autowired
+-    private TranscriptService transcriptService;
+-
+-    @BeforeEach
+-    public void setUp() {
+-        MockitoAnnotations.openMocks(this);
+-
+-        // Create instance of TranscriptService with the mock
+-        transcriptService = new TranscriptService(transcriptMapper);
+-    }
+-
+-    @Test
+-    public void testCreateChatRecord() throws Exception {
+-        String transcript = "Test transcript";
+-        String agentName = "Agent";
+-        String chatRecordId = "001";
+-        String feedbackRecordId = "456";
+-
+-        // Create ChatRecord instance
+-        ChatRecord expectedChatRecord = new ChatRecord();
+-        expectedChatRecord.setTranscript(transcript);
+-        expectedChatRecord.setAgentName(agentName);
+-        expectedChatRecord.setChatRecordId(chatRecordId);
+-        expectedChatRecord.setFeedbackRecordId(feedbackRecordId);
+-
+-        // Mock transcriptMapper.insert
+-        when(transcriptMapper.insert(any(ChatRecord.class))).thenAnswer(invocation -> {
+-            ChatRecord chatRecordArgument = invocation.getArgument(0);
+-            chatRecordArgument.setFeedbackRecordId(feedbackRecordId);
+-            return 1;
+-        });
+-
+-        // Call the service method
+-        String actualFeedbackRecordId = transcriptService.create(transcript, agentName, chatRecordId);
+-
+-        // Verify that transcriptMapper.insert was called with the expected ChatRecord
+-        verify(transcriptMapper).insert(expectedChatRecord);
+-
+-        // Verify that the returned feedbackRecordId matches the expected value
+-        assertEquals(feedbackRecordId, actualFeedbackRecordId);
+-    }
+-}
+Index: frontend/register.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <title>Login</title>\r\n  <!-- Bootstrap libraries -->\r\n  <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\"\r\n        integrity=\"sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi\" crossorigin=\"anonymous\">\r\n  <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js\"\r\n          integrity=\"sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3\"\r\n          crossorigin=\"anonymous\"></script>\r\n  <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js\"\r\n          integrity=\"sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3\"\r\n          crossorigin=\"anonymous\"></script>\r\n  <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js\"\r\n          integrity=\"sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk\"\r\n          crossorigin=\"anonymous\"></script>\r\n  <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>\r\n\r\n  <script type=\"text/javascript\" src=\"js/register.js\"></script>\r\n\r\n\r\n</head>\r\n<style>\r\n  body {\r\n    background-color: #8696a7;\r\n  }\r\n\r\n  .center-container {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    min-height: 100vh;\r\n  }\r\n\r\n  .container {\r\n    max-width: 600px;\r\n    padding: 20px;\r\n    border-radius: 10px;\r\n    background-color: #ffffff;\r\n    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\r\n  }\r\n\r\n  .form-label {\r\n    font-weight: bold;\r\n    margin-bottom: 0;\r\n  }\r\n\r\n  .form-control {\r\n    border: 2px solid #ccc;\r\n    border-radius: 5px;\r\n    padding: 10px;\r\n    width: 100%;\r\n    transition: border-color 0.3s ease-in-out;\r\n  }\r\n\r\n  .form-control:focus {\r\n    border-color: #11a1fd;\r\n  }\r\n\r\n  /* Your other styles here */\r\n\r\n</style>\r\n</head>\r\n<body class=\"p-3 m-0 border-0 bd-example bd-example-row\">\r\n<div class=\"center-container\">\r\n  <div class=\"container w-50\">\r\n<!--    <p th:if=\"${error}\" class=\"error\">Sign up failed</p>-->\r\n    <form action=\"RegistUserServlet\" id=\"registerForm\" accept-charset=\"utf-8\" method=\"post\">\r\n      <div class=\"mb-3\">\r\n        <div class=\"login\"><h2>Sign Up</h2></div>\r\n      </div>\r\n      <div class=\"row input-group mb-3\">\r\n        <label class=\"col-xs-12 col-sm-12 col-md-12 col-lg-3\" for=\"username\">Username:</label>\r\n        <input id=\"username\" type=\"text\" name=\"username\" class=\"form-control col-xs-12 col-sm-12 col-md-12 col-lg-9\" aria-describedby=\"inputGroup-sizing-default\" placeholder=\"Username\" required aria-required=\"true\">\r\n      </div>\r\n      <div class=\"row input-group mb-3\">\r\n        <label for=\"password\" class=\"col-xs-12 col-sm-12 col-md-12 col-lg-3\">Password:</label>\r\n        <input id=\"password\" name=\"password\" type=\"password\" class=\"form-control col-xs-12 col-sm-12 col-md-12 col-lg-9\" aria-describedby=\"inputGroup-sizing-default\" placeholder=\"Password\" required aria-required=\"true\">\r\n      </div>\r\n      <div>\r\n        <button class=\"btn btn-primary\" style=\"background-color: #214ea3\" type=\"submit\" id=\"btn_sub\">Sign Up</button>\r\n      </div>\r\n      <div>\r\n        <p class=\"signup-label\">Already have an account? <a\r\n                href=\"/login.html\">Back\r\n          to login!</a></p>\r\n      </div>\r\n    </form>\r\n  </div>\r\n</div>\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/frontend/register.html b/frontend/register.html
+--- a/frontend/register.html	(revision 8ede702174324f0b41f9806c27cd3e06830cdf1c)
++++ b/frontend/register.html	(date 1692985650165)
+@@ -66,7 +66,7 @@
+ <div class="center-container">
+   <div class="container w-50">
+ <!--    <p th:if="${error}" class="error">Sign up failed</p>-->
+-    <form action="RegistUserServlet" id="registerForm" accept-charset="utf-8" method="post">
++    <form action="/RegistUserServlet" id="registerForm" accept-charset="utf-8" method="post">
+       <div class="mb-3">
+         <div class="login"><h2>Sign Up</h2></div>
+       </div>
+@@ -83,7 +83,7 @@
+       </div>
+       <div>
+         <p class="signup-label">Already have an account? <a
+-                href="/login.html">Back
++                href="/static/login.html">Back
+           to login!</a></p>
+       </div>
+     </form>
+Index: frontend/js/register.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>//校验用户名\r\n//1.用户名：单词字符，4~20位\r\nfunction checkUsername(){\r\n    //1.获取用户名\r\n    let username=$(\"#username\").val();\r\n    //2.定义正则\r\n    let reg_username=/^\\w{4,15}$/;\r\n    //3.判断，给出信息\r\n    let flag= reg_username.test(username);\r\n    if(flag){\r\n        //用户名合法\r\n        $(\"#username\").css(\"border\",\"\");\r\n    }else{\r\n        //用户名非法,加一个红色边框\r\n        $(\"#username\").css(\"border\",\"1px solid red\");\r\n    }\r\n    return flag;\r\n}\r\n\r\n//校验密码\r\nfunction checkPassword(){\r\n    //1.获取密码\r\n    let password=$(\"#password\").val();\r\n    //2.定义正则\r\n    let reg_password=/^\\w{3,15}$/;\r\n    //3.判断，给出信息\r\n    let flag= reg_password.test(password);\r\n    if(flag){\r\n        //用户名合法\r\n        $(\"#password\").css(\"border\",\"\");\r\n    }else{\r\n\r\n        //用户名非法,加一个红色边框\r\n        $(\"#password\").css(\"border\",\"1px solid red\");\r\n    }\r\n    return flag;\r\n}\r\n\r\n$(function(){\r\n    //表单提交时，调用所有的校验方法\r\n    $(\"#registerForm\").submit(function (){\r\n        //1.发送数据到服务器\r\n        if(checkUsername() && checkPassword()){\r\n            //校验通过，发送Ajax请求，提交表单的数据\r\n            $.post(\"RegistUserServlet\",$(this).serialize(),function (data){\r\n                //处理服务器响应的数据 data\t{flag:true,errorMsg:\"注册失败\"}\r\n                if(data.flag){\r\n                    //注册成功，跳转成功页面\r\n                    location.href=\"login.html\";\r\n                }else{\r\n                    //注册失败,给errorMsg添加提示信息\r\n                    $(\"#errorMsg\").html(data.errorMsg);\r\n                }\r\n            });\r\n        }\r\n        //2.跳转页面\r\n\r\n        //如果这个方法没有返回值，或者返回为true，则表单提交，如果返回FALSE，则表单不提交\r\n    });\r\n    //当某一个组件失去焦点时,调用对应的校验方法\r\n    $(\"#username\").blur(checkUsername);\r\n    $(\"#password\").blur(checkPassword);\r\n})
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/frontend/js/register.js b/frontend/js/register.js
+--- a/frontend/js/register.js	(revision 8ede702174324f0b41f9806c27cd3e06830cdf1c)
++++ b/frontend/js/register.js	(date 1692985650163)
+@@ -42,11 +42,11 @@
+         //1.发送数据到服务器
+         if(checkUsername() && checkPassword()){
+             //校验通过，发送Ajax请求，提交表单的数据
+-            $.post("RegistUserServlet",$(this).serialize(),function (data){
++            $.post("/RegistUserServlet",$(this).serialize(),function (data){
+                 //处理服务器响应的数据 data	{flag:true,errorMsg:"注册失败"}
+                 if(data.flag){
+                     //注册成功，跳转成功页面
+-                    location.href="login.html";
++                    location.href="/static/login.html";
+                 }else{
+                     //注册失败,给errorMsg添加提示信息
+                     $("#errorMsg").html(data.errorMsg);
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"d1122899-63bc-4208-8b3b-19db2bcf95c8\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/frontend/js/register.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/frontend/js/register.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/test/java/com/demo/controller/TranscriptControllerUnitTest.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/test/java/com/demo/controller/TranscriptControllerUnitTest.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/test/java/com/demo/service/TranscriptServiceUnitTest.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/test/java/com/demo/service/TranscriptServiceUnitTest.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Interface\" />\r\n        <option value=\"HTML File\" />\r\n        <option value=\"JavaScript File\" />\r\n        <option value=\"Class\" />\r\n        <option value=\"Python Script\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"FlaskConsoleOptions\" custom-start-script=\"import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\\nApp: %s [%s]\\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))\">\r\n    <envs>\r\n      <env key=\"FLASK_APP\" value=\"app\" />\r\n    </envs>\r\n    <option name=\"myCustomStartScript\" value=\"import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\\nApp: %s [%s]\\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))\" />\r\n    <option name=\"myEnvs\">\r\n      <map>\r\n        <entry key=\"FLASK_APP\" value=\"app\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"develop_2\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"file://$PROJECT_DIR$/talkative.pem\" root0=\"SKIP_INSPECTION\" />\r\n  </component>\r\n  <component name=\"JpbToolWindowState\">\r\n    <option name=\"isToolWindowVisible\" value=\"false\" />\r\n  </component>\r\n  <component name=\"JsBowerSettings\">\r\n    <node-interpreter value=\"project\" />\r\n    <bower-package value=\"\" />\r\n    <bower.json value=\"\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2SX9gNf062XMVS6hFsxAjCPsbQN\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n    <option name=\"showVisibilityIcons\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,\r\n    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,\r\n    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,\r\n    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,\r\n    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/Tony/Desktop/Talkative&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,\r\n    &quot;spring.configuration.checksum&quot;: &quot;3d03706d9ca9cfb206f00c437c272955&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ReactorSettings\">\r\n    <option name=\"notificationShown\" value=\"true\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\Tony\\Desktop\\Talkative\" />\r\n      <recent name=\"C:\\Users\\Tony\\Desktop\\Talkative\\src\" />\r\n      <recent name=\"$PROJECT_DIR$/frontend/vendors\" />\r\n      <recent name=\"$PROJECT_DIR$/frontend/css\" />\r\n      <recent name=\"$PROJECT_DIR$/frontend\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\Tony\\Desktop\\Talkative\" />\r\n      <recent name=\"C:\\Users\\c21112765\\OneDrive - Cardiff University\\Desktop\\Talkative\\frontend\\vendors\\bs-stepper\" />\r\n      <recent name=\"$PROJECT_DIR$/frontend\" />\r\n      <recent name=\"$PROJECT_DIR$/src/main/resources/templates\" />\r\n      <recent name=\"$PROJECT_DIR$/frontend/images\" />\r\n    </key>\r\n    <key name=\"CopyClassDialog.RECENTS_KEY\">\r\n      <recent name=\"com.demo.model\" />\r\n      <recent name=\"com.demo.mapper\" />\r\n      <recent name=\"com.demo.controller\" />\r\n      <recent name=\"com.demo.config\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunDashboard\">\r\n    <option name=\"configurationTypes\">\r\n      <set>\r\n        <option value=\"SpringBootApplicationConfigurationType\" />\r\n      </set>\r\n    </option>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"JUnit.TranscriptServiceUnitTest\">\r\n    <configuration default=\"true\" type=\"ArquillianJUnit\" factoryName=\"\" nameIsGenerated=\"true\">\r\n      <option name=\"arquillianRunConfiguration\">\r\n        <value>\r\n          <option name=\"containerStateName\" value=\"\" />\r\n        </value>\r\n      </option>\r\n      <option name=\"TEST_OBJECT\" value=\"class\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"AZURE_FUNCTION_SUPPORT\" factoryName=\"Run Functions\">\r\n      <option name=\"appName\" />\r\n      <option name=\"appServicePlanName\" />\r\n      <option name=\"appServicePlanResourceGroup\" />\r\n      <option name=\"appSettingsKey\" value=\"4f2d11c9-40f7-498d-90e8-e0621ace9f19\" />\r\n      <option name=\"artifact\" />\r\n      <option name=\"debugOptions\" />\r\n      <option name=\"deployment\" />\r\n      <option name=\"deploymentStagingDirectoryPath\" />\r\n      <option name=\"funcPath\" />\r\n      <option name=\"functionHostArguments\" />\r\n      <option name=\"hostJsonPath\" />\r\n      <option name=\"insightsName\" />\r\n      <option name=\"instrumentationKey\" />\r\n      <option name=\"javaVersion\" />\r\n      <option name=\"localSettingsJsonPath\" />\r\n      <option name=\"moduleName\" />\r\n      <option name=\"os\" />\r\n      <option name=\"pricingTier\" />\r\n      <option name=\"providerMap\">\r\n        <map />\r\n      </option>\r\n      <option name=\"region\" />\r\n      <option name=\"resourceGroup\" />\r\n      <option name=\"stagingFolder\" />\r\n      <option name=\"subscription\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"TranscriptControllerUnitTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Talkative\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.demo.controller.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"com.demo.controller\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.demo.controller.TranscriptControllerUnitTest\" />\r\n      <option name=\"TEST_OBJECT\" value=\"class\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"TranscriptServiceUnitTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Talkative\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.demo.service.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"com.demo.service\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.demo.service.TranscriptServiceUnitTest\" />\r\n      <option name=\"TEST_OBJECT\" value=\"class\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"home.html\" type=\"JavascriptDebugType\" temporary=\"true\" nameIsGenerated=\"true\" uri=\"http://localhost/static/home.html\">\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"preload_models\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Talkative\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/preload_models.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"TalkativeApplication\" type=\"SpringBootApplicationConfigurationType\" factoryName=\"Spring Boot\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Talkative\" />\r\n      <option name=\"SPRING_BOOT_MAIN_CLASS\" value=\"com.demo.TalkativeApplication\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.demo.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"JUnit.TranscriptServiceUnitTest\" />\r\n        <item itemvalue=\"JUnit.TranscriptControllerUnitTest\" />\r\n        <item itemvalue=\"Python.preload_models\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"d1122899-63bc-4208-8b3b-19db2bcf95c8\" name=\"Changes\" comment=\"\" />\r\n      <created>1689282179940</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1689282179940</updated>\r\n      <workItem from=\"1689282185609\" duration=\"760000\" />\r\n      <workItem from=\"1689283094194\" duration=\"3898000\" />\r\n      <workItem from=\"1689618426597\" duration=\"8671000\" />\r\n      <workItem from=\"1689646715697\" duration=\"6301000\" />\r\n      <workItem from=\"1689684237846\" duration=\"14248000\" />\r\n      <workItem from=\"1689782525643\" duration=\"18653000\" />\r\n      <workItem from=\"1689854195941\" duration=\"3441000\" />\r\n      <workItem from=\"1690154222502\" duration=\"1986000\" />\r\n      <workItem from=\"1690156214989\" duration=\"811000\" />\r\n      <workItem from=\"1690157030612\" duration=\"5984000\" />\r\n      <workItem from=\"1690319566567\" duration=\"4107000\" />\r\n      <workItem from=\"1690324360671\" duration=\"9751000\" />\r\n      <workItem from=\"1690818310672\" duration=\"2330000\" />\r\n      <workItem from=\"1690913669260\" duration=\"166000\" />\r\n      <workItem from=\"1691298194872\" duration=\"5089000\" />\r\n      <workItem from=\"1692121815464\" duration=\"298000\" />\r\n      <workItem from=\"1692222749896\" duration=\"16912000\" />\r\n      <workItem from=\"1692356786331\" duration=\"7069000\" />\r\n      <workItem from=\"1692408410838\" duration=\"7117000\" />\r\n      <workItem from=\"1692448687578\" duration=\"347000\" />\r\n      <workItem from=\"1692449110151\" duration=\"1010000\" />\r\n      <workItem from=\"1692484468212\" duration=\"2216000\" />\r\n      <workItem from=\"1692487812803\" duration=\"18388000\" />\r\n      <workItem from=\"1692555314585\" duration=\"4427000\" />\r\n      <workItem from=\"1692568678700\" duration=\"4965000\" />\r\n      <workItem from=\"1692597238055\" duration=\"7110000\" />\r\n      <workItem from=\"1692663995520\" duration=\"3475000\" />\r\n      <workItem from=\"1692674570926\" duration=\"26427000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"new gitigonore file\">\r\n      <created>1689282546007</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1689282546007</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"added Feedback java files &amp; Python script to format transcript, not yet tested out\">\r\n      <created>1689682242585</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1689682242585</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"tryin to use JAVA to format the transcript data instead of Python, not yet working\">\r\n      <created>1689781236343</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1689781236343</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"tryin to use JAVA to format the transcript data instead of Python, not yet working\">\r\n      <created>1689782802126</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1689782802126</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"format transcript data at frontend, removed all Python related dependencies\">\r\n      <created>1689790659026</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1689790659026</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"attempted to save transcript to DB, not working yet\">\r\n      <created>1689846019447</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1689846019447</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"changed Chat_record Table_id to AUTO\">\r\n      <created>1689852347914</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1689852347914</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"Updated database schema &amp; successfully written transcript data to chat_record table\">\r\n      <created>1689856962052</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1689856962053</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"added unversioned files\">\r\n      <created>1689857373156</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1689857373156</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"merged with folder_structure\">\r\n      <created>1689857966254</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1689857966254</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"Refactored code; changed feedback form to popup; trying to show feedback questions 1 by 1\">\r\n      <created>1690071237232</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1690071237232</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"Only load questions when they are in localStorage; Refactored schema.sql &amp; FeedbackRecord\">\r\n      <created>1690153603327</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1690153603328</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"add\">\r\n      <created>1690932337503</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1690932337503</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"1.Write the popup windows to show the questions and transcripts.&#10;2.Write the delete and modify function in the datasheet.&#10;3.Create a search function for the datasheet that allows to filter the data by ChatRecord_NB, Satisfaction, agentName, and date.\">\r\n      <created>1691258169514</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1691258169514</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00015\" summary=\"Fix some bugs\">\r\n      <created>1691299043271</created>\r\n      <option name=\"number\" value=\"00015\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1691299043271</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00016\" summary=\"Delete some useless file.\">\r\n      <created>1691763221517</created>\r\n      <option name=\"number\" value=\"00016\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1691763221517</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00017\" summary=\"fix\">\r\n      <created>1691940107462</created>\r\n      <option name=\"number\" value=\"00017\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00017\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1691940107462</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00018\" summary=\"Edited style of feedback modal &amp; added stepper at th top of modal; still need to fix show active step issue\">\r\n      <created>1692294633633</created>\r\n      <option name=\"number\" value=\"00018\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00018\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1692294633633</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00019\" summary=\"fix bug 1: miss typed in main&#10;fix bug 2: a possible mistake report in database setting&#10;fix bug 3: a database structure mistake\">\r\n      <created>1692379837858</created>\r\n      <option name=\"number\" value=\"00019\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00019\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1692379837858</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00020\" summary=\"fix bug 1: miss typed in main&#10;fix bug 2: a possible mistake report in database setting&#10;fix bug 3: a database structure mistake\">\r\n      <created>1692380068872</created>\r\n      <option name=\"number\" value=\"00020\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00020\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1692380068872</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00021\" summary=\"try to deployee in openstack\">\r\n      <created>1692414101308</created>\r\n      <option name=\"number\" value=\"00021\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00021\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1692414101308</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00022\" summary=\"try to deployee in openstack\">\r\n      <created>1692415055066</created>\r\n      <option name=\"number\" value=\"00022\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00022\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1692415055066</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00023\" summary=\"try to deployee in openstack\">\r\n      <created>1692446058188</created>\r\n      <option name=\"number\" value=\"00023\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00023\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1692446058188</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00024\" summary=\"try to deployee in openstack\">\r\n      <created>1692449734794</created>\r\n      <option name=\"number\" value=\"00024\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00024\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1692449734794</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00025\" summary=\"works perfectly in local docker environment.\">\r\n      <created>1692577986031</created>\r\n      <option name=\"number\" value=\"00025\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00025\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1692577986031</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00026\" summary=\"downgrade to java 11.\">\r\n      <created>1692580100749</created>\r\n      <option name=\"number\" value=\"00026\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00026\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1692580100749</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00027\" summary=\"downgrade to java 11.\">\r\n      <created>1692580715869</created>\r\n      <option name=\"number\" value=\"00027\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00027\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1692580715869</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00028\" summary=\"add preload image in jenkins.\">\r\n      <created>1692585204417</created>\r\n      <option name=\"number\" value=\"00028\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00028\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1692585204417</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00029\" summary=\"add preload image in jenkins.\">\r\n      <created>1692597794954</created>\r\n      <option name=\"number\" value=\"00029\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00029\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1692597794954</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00030\" summary=\"update terraform..\">\r\n      <created>1692649098080</created>\r\n      <option name=\"number\" value=\"00030\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00030\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1692649098080</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00031\" summary=\"update terraform..\">\r\n      <created>1692651236141</created>\r\n      <option name=\"number\" value=\"00031\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00031\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1692651236141</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00032\" summary=\"finish deployee on the aws and openstack.\">\r\n      <created>1692741924413</created>\r\n      <option name=\"number\" value=\"00032\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00032\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1692741924413</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00033\" summary=\"fix bugs.\">\r\n      <created>1692743944114</created>\r\n      <option name=\"number\" value=\"00033\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00033\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1692743944114</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00034\" summary=\"fix bugs.\">\r\n      <created>1692746061573</created>\r\n      <option name=\"number\" value=\"00034\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00034\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1692746061573</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00035\" summary=\"fix bugs.\">\r\n      <created>1692751106108</created>\r\n      <option name=\"number\" value=\"00035\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00035\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1692751106108</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00036\" summary=\"fix bugs.\">\r\n      <created>1692756260540</created>\r\n      <option name=\"number\" value=\"00036\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00036\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1692756260540</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00037\" summary=\"fix bugs.\">\r\n      <created>1692757850762</created>\r\n      <option name=\"number\" value=\"00037\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00037\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1692757850762</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00038\" summary=\"checked widget works in index.html\">\r\n      <created>1692924319686</created>\r\n      <option name=\"number\" value=\"00038\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00038\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1692924319686</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"39\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"UnknownFeatures\">\r\n    <option featureType=\"dependencySupport\" implementationName=\"java:org.springframework:spring-core\" />\r\n    <option featureType=\"dependencySupport\" implementationName=\"java:org.springframework.security:spring-security-core\" />\r\n    <option featureType=\"dependencySupport\" implementationName=\"java:io.projectreactor:reactor-core\" />\r\n    <option featureType=\"dependencySupport\" implementationName=\"java:org.thymeleaf:thymeleaf\" />\r\n    <option featureType=\"dependencySupport\" implementationName=\"java:org.springframework.boot:spring-boot\" />\r\n    <option featureType=\"dependencySupport\" implementationName=\"java:org.springframework:spring-webmvc\" />\r\n    <option featureType=\"dependencySupport\" implementationName=\"java:com.azure:azure-core\" />\r\n    <option featureType=\"dependencySupport\" implementationName=\"java:org.projectlombok:lombok\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"attempted to save transcript to DB, not working yet\" />\r\n    <MESSAGE value=\"changed Chat_record Table_id to AUTO\" />\r\n    <MESSAGE value=\"Updated database schema &amp; successfully written transcript data to chat_record table\" />\r\n    <MESSAGE value=\"added unversioned files\" />\r\n    <MESSAGE value=\"merged with folder_structure\" />\r\n    <MESSAGE value=\"1.As a developer, I want to automatically pop up the surveyForm page while submitting a transcript on the Talkative page.&#10;2.As a developer, I want to display issues analyzed and generated by ChatGPT on the surveyForm page.&#10;3.As a developer, I want to write some CSS style for the webpages.\" />\r\n    <MESSAGE value=\"Refactored code; changed feedback form to popup; trying to show feedback questions 1 by 1\" />\r\n    <MESSAGE value=\"Only load questions when they are in localStorage; Refactored schema.sql &amp; FeedbackRecord\" />\r\n    <MESSAGE value=\"add\" />\r\n    <MESSAGE value=\"1.Write the popup windows to show the questions and transcripts.&#10;2.Write the delete and modify function in the datasheet.&#10;3.Create a search function for the datasheet that allows to filter the data by ChatRecord_NB, Satisfaction, agentName, and date.\" />\r\n    <MESSAGE value=\"Fix some bugs\" />\r\n    <MESSAGE value=\"Configuring MyBatis-Plus in application.properties file and fix some bugs.\" />\r\n    <MESSAGE value=\"Delete some useless file.\" />\r\n    <MESSAGE value=\"fix\" />\r\n    <MESSAGE value=\"Fix some bugs.\" />\r\n    <MESSAGE value=\"Edited style of feedback modal &amp; added stepper at th top of modal; still need to fix show active step issue\" />\r\n    <MESSAGE value=\"fix bug 1: miss typed in main&#10;fix bug 2: a possible mistake report in database setting&#10;fix bug 3: a database structure mistake\" />\r\n    <MESSAGE value=\"try to deployee in openstack\" />\r\n    <MESSAGE value=\"works perfectly in local docker environment.\" />\r\n    <MESSAGE value=\"downgrade to java 11.\" />\r\n    <MESSAGE value=\"add preload image in jenkins.\" />\r\n    <MESSAGE value=\"update terraform..\" />\r\n    <MESSAGE value=\"finish deployee on the aws and openstack.\" />\r\n    <MESSAGE value=\"fix bugs.\" />\r\n    <MESSAGE value=\"checked widget works in index.html\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"checked widget works in index.html\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.lang.RuntimeException\" package=\"java.lang\" />\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/test/java/com/demo/service/TranscriptServiceUnitTest.java</url>\r\n          <line>19</line>\r\n          <option name=\"timeStamp\" value=\"3\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 8ede702174324f0b41f9806c27cd3e06830cdf1c)
++++ b/.idea/workspace.xml	(date 1692985650161)
+@@ -4,11 +4,22 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="">
++    <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="fix bugs.">
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_8_23__14_42__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_8_23__14_42__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_13__18_13__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_13__18_13__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_20_22_24__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_20_22_24__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_21_5_04__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_21_5_04__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_21__00_38__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_21__00_38__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_22_0_57__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_22_0_57__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_24__03_29__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_8_24__03_29__Changes_.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/frontend/js/feedbackCustomerInformation.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/feedbackCustomerInformation.js" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/frontend/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/register.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/test/java/com/demo/controller/TranscriptControllerUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/demo/controller/TranscriptControllerUnitTest.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/test/java/com/demo/service/TranscriptServiceUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/demo/service/TranscriptServiceUnitTest.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/frontend/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/login.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/frontend/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/register.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/druid.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/druid.properties" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/test/java/com/demo/controller/TranscriptControllerUnitTest.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/test/java/com/demo/service/TranscriptServiceUnitTest.java" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -100,11 +111,11 @@
+       <recent name="$PROJECT_DIR$/frontend" />
+     </key>
+     <key name="MoveFile.RECENT_KEYS">
++      <recent name="C:\Users\Tony\Desktop\Talkative\src\test" />
++      <recent name="C:\Users\Tony\Desktop\Talkative\src" />
+       <recent name="C:\Users\Tony\Desktop\Talkative" />
+       <recent name="C:\Users\c21112765\OneDrive - Cardiff University\Desktop\Talkative\frontend\vendors\bs-stepper" />
+       <recent name="$PROJECT_DIR$/frontend" />
+-      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
+-      <recent name="$PROJECT_DIR$/frontend/images" />
+     </key>
+     <key name="CopyClassDialog.RECENTS_KEY">
+       <recent name="com.demo.model" />
+@@ -120,7 +131,7 @@
+       </set>
+     </option>
+   </component>
+-  <component name="RunManager" selected="JUnit.TranscriptServiceUnitTest">
++  <component name="RunManager" selected="Python.preload_models">
+     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+       <option name="arquillianRunConfiguration">
+         <value>
+@@ -158,36 +169,6 @@
+       <option name="resourceGroup" />
+       <option name="stagingFolder" />
+       <option name="subscription" />
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <configuration name="TranscriptControllerUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+-      <module name="Talkative" />
+-      <extension name="coverage">
+-        <pattern>
+-          <option name="PATTERN" value="com.demo.controller.*" />
+-          <option name="ENABLED" value="true" />
+-        </pattern>
+-      </extension>
+-      <option name="PACKAGE_NAME" value="com.demo.controller" />
+-      <option name="MAIN_CLASS_NAME" value="com.demo.controller.TranscriptControllerUnitTest" />
+-      <option name="TEST_OBJECT" value="class" />
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <configuration name="TranscriptServiceUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+-      <module name="Talkative" />
+-      <extension name="coverage">
+-        <pattern>
+-          <option name="PATTERN" value="com.demo.service.*" />
+-          <option name="ENABLED" value="true" />
+-        </pattern>
+-      </extension>
+-      <option name="PACKAGE_NAME" value="com.demo.service" />
+-      <option name="MAIN_CLASS_NAME" value="com.demo.service.TranscriptServiceUnitTest" />
+-      <option name="TEST_OBJECT" value="class" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+@@ -232,8 +213,6 @@
+     </configuration>
+     <recent_temporary>
+       <list>
+-        <item itemvalue="JUnit.TranscriptServiceUnitTest" />
+-        <item itemvalue="JUnit.TranscriptControllerUnitTest" />
+         <item itemvalue="Python.preload_models" />
+       </list>
+     </recent_temporary>
+@@ -274,6 +253,7 @@
+       <workItem from="1692597238055" duration="7110000" />
+       <workItem from="1692663995520" duration="3475000" />
+       <workItem from="1692674570926" duration="26427000" />
++      <workItem from="1692927288778" duration="1840000" />
+     </task>
+     <task id="LOCAL-00001" summary="new gitigonore file">
+       <created>1689282546007</created>
+@@ -534,14 +514,7 @@
+       <option name="project" value="LOCAL" />
+       <updated>1692757850762</updated>
+     </task>
+-    <task id="LOCAL-00038" summary="checked widget works in index.html">
+-      <created>1692924319686</created>
+-      <option name="number" value="00038" />
+-      <option name="presentableId" value="LOCAL-00038" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1692924319686</updated>
+-    </task>
+-    <option name="localTasksCounter" value="39" />
++    <option name="localTasksCounter" value="38" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -569,6 +542,7 @@
+     </option>
+   </component>
+   <component name="VcsManagerConfiguration">
++    <MESSAGE value="format transcript data at frontend, removed all Python related dependencies" />
+     <MESSAGE value="attempted to save transcript to DB, not working yet" />
+     <MESSAGE value="changed Chat_record Table_id to AUTO" />
+     <MESSAGE value="Updated database schema &amp; successfully written transcript data to chat_record table" />
+@@ -593,8 +567,7 @@
+     <MESSAGE value="update terraform.." />
+     <MESSAGE value="finish deployee on the aws and openstack." />
+     <MESSAGE value="fix bugs." />
+-    <MESSAGE value="checked widget works in index.html" />
+-    <option name="LAST_COMMIT_MESSAGE" value="checked widget works in index.html" />
++    <option name="LAST_COMMIT_MESSAGE" value="fix bugs." />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
+@@ -603,11 +576,6 @@
+           <properties class="java.lang.RuntimeException" package="java.lang" />
+           <option name="timeStamp" value="1" />
+         </breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/test/java/com/demo/service/TranscriptServiceUnitTest.java</url>
+-          <line>19</line>
+-          <option name="timeStamp" value="3" />
+-        </line-breakpoint>
+       </breakpoints>
+     </breakpoint-manager>
+   </component>
+@@ -615,4 +583,7 @@
+     <expand />
+     <select />
+   </component>
++  <component name="com.intellij.coverage.CoverageDataManagerImpl">
++    <SUITE FILE_PATH="coverage/Talkative$Analyzer.coverage" NAME="Analyzer Coverage Results" MODIFIED="1691982690385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python" />
++  </component>
+ </project>
+\ No newline at end of file
+Index: src/main/resources/druid.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>driverClassName=com.mysql.cj.jdbc.Driver\r\nurl=jdbc:mysql://127.0.0.1:3306/talkative?useSSL=true&verifyServerCertificate=false&serverTimezone=UTC\r\nusername=root\r\npassword=Fty5005669\r\ninitialSize=5\r\nmaxActive=10\r\nmaxWait=3000
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/src/main/resources/druid.properties b/src/main/resources/druid.properties
+--- a/src/main/resources/druid.properties	(revision 8ede702174324f0b41f9806c27cd3e06830cdf1c)
++++ b/src/main/resources/druid.properties	(date 1692985650166)
+@@ -1,5 +1,5 @@
+ driverClassName=com.mysql.cj.jdbc.Driver
+-url=jdbc:mysql://127.0.0.1:3306/talkative?useSSL=true&verifyServerCertificate=false&serverTimezone=UTC
++url=jdbc:mysql://My_db:3306/talkative?allowPublicKeyRetrieval=true&useSSL=false&verifyServerCertificate=false&serverTimezone=UTC
+ username=root
+ password=Fty5005669
+ initialSize=5
+Index: frontend/js/feedbackCustomerInformation.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>$(document).ready(function () {\r\n//    let baseUrl = 'http://127.0.0.1:8081';\r\n   // let baseUrl = 'http://13.42.40.174';\r\n\r\n    // EventListeners\r\n    $(\"#submitInfoBtn\").click(function () {\r\n        if (document.getElementById(\"check\").checked === false){\r\n            let firstName = document.getElementById(\"firstName\").value\r\n            let lastName = document.getElementById(\"lastName\").value\r\n            let email = document.getElementById(\"inputEmail\").value\r\n            let regEmail = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\\.[a-zA-Z0-9_-])+/\r\n\r\n            if (firstName.trim().length <= 0) {\r\n                alert(\"First Name Is Null\")\r\n                return false\r\n            } else if (lastName.trim().length <= 0) {\r\n                alert(\"Last Name Is Null\")\r\n                return false\r\n            } else if (email.trim().length <= 0) {\r\n                alert(\"email Is Null\")\r\n                return false\r\n            } else if (!regEmail.test(email)) {\r\n                alert(\"email result is false\")\r\n                return false\r\n            } else {\r\n                saveCustomerInfo(firstName, lastName, email);\r\n            }\r\n        }else {\r\n            saveCustomerInfo(\"Anonymity\", \"Anonymity\", \"NULL\");\r\n        }\r\n\r\n        $('.modal-content').empty();\r\n        $('.modal-content').append('<div class=\"modal-body\" style=\"margin-top: 50px\"><h3>Thank you for your feedback!</h3></div>');\r\n\r\n         setTimeout(() => {\r\n             localStorage.clear();\r\n             window.location.reload();\r\n         }, 2000)\r\n    })\r\n\r\n    // Functions\r\n    function saveCustomerInfo(firstName, lastName, email) {\r\n        let chatRecordId = localStorage.getItem(\"chatRecordId\")\r\n\r\n        let json = {\r\n            \"firstName\": firstName,\r\n            \"lastName\": lastName,\r\n            \"email\": email,\r\n            \"chatRecordIdList\": [\"1\"],\r\n            \"chatRecordId\": chatRecordId\r\n        };\r\n\r\n        $.ajax({\r\n            url: baseUrl + '/create-info/' + localStorage.getItem(\"agentName\"),\r\n            method: 'post',\r\n            contentType: \"application/json\", // Set the request header to JSON format.\r\n            data: JSON.stringify(json),\r\n            success: function (data) {\r\n                if (data.code == 500) {\r\n                    return alert(data.message);\r\n                } else {\r\n                    return \"success\";\r\n                }\r\n            }\r\n        })\r\n    }\r\n})\r\n\r\nfunction checkOne() {\r\n    let checkRadio = false\r\n    if (checkRadio === false){\r\n        checkRadio = true\r\n    }else {\r\n        checkRadio = false\r\n        document.getElementById(\"check\").checked=false\r\n    }\r\n    console.log()\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/frontend/js/feedbackCustomerInformation.js b/frontend/js/feedbackCustomerInformation.js
+--- a/frontend/js/feedbackCustomerInformation.js	(revision 8ede702174324f0b41f9806c27cd3e06830cdf1c)
++++ b/frontend/js/feedbackCustomerInformation.js	(date 1692985650162)
+@@ -50,6 +50,8 @@
+             "chatRecordId": chatRecordId
+         };
+ 
++
++
+         $.ajax({
+             url: baseUrl + '/create-info/' + localStorage.getItem("agentName"),
+             method: 'post',
+Index: frontend/login.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <title>Login</title>\r\n    <!-- Bootstrap libraries -->\r\n    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\"\r\n          integrity=\"sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi\" crossorigin=\"anonymous\">\r\n    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js\"\r\n            integrity=\"sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3\"\r\n            crossorigin=\"anonymous\"></script>\r\n    <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js\"\r\n            integrity=\"sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3\"\r\n            crossorigin=\"anonymous\"></script>\r\n    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js\"\r\n            integrity=\"sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk\"\r\n            crossorigin=\"anonymous\"></script>\r\n    <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>\r\n    <script type=\"text/javascript\" src=\"js/login.js\"></script>\r\n\r\n\r\n</head>\r\n<style>\r\n    body {\r\n        background-color: #8696a7;\r\n    }\r\n\r\n    .center-container {\r\n        display: flex;\r\n        justify-content: center;\r\n        align-items: center;\r\n        min-height: 100vh;\r\n    }\r\n\r\n    .container {\r\n        max-width: 600px;\r\n        padding: 20px;\r\n        border-radius: 10px;\r\n        background-color: #ffffff;\r\n        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\r\n    }\r\n\r\n    .form-label {\r\n        font-weight: bold;\r\n        margin-bottom: 0;\r\n    }\r\n\r\n    .form-control {\r\n        border: 2px solid #ccc;\r\n        border-radius: 5px;\r\n        padding: 10px;\r\n        width: 100%;\r\n        transition: border-color 0.3s ease-in-out;\r\n    }\r\n\r\n    .form-control:focus {\r\n        border-color: #11a1fd;\r\n    }\r\n\r\n    /* Your other styles here */\r\n\r\n</style>\r\n</head>\r\n<body class=\"p-3 m-0 border-0 bd-example bd-example-row\">\r\n<div class=\"center-container\">\r\n<div class=\"container w-100\">\r\n    <div class=\"title\">\r\n        <h2 class=\"project\">Talkative Feedback System</h2>\r\n    </div>\r\n    <form action=\"LoginServlet\" method=\"post\" id=\"loginForm\">\r\n        <div class=\"login\">\r\n            <h2>Hello,Welcome!</h2>\r\n            <p>Please Enter Your Details Below to Continue</p>\r\n        </div>\r\n        <div class=\"row input-group mb-3\">\r\n            <label class=\"col-xs-12 col-sm-12 col-md-12 col-lg-3\" for=\"user\">Username:</label>\r\n            <input id=\"user\" type=\"text\" name=\"username\" class=\"form-control col-xs-12 col-sm-12 col-md-12 col-lg-9\" aria-describedby=\"inputGroup-sizing-default\" placeholder=\"Username\" required aria-required=\"true\">\r\n        </div>\r\n        <div class=\"row input-group mb-3\">\r\n            <label for=\"password\" class=\"col-xs-12 col-sm-12 col-md-12 col-lg-3\">Password:</label>\r\n            <input id=\"password\" name=\"password\" type=\"password\" class=\"form-control col-xs-12 col-sm-12 col-md-12 col-lg-9\" aria-describedby=\"inputGroup-sizing-default\" placeholder=\"Password\" required aria-required=\"true\">\r\n        </div>\r\n<!--        <div>-->\r\n<!--            <button class=\"btn btn-primary\" type=\"submit\" id=\"btn_sub\">Log in</button>-->\r\n<!--        </div>-->\r\n        <div class=\"form-group\" style=\"text-align: center;\">\r\n            <input class=\"btn btn btn-primary\" id=\"btn_sub\" type=\"button\" value=\"Login\">\r\n        </div>\r\n    </form>\r\n<!--    <div class=\"alert alert-warning alert-dismissible\" role=\"alert\">-->\r\n<!--        <button type=\"button\" class=\"close\" data-dismiss=\"alert\" >-->\r\n<!--            <span>&times;</span></button>-->\r\n<!--        <strong id=\"errorMsg\"></strong>-->\r\n<!--    </div>-->\r\n    <div class=\"login-label\">\r\n        <p>No account? <a href=\"static/register.html\">Create one!</a></p>\r\n    </div>\r\n</div>\r\n</div>\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/frontend/login.html b/frontend/login.html
+--- a/frontend/login.html	(revision 8ede702174324f0b41f9806c27cd3e06830cdf1c)
++++ b/frontend/login.html	(date 1692985650164)
+@@ -93,7 +93,7 @@
+ <!--        <strong id="errorMsg"></strong>-->
+ <!--    </div>-->
+     <div class="login-label">
+-        <p>No account? <a href="static/register.html">Create one!</a></p>
++        <p>No account? <a href="/static/register.html">Create one!</a></p>
+     </div>
+ </div>
+ </div>
