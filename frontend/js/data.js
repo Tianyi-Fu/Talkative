@@ -1,3 +1,4 @@
+let baseUrl = "http://localhost:8081"
 function getData(url,call,par){
     $.ajax({
         url: url,
@@ -80,15 +81,15 @@ $("#generate-excel").click(function(){
     excel.generate();
 });
 function loadTotal(){
-    getData("/feedbackrecord/count",function(data){
+    getData(baseUrl+"/feedbackrecord/count",function(data){
         $("#feedbackTotal").html(data.total);
     });
-    getData("/chatrecord/count",function(data){
+    getData(baseUrl+"/chatrecord/count",function(data){
         $("#chatRecordTotal").html(data.total);
     });
 }
 function loadPeviewanalysisLits(){
-    getData("/reviewanalysis/list",function(data){
+    getData(baseUrl+"/reviewanalysis/list",function(data){
         var html="";
         var table=data.list;
         for(var i in table){
@@ -98,7 +99,7 @@ function loadPeviewanalysisLits(){
     },'{"page":1,"size":10000}');
 }
 function loadPeviewanalysisSentiment(){
-    getData("/reviewanalysis/sentiment",function(data){
+    getData(baseUrl+"/reviewanalysis/sentiment",function(data){
         var ntlk=data.sentiment_ntlk[0];
         var flair=data.sentiment_flair[0];
         var bert=data.sentiment_bert[0];
@@ -110,7 +111,7 @@ function loadPeviewanalysisSentiment(){
     });
 }
 function loadPeviewanalysisTopic(){
-    getData("/reviewanalysis/topic",function(data){
+    getData(baseUrl+"/reviewanalysis/topic",function(data){
         var topic=data.list;
         var keys=data.key;
         var data=[];
