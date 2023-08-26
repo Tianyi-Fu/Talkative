@@ -1,4 +1,4 @@
-let baseUrl = "http://13.42.40.174"
+let baseUrl = "https://13.42.40.174"
 function getData(url,call,par){
     $.ajax({
         url: url,
