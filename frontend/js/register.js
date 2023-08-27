@@ -40,7 +40,7 @@ $(function(){
     //表单提交时，调用所有的校验方法
     $("#registerForm").submit(function (){
         //1.发送数据到服务器
-            $.post("http://13.42.40.174/RegistUserServlet",$(this).serialize(),function (data){
+            $.post("https://13.42.40.174/RegistUserServlet",$(this).serialize(),function (data){
                     window.location.href="login.html";
             });
     });
