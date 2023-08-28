@@ -1,4 +1,5 @@
-let baseUrl = 'http://localhost:8081'
+// let baseUrl = 'http://127.0.0.1:8081'
+let baseUrl = 'https://13.42.40.174';
 
 $(document).ready(() => {
     let agentName = '';
@@ -26,6 +27,12 @@ $(document).ready(() => {
         } else {
             $("#submit").prop("disabled", true);
         }
+    })
+
+    // Listen close button on click
+    $(".btn-close").click(() => {
+        localStorage.clear();
+        window.location.reload();
     })
 })
 
@@ -60,7 +67,7 @@ function formatTranscript(conversation, chatRecordId) {
 
 function loadModalContent() {
     let modalContainer = new bootstrap.Modal(document.getElementById('modalContainer'))
-    $('.modal-content').load('components/startSurveyModal.html', () => {
+    $('.modal-content').load('/static/components/startSurveyModal.html', () => {
         modalContainer.show();
     });
 }
@@ -69,7 +76,9 @@ function sendTranscript(chatRecordId, conversation, widget) {
     if (chatRecordId) {
         localStorage.setItem("chatRecordId", chatRecordId);
     } else {
-        localStorage.setItem("chatRecordId", JSON.stringify(Date.now()));
+        let now = Date.now();
+        let id = now.toString().slice(6);
+        localStorage.setItem("chatRecordId", id);
     }
 
     // Hide Talkative widget
@@ -90,7 +99,7 @@ function sendTranscript(chatRecordId, conversation, widget) {
         data: JSON.stringify(transcriptObj),
         success: function (data) {
             if (data.code == 500) {
-                alert(data.message)
+                console.log(data.message)
             } else {
                 localStorage.setItem("feedbackRecordId", data.data)
                 console.log('OK')

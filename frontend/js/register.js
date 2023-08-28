@@ -40,22 +40,9 @@ $(function(){
     //表单提交时，调用所有的校验方法
     $("#registerForm").submit(function (){
         //1.发送数据到服务器
-        if(checkUsername() && checkPassword()){
-            //校验通过，发送Ajax请求，提交表单的数据
-            $.post("http://127.0.0.1:8081/RegistUserServlet",$(this).serialize(),function (data){
-                //处理服务器响应的数据 data	{flag:true,errorMsg:"注册失败"}
-                if(data.flag){
-                    //注册成功，跳转成功页面
-                    location.href="login.html";
-                }else{
-                    //注册失败,给errorMsg添加提示信息
-                    $("#errorMsg").html(data.errorMsg);
-                }
+            $.post("https://13.42.40.174/RegistUserServlet",$(this).serialize(),function (data){
+                    window.location.href="login.html";
             });
-        }
-        //2.跳转页面
-
-        //如果这个方法没有返回值，或者返回为true，则表单提交，如果返回FALSE，则表单不提交
     });
     //当某一个组件失去焦点时,调用对应的校验方法
     $("#username").blur(checkUsername);

@@ -17,9 +17,6 @@ public class TranscriptController {
     public Result<String> query(@RequestBody String param) throws Exception {
         JSONObject obj = new JSONObject(param);
 
-//        System.out.println(obj.getString("agent_name"));
-//        System.out.println(obj.getJSONArray("transcript"));
-
         String agentName = obj.getString("agent_name");
         String chatRecordId = String.valueOf(obj.getInt("chatRecordId"));
         String transcript = String.valueOf(obj.getJSONArray("transcript"));

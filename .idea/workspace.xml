@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="connect to database">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/druid.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/druid.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Talkative-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Talkative-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/FeedbackRecordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/controller/FeedbackRecordController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/web/servlet/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/web/servlet/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/druid.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/druid.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-    </list>
+    <list default="true" id="d1122899-63bc-4208-8b3b-19db2bcf95c8" name="Changes" comment="final version." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,22 +13,39 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="Interface" />
         <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="Class" />
+        <option value="Python Script" />
       </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="develop_2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/talkative.pem" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
   </component>
   <component name="JsBowerSettings">
     <node-interpreter value="project" />
@@ -60,24 +64,39 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RequestMappingsPanelOrder0" value="0" />
-    <property name="RequestMappingsPanelOrder1" value="1" />
-    <property name="RequestMappingsPanelWidth0" value="75" />
-    <property name="RequestMappingsPanelWidth1" value="75" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Tony/Desktop/Talkative&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;3d03706d9ca9cfb206f00c437c272955&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/demo/web" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/demo" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/demo/serivce" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/demo/repository" />
+      <recent name="C:\Users\Tony\Desktop\Talkative" />
+      <recent name="C:\Users\Tony\Desktop\Talkative\src" />
+      <recent name="$PROJECT_DIR$/frontend/vendors" />
+      <recent name="$PROJECT_DIR$/frontend/css" />
+      <recent name="$PROJECT_DIR$/frontend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Tony\Desktop\Talkative" />
       <recent name="C:\Users\c21112765\OneDrive - Cardiff University\Desktop\Talkative\frontend\vendors\bs-stepper" />
       <recent name="$PROJECT_DIR$/frontend" />
       <recent name="$PROJECT_DIR$/src/main/resources/templates" />
@@ -85,10 +104,9 @@
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.demo.model" />
-      <recent name="com.demo.util" />
-      <recent name="com.demo.serivce" />
       <recent name="com.demo.mapper" />
       <recent name="com.demo.controller" />
+      <recent name="com.demo.config" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -98,7 +116,18 @@
       </set>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.TranscriptServiceUnitTest">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -129,35 +158,79 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+    <configuration name="TranscriptControllerUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Talkative" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.demo.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.demo.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.demo.controller.TranscriptControllerUnitTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TranscriptServiceUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Talkative" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.demo.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.demo.service" />
+      <option name="MAIN_CLASS_NAME" value="com.demo.service.TranscriptServiceUnitTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="home.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost/static/home.html">
+      <method v="2" />
+    </configuration>
+    <configuration name="preload_models" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Talkative" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preload_models.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="TalkativeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="Talkative" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.demo.TalkativeApplication" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.demo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.demo.TalkativeApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.TalkativeApplication" />
+        <item itemvalue="JUnit.TranscriptServiceUnitTest" />
+        <item itemvalue="JUnit.TranscriptControllerUnitTest" />
+        <item itemvalue="Python.preload_models" />
       </list>
     </recent_temporary>
   </component>
@@ -187,9 +260,17 @@
       <workItem from="1692121815464" duration="298000" />
       <workItem from="1692222749896" duration="16912000" />
       <workItem from="1692356786331" duration="7069000" />
-      <workItem from="1692543267366" duration="2859000" />
-      <workItem from="1692546814056" duration="1425000" />
-      <workItem from="1692749601332" duration="13472000" />
+      <workItem from="1692408410838" duration="7117000" />
+      <workItem from="1692448687578" duration="347000" />
+      <workItem from="1692449110151" duration="1010000" />
+      <workItem from="1692484468212" duration="2216000" />
+      <workItem from="1692487812803" duration="18388000" />
+      <workItem from="1692555314585" duration="4427000" />
+      <workItem from="1692568678700" duration="4965000" />
+      <workItem from="1692597238055" duration="7110000" />
+      <workItem from="1692663995520" duration="3475000" />
+      <workItem from="1692674570926" duration="26427000" />
+      <workItem from="1693143822497" duration="6144000" />
     </task>
     <task id="LOCAL-00001" summary="new gitigonore file">
       <created>1689282546007</created>
@@ -324,7 +405,217 @@
       <option name="project" value="LOCAL" />
       <updated>1692379837858</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="fix bug 1: miss typed in main&#10;fix bug 2: a possible mistake report in database setting&#10;fix bug 3: a database structure mistake">
+      <created>1692380068872</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1692380068872</updated>
+    </task>
+    <task id="LOCAL-00021" summary="try to deployee in openstack">
+      <created>1692414101308</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1692414101308</updated>
+    </task>
+    <task id="LOCAL-00022" summary="try to deployee in openstack">
+      <created>1692415055066</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1692415055066</updated>
+    </task>
+    <task id="LOCAL-00023" summary="try to deployee in openstack">
+      <created>1692446058188</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1692446058188</updated>
+    </task>
+    <task id="LOCAL-00024" summary="try to deployee in openstack">
+      <created>1692449734794</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1692449734794</updated>
+    </task>
+    <task id="LOCAL-00025" summary="works perfectly in local docker environment.">
+      <created>1692577986031</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1692577986031</updated>
+    </task>
+    <task id="LOCAL-00026" summary="downgrade to java 11.">
+      <created>1692580100749</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1692580100749</updated>
+    </task>
+    <task id="LOCAL-00027" summary="downgrade to java 11.">
+      <created>1692580715869</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1692580715869</updated>
+    </task>
+    <task id="LOCAL-00028" summary="add preload image in jenkins.">
+      <created>1692585204417</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1692585204417</updated>
+    </task>
+    <task id="LOCAL-00029" summary="add preload image in jenkins.">
+      <created>1692597794954</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1692597794954</updated>
+    </task>
+    <task id="LOCAL-00030" summary="update terraform..">
+      <created>1692649098080</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1692649098080</updated>
+    </task>
+    <task id="LOCAL-00031" summary="update terraform..">
+      <created>1692651236141</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1692651236141</updated>
+    </task>
+    <task id="LOCAL-00032" summary="finish deployee on the aws and openstack.">
+      <created>1692741924413</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1692741924413</updated>
+    </task>
+    <task id="LOCAL-00033" summary="fix bugs.">
+      <created>1692743944114</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1692743944114</updated>
+    </task>
+    <task id="LOCAL-00034" summary="fix bugs.">
+      <created>1692746061573</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1692746061573</updated>
+    </task>
+    <task id="LOCAL-00035" summary="fix bugs.">
+      <created>1692751106108</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1692751106108</updated>
+    </task>
+    <task id="LOCAL-00036" summary="fix bugs.">
+      <created>1692756260540</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1692756260540</updated>
+    </task>
+    <task id="LOCAL-00037" summary="fix bugs.">
+      <created>1692757850762</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1692757850762</updated>
+    </task>
+    <task id="LOCAL-00038" summary="checked widget works in index.html">
+      <created>1692924319686</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1692924319686</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Fixed test failed issue">
+      <created>1692926266795</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1692926266795</updated>
+    </task>
+    <task id="LOCAL-00040" summary="prepare to launch in aws server.">
+      <created>1693002344272</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1693002344272</updated>
+    </task>
+    <task id="LOCAL-00041" summary="add certifications for https.">
+      <created>1693005575107</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1693005575107</updated>
+    </task>
+    <task id="LOCAL-00042" summary="add certifications for https.">
+      <created>1693005728938</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1693005728938</updated>
+    </task>
+    <task id="LOCAL-00043" summary="add certifications for https.">
+      <created>1693007377818</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1693007377818</updated>
+    </task>
+    <task id="LOCAL-00044" summary="fix bug.">
+      <created>1693148333408</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1693148333409</updated>
+    </task>
+    <task id="LOCAL-00045" summary="fix bug.">
+      <created>1693148683396</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1693148683396</updated>
+    </task>
+    <task id="LOCAL-00046" summary="fix bug.">
+      <created>1693149248632</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1693149248632</updated>
+    </task>
+    <task id="LOCAL-00047" summary="fix bug.">
+      <created>1693149565159</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1693149565159</updated>
+    </task>
+    <task id="LOCAL-00048" summary="final version.">
+      <created>1693150219697</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1693150219697</updated>
+    </task>
+    <task id="LOCAL-00049" summary="final version.">
+      <created>1693151000555</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1693151000555</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -350,18 +641,8 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="new gitigonore file" />
-    <MESSAGE value="added Feedback java files &amp; Python script to format transcript, not yet tested out" />
-    <MESSAGE value="tryin to use JAVA to format the transcript data instead of Python, not yet working" />
-    <MESSAGE value="format transcript data at frontend, removed all Python related dependencies" />
-    <MESSAGE value="attempted to save transcript to DB, not working yet" />
-    <MESSAGE value="changed Chat_record Table_id to AUTO" />
-    <MESSAGE value="Updated database schema &amp; successfully written transcript data to chat_record table" />
-    <MESSAGE value="added unversioned files" />
-    <MESSAGE value="merged with folder_structure" />
     <MESSAGE value="1.As a developer, I want to automatically pop up the surveyForm page while submitting a transcript on the Talkative page.&#10;2.As a developer, I want to display issues analyzed and generated by ChatGPT on the surveyForm page.&#10;3.As a developer, I want to write some CSS style for the webpages." />
     <MESSAGE value="Refactored code; changed feedback form to popup; trying to show feedback questions 1 by 1" />
     <MESSAGE value="Only load questions when they are in localStorage; Refactored schema.sql &amp; FeedbackRecord" />
@@ -374,7 +655,20 @@
     <MESSAGE value="Fix some bugs." />
     <MESSAGE value="Edited style of feedback modal &amp; added stepper at th top of modal; still need to fix show active step issue" />
     <MESSAGE value="fix bug 1: miss typed in main&#10;fix bug 2: a possible mistake report in database setting&#10;fix bug 3: a database structure mistake" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bug 1: miss typed in main&#10;fix bug 2: a possible mistake report in database setting&#10;fix bug 3: a database structure mistake" />
+    <MESSAGE value="try to deployee in openstack" />
+    <MESSAGE value="works perfectly in local docker environment." />
+    <MESSAGE value="downgrade to java 11." />
+    <MESSAGE value="add preload image in jenkins." />
+    <MESSAGE value="update terraform.." />
+    <MESSAGE value="finish deployee on the aws and openstack." />
+    <MESSAGE value="fix bugs." />
+    <MESSAGE value="checked widget works in index.html" />
+    <MESSAGE value="Fixed test failed issue" />
+    <MESSAGE value="prepare to launch in aws server." />
+    <MESSAGE value="add certifications for https." />
+    <MESSAGE value="fix bug." />
+    <MESSAGE value="final version." />
+    <option name="LAST_COMMIT_MESSAGE" value="final version." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

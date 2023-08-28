@@ -7,6 +7,12 @@ $(document).ready(() => {
         questionsLoadedCheck();
     })
 
+    // Listen close button on click
+    $(".btn-close").click(() => {
+        localStorage.clear();
+        window.location.reload();
+    })
+
     // Functions
     function loadQuestions() {
         const questionArray = localStorage.getItem("questions");
@@ -22,15 +28,31 @@ $(document).ready(() => {
 
     function questionsLoadedCheck() {
         let timer = setInterval(checkLocalStorage, 2000);
+        let counter = 0;
 
         function checkLocalStorage() {
-            localStorage.getItem("questions") ? abortTimer() : console.log("not loaded");
+            if (localStorage.getItem("questions")) {
+                abortTimer();
+            } else if (counter >= 30) {
+                clearInterval(timer);
+
+                $('.modal-content').empty();
+                $('.modal-content').append("<div id='loading-container'><h3>Sorry, something went wrong :-(</h3></div>");
+
+                setTimeout(() => {
+                    localStorage.clear();
+                    window.location.reload();
+                }, 3000)
+            } else {
+                console.log("not loaded");
+                counter ++;
+            }
         }
 
         function abortTimer() {
             clearInterval(timer);
 
-            $('.modal-content').load('components/feedbackQuestionModal.html', () => {
+            $('.modal-content').load('/static/components/feedbackQuestionModal.html', () => {
                 loadQuestions();
             });
         }

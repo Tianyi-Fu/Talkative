@@ -1,13 +1,24 @@
 package com.demo.util;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
+import org.apache.commons.text.StringEscapeUtils;
+
+import java.io.IOException;
 
 /**
  * @author Tianyi Fu
  * @since 2023/7/20
  */
+
+
 public class JsonUtil {
 
+    private static String removeQuotesAndUnescape(String uncleanJson) {
+        String noQuotes = uncleanJson.replaceAll("^\"|\"$", "");
+
+        return StringEscapeUtils.unescapeJava(noQuotes);
+    }
 
     /**
      * json convert to class object
@@ -20,6 +31,6 @@ public class JsonUtil {
     public static <T> T toClass(String json, Class<T> t) {
         Gson gson = new Gson();
         System.out.println("json："+json);
-        return gson.fromJson(json, t);
+        return gson.fromJson(removeQuotesAndUnescape(json), t);
     }
 }

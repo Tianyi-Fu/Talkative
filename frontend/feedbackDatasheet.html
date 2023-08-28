@@ -15,13 +15,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>FeedbackDatasheet - Admin</title>
-    <!-- Custom fonts for this template-->
-    <!--    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">-->
-    <!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
-    <!--    <link-->
-    <!--            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"-->
-    <!--            rel="stylesheet">-->
+    <title>Feedback Datasheet - Admin</title>
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -71,12 +65,32 @@
         .answer::placeholder{
             color: white;
         }
-        /*input{*/
-        /*    color: white; !important;*/
-        /*}*/
         .container{
             max-width: 1740px;
         }
+
+        .card .btn {
+            margin-bottom: 8px;
+        }
+        tr:hover {
+            background-color: #f2f2f2;
+        }
+        .col-md-4 {
+            margin: 8px 0;
+        }
+
+        /* Datepicker Style */
+        .ui-widget-header {
+            background: #4e73dfa8;
+        }
+        .ui-datepicker-month, .ui-datepicker-year {
+            border: none;
+            text-align: center;
+        }
+        .ui-state-default {
+            border-color: #f1f1f1 !important;
+        }
+
     </style>
 </head>
 
@@ -233,10 +247,10 @@
                                         <!-- First Row -->
                                         <div class="row mb-3">
                                             <div class="col-md-4">
-                                                <input type="text" id="chatRecordID" placeholder="ChatRecord_NB" class="form-control">
+                                                <input type="text" id="chatRecordID" placeholder="Chat Record ID" class="form-control">
                                             </div>
                                             <div class="col-md-4">
-                                                <input type="text" id="satisfaction" placeholder="Satisfaction" class="form-control">
+                                                <input type="text" id="satisfaction" placeholder="Satisfaction Level" class="form-control">
                                             </div>
                                             <div class="col-md-4">
                                                 <input type="text" id="agentName" placeholder="Agent Name" class="form-control">
@@ -244,14 +258,14 @@
                                         </div>
                                         <!-- Second Row -->
                                         <div class="row mb-3">
-                                            <div class="col-md-4">
-                                                <label for="datepicker">Select Date:</label>
+                                            <div class="col-md-4" style="text-align: center;">
+                                                <label for="datepicker"style="margin-bottom: 0; vertical-align: middle;">Select Date:</label>
                                             </div>
                                             <div class="col-md-4">
-                                                <input type="text" id="datepicker" class="form-control">
+                                                <input type="text" id="datepicker" class="form-control" placeholder="From">
                                             </div>
                                             <div class="col-md-4">
-                                                <input type="text" id="datepicker2" class="form-control">
+                                                <input type="text" id="datepicker2" class="form-control" placeholder="To">
                                             </div>
                                         </div>
                                         <!-- Third Row -->
@@ -271,7 +285,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="col-xl-4 col-md-6 mb-4">
                                 <div class="card border-left-primary shadow h-100 py-2">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
@@ -302,12 +316,12 @@
                         <div class="row">
 
                             <!-- Pie Chart -->
-                            <div class="col-xl-4 col-lg-5">
+                            <div class="col-xl-5 col-lg-5">
                                 <div class="card shadow mb-4">
                                     <!-- Card Header - Dropdown -->
                                     <div
                                             class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                        <h6 class="m-0 font-weight-bold text-primary">Participation Rate of feedback</h6>
+                                        <h6 class="m-0 font-weight-bold text-primary">Participation Rate of Feedback</h6>
                                         <div class="dropdown no-arrow"></div>
                                     </div>
                                     <!-- Card Body -->
@@ -328,7 +342,7 @@
                             <div class="col-xl-7 col-lg-14 mb-4">
                                 <div class="card shadow">
                                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                        <h6 class="m-0 font-weight-bold text-primary">Satisfaction</h6>
+                                        <h6 class="m-0 font-weight-bold text-primary">Satisfaction Level</h6>
                                         <div class="dropdown no-arrow"></div>
                                     </div>
                                     <div class="card-body text-center" style="height: 360px;">
@@ -343,7 +357,7 @@
 
                         <div class="col-sm-12 mb-4 d-flex justify-content-between align-items-center">
                             <h1 class="h3 mb-0 text-gray-800">Data Sheet</h1>
-                            <a href="http://127.0.0.1:8081/download/excel" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" style="font-size: 14px;">
+                            <a href="https://13.42.40.174/download/excel" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" style="font-size: 14px;">
                                 <i class="fas fa-download fa-sm text-white-50"></i> Download
                             </a>
                         </div>
@@ -353,14 +367,14 @@
                         <table id="feedbackUserTable" class="table table-condensed" style="width: 100%;max-width: 100%;overflow-x: auto;margin-top: 6px">
                             <thead>
                             <tr>
-                                <th scope="col">UID</th>
-                                <th scope="col">ChatRecord_NB</th>
-                                <th scope="col">Firstname</th>
-                                <th scope="col">Lastname</th>
+                                <th scope="col">Feedback ID</th>
+                                <th scope="col">Chat Record ID</th>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Last Name</th>
                                 <th scope="col">Email</th>
-                                <th scope="col">Satisfaction</th>
-                                <th scope="col">agentName</th>
-                                <th scope="col">Questions</th>
+                                <th scope="col">Satisfaction Level</th>
+                                <th scope="col">Agent</th>
+                                <th scope="col">Feedback Questions</th>
                                 <th scope="col">Transcript</th>
                                 <th scope="col">Created at</th>
                                 <th scope="col">Action</th>
@@ -406,12 +420,12 @@
                 <span class="close" onclick="hidePopup3()">&times;</span>
                 <h2>Edit</h2>
                 <div id="edit">
-                    <p style="width: 300px;text-align: right;display: none">feedbackRecordId：<input type="text" placeholder="feedbackRecordId" id="feedbackRecordId"></p>
-                    <p style="width: 300px;text-align: right">firstName：<input type="text" placeholder="firstName" id="firstName"></p>
-                    <p style="width: 300px;text-align: right">lastName：<input type="text" placeholder="lastName" id="lastName"></p>
-                    <p style="width: 300px;text-align: right">email：<input type="text" placeholder="email" id="email"></p>
-                    <p style="width: 300px;text-align: right">agentName：<input type="text" placeholder="agentName" id="agentNames"></p>
-                    <button type="button" class="btn btn-primary btn-xs" onclick="onsubmitEdit()" style="margin-left: 107px">submit</button>
+                    <p style="width: 300px;text-align: right;display: none">Feedback Id：<input type="text" placeholder="Feedback Id" id="feedbackRecordId"></p>
+                    <p style="width: 300px;text-align: right">Customer First Name：<input type="text" placeholder="Customer First Name" id="firstName"></p>
+                    <p style="width: 300px;text-align: right">Customer Last Name：<input type="text" placeholder="Customer Last Name" id="lastName"></p>
+                    <p style="width: 300px;text-align: right">Customer Email：<input type="text" placeholder="Customer Email" id="email"></p>
+                    <p style="width: 300px;text-align: right">Agent：<input type="text" placeholder="Agent" id="agentNames"></p>
+                    <button type="button" class="btn btn-primary btn-xs" onclick="onsubmitEdit()" style="margin-left: 107px">Submit</button>
                 </div>
             </div>
         </div>
@@ -428,7 +442,7 @@
             <div class="popup-content">
                 <span class="close" onclick="analysisClose()">&times;</span>
                 <h2>Analysis Result</h2>
-                <h3>Get suggestions:</h3>
+                <h3>Suggestions from Customers:</h3>
                 <div id="analysis" class="analysis-box">
                 </div>
             </div>
@@ -455,21 +469,7 @@
     <i class="fas fa-angle-up"></i>
 </a>
 
-
-<!-- Include the jQuery library -->
-<!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
-
 <script type="text/javascript" src="js/feedbackDatasheet.js"></script>
-
-<!-- Bootstrap core JavaScript-->
-<!--<script src="vendor/jquery/jquery.min.js"></script>-->
-<!--<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>-->
-
-<!-- Core plugin JavaScript-->
-<!--<script src="vendor/jquery-easing/jquery.easing.min.js"></script>-->
-
-<!-- Custom scripts for all pages-->
-
 </body>
 <!--<script>-->
 <!--    const ctx = document.getElementById('peityChart');-->
@@ -507,10 +507,10 @@
 <!--</script>-->
 
 <script>
-
+    let baseUrl = "https://13.42.40.174";
     function analysis(feedbackRecordId) {
         $.ajax({
-            url: "http://127.0.0.1:8081/qry/analysis/"+feedbackRecordId,
+            url: baseUrl + "/qry/analysis/"+feedbackRecordId,
             method: 'get',
             success: function (data) {
                 var json = JSON.parse(data.data)
@@ -549,11 +549,11 @@
     function downloadTranscript() {
         // var href =
         // document.getElementById("okDownload")
-        window.location.href='http://127.0.0.1:8081/download/excel/transcript/'+this.feedbackRecordId
+        window.location.href= baseUrl + '/download/excel/transcript/'+this.feedbackRecordId
         // window.location.href='http://127.0.0.1:8081/download/excel'
     }
     function downloadQuestion() {
-        window.location.href='http://127.0.0.1:8081/download/excel/question/'+this.feedbackRecordId
+        window.location.href= baseUrl + '/download/excel/question/'+this.feedbackRecordId
     }
     var feedbackRecordId;
 
@@ -561,7 +561,7 @@
         this.feedbackRecordId = feedbackRecordId
         var json = {"feedbackRecordId": feedbackRecordId}
         $.ajax({
-            url: "http://127.0.0.1:8081/question/list",
+            url: baseUrl + "/question/list",
             data: JSON.stringify(json),
             method: 'post',
             contentType: "application/json", // Set the request header to JSON format.
@@ -600,7 +600,7 @@
         this.feedbackRecordId = feedbackRecordId
         var json = {"feedbackRecordId": feedbackRecordId}
         $.ajax({
-            url: "http://127.0.0.1:8081/transcript/list",
+            url: baseUrl + "/transcript/list",
             data: JSON.stringify(json),
             method: 'post',
             contentType: "application/json", // Set the request header to JSON format.

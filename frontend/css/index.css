@@ -10,7 +10,7 @@ body {
     width: 100vw;
     height: 500vh;
     margin: 0;
-    background-image: url("/frontend/images/home.png");
+    background-image: url("/static/images/home.png");
     background-attachment: scroll;
     background-size: cover;
 }
