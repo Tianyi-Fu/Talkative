@@ -61,9 +61,13 @@ public class FeedbackController {
 
         //Have the AI output in JSON format.
         chatMessages.add(new ChatMessage(ChatRole.USER).setContent(
-                "Based on the above dialogue and the emotions of the conversation participants, generate six forms to ask the Customer for their feedback of the conversation. Please output in JSON format according to the following requirements:" +
+                "Based on the above dialogue and the emotions of the conversation participants, " +
+                        "generate six forms to ask the Customer for their feedback of the conversation. " +
+                        "Please output in JSON format according to the following requirements:" +
                         "\n 1. There should be six questions." +
-                        "\n 2. The six questions are output in the following types and order: the first question has a question type of Scale (1-5). The second and third questions have a question type of Yes/No. The remaining questions have a question type of Open ended and related to enquiry/issue in the conversation." +
+                        "\n 2. The six questions are output in the following types and order: the first question has a question type of Scale (1-5). " +
+                        "The second and third questions have a question type of Yes/No. " +
+                        "The remaining questions have a question type of Open ended and related to enquiry/issue in the conversation." +
                         "\n 3. Please generate a JSON format for me, which contains an array named 'questions', and this array should have six string elements, like this format:{\"questions\": [\"How do you feel?\", \"Was this helpful?\"]}"
 
         ));
