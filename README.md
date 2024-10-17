@@ -1,6 +1,9 @@
 # Talkative
+![Slide 16_9 - 5](https://github.com/user-attachments/assets/f3b74a8d-2d93-4250-9796-9724dcc59402)
 
+![Slide 16_9 - 6](https://github.com/user-attachments/assets/5f10fb86-fd54-4c62-a0ff-c300c00bf787)
 
+![Slide 16_9 - 7](https://github.com/user-attachments/assets/09002002-1b63-450e-9a05-f2991ad8ee77)
 
 ## Getting started
 
