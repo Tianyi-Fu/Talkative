@@ -1,4 +1,9 @@
 # Talkative
+![Slide 16_9 - 3](https://github.com/user-attachments/assets/a8f22bc2-026b-43e7-b40c-ccbdbfaeec4d)
+![Slide 16_9 - 2](https://github.com/user-attachments/assets/00547755-edb2-4912-8f3d-c8bbb49b7b38)
+![Slide 16_9 - 1](https://github.com/user-attachments/assets/78c00d77-055a-4d7d-95ef-26f22b071c42)
+
+
 ![Slide 16_9 - 5](https://github.com/user-attachments/assets/f3b74a8d-2d93-4250-9796-9724dcc59402)
 
 ![Slide 16_9 - 6](https://github.com/user-attachments/assets/5f10fb86-fd54-4c62-a0ff-c300c00bf787)
